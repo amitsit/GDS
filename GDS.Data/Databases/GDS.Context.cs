@@ -25,5 +25,19 @@ namespace GDS.Data.Databases
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<CountryMaster> CountryMasters { get; set; }
+        public virtual DbSet<PlantMaster> PlantMasters { get; set; }
+        public virtual DbSet<ProcessDetail> ProcessDetails { get; set; }
+        public virtual DbSet<ProcessDocument> ProcessDocuments { get; set; }
+        public virtual DbSet<RegionMaster> RegionMasters { get; set; }
+        public virtual DbSet<RightsMaster> RightsMasters { get; set; }
+        public virtual DbSet<RoleRight> RoleRights { get; set; }
+        public virtual DbSet<RolesMaster> RolesMasters { get; set; }
+        public virtual DbSet<StateMaster> StateMasters { get; set; }
+        public virtual DbSet<UserMaster> UserMasters { get; set; }
+        public virtual DbSet<UserPlant> UserPlants { get; set; }
+        public virtual DbSet<UserRoleMaster> UserRoleMasters { get; set; }
+        public virtual DbSet<MenuMaster> MenuMasters { get; set; }
+        public virtual DbSet<SubMenuMaster> SubMenuMasters { get; set; }
     }
 }

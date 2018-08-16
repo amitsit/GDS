@@ -7,8 +7,8 @@
     <ProjectGuid>{7FB5C690-FCAB-49A7-9EF9-0AE42E282954}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>IACBI.Services</RootNamespace>
-    <AssemblyName>IACBI.Services</AssemblyName>
+    <RootNamespace>GDS.Services</RootNamespace>
+    <AssemblyName>GDS.Services</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\RestaurantPortalAPI\</SolutionDir>

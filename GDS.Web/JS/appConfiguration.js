@@ -42,6 +42,14 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $tra
 
    });
 
+
+   $stateProvider.state({
+       name: 'Master',
+       url: '/Master',
+       templateUrl: '/Templates/Master/Admin_Links/Index.html'
+
+   });
+
    $stateProvider.state({
        name: 'Region',
        url: '/Region',

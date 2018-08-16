@@ -11,8 +11,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>IACBI.Web</RootNamespace>
-    <AssemblyName>IACBI.Web</AssemblyName>
+    <RootNamespace>GDS.Web</RootNamespace>
+    <AssemblyName>GDS.Web</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>false</UseIISExpress>
@@ -828,27 +828,8 @@
     <Content Include="Templates\Home\ContentTestPage2.html" />
     <Content Include="Templates\Home\ContentTestPage.html" />
     <Content Include="Templates\Home\ContentTestPage1.html" />
-    <Content Include="Templates\Master\DOEVariableMaster\AddOrEditDOEVariableMaster.html" />
-    <Content Include="Templates\Master\DOEVariableMaster\Index.html" />
-    <Content Include="Templates\Master\PlantLaborCost\AddOrEditPlantLaborCost.html" />
-    <Content Include="Templates\Master\PlantLaborCost\Index.html" />
-    <Content Include="Templates\Master\PressBreakDownOrder\Index.html" />
     <Content Include="Templates\Master\Admin_Links\Configuration.html" />
     <Content Include="Templates\Master\Admin_Links\Index.html" />
-    <Content Include="Templates\Master\BICCycleKeyElementStandard\AddOrEditBICCycleKeyElementStandard.html" />
-    <Content Include="Templates\Master\BICCycleKeyElementStandard\Index.html" />
-    <Content Include="Templates\Master\BICCycleKeyElement\AddOrEditBICCycleKeyElement.html" />
-    <Content Include="Templates\Master\BICCycleKeyElement\Index.html" />
-    <Content Include="Templates\Master\CTPartThicknessAddition\AddorEditCTPartThicknessAddition.html" />
-    <Content Include="Templates\Master\CTPartThicknessAddition\Index.html" />
-    <Content Include="Templates\Master\IACCycleGoal\AddOrEditIACCycleGoal.html" />
-    <Content Include="Templates\Master\IACCycleGoal\Index.html" />
-    <Content Include="Templates\Master\MaterialData\Index.html" />
-    <Content Include="Templates\Master\MaterialType\AddorEditMaterialType.html" />
-    <Content Include="Templates\Master\MaterialType\Index.html" />
-    <Content Include="Templates\Master\Material\Index.html" />
-    <Content Include="Templates\Master\Program\AddOrEditProgram.html" />
-    <Content Include="Templates\Master\Program\Index.html" />
     <Content Include="JS\Master\Region\Controllers\RegionController.js" />
     <Content Include="JS\Master\Region\Services\RegionService.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
@@ -1028,10 +1009,8 @@
     <Content Include="Scripts\ui-bootstrap-tpls.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Templates\Home\Index.html" />
-    <Content Include="Templates\Master\TroubleShooterGuide\index.html" />
     <Content Include="Templates\Master\User\Index.html" />
     <Content Include="Templates\Master\User\EditUser.html" />
-    <Content Include="Templates\Master\UtilityConfiguration\Index.html" />
     <Content Include="Templates\Master\Country\AddOrEditCountry.html" />
     <Content Include="Templates\Master\Country\Index.html" />
     <Content Include="Templates\Master\Plant\AddOrEditPlant.html" />
@@ -1043,10 +1022,6 @@
     <Content Include="Templates\Master\Role\RoleConfiguration.html" />
     <Content Include="Templates\Master\State\AddOrEditState.html" />
     <Content Include="Templates\Master\State\Index.html" />
-    <Content Include="Templates\Master\TroubleShooter\AddOrEditTroubleShooter.html" />
-    <Content Include="Templates\Master\TroubleShooter\Index.html" />
-    <Content Include="Templates\Master\WallStock\AddorEditWallStock.html" />
-    <Content Include="Templates\Master\WallStock\Index.html" />
     <Content Include="Templates\Processes\Index.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>

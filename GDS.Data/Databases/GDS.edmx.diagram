@@ -4,7 +4,25 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="5ff31af1e79442198c7b5382d320c63c" Name="Diagram1" />
+      <Diagram DiagramId="f9f3f99846f24772807c71caad256a7d" Name="Diagram1">
+        <EntityTypeShape EntityType="Model.CountryMaster" Width="1.5" PointX="0.75" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PlantMaster" Width="1.5" PointX="3" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ProcessDetail" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ProcessDocument" Width="1.5" PointX="5.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.RegionMaster" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.RightsMaster" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.RoleRight" Width="1.5" PointX="7.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.RolesMaster" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.StateMaster" Width="1.5" PointX="3" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.UserMaster" Width="1.5" PointX="9.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.UserPlant" Width="1.5" PointX="7.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.UserRoleMaster" Width="1.5" PointX="9.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MenuMaster" Width="1.5" PointX="11.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.SubMenuMaster" Width="1.5" PointX="11.75" PointY="4.75" IsExpanded="true" />
+        <AssociationConnector Association="Model.FK_PlantMaster_CountryMaster" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_StateMaster_CountryMaster" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_PlantMaster_RegionMaster" ManuallyRouted="false" />
+      </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

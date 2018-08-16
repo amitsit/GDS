@@ -5,13 +5,13 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("IACBI.Web")]
+[assembly: AssemblyTitle("GDS.Web")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Shaligram Infotech")]
-[assembly: AssemblyProduct("IACBI.Web")]
-[assembly: AssemblyCopyright("Shaligram Infotech Copyright ©  2017")]
-[assembly: AssemblyTrademark("SGIT")]
+[assembly: AssemblyCompany("Cement Digital")]
+[assembly: AssemblyProduct("GDS.Web")]
+[assembly: AssemblyCopyright("Cement Digital Copyright ©  2017")]
+[assembly: AssemblyTrademark("CEM")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible

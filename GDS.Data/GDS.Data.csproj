@@ -7,8 +7,8 @@
     <ProjectGuid>{73FB0298-D435-4960-A05B-458982071FF8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>IACBI.Data</RootNamespace>
-    <AssemblyName>IACBI.Data</AssemblyName>
+    <RootNamespace>GDS.Data</RootNamespace>
+    <AssemblyName>GDS.Data</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
@@ -118,6 +118,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Databases\CountryMaster.cs">
+      <DependentUpon>GDS.tt</DependentUpon>
+    </Compile>
     <Compile Include="Databases\GDS.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -132,6 +135,45 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GDS.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Databases\MenuMaster.cs">
+      <DependentUpon>GDS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Databases\PlantMaster.cs">
+      <DependentUpon>GDS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Databases\ProcessDetail.cs">
+      <DependentUpon>GDS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Databases\ProcessDocument.cs">
+      <DependentUpon>GDS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Databases\RegionMaster.cs">
+      <DependentUpon>GDS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Databases\RightsMaster.cs">
+      <DependentUpon>GDS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Databases\RoleRight.cs">
+      <DependentUpon>GDS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Databases\RolesMaster.cs">
+      <DependentUpon>GDS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Databases\StateMaster.cs">
+      <DependentUpon>GDS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Databases\SubMenuMaster.cs">
+      <DependentUpon>GDS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Databases\UserMaster.cs">
+      <DependentUpon>GDS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Databases\UserPlant.cs">
+      <DependentUpon>GDS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Databases\UserRoleMaster.cs">
+      <DependentUpon>GDS.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\DBAccess.cs" />

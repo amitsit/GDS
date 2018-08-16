@@ -4,20 +4,859 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityContainer Name="ModelStoreContainer" />
+      <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CountryMaster">
+          <Key>
+            <PropertyRef Name="CountryID" />
+          </Key>
+          <Property Name="CountryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CountryName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="ModifiedBy" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'IAC Auria GDS.dbo.MenuMaster' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="MenuMaster">
+          <Key>
+            <PropertyRef Name="MenuId" />
+            <PropertyRef Name="MenuName" />
+            <PropertyRef Name="IsActive" />
+            <PropertyRef Name="DisplayOrder" />
+            <PropertyRef Name="CreatedBy" />
+            <PropertyRef Name="CreatedDate" />
+          </Key>
+          <Property Name="MenuId" Type="int" Nullable="false" />
+          <Property Name="MenuName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="DisplayOrder" Type="smallint" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="int" />
+          <Property Name="UpdatedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="PlantMaster">
+          <Key>
+            <PropertyRef Name="PlantID" />
+          </Key>
+          <Property Name="PlantID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PlantName" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="PlantName_PressSpecification" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="RegionID" Type="int" />
+          <Property Name="CountryID" Type="int" />
+          <Property Name="Location" Type="nvarchar" MaxLength="200" />
+          <Property Name="UnitSystemId" Type="tinyint" />
+          <Property Name="LengthUnit" Type="tinyint" />
+          <Property Name="PressureUnit" Type="tinyint" />
+          <Property Name="HeadCount" Type="float" />
+          <Property Name="FringeWageRate" Type="float" />
+          <Property Name="HourlyWageRate" Type="float" />
+          <Property Name="StdPerfomanceGoal" Type="float" />
+          <Property Name="AllPerformanceGoal" Type="float" />
+          <Property Name="StdReliefDivisor" Type="float" />
+          <Property Name="StdQuotedWeek" Type="float" />
+          <Property Name="MoldingManning" Type="float" />
+          <Property Name="DefaultUTLZPercentage" Type="float" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="int" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="InjectionMoldingAreaId" Type="varchar" MaxLength="500" />
+          <Property Name="PlantName_QAD" Type="nvarchar" MaxLength="200" />
+          <Property Name="PlantColor" Type="varchar" MaxLength="10" />
+          <Property Name="SaasId" Type="int" />
+        </EntityType>
+        <EntityType Name="ProcessDetail">
+          <Key>
+            <PropertyRef Name="ProcessId" />
+          </Key>
+          <Property Name="ProcessId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SubMenuId" Type="int" Nullable="false" />
+          <Property Name="ProcessCode" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ProcessName" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="ProcessModelPath" Type="varchar" MaxLength="500" />
+          <Property Name="ProcessDescription" Type="varchar(max)" />
+          <Property Name="ProcessOwner" Type="varchar" MaxLength="100" />
+          <Property Name="ProcessInput" Type="varchar(max)" />
+          <Property Name="FundamentalOfProcess" Type="varchar(max)" />
+          <Property Name="ProcessOutput" Type="varchar(max)" />
+          <Property Name="RegionId" Type="int" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="DisplayOrder" Type="smallint" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="int" />
+          <Property Name="UpdatedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ProcessDocument">
+          <Key>
+            <PropertyRef Name="DocumentId" />
+          </Key>
+          <Property Name="DocumentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DocumentCode" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DocumentTitle" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="DocumentPath" Type="varchar" MaxLength="500" />
+          <Property Name="ReleaseDate" Type="datetime" Nullable="false" />
+          <Property Name="RegionId" Type="int" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="DisplayOrder" Type="smallint" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="int" />
+          <Property Name="UpdatedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="RegionMaster">
+          <Key>
+            <PropertyRef Name="RegionID" />
+          </Key>
+          <Property Name="RegionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RegionName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="int" />
+          <Property Name="UpdatedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="RightsMaster">
+          <Key>
+            <PropertyRef Name="RightId" />
+          </Key>
+          <Property Name="RightId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ModuleName" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="SubmoduleName" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="FunctionName" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="ModuleSortOrder" Type="float" />
+          <Property Name="SubModuleSortOrder" Type="float" />
+          <Property Name="FunctionSortOrder" Type="float" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="int" />
+          <Property Name="ModifiedDate" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'IAC Auria GDS.dbo.RoleMaster' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="RoleMaster">
+          <Property Name="RoleId" Type="int" />
+        </EntityType>-->
+        <EntityType Name="RoleRights">
+          <Key>
+            <PropertyRef Name="RoleRightId" />
+          </Key>
+          <Property Name="RoleRightId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RoleId" Type="int" Nullable="false" />
+          <Property Name="RightId" Type="bigint" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="int" />
+          <Property Name="ModifiedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="RolesMaster">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="RoleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RoleName" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="int" />
+          <Property Name="ModifiedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="StateMaster">
+          <Key>
+            <PropertyRef Name="StateID" />
+          </Key>
+          <Property Name="StateID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StateName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CountryID" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="ModifiedBy" Type="int" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'IAC Auria GDS.dbo.SubMenuMaster' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="SubMenuMaster">
+          <Key>
+            <PropertyRef Name="SubMenuId" />
+            <PropertyRef Name="MenuId" />
+            <PropertyRef Name="SubMenuName" />
+            <PropertyRef Name="IsActive" />
+            <PropertyRef Name="DisplayOrder" />
+            <PropertyRef Name="CreatedBy" />
+            <PropertyRef Name="CreatedDate" />
+          </Key>
+          <Property Name="SubMenuId" Type="int" Nullable="false" />
+          <Property Name="MenuId" Type="int" Nullable="false" />
+          <Property Name="SubMenuName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="DisplayOrder" Type="smallint" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="int" />
+          <Property Name="UpdatedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="UserMaster">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="100" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="100" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="200" />
+          <Property Name="Email" Type="nvarchar" MaxLength="250" />
+          <Property Name="NetworkUserId" Type="nvarchar" MaxLength="200" />
+          <Property Name="Password" Type="varchar" MaxLength="32" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="int" />
+          <Property Name="ModifiedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="UserPlants">
+          <Key>
+            <PropertyRef Name="UserPlantId" />
+          </Key>
+          <Property Name="UserPlantId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="PlantId" Type="int" />
+          <Property Name="RegionId" Type="int" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserRoleMaster">
+          <Key>
+            <PropertyRef Name="UserRoleId" />
+          </Key>
+          <Property Name="UserRoleId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="RoleId" Type="int" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_PlantMaster_CountryMaster">
+          <End Role="CountryMaster" Type="Self.CountryMaster" Multiplicity="0..1" />
+          <End Role="PlantMaster" Type="Self.PlantMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CountryMaster">
+              <PropertyRef Name="CountryID" />
+            </Principal>
+            <Dependent Role="PlantMaster">
+              <PropertyRef Name="CountryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PlantMaster_RegionMaster">
+          <End Role="RegionMaster" Type="Self.RegionMaster" Multiplicity="0..1" />
+          <End Role="PlantMaster" Type="Self.PlantMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RegionMaster">
+              <PropertyRef Name="RegionID" />
+            </Principal>
+            <Dependent Role="PlantMaster">
+              <PropertyRef Name="RegionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StateMaster_CountryMaster">
+          <End Role="CountryMaster" Type="Self.CountryMaster" Multiplicity="1" />
+          <End Role="StateMaster" Type="Self.StateMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CountryMaster">
+              <PropertyRef Name="CountryID" />
+            </Principal>
+            <Dependent Role="StateMaster">
+              <PropertyRef Name="CountryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="CountryMaster" EntityType="Self.CountryMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PlantMaster" EntityType="Self.PlantMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProcessDetail" EntityType="Self.ProcessDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProcessDocument" EntityType="Self.ProcessDocument" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RegionMaster" EntityType="Self.RegionMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RightsMaster" EntityType="Self.RightsMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RoleRights" EntityType="Self.RoleRights" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RolesMaster" EntityType="Self.RolesMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StateMaster" EntityType="Self.StateMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserMaster" EntityType="Self.UserMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserPlants" EntityType="Self.UserPlants" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserRoleMaster" EntityType="Self.UserRoleMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MenuMaster" EntityType="Self.MenuMaster" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [MenuMaster].[MenuId] AS [MenuId], 
+    [MenuMaster].[MenuName] AS [MenuName], 
+    [MenuMaster].[IsActive] AS [IsActive], 
+    [MenuMaster].[DisplayOrder] AS [DisplayOrder], 
+    [MenuMaster].[CreatedBy] AS [CreatedBy], 
+    [MenuMaster].[CreatedDate] AS [CreatedDate], 
+    [MenuMaster].[UpdatedBy] AS [UpdatedBy], 
+    [MenuMaster].[UpdatedDate] AS [UpdatedDate]
+    FROM [dbo].[MenuMaster] AS [MenuMaster]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="SubMenuMaster" EntityType="Self.SubMenuMaster" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [SubMenuMaster].[SubMenuId] AS [SubMenuId], 
+    [SubMenuMaster].[MenuId] AS [MenuId], 
+    [SubMenuMaster].[SubMenuName] AS [SubMenuName], 
+    [SubMenuMaster].[IsActive] AS [IsActive], 
+    [SubMenuMaster].[DisplayOrder] AS [DisplayOrder], 
+    [SubMenuMaster].[CreatedBy] AS [CreatedBy], 
+    [SubMenuMaster].[CreatedDate] AS [CreatedDate], 
+    [SubMenuMaster].[UpdatedBy] AS [UpdatedBy], 
+    [SubMenuMaster].[UpdatedDate] AS [UpdatedDate]
+    FROM [dbo].[SubMenuMaster] AS [SubMenuMaster]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_PlantMaster_CountryMaster" Association="Self.FK_PlantMaster_CountryMaster">
+            <End Role="CountryMaster" EntitySet="CountryMaster" />
+            <End Role="PlantMaster" EntitySet="PlantMaster" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PlantMaster_RegionMaster" Association="Self.FK_PlantMaster_RegionMaster">
+            <End Role="RegionMaster" EntitySet="RegionMaster" />
+            <End Role="PlantMaster" EntitySet="PlantMaster" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StateMaster_CountryMaster" Association="Self.FK_StateMaster_CountryMaster">
+            <End Role="CountryMaster" EntitySet="CountryMaster" />
+            <End Role="StateMaster" EntitySet="StateMaster" />
+          </AssociationSet>
+        </EntityContainer>
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="IAC_Auria_GDSEntities" annotation:LazyLoadingEnabled="true" />
+        <EntityType Name="CountryMaster">
+          <Key>
+            <PropertyRef Name="CountryID" />
+          </Key>
+          <Property Name="CountryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CountryName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int32" />
+          <NavigationProperty Name="PlantMasters" Relationship="Self.FK_PlantMaster_CountryMaster" FromRole="CountryMaster" ToRole="PlantMaster" />
+          <NavigationProperty Name="StateMasters" Relationship="Self.FK_StateMaster_CountryMaster" FromRole="CountryMaster" ToRole="StateMaster" />
+        </EntityType>
+        <EntityType Name="PlantMaster">
+          <Key>
+            <PropertyRef Name="PlantID" />
+          </Key>
+          <Property Name="PlantID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PlantName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PlantName_PressSpecification" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Location" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="UnitSystemId" Type="Byte" />
+          <Property Name="LengthUnit" Type="Byte" />
+          <Property Name="PressureUnit" Type="Byte" />
+          <Property Name="HeadCount" Type="Double" />
+          <Property Name="FringeWageRate" Type="Double" />
+          <Property Name="HourlyWageRate" Type="Double" />
+          <Property Name="StdPerfomanceGoal" Type="Double" />
+          <Property Name="AllPerformanceGoal" Type="Double" />
+          <Property Name="StdReliefDivisor" Type="Double" />
+          <Property Name="StdQuotedWeek" Type="Double" />
+          <Property Name="MoldingManning" Type="Double" />
+          <Property Name="DefaultUTLZPercentage" Type="Double" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int32" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="InjectionMoldingAreaId" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="PlantName_QAD" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="PlantColor" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="SaasId" Type="Int32" />
+          <NavigationProperty Name="CountryMaster" Relationship="Self.FK_PlantMaster_CountryMaster" FromRole="PlantMaster" ToRole="CountryMaster" />
+          <NavigationProperty Name="RegionMaster" Relationship="Self.FK_PlantMaster_RegionMaster" FromRole="PlantMaster" ToRole="RegionMaster" />
+        </EntityType>
+        <EntityType Name="ProcessDetail">
+          <Key>
+            <PropertyRef Name="ProcessId" />
+          </Key>
+          <Property Name="ProcessId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SubMenuId" Type="Int32" Nullable="false" />
+          <Property Name="ProcessCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ProcessName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ProcessModelPath" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ProcessDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ProcessOwner" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ProcessInput" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="FundamentalOfProcess" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ProcessOutput" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="RegionId" Type="Int32" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="DisplayOrder" Type="Int16" Nullable="false" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="Int32" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="ProcessDocument">
+          <Key>
+            <PropertyRef Name="DocumentId" />
+          </Key>
+          <Property Name="DocumentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DocumentCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DocumentTitle" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DocumentPath" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ReleaseDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="RegionId" Type="Int32" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="DisplayOrder" Type="Int16" Nullable="false" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="Int32" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="RegionMaster">
+          <Key>
+            <PropertyRef Name="RegionID" />
+          </Key>
+          <Property Name="RegionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RegionName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="Int32" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="PlantMasters" Relationship="Self.FK_PlantMaster_RegionMaster" FromRole="RegionMaster" ToRole="PlantMaster" />
+        </EntityType>
+        <EntityType Name="RightsMaster">
+          <Key>
+            <PropertyRef Name="RightId" />
+          </Key>
+          <Property Name="RightId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ModuleName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SubmoduleName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FunctionName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="ModuleSortOrder" Type="Double" />
+          <Property Name="SubModuleSortOrder" Type="Double" />
+          <Property Name="FunctionSortOrder" Type="Double" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int32" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="RoleRight">
+          <Key>
+            <PropertyRef Name="RoleRightId" />
+          </Key>
+          <Property Name="RoleRightId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RoleId" Type="Int32" Nullable="false" />
+          <Property Name="RightId" Type="Int64" Nullable="false" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int32" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="RolesMaster">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="RoleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RoleName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int32" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="StateMaster">
+          <Key>
+            <PropertyRef Name="StateID" />
+          </Key>
+          <Property Name="StateID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StateName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int32" />
+          <Property Name="IsActive" Type="Boolean" />
+          <NavigationProperty Name="CountryMaster" Relationship="Self.FK_StateMaster_CountryMaster" FromRole="StateMaster" ToRole="CountryMaster" />
+        </EntityType>
+        <EntityType Name="UserMaster">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="UserName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="NetworkUserId" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int32" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="UserPlant">
+          <Key>
+            <PropertyRef Name="UserPlantId" />
+          </Key>
+          <Property Name="UserPlantId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="PlantId" Type="Int32" />
+          <Property Name="RegionId" Type="Int32" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="UserRoleMaster">
+          <Key>
+            <PropertyRef Name="UserRoleId" />
+          </Key>
+          <Property Name="UserRoleId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="RoleId" Type="Int32" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MenuMaster">
+          <Key>
+            <PropertyRef Name="MenuId" />
+            <PropertyRef Name="MenuName" />
+            <PropertyRef Name="IsActive" />
+            <PropertyRef Name="DisplayOrder" />
+            <PropertyRef Name="CreatedBy" />
+            <PropertyRef Name="CreatedDate" />
+          </Key>
+          <Property Name="MenuId" Type="Int32" Nullable="false" />
+          <Property Name="MenuName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="DisplayOrder" Type="Int16" Nullable="false" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="Int32" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="SubMenuMaster">
+          <Key>
+            <PropertyRef Name="SubMenuId" />
+            <PropertyRef Name="MenuId" />
+            <PropertyRef Name="SubMenuName" />
+            <PropertyRef Name="IsActive" />
+            <PropertyRef Name="DisplayOrder" />
+            <PropertyRef Name="CreatedBy" />
+            <PropertyRef Name="CreatedDate" />
+          </Key>
+          <Property Name="SubMenuId" Type="Int32" Nullable="false" />
+          <Property Name="MenuId" Type="Int32" Nullable="false" />
+          <Property Name="SubMenuName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="DisplayOrder" Type="Int16" Nullable="false" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="Int32" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <Association Name="FK_PlantMaster_CountryMaster">
+          <End Role="CountryMaster" Type="Self.CountryMaster" Multiplicity="0..1" />
+          <End Role="PlantMaster" Type="Self.PlantMaster" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_StateMaster_CountryMaster">
+          <End Role="CountryMaster" Type="Self.CountryMaster" Multiplicity="1" />
+          <End Role="StateMaster" Type="Self.StateMaster" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_PlantMaster_RegionMaster">
+          <End Role="RegionMaster" Type="Self.RegionMaster" Multiplicity="0..1" />
+          <End Role="PlantMaster" Type="Self.PlantMaster" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="IAC_Auria_GDSEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CountryMasters" EntityType="Self.CountryMaster" />
+          <EntitySet Name="PlantMasters" EntityType="Self.PlantMaster" />
+          <EntitySet Name="ProcessDetails" EntityType="Self.ProcessDetail" />
+          <EntitySet Name="ProcessDocuments" EntityType="Self.ProcessDocument" />
+          <EntitySet Name="RegionMasters" EntityType="Self.RegionMaster" />
+          <EntitySet Name="RightsMasters" EntityType="Self.RightsMaster" />
+          <EntitySet Name="RoleRights" EntityType="Self.RoleRight" />
+          <EntitySet Name="RolesMasters" EntityType="Self.RolesMaster" />
+          <EntitySet Name="StateMasters" EntityType="Self.StateMaster" />
+          <EntitySet Name="UserMasters" EntityType="Self.UserMaster" />
+          <EntitySet Name="UserPlants" EntityType="Self.UserPlant" />
+          <EntitySet Name="UserRoleMasters" EntityType="Self.UserRoleMaster" />
+          <EntitySet Name="MenuMasters" EntityType="Self.MenuMaster" />
+          <EntitySet Name="SubMenuMasters" EntityType="Self.SubMenuMaster" />
+          <AssociationSet Name="FK_PlantMaster_CountryMaster" Association="Self.FK_PlantMaster_CountryMaster">
+            <End Role="CountryMaster" EntitySet="CountryMasters" />
+            <End Role="PlantMaster" EntitySet="PlantMasters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StateMaster_CountryMaster" Association="Self.FK_StateMaster_CountryMaster">
+            <End Role="CountryMaster" EntitySet="CountryMasters" />
+            <End Role="StateMaster" EntitySet="StateMasters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PlantMaster_RegionMaster" Association="Self.FK_PlantMaster_RegionMaster">
+            <End Role="RegionMaster" EntitySet="RegionMasters" />
+            <End Role="PlantMaster" EntitySet="PlantMasters" />
+          </AssociationSet>
+        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="IAC_Auria_GDSEntities" />
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="IAC_Auria_GDSEntities">
+          <EntitySetMapping Name="CountryMasters">
+            <EntityTypeMapping TypeName="Model.CountryMaster">
+              <MappingFragment StoreEntitySet="CountryMaster">
+                <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+                <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PlantMasters">
+            <EntityTypeMapping TypeName="Model.PlantMaster">
+              <MappingFragment StoreEntitySet="PlantMaster">
+                <ScalarProperty Name="PlantID" ColumnName="PlantID" />
+                <ScalarProperty Name="PlantName" ColumnName="PlantName" />
+                <ScalarProperty Name="PlantName_PressSpecification" ColumnName="PlantName_PressSpecification" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="UnitSystemId" ColumnName="UnitSystemId" />
+                <ScalarProperty Name="LengthUnit" ColumnName="LengthUnit" />
+                <ScalarProperty Name="PressureUnit" ColumnName="PressureUnit" />
+                <ScalarProperty Name="HeadCount" ColumnName="HeadCount" />
+                <ScalarProperty Name="FringeWageRate" ColumnName="FringeWageRate" />
+                <ScalarProperty Name="HourlyWageRate" ColumnName="HourlyWageRate" />
+                <ScalarProperty Name="StdPerfomanceGoal" ColumnName="StdPerfomanceGoal" />
+                <ScalarProperty Name="AllPerformanceGoal" ColumnName="AllPerformanceGoal" />
+                <ScalarProperty Name="StdReliefDivisor" ColumnName="StdReliefDivisor" />
+                <ScalarProperty Name="StdQuotedWeek" ColumnName="StdQuotedWeek" />
+                <ScalarProperty Name="MoldingManning" ColumnName="MoldingManning" />
+                <ScalarProperty Name="DefaultUTLZPercentage" ColumnName="DefaultUTLZPercentage" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="InjectionMoldingAreaId" ColumnName="InjectionMoldingAreaId" />
+                <ScalarProperty Name="PlantName_QAD" ColumnName="PlantName_QAD" />
+                <ScalarProperty Name="PlantColor" ColumnName="PlantColor" />
+                <ScalarProperty Name="SaasId" ColumnName="SaasId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProcessDetails">
+            <EntityTypeMapping TypeName="Model.ProcessDetail">
+              <MappingFragment StoreEntitySet="ProcessDetail">
+                <ScalarProperty Name="ProcessId" ColumnName="ProcessId" />
+                <ScalarProperty Name="SubMenuId" ColumnName="SubMenuId" />
+                <ScalarProperty Name="ProcessCode" ColumnName="ProcessCode" />
+                <ScalarProperty Name="ProcessName" ColumnName="ProcessName" />
+                <ScalarProperty Name="ProcessModelPath" ColumnName="ProcessModelPath" />
+                <ScalarProperty Name="ProcessDescription" ColumnName="ProcessDescription" />
+                <ScalarProperty Name="ProcessOwner" ColumnName="ProcessOwner" />
+                <ScalarProperty Name="ProcessInput" ColumnName="ProcessInput" />
+                <ScalarProperty Name="FundamentalOfProcess" ColumnName="FundamentalOfProcess" />
+                <ScalarProperty Name="ProcessOutput" ColumnName="ProcessOutput" />
+                <ScalarProperty Name="RegionId" ColumnName="RegionId" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProcessDocuments">
+            <EntityTypeMapping TypeName="Model.ProcessDocument">
+              <MappingFragment StoreEntitySet="ProcessDocument">
+                <ScalarProperty Name="DocumentId" ColumnName="DocumentId" />
+                <ScalarProperty Name="DocumentCode" ColumnName="DocumentCode" />
+                <ScalarProperty Name="DocumentTitle" ColumnName="DocumentTitle" />
+                <ScalarProperty Name="DocumentPath" ColumnName="DocumentPath" />
+                <ScalarProperty Name="ReleaseDate" ColumnName="ReleaseDate" />
+                <ScalarProperty Name="RegionId" ColumnName="RegionId" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RegionMasters">
+            <EntityTypeMapping TypeName="Model.RegionMaster">
+              <MappingFragment StoreEntitySet="RegionMaster">
+                <ScalarProperty Name="RegionID" ColumnName="RegionID" />
+                <ScalarProperty Name="RegionName" ColumnName="RegionName" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RightsMasters">
+            <EntityTypeMapping TypeName="Model.RightsMaster">
+              <MappingFragment StoreEntitySet="RightsMaster">
+                <ScalarProperty Name="RightId" ColumnName="RightId" />
+                <ScalarProperty Name="ModuleName" ColumnName="ModuleName" />
+                <ScalarProperty Name="SubmoduleName" ColumnName="SubmoduleName" />
+                <ScalarProperty Name="FunctionName" ColumnName="FunctionName" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="ModuleSortOrder" ColumnName="ModuleSortOrder" />
+                <ScalarProperty Name="SubModuleSortOrder" ColumnName="SubModuleSortOrder" />
+                <ScalarProperty Name="FunctionSortOrder" ColumnName="FunctionSortOrder" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RoleRights">
+            <EntityTypeMapping TypeName="Model.RoleRight">
+              <MappingFragment StoreEntitySet="RoleRights">
+                <ScalarProperty Name="RoleRightId" ColumnName="RoleRightId" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="RightId" ColumnName="RightId" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RolesMasters">
+            <EntityTypeMapping TypeName="Model.RolesMaster">
+              <MappingFragment StoreEntitySet="RolesMaster">
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StateMasters">
+            <EntityTypeMapping TypeName="Model.StateMaster">
+              <MappingFragment StoreEntitySet="StateMaster">
+                <ScalarProperty Name="StateID" ColumnName="StateID" />
+                <ScalarProperty Name="StateName" ColumnName="StateName" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserMasters">
+            <EntityTypeMapping TypeName="Model.UserMaster">
+              <MappingFragment StoreEntitySet="UserMaster">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="NetworkUserId" ColumnName="NetworkUserId" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserPlants">
+            <EntityTypeMapping TypeName="Model.UserPlant">
+              <MappingFragment StoreEntitySet="UserPlants">
+                <ScalarProperty Name="UserPlantId" ColumnName="UserPlantId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="PlantId" ColumnName="PlantId" />
+                <ScalarProperty Name="RegionId" ColumnName="RegionId" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserRoleMasters">
+            <EntityTypeMapping TypeName="Model.UserRoleMaster">
+              <MappingFragment StoreEntitySet="UserRoleMaster">
+                <ScalarProperty Name="UserRoleId" ColumnName="UserRoleId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MenuMasters">
+            <EntityTypeMapping TypeName="Model.MenuMaster">
+              <MappingFragment StoreEntitySet="MenuMaster">
+                <ScalarProperty Name="MenuId" ColumnName="MenuId" />
+                <ScalarProperty Name="MenuName" ColumnName="MenuName" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SubMenuMasters">
+            <EntityTypeMapping TypeName="Model.SubMenuMaster">
+              <MappingFragment StoreEntitySet="SubMenuMaster">
+                <ScalarProperty Name="SubMenuId" ColumnName="SubMenuId" />
+                <ScalarProperty Name="MenuId" ColumnName="MenuId" />
+                <ScalarProperty Name="SubMenuName" ColumnName="SubMenuName" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="FK_PlantMaster_CountryMaster" TypeName="Model.FK_PlantMaster_CountryMaster" StoreEntitySet="PlantMaster">
+            <EndProperty Name="CountryMaster">
+              <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+            </EndProperty>
+            <EndProperty Name="PlantMaster">
+              <ScalarProperty Name="PlantID" ColumnName="PlantID" />
+            </EndProperty>
+            <Condition IsNull="false" ColumnName="CountryID" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_StateMaster_CountryMaster" TypeName="Model.FK_StateMaster_CountryMaster" StoreEntitySet="StateMaster">
+            <EndProperty Name="CountryMaster">
+              <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+            </EndProperty>
+            <EndProperty Name="StateMaster">
+              <ScalarProperty Name="StateID" ColumnName="StateID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_PlantMaster_RegionMaster" TypeName="Model.FK_PlantMaster_RegionMaster" StoreEntitySet="PlantMaster">
+            <EndProperty Name="RegionMaster">
+              <ScalarProperty Name="RegionID" ColumnName="RegionID" />
+            </EndProperty>
+            <EndProperty Name="PlantMaster">
+              <ScalarProperty Name="PlantID" ColumnName="PlantID" />
+            </EndProperty>
+            <Condition IsNull="false" ColumnName="RegionID" />
+          </AssociationSetMapping>
+        </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>
@@ -32,7 +871,7 @@
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="true" />
-        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="false" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
       </DesignerInfoPropertySet>

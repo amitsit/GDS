@@ -11,8 +11,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>IACBI.API</RootNamespace>
-    <AssemblyName>IACBI.API</AssemblyName>
+    <RootNamespace>GDS.API</RootNamespace>
+    <AssemblyName>GDS.API</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>false</UseIISExpress>
@@ -267,26 +267,12 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IMIP\BICVerificationDocumentApiController.cs" />
     <Compile Include="Controllers\IMIP\ImprovementActionPlanApiController.cs" />
-    <Compile Include="Controllers\Master\BICCycleKeyElementController.cs" />
-    <Compile Include="Controllers\Master\ColorCodeSchemeApiController.cs" />
     <Compile Include="Controllers\Master\CountryApiController.cs" />
-    <Compile Include="Controllers\Master\CTPartThicknessAdditionApiController.cs" />
-    <Compile Include="Controllers\Master\DOEVariableMasterApiController.cs" />
-    <Compile Include="Controllers\Master\IACCycleGoalApiController.cs" />
-    <Compile Include="Controllers\Master\MaterialApiController.cs" />
-    <Compile Include="Controllers\Master\MaterialDataApiController.cs" />
-    <Compile Include="Controllers\Master\MaterialTypeApiController.cs" />
     <Compile Include="Controllers\Master\PlantApiController.cs" />
-    <Compile Include="Controllers\Master\PlantLaborCostApiController.cs" />
-    <Compile Include="Controllers\Master\PressBreakDownOrderApiController.cs" />
-    <Compile Include="Controllers\Master\ProgramApiController.cs" />
     <Compile Include="Controllers\Master\RegionApiController.cs" />
     <Compile Include="Controllers\Master\RoleApiController.cs" />
     <Compile Include="Controllers\Master\StateApiController.cs" />
-    <Compile Include="Controllers\Master\TroubleShooterApiController.cs" />
     <Compile Include="Controllers\Master\UserApiController.cs" />
-    <Compile Include="Controllers\Master\UtilityConfigurationApiController.cs" />
-    <Compile Include="Controllers\Master\WallStockApiController.cs" />
     <Compile Include="Controllers\SMOM\BarrelHeatApiController.cs" />
     <Compile Include="Controllers\SMOM\CavityBalanceController.cs" />
     <Compile Include="Controllers\SMOM\CheckRingStudyWeightApiController.cs" />

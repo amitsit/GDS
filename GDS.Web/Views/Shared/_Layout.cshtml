@@ -83,7 +83,8 @@
                     <a class="settinglink" data-toggle="dropdown"></a>
                     <ul class="dropdown-menu set-dropdown pull-right">
                         <li><a class="cursor-pointer" ng-click="OpenGlobalSettingPopup()"><span >Setting</span></a></li>
-                        <li ng-if="isSubModuleAccessibleToUser('Admin', 'Admin', 'View')"><a class="cursor-pointer" ui-sref="Master"><span>Admin</span></a></li>                                 
+                        @*ng-if="isSubModuleAccessibleToUser('Admin', 'Admin', 'View')"*@
+                        <li ><a class="cursor-pointer" ui-sref="Master"><span>Admin</span></a></li>                                 
                     </ul>
                 </li>
             </ul>
