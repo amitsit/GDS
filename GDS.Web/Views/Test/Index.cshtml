@@ -1,0 +1,46 @@
+﻿@model IEnumerable<IACBI.Entities.TestModel>
+
+
+<div class="content pt-0">
+    <div class="row">
+
+        <div class="col-md-12">
+
+            <div class="panel panel-flat">
+
+
+                <div class="panel-body position-relative">
+
+                    <legend class="text-bold pt-0"><i class="icon-store2 mr-5"></i>Test Data</legend>
+
+                    <p>
+                        @Html.ActionLink("Create New", "Create")
+                    </p>
+                    <table class="table">
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Name)
+                            </th>
+                            <th></th>
+                        </tr>
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Name)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                                </td>
+                            </tr>
+                        }
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,119 @@
+﻿
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operations & Process Navigator</title>
+    <link rel="shortcut icon" href="~/favicon.ico" type="image/x-icon" />
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Styles.Render("~/bundles/css")
+    <style>
+        .lhonehalf{
+            line-height:1.5;
+        }
+    </style>
+    <script>
+        //location.href = document.location.origin;
+        //alert(document.location.origin);
+    </script>
+</head>
+<body>
+    <div id="wrapper">
+        <header id="header">
+            <div class="logoimg">
+                <a href="/Home">
+                    <img src="~/Images/IAC.png" height="61" width="231" alt="IAC">
+                </a>
+                <p>
+                    <span style="color: gray; font-size: 17px; font-weight: bold;"> Operations &amp; Process Navigator </span><br />
+                    <span style="font-size: 10px;">Copyright &copy; 2018</span>
+                </p>
+            </div>
+        </header>
+        <section id="content">
+            <div class="container-fluid">
+                <div class="row-fluid">
+                    <div class="col-lg-12">
+                        <div class="centering text-center error-container">
+                            <div class="text-center">
+                                <h3 class="without-margin">
+                                    <img src="~/Content/Images/Access-Denied-icon.png" height="70px" width="70px" />
+                                    We are sorry, This system is not compatible with your browser version.
+                                    <br />                                   
+                                </h3>
+                                <h4> Please use IE(10,11),Edge,Chrome,Firefox for better experience.</h4>
+                                <br />                                                           
+                                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Steps to check IE version</button>
+                               
+                                <div id="demo" class="collapse ">
+                                    <div class="col-sm-12">
+                                        <br />
+                                        <div class="col-sm-3 col-sm-offset-1">
+                                            <div class="panel panel-primary" style="height:469px;">
+                                                <div class="panel-heading"><b>Step 1</b></div>
+                                                <div class="panel-body">
+                                                    <h5 class="lhonehalf"><b><span class="text-info">Press F12</span> OR Click on tools icon then select F12 Developer Tools option.</b></h5>
+                                                    <br />                                                   
+                                                <img src="~/Images/IE0.png" />
+                                                </div>
+                                            </div>                                          
+                                        </div>
+                                        <div class="col-sm-3 mr-20 ml-20">
+                                            <div class="panel panel-primary" style="height:469px;">
+                                                <div class="panel-heading"><b>Step 2</b></div>
+                                                <div class="panel-body">
+                                                    <h5 class="lhonehalf"><br /><b>Click on Document Mode Icon and Check (Default) Version.</b> </h5>
+                                                    <br />
+                                                    <img src="~/Images/IE1.png" />
+                                                </div>
+                                            </div>  
+
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="panel panel-primary" style="height:469px;">
+                                                <div class="panel-heading"><b>Note</b></div>
+                                                <div class="panel-body"><br /><h5 class="lhonehalf"><b>If your IE version is <span class="text-info">9 Or below</span> then you need to upgrade using following steps :</b></h5>
+                                               <br />
+                                                <ol class="text-left">
+                                                    <li class="margin-bottom-5">Click on <i class="glyphicon glyphicon-cog"></i> icon in IE.</li>
+                                                    <li class="margin-bottom-5">Go to About Internet Explorer.</li>
+                                                    <li class="margin-bottom-5">Check the box next to Install new versions automatically.</li>
+                                                    <li class="margin-bottom-5">Click Close.</li>
+                                                   
+                                                </ol>
+                                                    Now Internet Explorer will automatically stay up to date, keeping Windows' internet services patched.
+                                               
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>                                                         
+                      
+                                <h4>
+                                    <br />
+                                    <b>Please click <a href="javascript:void(0)" onclick="location.href = document.location.origin">here</a> to go on home page.</b>
+                                </h4>
+                            </div>
+                            <br />
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer id="footer">
+            <div class="automotive pull-right">
+                <a href="/Home">
+                    <img src="~/Images/IAC.png" height="61" width="231" alt="">
+                </a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
+

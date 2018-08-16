@@ -1,0 +1,52 @@
+﻿<h1 class="title iac-breadcrumb">
+    <a ui-sref="Home"><i class="fa fa-home"></i></a><span translate="Configuration_HomeIcon">Data Configuration Setting</span>
+</h1>
+<div class="text-center">
+	<div class="admin_menu menu-center">
+		<div class="panel panel-default">
+			<div class="panel-heading text-left">
+				<h3 class="panel-title" translate="Configuration_AdminLink_Header">Configuration Menus</h3>
+			</div>
+			<div class="panel-body pb-0">
+				<div class="db-links iac-general" ng-if="isSubModuleAccessibleToUser('DCS', 'General Settings Links', 'View')">
+					<div class="dbl-title">General <span translate="Configuration_AdminLink_Sublink1">Settings</span><span class="arw"></span></div>
+					<ul>
+						<li ng-if="isSubModuleAccessibleToUser('DCS', 'General Settings Links', 'View IAC Global Parameters')"><a href="#" class="dbl IAC-Global-Parameters" ui-sref="UtilityConfiguration"><span></span><div translate="Configuration_AdminLink_IACGlobal">IAC Global Parameters</div></a></li>
+						
+						<li ng-if="isSubModuleAccessibleToUser('DCS', 'General Settings Links', 'View BIC Cycle Key Element')"><a href="#" class="dbl BIC-Cycle-Key-Elements" ui-sref="BICCycleKeyElement"><span></span><div translate="Configuration_AdminLink_BICKeyElement">BIC Cycle Key Elements</div></a></li>
+						<li ng-if="isSubModuleAccessibleToUser('DCS', 'General Settings Links', 'View Material Type')"><a href="#" class="dbl Material-Data" ui-sref="MaterialType"><span></span><div translate="Configuration_AdminLink_MaterialType">Material Type</div></a></li>
+						<li ng-if="isSubModuleAccessibleToUser('DCS', 'General Settings Links', 'View BIC Cycle Key Element Standard')"><a href="#" class="dbl BIC-Standards" ui-sref="BICCycleKeyElementStandard"><span></span><div translate="Configuration_AdminLink_BICStandards">BIC Standards</div></a></li>
+						<li ng-if="isSubModuleAccessibleToUser('DCS', 'General Settings Links', 'View Wall Stock')"><a href="#" class="dbl Wall-Stock" ui-sref="WallStock"><span></span><div translate="Configuration_AdminLink_WallStock">Wall Stock</div></a></li>
+						<li ng-if="isSubModuleAccessibleToUser('DCS', 'General Settings Links', 'View Plant Labor Cost')"><a href="#" class="dbl plant" ui-sref="PlantLaborCost"><span></span><div translate="Configuration_AdminLink_PlantLabor">Plant Labor Cost</div></a></li>
+					</ul>
+
+				</div>
+
+				<div class="db-links iac-smtp" ng-if="isSubModuleAccessibleToUser('DCS', 'AMP Quick Links', 'View')">
+					<div class="dbl-title">AMP<span translate="Configuration_AdminLink_QuickLinks">Quick Links</span><span class="arw"></span></div>
+					<ul>
+						<li ng-if="isSubModuleAccessibleToUser('DCS', 'AMP Quick Links', 'View Input Data')"><a href="#" class="dbl Input-Data" ui-sref="STMPInputData"><span></span><div translate="Configuration_AdminLink_InputData">Input Data</div></a></li>
+						<li ng-if="isSubModuleAccessibleToUser('DCS', 'AMP Quick Links', 'View Customer Requirement')"><a href="#" class="dbl Customer-Requirement" ui-sref="CustomerRequirement"><span></span><div translate="Configuration_AdminLink_CustomerReqirement">Customer Requirement</div></a></li>
+						<li ng-if="isSubModuleAccessibleToUser('DCS', 'AMP Quick Links', 'View Plant Equipment List')"><a href="#" class="dbl Plant-Equipment" ui-sref="STMPPlantEquipmentList"><span></span><div translate="Configuration_AdminLink_PlantEquipment">Plant Equipment</div></a></li>
+						<!--<li><a href="#" class="dbl TLN-Saving-Reporting" ui-sref="AddSTMPTLNSavingReport"><span></span>TLN Saving Reporting</a></li>-->
+						<!--<li><a href="#" class="dbl Daily-Recap" ui-sref="STMPDailyRecapRapPressParametersList"><span></span>Daily Recap Rap PressParameters</a></li>-->
+                        <li ng-if="isSubModuleAccessibleToUser('DCS', 'AMP Quick Links', 'View Replacement Savings')"><a href="#" class="dbl Daily-Recap" ui-sref="ReplacementSavings"><span></span><div translate="Configuration_AdminLink_ReplacementSavings">Replacement Savings</div></a></li>
+                        <li ng-if="isSubModuleAccessibleToUser('DCS', 'AMP Quick Links', 'View Press Break Down Order')"><a href="#" class="dbl Pressure-Loss" ui-sref="PressBreakDownOrder"><span></span><div translate="Configuration_AdminLink_PressBreakdown">Press Break Down Order</div></a></li>
+					</ul>
+				</div>
+
+				<div class="db-links iac-standards" ng-if="isSubModuleAccessibleToUser('DCS', 'IAC Standards Links', 'View')">
+					<div class="dbl-title"><span translate="Configuration_AdminLink_Link3">IAC Standards</span><span translate="Configuration_AdminLink_QuickLinks">Quick Links</span><span class="arw"></span></div>
+					<ul>
+						<li ng-if="isSubModuleAccessibleToUser('DCS', 'IAC Standards Links', 'View IAC Cycle Goal')"><a href="#" class="dbl IAC-cycle-goal" ui-sref="IACCycleGoal"><span></span><div translate="Configuration_AdminLink_IACCycle">IAC cycle goal</div></a></li>
+						<li ng-if="isSubModuleAccessibleToUser('DCS', 'IAC Standards Links', 'View Material Data')"><a href="#" class="dbl Program" ui-sref="MaterialData"><span></span><div translate="Configuration_AdminLink_MaterialData">Material Data</div></a></li>
+						<!--<li><a href="#" class="dbl CT-Part-Thickness" ui-sref="CTPartThicknessAddition"><span></span>CT Part Thickness</a></li>-->
+						<!--<li><a href="#" class="dbl scope" ><span></span>Molding Addition</a></li>-->
+						<!--<li><a href="#" class="dbl scope" ><span></span>BIC Element Standard</a></li>-->
+					</ul>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

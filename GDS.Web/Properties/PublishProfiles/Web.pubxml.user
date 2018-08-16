@@ -1,0 +1,3745 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>D:\GDS\Aug 14,2018\Web</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/Autofac.dll">
+      <publishTime>08/18/2016 15:15:34</publishTime>
+    </File>
+    <File Include="bin/Autofac.Integration.Mvc.dll">
+      <publishTime>04/10/2017 15:40:32</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>08/09/2018 12:08:33</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>08/09/2018 12:08:33</publishTime>
+    </File>
+    <File Include="bin/IACBI.Common.dll">
+      <publishTime>08/14/2018 15:46:15</publishTime>
+    </File>
+    <File Include="bin/IACBI.Entities.dll">
+      <publishTime>08/14/2018 15:46:16</publishTime>
+    </File>
+    <File Include="bin/IACBI.Web.dll">
+      <publishTime>08/14/2018 15:46:17</publishTime>
+    </File>
+    <File Include="bin/log4net.dll">
+      <publishTime>03/08/2017 19:26:22</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.Core.dll">
+      <publishTime>08/09/2018 12:08:33</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.EntityFramework.dll">
+      <publishTime>08/09/2018 12:08:33</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.Owin.dll">
+      <publishTime>08/09/2018 12:08:33</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
+      <publishTime>04/16/2018 10:25:26</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.dll">
+      <publishTime>08/09/2018 12:08:34</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Host.SystemWeb.dll">
+      <publishTime>08/09/2018 12:08:34</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.Cookies.dll">
+      <publishTime>08/09/2018 12:08:34</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.dll">
+      <publishTime>08/09/2018 12:08:34</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>07/25/2012 11:48:56</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>08/09/2018 12:08:34</publishTime>
+    </File>
+    <File Include="bin/Owin.dll">
+      <publishTime>08/09/2018 12:08:34</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe">
+      <publishTime>04/16/2018 10:25:26</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
+      <publishTime>04/16/2018 10:25:26</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>04/16/2018 10:25:26</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
+      <publishTime>04/16/2018 10:25:26</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>04/16/2018 10:25:26</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>04/16/2018 10:25:26</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>04/16/2018 10:25:26</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Collections.Immutable.dll">
+      <publishTime>04/16/2018 10:25:26</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Reflection.Metadata.dll">
+      <publishTime>04/16/2018 10:25:26</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe">
+      <publishTime>04/16/2018 10:25:26</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe">
+      <publishTime>04/16/2018 10:25:26</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe.config">
+      <publishTime>04/16/2018 10:25:26</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>05/10/2018 22:38:56</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>05/10/2018 22:42:40</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>10/01/2013 20:54:24</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>10/01/2013 20:54:26</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>08/09/2018 12:08:33</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.dll">
+      <publishTime>08/09/2018 12:08:33</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>05/10/2018 22:38:32</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>05/10/2018 22:42:40</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>05/10/2018 22:42:40</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>05/10/2018 22:42:40</publishTime>
+    </File>
+    <File Include="bin/WebGrease.dll">
+      <publishTime>08/09/2018 12:08:35</publishTime>
+    </File>
+    <File Include="Content/ckeditor/adapters/jquery.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/build-config.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/CHANGES.md">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/ckeditor.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/config.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/contents.css">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/lang/af.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/lang/ar.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/lang/bg.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/lang/bn.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/lang/bs.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/lang/ca.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/lang/cs.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/lang/cy.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/lang/da.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/lang/de.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/lang/el.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/lang/en-au.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/lang/en-ca.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/lang/en-gb.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/lang/en.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/lang/eo.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/lang/es.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/lang/et.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/lang/eu.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/lang/fa.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/lang/fi.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/lang/fo.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/lang/fr-ca.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/lang/fr.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/lang/gl.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/lang/gu.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/lang/he.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/lang/hi.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/lang/hr.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/lang/hu.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/lang/is.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/lang/it.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/lang/ja.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/lang/ka.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/lang/km.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/lang/ko.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/lang/ku.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/lang/lt.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/lang/lv.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/lang/mk.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/lang/mn.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/lang/ms.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/lang/nb.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/lang/nl.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/lang/no.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/lang/pl.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/lang/pt-br.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/lang/pt.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/lang/ro.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/lang/ru.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/lang/sk.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/lang/sl.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/lang/sr-latn.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/lang/sr.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/lang/sv.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/lang/th.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/lang/tr.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/lang/ug.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/lang/uk.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/lang/vi.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/lang/zh-cn.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/lang/zh.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/LICENSE.md">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/a11yhelp.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/ar.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/bg.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/ca.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/cs.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/cy.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/da.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/de.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/el.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/en.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/eo.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/es.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/et.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/fa.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/fi.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/fr.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/gu.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/he.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/hi.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/hr.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/hu.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/it.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/ja.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/ku.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/lt.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/lv.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/mk.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/mn.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/nb.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/nl.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/no.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/pl.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/pt-br.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/pt.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/ro.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/ru.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/sk.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/sl.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/sv.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/tr.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/ug.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/uk.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/vi.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/zh-cn.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/a11yhelp/dialogs/lang/_translationstatus.txt">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/about/dialogs/about.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/about/dialogs/logo_ckeditor.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/clipboard/dialogs/paste.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/dialog/dialogDefinition.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/fakeobjects/images/spacer.gif">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/icons.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/image/dialogs/image.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/image/images/noimage.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/link/dialogs/anchor.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/link/dialogs/link.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/link/images/anchor.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/magicline/images/icon.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/pastefromword/filter/default.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/scayt/dialogs/options.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/scayt/dialogs/toolbar.css">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/scayt/LICENSE.md">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/scayt/README.md">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/ca.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/cs.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/cy.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/de.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/el.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/en.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/eo.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/et.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/fa.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/fi.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/fr.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/he.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/hr.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/it.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/ku.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/lv.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/nb.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/nl.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/no.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/pt-br.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/sk.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/sv.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/tr.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/ug.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/zh-cn.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/lang/_translationstatus.txt">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/specialchar/dialogs/specialchar.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/table/dialogs/table.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/tabletools/dialogs/tableCell.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/wsc/dialogs/ciframe.html">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/wsc/dialogs/tmpFrameset.html">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/wsc/dialogs/wsc.css">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/wsc/dialogs/wsc.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/wsc/LICENSE.md">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/plugins/wsc/README.md">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/README.md">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/ajax.html">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/api.html">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/appendto.html">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/assets/inlineall/logo.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/assets/outputxhtml/outputxhtml.css">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/assets/posteddata.php">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/assets/sample.css">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/assets/sample.jpg">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/assets/uilanguages/languages.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/divreplace.html">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/index.html">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/inlineall.html">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/inlinebycode.html">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/plugins/dialog/assets/my_dialog.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/plugins/dialog/dialog.html">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/plugins/enterkey/enterkey.html">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/plugins/htmlwriter/assets/outputforflash/outputforflash.fla">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/plugins/htmlwriter/assets/outputforflash/outputforflash.swf">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/plugins/htmlwriter/assets/outputforflash/swfobject.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/plugins/htmlwriter/outputforflash.html">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/plugins/htmlwriter/outputhtml.html">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/plugins/magicline/magicline.html">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/plugins/toolbar/toolbar.html">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/plugins/wysiwygarea/fullpage.html">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/readonly.html">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/replacebyclass.html">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/replacebycode.html">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/sample.css">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/sample.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/sample_posteddata.php">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/tabindex.html">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/uicolor.html">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/uilanguages.html">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/samples/xhtmlstyle.html">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/skins/moono/dialog.css">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/skins/moono/dialog_ie.css">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/skins/moono/dialog_ie7.css">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/skins/moono/dialog_ie8.css">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/skins/moono/dialog_iequirks.css">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/skins/moono/dialog_opera.css">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/skins/moono/editor.css">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/skins/moono/editor_gecko.css">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/skins/moono/editor_ie.css">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/skins/moono/editor_ie7.css">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/skins/moono/editor_ie8.css">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/skins/moono/editor_iequirks.css">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/skins/moono/icons.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/skins/moono/images/arrow.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/skins/moono/images/close.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/skins/moono/images/mini.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/skins/moono/readme.md">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/ckeditor/styles.js">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/css/angular-datepicker.css">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/css/angular-ui-switch.min.css">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/css/angular.treeview.css">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap-datepicker.min.css">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap-duallistbox.css">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap-duallistbox.min.css">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap-modal-bs3patch.css">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap-modal.css">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap-timepicker.css">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap-timepicker.min.css">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap.css">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap.min.css">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/css/Custom.css">
+      <publishTime>08/14/2018 14:54:15</publishTime>
+    </File>
+    <File Include="Content/css/dataTables.tableTools.css">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/css/easy-responsive-tabs.css">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/css/font-awesome.min.css">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/css/jQuery-plugin-progressbar.css">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Content/css/jQuery-plugin-progressbar.scss">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Content/css/jquery-ui.min.css">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/css/jquery.dataTables.min.css">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Content/css/jquery.mCustomScrollbar.min.css">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/css/kendo.common-material.min.css">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/css/kendo.material.min.css">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/css/kendo.material.mobile.min.css">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/css/lightbox.min.css">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Content/css/nav.css">
+      <publishTime>08/13/2018 15:30:04</publishTime>
+    </File>
+    <File Include="Content/css/percircle.css">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Content/css/rzslider.css">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/css/Site.css">
+      <publishTime>08/14/2018 15:16:07</publishTime>
+    </File>
+    <File Include="Content/css/textAngular.css">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/css/timepicker.less">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/css/toastr.css">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/css/toastr.less">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/css/toastr.min.css">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/css/toastr.scss">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/css/treeGrid.css">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/fonts/fontawesome-webfont.eot">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/fonts/fontawesome-webfont.svg">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/fonts/fontawesome-webfont.ttf">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/fonts/fontawesome-webfont.woff">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/fonts/fontawesome-webfont.woff2">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/fonts/FontAwesome.otf">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/fonts/glyphicons-halflings-regular.eot">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/fonts/glyphicons-halflings-regular.svg">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/fonts/glyphicons-halflings-regular.woff">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/fonts/glyphicons-halflings-regular.woff2">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/fonts/glyphs/kendoui.woff">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/fonts/glyphs/WebComponentsIcons.eot">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/fonts/glyphs/WebComponentsIcons.ttf">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/fonts/glyphs/WebComponentsIcons.woff">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/fonts/opensans-bold-webfont.eot">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/fonts/opensans-bold-webfont.svg">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/fonts/opensans-bold-webfont.ttf">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/fonts/opensans-bold-webfont.woff">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/fonts/opensans-bold-webfont.woff2">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/fonts/opensans-regular-webfont.eot">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/fonts/opensans-regular-webfont.svg">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/fonts/opensans-regular-webfont.ttf">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/fonts/opensans-regular-webfont.woff">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/fonts/opensans-regular-webfont.woff2">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/fonts/opensans-semibold-demo.html">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/fonts/opensans-semibold-webfont.eot">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/fonts/opensans-semibold-webfont.svg">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/fonts/opensans-semibold-webfont.ttf">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/fonts/opensans-semibold-webfont.woff">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/fonts/opensans-semibold-webfont.woff2">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/1.gif">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/6.gif">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Access-Denied-icon.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Access-Denied.jpg">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/add.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/ar.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/arrow.png">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Content/images/Assign-supervisor.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Associate-hierarchy.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/available-graph.jpg">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/bar-graph.jpg">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/big-user.jpg">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Binoculars.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/btn-save.png">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Content/images/bul-active.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/bul-normal.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/btnDisabled3_80.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/btnFindEmployee.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/btnNormal2_80.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/btnNormal3_80.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/btnNormal_80.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/btnPointRight_120.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/btnPointRight_120_hover.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/btnRollover2_80.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/btnRollover3_80.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/btnRollover_80.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/button-full-page.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/buttonadd.gif">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/buttonAddEmp.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/ButtonAdd_lg.gif">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/ButtonAssign.gif">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/buttonBlackSuit.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/buttonCalculate.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/ButtonCancel.gif">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/ButtonCancelDoc.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/ButtonClose.gif">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/ButtonClose.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/ButtonClose_lg.gif">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/ButtonCopy.gif">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/buttonCopy.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/ButtonDelete.gif">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/buttonDelete.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/ButtonDownload.gif">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/ButtonDownload.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/ButtonDownloadExcel.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/ButtonDownloadPlus.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/buttonDraft.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/ButtonEdit.gif">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/buttonEdit.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/ButtonEdit_24.gif">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/buttonEffectiveDate.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/buttonEffectiveDateActive.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/buttonFilledBox.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/ButtonFillPosition.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/buttonFindJR.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/ButtonFinish.gif">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/buttonFinish.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/ButtonHelp.gif">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/ButtonHold.gif">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/buttonJR.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/buttonKPI.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/buttonLink.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/buttonMoneyBox.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/buttonMoveEmp.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/buttonNewJR.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/ButtonNewPosition.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/buttonNext.gif">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/ButtonOptions.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/buttonOutline.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/buttonPDF.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/buttonPrevious.gif">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/ButtonPrint.gif">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/buttonPrint.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/ButtonPrint_lg.gif">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/buttonRecruitJR1.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/buttonRehire.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/buttonReset.gif">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/buttonRun.gif">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/ButtonSave.gif">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/buttonSaveFinish.gif">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/ButtonSendBackToEmployee.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/buttonShading.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/ButtonSubmit.gif">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/buttonSubmit.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/buttonSubmitDoc.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/buttonUnlink.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/buttonUpload.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/ButtonViewDoc.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/ButtonViewFactory.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/ButtonViewWorld.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/buttonWorkflow.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/Employees.jpg">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/EmptyButton.jpg">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/Help_LabelIcon.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/icon_toolbar_divider.gif">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/JobReq.jpg">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/KPI.jpg">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/Objectives.jpg">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/PerfReview.jpg">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/Safety.jpg">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Buttons/TravelReq.jpg">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Change-compensation.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/circle-img-old.png">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Content/images/circle-img.jpg">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Content/images/circle-img.png">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Content/images/circle-img1.jpg">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Content/images/circle-img1.png">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Content/images/close.png">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Content/images/Comments-ic.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/common-new-edit-compose-glyph-16.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/cycle-time.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/d.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/downArrow.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/downArrow2.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/edit.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/emp.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/file.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/folder-closed.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/folder.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/goal-and-objectives.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/graph.jpg">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/helpimg.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/hire-new-emp.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/hire.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/i-ar.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/i-awac.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/i-awal.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/i-awan.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/i-band.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/i-bon.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/i-chart.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/i-con.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/i-cou.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/i-coy.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/i-edis.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/i-eh.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/i-emplink.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/i-empres.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/i-empreview.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/i-err.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/i-family.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/i-glob.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/i-grade.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/i-head.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/i-help.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/i-inb.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/i-ip.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/i-jobclass.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/i-jobcode.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/i-loc.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/i-mer.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/i-mme.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/i-mmoc.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/i-mpr.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/i-pa.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/i-reg.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/i-review.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/i-roles.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/i-scope.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/i-subband.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/i-tfc.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/i-tia.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/i-vehi.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/i-vhb.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/i-work.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/i-workflow.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/i-worktbl.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/ic-add.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/ic-alert-small.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/ic-alert.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/ic-backpage.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/ic-cal.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/ic-cancel.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/ic-close.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/ic-delemp.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/ic-delemp1.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/ic-delete.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/ic-draft.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/ic-edit.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/ic-empcom.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/ic-emprate.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/ic-empterm.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/ic-excel.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/ic-first.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/ic-help.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/ic-help2.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/ic-info-small.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/ic-kpi.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/ic-kpy.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/ic-last.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/ic-logout.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/ic-logout2.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/ic-next.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/ic-nextpage.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/ic-prev.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/ic-print.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/ic-remove.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/ic-reset.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/ic-save.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/ic-setting.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/icons/Active-InActive-disabled.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/icons/Active-InActive.png">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Content/images/icons/admin.jpg">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/icons/Barrel-Heats-disabled.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/icons/Barrel-Heats.png">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Content/images/icons/BIC-Cycle-Key-Elements-disabled.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/icons/BIC-Cycle-Key-Elements.png">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Content/images/icons/bic-icon.jpg">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/icons/BIC-Standards-disabled.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/icons/BIC-Standards.png">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Content/images/icons/bic-verification-disabled.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/icons/bic-verification.png">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Content/images/icons/calc-Conversion-Setup.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/icons/calc-Mold-Flow-Setup.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/icons/Cavity-Balance-disabled.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/icons/Cavity-Balance.png">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Content/images/icons/Check-Ring-Study-Weight-disabled.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/icons/Check-Ring-Study-Weight.png">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Content/images/icons/configuration.jpg">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/icons/Conversion-Setup-disabled.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/icons/Conversion-Setup.png">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Content/images/icons/conversion-tools.jpg">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/icons/Corp-IMPD-disabled.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/icons/Corp-IMPD.png">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Content/images/icons/Corp-Report-disabled.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/icons/Corp-Report.png">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Content/images/icons/Country-disabled.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/icons/Country.png">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Content/images/icons/CT-Part-Thickness-disabled.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/icons/CT-Part-Thickness.png">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Content/images/icons/current-data-setup-disabled.png">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Content/images/icons/current-data-setup.png">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Content/images/icons/Customer-Requirement-disabled.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/icons/Customer-Requirement.png">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Content/images/icons/Daily-Recap-disabled.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/icons/Daily-Recap.png">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Content/images/icons/dashboard.jpg">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/icons/doe.png">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Content/images/icons/Gate-Seal-disabled.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/icons/Gate-Seal.png">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Content/images/icons/GPM-Calculator-disabled.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/icons/GPM-Calculator.png">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Content/images/icons/IAC-cycle-goal-disabled.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/icons/IAC-cycle-goal.png">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Content/images/icons/IAC-Global-Parameters-disabled.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/icons/IAC-Global-Parameters.png">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Content/images/icons/imip.jpg">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/icons/Initial-Setup-disabled.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/icons/Initial-Setup.png">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Content/images/icons/Input-Data-disabled.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/icons/Input-Data.png">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Content/images/icons/Machine-Linearity-disabled.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/icons/Machine-Linearity.png">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Content/images/icons/Material-Data-disabled.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/icons/Material-Data.png">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Content/images/icons/Misc-Calculators-disabled.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/icons/Misc-Calculators.png">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Content/images/icons/Mold-Flow-Setup-disabled.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/icons/Mold-Flow-Setup.png">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Content/images/icons/Page-Help-disabled.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/icons/Page-Help.png">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Content/images/icons/Part-And-Mold-Mapping-disabled.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/icons/Part-And-Mold-Mapping.png">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Content/images/icons/plant-disabled.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/icons/Plant-Equipment-disabled.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/icons/Plant-Equipment.png">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Content/images/icons/plant.png">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Content/images/icons/Press-Specs-disabled.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/icons/Press-Specs.png">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Content/images/icons/Pressure-Loss-disabled.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/icons/Pressure-Loss.png">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Content/images/icons/process-report-disabled.png">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Content/images/icons/process-report.png">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Content/images/icons/Program-disabled.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/icons/Program.png">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Content/images/icons/Region-disabled.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/icons/Region.png">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Content/images/icons/Rheology-disabled.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/icons/Rheology.png">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Content/images/icons/Roles-Rights-disabled.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/icons/Roles-Rights.png">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Content/images/icons/Screw-Recovery-disabled.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/icons/Screw-Recovery.png">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Content/images/icons/smom.jpg">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/icons/State-disabled.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/icons/State.png">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Content/images/icons/stmp.jpg">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/icons/TLN-Saving-Reporting-disabled.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/icons/TLN-Saving-Reporting.png">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Content/images/icons/Tonnage-Calculator-disabled.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/icons/Tonnage-Calculator.png">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Content/images/icons/Trouble-Shooter-Guide-disabled.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/icons/Trouble-Shooter-Guide.png">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Content/images/icons/version-disabled.png">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Content/images/icons/version.png">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Content/images/icons/Wall-Stock-disabled.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/icons/Wall-Stock.png">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Content/images/icons/Water-Flow-disabled.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/icons/Water-Flow.png">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Content/images/icons/Water-Supply-Calculator-disabled.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/icons/Water-Supply-Calculator.png">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Content/images/img1.jpg">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/import-icon.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/labor-graph.jpg">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Loading.gif">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/logo.jpg">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/logotext.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/maintenance.jpg">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/menu-icon.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/merit-budget-guidance.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/merit-planning.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/merit-template-letter.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/minus.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/monthly-reporting-period.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/navar.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/next.png">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Content/images/NoUserPicture.jpg">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/org-chart-box.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/p-and-l-information.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/pdficon_small.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/plus.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/press-graph.jpg">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/prev.png">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Content/images/Re-Hire.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/remove.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/s.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/sort_asc.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/sort_both.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/sort_desc.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/start-recruitment.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Terminate-employee.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Thumbs.db">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Content/images/Transfer-employee.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/ui-bg_diagonals-thick_18_b81900_40x40.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/ui-bg_diagonals-thick_20_666666_40x40.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/ui-bg_flat_10_000000_40x100.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/ui-bg_glass_100_f6f6f6_1x400.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/ui-bg_glass_100_fdf5ce_1x400.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/ui-bg_glass_65_ffffff_1x400.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/ui-bg_gloss-wave_35_f6a828_500x100.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/ui-bg_highlight-soft_100_eeeeee_1x100.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/ui-bg_highlight-soft_75_ffe45c_1x100.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/ui-icons_222222_256x240.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/ui-icons_228ef1_256x240.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/ui-icons_ef8c08_256x240.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/ui-icons_ffd27a_256x240.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/ui-icons_ffffff_256x240.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/upArrow.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/user.jpg">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/user_find.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/Warning-Icon.svg">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/worldMap.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="Content/images/world_map.jpg">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Content/images/year-master.png">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="EmailTemplates/ForgotPassword.html">
+      <publishTime>08/09/2018 12:08:31</publishTime>
+    </File>
+    <File Include="favicon.ico">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.eot">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.svg">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="GDS.Web.ruleset">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>08/10/2018 16:50:59</publishTime>
+    </File>
+    <File Include="IACBI.Web.ruleset">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Images/close.png">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Images/IAC.png">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Images/IE0.png">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Images/IE1.png">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Images/loading.gif">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Images/logo_light.png">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Images/next.png">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Images/prev.png">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/appConfiguration.js">
+      <publishTime>08/14/2018 14:44:19</publishTime>
+    </File>
+    <File Include="JS/Common.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/Directives/appDirectives.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/dirPagination.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="JS/Enums.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/ExecutiveSummary/Controllers/ExecutiveSummaryController.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="JS/ExecutiveSummary/Services/ExecutiveSummaryService.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="JS/Factory/appFactory.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="JS/Filters/appFilters.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/General/Controllers/chart.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="JS/General/Controllers/DashBoard2Controller.js">
+      <publishTime>03/23/2018 12:31:39</publishTime>
+    </File>
+    <File Include="JS/General/Controllers/DashboardController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/General/Controllers/GradeCardController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/General/Controllers/IndexController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/General/Controllers/PerformancesController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/General/Controllers/TroubleShooterPopUpController.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="JS/General/Services/DashBoard2Service.js">
+      <publishTime>03/21/2018 16:49:27</publishTime>
+    </File>
+    <File Include="JS/General/Services/DashboardService.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/IMIP/BICVerificationDocument/Controllers/BICVerificationDocumentController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/IMIP/BICVerificationDocument/Controllers/BICVerificationDocumentParentController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/IMIP/BICVerificationDocument/Services/BICVerificationDocumentParentServices.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/IMIP/BICVerificationDocument/Services/BICVerificationDocumentServices.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/IMIP/PlanActionList/Controllers/ImprovementPlanActionListController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/IMIP/PlanActionList/Services/ImprovementPlanActionListService.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/Master/BICCycleKeyElement/Controllers/BICCycleKeyElementController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/Master/BICCycleKeyElement/Controllers/BICCycleKeyElementStandardController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/Master/BICCycleKeyElement/Services/BICCycleKeyElementService.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="JS/Master/Common/Controllers/CommonController.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="JS/Master/Common/Services/CommonService.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/Master/Country/Controllers/CountryController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/Master/Country/Services/CountryService.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="JS/Master/CTPartThicknessAddition/Controllers/CTPartThicknessAdditionController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/Master/CTPartThicknessAddition/Services/CTPartThicknessAdditionService.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="JS/Master/DOEVariableMaster/Controllers/DOEVariableMasterController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/Master/DOEVariableMaster/Services/DOEVariableMasterService.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/Master/IACCycleGoal/Controllers/IACCycleGoalController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/Master/IACCycleGoal/Services/IACCycleGoalService.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/Master/Material/Controllers/MaterialController.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="JS/Master/Material/Services/MaterialService.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="JS/Master/MaterialData/Controllers/MaterialDataController.js">
+      <publishTime>08/09/2018 18:28:52</publishTime>
+    </File>
+    <File Include="JS/Master/MaterialData/Services/MaterialDataService.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="JS/Master/MaterialType/Controllers/MaterialTypeController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/Master/MaterialType/Services/MaterialTypeService.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="JS/Master/Plant/Controllers/AddOrUpdatePlantController.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="JS/Master/Plant/Controllers/PlantController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/Master/Plant/Services/PlantService.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/Master/PlantLaborCost/Controllers/PlantLaborCostController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/Master/PlantLaborCost/Services/PlantLaborCostService.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="JS/Master/PressBreakDownOrder/Controllers/PressBreakDownOrderController.js">
+      <publishTime>08/09/2018 18:22:27</publishTime>
+    </File>
+    <File Include="JS/Master/PressBreakDownOrder/Services/PressBreakDownOrderService.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="JS/Master/Program/Controllers/ProgramController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/Master/Program/Services/ProgramService.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/Master/Region/Controllers/RegionController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/Master/Region/Services/RegionService.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="JS/Master/Role/Controllers/RoleConfigurationController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/Master/Role/Controllers/RoleController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/Master/Role/Services/RoleService.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="JS/Master/State/Controllers/StateController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/Master/State/Services/StateService.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="JS/Master/TroubleShooter/Controllers/TroubleShooterController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/Master/TroubleShooter/Services/TroubleShooterService.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="JS/Master/TroubleShooterGuide/Controllers/TroubleShooterGuideController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/Master/TroubleShooterGuide/Services/TroubleShooterGuideService.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="JS/Master/User/Controllers/UserController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/Master/User/Services/UserService.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/Master/UtilityConfiguration/Controllers/UtilityConfigurationController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/Master/UtilityConfiguration/Services/UtilityConfigurationService.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="JS/Master/WallStock/Controllers/WallStockController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/Master/WallStock/Services/WallStockService.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="JS/SMOM/BarrelHeats/Controllers/BarrelHeatController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/BarrelHeats/Services/BarrelHeatService.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="JS/SMOM/CavityBalance/Controllers/CavityBalanceController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/CavityBalance/Services/CavityBalanceServices.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="JS/SMOM/CheckRingStudyWeight/Controllers/CheckRingStudyWeightController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/CheckRingStudyWeight/Services/CheckRingStudyWeightService.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/ConversionSetup/Controllers/ConversionSetupBarrelTempController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/ConversionSetup/Controllers/ConversionSetupController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/ConversionSetup/Controllers/ConversionSetupFillStagesController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/ConversionSetup/Controllers/ConversionSetupGeneralInfoController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/ConversionSetup/Controllers/ConversionSetupHotRunnerController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/ConversionSetup/Controllers/ConversionSetupMoldTempController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/ConversionSetup/Controllers/ConversionSetupPressureController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/ConversionSetup/Controllers/ConversionSetupShotPositionController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/ConversionSetup/Controllers/ConversionSetupShotWeightController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/ConversionSetup/Controllers/ConversionSetupTimerController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/ConversionSetup/Controllers/ConversionSetupValveController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/ConversionSetup/Services/ConversionSetupBarrelTempService.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="JS/SMOM/ConversionSetup/Services/ConversionSetupFillStagesService.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="JS/SMOM/ConversionSetup/Services/ConversionSetupGeneralInfoService.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="JS/SMOM/ConversionSetup/Services/ConversionSetupHotRunnerService.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="JS/SMOM/ConversionSetup/Services/ConversionSetupMoldTempService.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="JS/SMOM/ConversionSetup/Services/ConversionSetupPressureService.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="JS/SMOM/ConversionSetup/Services/ConversionSetupService.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/ConversionSetup/Services/ConversionSetupShotPositionService.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="JS/SMOM/ConversionSetup/Services/ConversionSetupShotWeightService.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="JS/SMOM/ConversionSetup/Services/ConversionSetupTimerService.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="JS/SMOM/ConversionSetup/Services/ConversionSetupValveService.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="JS/SMOM/CorpIMPD/Controllers/CorpIMPDController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/CorpIMPD/Services/CorpIMPDService.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="JS/SMOM/CoverPage/Controllers/CoverPageController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/CoverPage/Controllers/CoverPageHeaderController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/CoverPage/Controllers/SMOMIndexController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/CoverPage/Services/CoverPageService.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/DOE/Controllers/DOEController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/DOE/Services/DOEService.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/FinalProcessDataPositionDetails/Controllers/FinalProcessDataPositionDetailsController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/FinalProcessDataPositionDetails/Services/FinalProcessDataPositionDetailsService.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/GateSeal/Controller/GateSealController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/GateSeal/Services/GateSealServices.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="JS/SMOM/GPMCalculator/Controllers/GPMCalculatorController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/GPMCalculator/Services/GPMCalculatorService.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="JS/SMOM/InitialDataConversionSetup/Controllers/BarrelTempSettingController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/InitialDataConversionSetup/Controllers/FillStagesController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/InitialDataConversionSetup/Controllers/GeneralInformationController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/InitialDataConversionSetup/Controllers/InitDataHeaderController.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="JS/SMOM/InitialDataConversionSetup/Controllers/InitDataHotRunnerController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/InitialDataConversionSetup/Controllers/InitDataTimerController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/InitialDataConversionSetup/Controllers/InitialDataConversionSetupController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/InitialDataConversionSetup/Controllers/MoldTempController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/InitialDataConversionSetup/Controllers/PressureController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/InitialDataConversionSetup/Controllers/ShotPositionsController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/InitialDataConversionSetup/Controllers/ShotWeightController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/InitialDataConversionSetup/Services/BarrelTempSettingService.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/InitialDataConversionSetup/Services/FillStagesService.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/InitialDataConversionSetup/Services/GeneralInformationService.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/InitialDataConversionSetup/Services/HotRunnerService.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/InitialDataConversionSetup/Services/InitDataHeaderService.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="JS/SMOM/InitialDataConversionSetup/Services/InitDataTimerService.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/InitialDataConversionSetup/Services/InitialDataConversionSetupService.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="JS/SMOM/InitialDataConversionSetup/Services/MoldTempService.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/InitialDataConversionSetup/Services/PressureService.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/InitialDataConversionSetup/Services/ShotPositionsService.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/InitialDataConversionSetup/Services/ShotWeightService.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/LinearityResults/Controllers/LinearityResultsController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/LinearityResults/Services/LinearityResultsService.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/MachineLinearity/Controllers/MachineLinearityController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/MachineLinearity/Controllers/MachineLinearityParentController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/MachineLinearity/Services/MachineLinearityServices.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="JS/SMOM/MiscCalculator/Controllers/MiscCalculatorController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/MiscCalculator/Services/MiscCalculatorServices.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="JS/SMOM/MoldFlowSetup/Controllers/ConversionToolController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/MoldFlowSetup/Controllers/ManualInputController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/MoldFlowSetup/Controllers/MoldflowGeneralInfoController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/MoldFlowSetup/Controllers/MoldflowHeaderController.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="JS/SMOM/MoldFlowSetup/Controllers/MoldflowPressureController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/MoldFlowSetup/Controllers/MoldFlowSetupController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/MoldFlowSetup/Controllers/MoldFlowShotPositionController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/MoldFlowSetup/Controllers/MoldflowTimerController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/MoldFlowSetup/Controllers/ValveGatePositionController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/MoldFlowSetup/Services/ConversionToolService.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/MoldFlowSetup/Services/ManualInputService.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/MoldFlowSetup/Services/MoldFlowGeneralInfoService.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/MoldFlowSetup/Services/MoldflowHeaderService.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="JS/SMOM/MoldFlowSetup/Services/MoldflowPressureService.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/MoldFlowSetup/Services/MoldFlowSetupService.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="JS/SMOM/MoldFlowSetup/Services/MoldFlowShotPositionService.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/MoldFlowSetup/Services/MoldflowTimerService.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/MoldFlowSetup/Services/ValveGatePositionService.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/PartAndMoldTemperatureMapping/Controllers/PartAndMoldTemperatureMappingController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/PartAndMoldTemperatureMapping/Services/PartAndMoldTemperatureMappingService.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="JS/SMOM/PlasticPressureLosses/Controllers/ColdRunnerSystemController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/PlasticPressureLosses/Controllers/HotDropToColdRunnerController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/PlasticPressureLosses/Controllers/HotRunnerController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/PlasticPressureLosses/Controllers/PlasticPressureLossesController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/PlasticPressureLosses/Services/PlasticPressureLossesService.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="JS/SMOM/ProcessReport/Controllers/ProcessReportController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/ProcessReport/Services/ProcessReportService.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/RecoveryTimeStudy/Controllers/RecoveryTimeStudyController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/RecoveryTimeStudy/Services/RecoveryTimeStudyService.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/RheologyCurve/Controllers/RheologyCurveController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/RheologyCurve/Service/RheologyCurveService.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="JS/SMOM/TonnageCalculator/Controllers/TonnageCalculatorController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/TonnageCalculator/Services/TonnageCalculatorService.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="JS/SMOM/WaterFlow/Controller/WaterFlowController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/WaterFlow/Services/WaterFlowServices.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/WaterSupplyCalculator/Controllers/WaterSupplyCalculatorController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/SMOM/WaterSupplyCalculator/Services/WaterSupplyCalculatorService.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="JS/STMP/CapacityChart/Controllers/CapacityChartController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/STMP/CapacityChart/Controllers/CycleTimePerformanceAndTLNSavingReportController.js">
+      <publishTime>08/09/2018 18:33:50</publishTime>
+    </File>
+    <File Include="JS/STMP/CapacityChart/Controllers/ManningController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/STMP/CapacityChart/Controllers/UtilizationController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/STMP/CapacityChart/Services/CapacityChartService.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/STMP/CustomerRequirement/Controllers/CustomerRequirementController.js">
+      <publishTime>08/09/2018 18:10:15</publishTime>
+    </File>
+    <File Include="JS/STMP/CustomerRequirement/Services/CustomerRequirementService.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="JS/STMP/DailyRecapRap_PressParameters/Controllers/DailyRecapRap_PressParametersController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/STMP/DailyRecapRap_PressParameters/Services/DailyRecapRap_PressParametersService.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="JS/STMP/InputData/Controllers/InputDataController.js">
+      <publishTime>08/09/2018 18:10:19</publishTime>
+    </File>
+    <File Include="JS/STMP/InputData/Services/InputDataService.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/STMP/LaborPlantSpecific/Controllers/LaborPlantSpecificController.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="JS/STMP/LaborPlantSpecific/Services/LaborPlantSpecificService.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="JS/STMP/MainDashboard/Controllers/MainDashboardController.js">
+      <publishTime>03/22/2018 15:31:24</publishTime>
+    </File>
+    <File Include="JS/STMP/MainDashboard/Services/MainDashboardService.js">
+      <publishTime>03/19/2018 15:57:13</publishTime>
+    </File>
+    <File Include="JS/STMP/ManningAndUtilization/Controllers/ManningUtilizationController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/STMP/ManningAndUtilization/Services/ManningUtilizationService.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/STMP/MROData/Controllers/MRODataController.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="JS/STMP/MROData/Services/MRODataService.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="JS/STMP/PlantEquipmentList/Controllers/AddEditPlantEquipmentListController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/STMP/PlantEquipmentList/Controllers/PlantEquipmentListController.js">
+      <publishTime>08/09/2018 17:24:42</publishTime>
+    </File>
+    <File Include="JS/STMP/PlantEquipmentList/Services/PlantEquipmentListService.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/STMP/PressBreakDown/Controllers/PressBreakDownController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/STMP/PressBreakDown/Services/PressBreakDownService.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/STMP/ReplacementSaving/Controllers/ReplacementSavingController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/STMP/ReplacementSaving/Services/ReplacementSavingService.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="JS/STMP/STMP_Links/Controllers/HeaderFilterController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/STMP/STMP_Links/Controllers/STMP_LinkController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/STMP/STMP_Links/Services/STMP_LinkService.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="JS/STMP/TLNSavingReport/Controllers/TLNSavingReportController.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/STMP/TLNSavingReport/Services/TLNSavingReportService.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="ResourceFiles/Customer_requirement.xlsx">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="ResourceFiles/Input_Data.xlsx">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="ResourceFiles/lang_en.json">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="ResourceFiles/lang_es.json">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="ResourceFiles/Operations &amp; Process Navigator User Registration Details.xlsx">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="ResourceFiles/Press Specs.xlsx">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Scripts/ai.0.22.9-build00167.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/ai.0.22.9-build00167.min.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/angucomplete-alt.min.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/angular-animate.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/angular-animate.min.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/angular-animate.min.js.map">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/angular-aria.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/angular-aria.min.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/angular-aria.min.js.map">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/angular-cookies.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/angular-cookies.min.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/angular-cookies.min.js.map">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/angular-csp.css">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/angular-datatables.min.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/angular-datepicker.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/angular-dragdrop.min.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/angular-filter.min.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/angular-loader.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/angular-loader.min.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/angular-loader.min.js.map">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/angular-local-storage.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/angular-message-format.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/angular-message-format.min.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/angular-message-format.min.js.map">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/angular-messages.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/angular-messages.min.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/angular-messages.min.js.map">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/angular-mocks.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/angular-resource.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/angular-resource.min.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/angular-resource.min.js.map">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/angular-route.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/angular-route.min.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/angular-route.min.js.map">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/angular-sanitize.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/angular-sanitize.min.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/angular-sanitize.min.js.map">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/angular-scenario.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/angular-touch.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/angular-touch.min.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/angular-touch.min.js.map">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/angular-translate-loader-static-files.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/angular-translate-loader-static-files.min.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/angular-translate.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/angular-translate.min.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/angular-ui-router.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/angular-ui-router.min.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/angular-ui-switch.min.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/angular.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/angular.min.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/angular.min.js.map">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/angular.treeview.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/angular.treeview.min.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/app.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/bootbox.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap-datepicker.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap-modal.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap-modalmanager.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap-timepicker.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap-timepicker.min.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.min.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/bsDuallistbox.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/buttons.flash.min.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/buttons.html5.min.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/buttons.print.min.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/Chart.min.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/dataTables.bootstrap.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/dataTables.buttons.min.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/dataTables.fixedColumns.min.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/dataTables.rowReorder.min.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/dataTables.rowsGroup.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/dataTables.tableTools.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/easy-responsive-tabs.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/errors.json">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/FileAPI.flash.swf">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/FileAPI.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/FileAPI.min.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.min.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.min.map">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.11.3.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.11.3.min.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/jQuery-plugin-progressbar.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Scripts/jquery-ui-i18n.min.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/jquery-ui.min.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/jquery.bootstrap-duallistbox.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/jquery.bootstrap-duallistbox.min.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/jquery.dataTables.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/jquery.dataTables.min.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/jquery.dataTables.rowReordering.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/jquery.freezeheader.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/jquery.mCustomScrollbar.concat.min.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/jquery.mCustomScrollbar.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/jquery.responsiveTabs.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.min.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.min.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/jspdf.debug.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/jszip.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/jszip.min.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/kendo.all.min.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/kendo.aspnetmvc.min.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/lightbox-plus-jquery.min.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Scripts/lightbox.min.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Scripts/loadash.min.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/menuscript.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/modernizr-2.6.2.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/moment.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Scripts/ng-ckeditor.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/ng-file-upload-all.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/ng-file-upload-all.min.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/ng-file-upload-shim.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/ng-file-upload-shim.min.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/ng-file-upload.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/ng-file-upload.min.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/ngJsonExportExcel.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/ngStorage.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/ngStorage.min.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/percircle.js">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Scripts/respond.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/respond.min.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/rzslider.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/swx-session-storage.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/swx-session-storage.min.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/textAngular-rangy.min.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/textAngular-sanitize.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/textAngular.min.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/toastr.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/toastr.min.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/tree-grid-directive.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/ui-bootstrap-tpls.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/underscore.min.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/utils.js">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/version.json">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Scripts/_references.js">
+      <publishTime>08/10/2018 19:08:10</publishTime>
+    </File>
+    <File Include="StaticImages/MiscCalculatorFormulas.PNG">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="StaticImages/waterstudy.PNG">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="StaticImages/WaterSupplyChart.png">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="StaticImages/WaterSupplyDiameter.png">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="StaticImages/WaterSupplyDiameter2.png">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Templates/Chart.html">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Templates/CoreProcess/Index.html">
+      <publishTime>08/14/2018 15:36:30</publishTime>
+    </File>
+    <File Include="Templates/ExecutiveSummary/ExecutiveSummary.html">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Templates/ExecutiveSummary/PressConsolidationOpportunity.html">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Templates/Home/ContentTestPage.html">
+      <publishTime>08/14/2018 13:16:39</publishTime>
+    </File>
+    <File Include="Templates/Home/ContentTestPage1.html">
+      <publishTime>08/14/2018 12:16:50</publishTime>
+    </File>
+    <File Include="Templates/Home/ContentTestPage2.html">
+      <publishTime>08/14/2018 13:09:54</publishTime>
+    </File>
+    <File Include="Templates/Home/DashboardHeader.html">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Templates/Home/DashboardPerformances.html">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Templates/Home/ExecutiveSummary.html">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Templates/Home/GradeCard.html">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Templates/Home/Index.html">
+      <publishTime>08/13/2018 16:12:09</publishTime>
+    </File>
+    <File Include="Templates/Home/Index2.html">
+      <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="Templates/Home/index3.html">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Templates/Home/MainDashboardModal.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/Home/PlantList.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/Home/PressTotalCostSaving.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/IMIP/BICVerificationDocument/AddorEditBICVerificationDocumentParent.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/IMIP/BICVerificationDocument/BICVerificationDocumentListing.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/IMIP/BICVerificationDocument/BICVerificationQuestionAnswer.html">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Templates/IMIP/BICVerificationDocument/LookUpModal.html">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Templates/IMIP/ImprovementPlanActionList/ImprovementPlanActionList.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/Master/Admin_Links/Configuration.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/Master/Admin_Links/Index.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/Master/BICCycleKeyElement/AddOrEditBICCycleKeyElement.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/Master/BICCycleKeyElement/Index.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/Master/BICCycleKeyElementStandard/AddOrEditBICCycleKeyElementStandard.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/Master/BICCycleKeyElementStandard/Index.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/Master/Country/AddOrEditCountry.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/Master/Country/Index.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/Master/CTPartThicknessAddition/AddorEditCTPartThicknessAddition.html">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Templates/Master/CTPartThicknessAddition/Index.html">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Templates/Master/DOEVariableMaster/AddOrEditDOEVariableMaster.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/Master/DOEVariableMaster/Index.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/Master/IACCycleGoal/AddOrEditIACCycleGoal.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/Master/IACCycleGoal/Index.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/Master/Material/Index.html">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Templates/Master/MaterialData/Index.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/Master/MaterialType/AddorEditMaterialType.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/Master/MaterialType/Index.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/Master/Plant/AddOrEditPlant.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/Master/Plant/Index.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/Master/PlantLaborCost/AddOrEditPlantLaborCost.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/Master/PlantLaborCost/Index.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/Master/PressBreakDownOrder/Index.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/Master/Program/AddOrEditProgram.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/Master/Program/Index.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/Master/Region/AddOrEditRegion.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/Master/Region/Index.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/Master/Role/AddOrUpdateRole.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/Master/Role/Index.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/Master/Role/RoleConfiguration.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/Master/State/AddOrEditState.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/Master/State/Index.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/Master/TroubleShooter/AddOrEditTroubleShooter.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/Master/TroubleShooter/Index.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/Master/TroubleShooterGuide/index.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/Master/User/EditUser.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/Master/User/Index.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/Master/UtilityConfiguration/Index.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/Master/WallStock/AddorEditWallStock.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/Master/WallStock/Index.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/Processes/Index.html">
+      <publishTime>08/14/2018 14:56:05</publishTime>
+    </File>
+    <File Include="Templates/SMOM/BarrelHeats/Index.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/SMOM/CavityBalance/Index.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/SMOM/CheckRingStudyWeight/index.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/SMOM/ConversionSetup/BarrelTemp.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/SMOM/ConversionSetup/ConversionSetup.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/SMOM/ConversionSetup/ConversionSetupHotRunner.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/SMOM/ConversionSetup/FillStages.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/SMOM/ConversionSetup/GeneralInfo.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/SMOM/ConversionSetup/MoldTemp.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/SMOM/ConversionSetup/Pressure.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/SMOM/ConversionSetup/ShotPosition.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/SMOM/ConversionSetup/ShotWeight.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/SMOM/ConversionSetup/Timer.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/SMOM/ConversionSetup/ValveGate.html">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Templates/SMOM/CorpIMPD/Index.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/SMOM/DOE/Index.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/SMOM/FinalProcessDataPositionDetails/FinalProcessDataPositionDetails.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/SMOM/GateSeal/Index.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/SMOM/GPMCalculator/index.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/SMOM/InitialDataConversionSetup/BarrelTempSetting.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/SMOM/InitialDataConversionSetup/FillStages.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/SMOM/InitialDataConversionSetup/GeneralInformation.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/SMOM/InitialDataConversionSetup/HotRunner.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/SMOM/InitialDataConversionSetup/InitialDataConversionSetup.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/SMOM/InitialDataConversionSetup/MoldTemp.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/SMOM/InitialDataConversionSetup/Pressure.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/SMOM/InitialDataConversionSetup/ShotPositions.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/SMOM/InitialDataConversionSetup/ShotWeight.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/SMOM/InitialDataConversionSetup/Timer.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/SMOM/LinearityResults/Index.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/SMOM/MachineLinearity/index.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/SMOM/MachineLinearity/MachineLinearityParent.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/SMOM/MiscCalculator/Index.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/SMOM/MoldFlowSetup/ConversionTool_Link.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/SMOM/MoldFlowSetup/ManualInput.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/SMOM/MoldFlowSetup/MoldFlowGeneralInfo.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/SMOM/MoldFlowSetup/MoldFlowSetup.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/SMOM/MoldFlowSetup/Pressure.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/SMOM/MoldFlowSetup/ShotPosition.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/SMOM/MoldFlowSetup/Timer.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/SMOM/MoldFlowSetup/ValveGatePosition.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/SMOM/PartAndMoldTemperatureMapping/AddorEditPartAndMoldTemperatureMapping.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/SMOM/PlasticPressureLosses/ColdRunnerSystem.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/SMOM/PlasticPressureLosses/HotDropToColdRunner.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/SMOM/PlasticPressureLosses/HotRunner.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/SMOM/PlasticPressureLosses/PlasticPressureLossesParent.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/SMOM/PlasticPressureLosses/_MachineMaxPlasticPressure.html">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Templates/SMOM/ProcessReport/Index.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/SMOM/RecoveryTimeStudy/Index.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/SMOM/RheologyCurve/index.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/SMOM/SMOM_Links/CoverPage.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/SMOM/SMOM_Links/CoverPageHeader.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/SMOM/SMOM_Links/Index.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/SMOM/TonnageCalculator/Index.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/SMOM/WaterFlow/Index.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/SMOM/WaterSupplyCalculator/Index.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/STMP/CapacityChart/CycleTimePerformanceAndTLNSavingReport.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/STMP/CapacityChart/index.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/STMP/CapacityChart/ManningSection.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/STMP/CapacityChart/PlantUtilization.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/STMP/CustomerRequirement/Index.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/STMP/DailyRecapRap_PressParameters/Index.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/STMP/InputData/AddorEditInputData.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/STMP/InputData/Index.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/STMP/InputData/_AddEditInputData.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/STMP/LaborPlantSpecific/LaborPlantSpecific.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/STMP/MainDashboard/CapitalBenifits.html">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Templates/STMP/MainDashboard/Dashboard.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/STMP/MainDashboard/MainDashboard.html">
+      <publishTime>03/21/2018 12:40:23</publishTime>
+    </File>
+    <File Include="Templates/STMP/MainDashboard/PressUtilization.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/STMP/ManningAndUtilization/Index.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/STMP/MROData/MROData.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/STMP/PlantEquipmentList/AddEditPlantEquipmentList.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/STMP/PlantEquipmentList/Index.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/STMP/PlantEquipmentList/_AddEditPlantEquipmentListUC.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/STMP/PressBreakDown/Index.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/STMP/ReplacementSaving/ReplacementSaving.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/STMP/STMP_Links/CreateScenarioPopup.html">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Templates/STMP/STMP_Links/HeaderFilters.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/STMP/STMP_Links/Index.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/STMP/STMP_Links/MainLinkPageHeader.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/STMP/STMP_Links/OldScenariosPopup.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/STMP/TLNSavingReport/AddorEditTLNReportSaving.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Templates/STMP/TLNSavingReport/Index.html">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Views/Account/ConfirmEmail.cshtml">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Views/Account/ExternalLoginConfirmation.cshtml">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Views/Account/ExternalLoginFailure.cshtml">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Views/Account/ForgotPassword.cshtml">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Views/Account/ForgotPasswordConfirmation.cshtml">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Views/Account/Login.cshtml">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Views/Account/Register.cshtml">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Views/Account/ResetPassword.cshtml">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Views/Account/ResetPasswordConfirmation.cshtml">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Views/Account/SendCode.cshtml">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Views/Account/Unauthorize.cshtml">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Views/Account/VerifyCode.cshtml">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Views/Account/_ExternalLoginsListPartial.cshtml">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Views/DailyRecapRepTonRange/Index.cshtml">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Views/Home/About.cshtml">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Views/Home/AccessDenied.cshtml">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Views/Home/Contact.cshtml">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Views/Home/incompatiblebrowser.cshtml">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Views/Home/Index.cshtml">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Views/Login/ForgotPassword.cshtml">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Views/Login/Index.cshtml">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Views/Manage/AddPhoneNumber.cshtml">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Views/Manage/ChangePassword.cshtml">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Views/Manage/Index.cshtml">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Views/Manage/ManageLogins.cshtml">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Views/Manage/SetPassword.cshtml">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Views/Manage/VerifyPhoneNumber.cshtml">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Views/Plant/Index.cshtml">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Views/PlantEquipmentList/Index.cshtml">
+      <publishTime>08/09/2018 14:14:15</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/ProgramsDDL.cshtml">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Views/Shared/Error.cshtml">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Views/Shared/Lockout.cshtml">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>08/14/2018 14:58:06</publishTime>
+    </File>
+    <File Include="Views/Shared/_LoginPartial.cshtml">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Views/Shared/_Notifications.cshtml">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Views/Shared/_Sidebar.cshtml">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Views/STMPInputData/Index.cshtml">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Views/Test/Index.cshtml">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Views/Web.config">
+      <publishTime>08/10/2018 17:11:22</publishTime>
+    </File>
+    <File Include="Views/_ViewStart.cshtml">
+      <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>08/14/2018 15:46:21</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

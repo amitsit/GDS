@@ -1,0 +1,70 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IAC BI</title>
+    <link rel="shortcut icon" href="~/favicon.ico" type="image/x-icon" />
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+
+    @Styles.Render("~/bundles/css")
+
+
+</head>
+<body>
+    <div id="wrapper">
+        <header id="header">
+            <div class="logoimg">
+                <a href="/Home">
+                    <img src="~/Images/IAC.png" height="61" width="231" alt="IAC">
+                </a>
+                <p>
+                    <span style="color: gray; font-size: 17px; font-weight: bold;"> Operations &amp; Process Navigator </span><br />
+                    <span style="font-size: 10px;">Copyright &copy; 2018</span>
+                </p>
+            </div>
+        </header>
+        <section id="content">
+
+            <div class="container-fluid">
+                <div class="row-fluid">
+                    <div class="col-lg-12">
+                        <div class="centering text-center error-container">
+                            <div class="text-center">
+                                <h4 class="without-margin">
+                                    <br />
+                                    We are sorry, but the system is unable to fully identify you, so the page you requested cannot be displayed.  Your network userid is either missing or incorrect in <br /> <b>Operations &amp; Process Navigator</b>.
+
+                                </h4>
+                                <br />
+                                <h4 class="text-warning">The system shows that you are logged in as < @HttpContext.Current.User.Identity.Name > </h4>
+                            </div>
+                            <br />
+                            <div class="text-center">
+                                <h4><a href="../../../ResourceFiles/Operations & Process Navigator User Registration Details.xlsx" target="_self">Click here </a>to download registration form. Please fill all information and send it to <b>TWyse@iacgroup.com</b></h4>
+                            </div>
+                            <hr>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </section>
+        <footer id="footer"></footer>
+
+    </div>
+
+
+
+</body>
+</html>
+

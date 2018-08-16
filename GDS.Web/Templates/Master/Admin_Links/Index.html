@@ -1,0 +1,60 @@
+﻿<h1 class="title iac-breadcrumb">
+    <a ui-sref="Home"><i class="fa fa-home"></i></a><span translate="Admin_HomeIcon">Admin Settings</span>
+</h1>
+<div class="text-center">
+	<div class="admin_menu menu-center">
+		<div class="panel panel-default">
+			<div class="panel-heading text-left">
+				<h3 class="panel-title" translate="AdminCoverPage_AdminMenu">Admin Menus</h3>
+			</div>
+			<div class="panel-body pb-0">
+				<div class="db-links iac-user" ng-if="isSubModuleAccessibleToUser('Admin', 'User Quick Links', 'View')">
+					<div class="dbl-title"><span translate="AdminCoverPage_User">User</span><span translate="AdminCoverPage_QuickLinks">Quick Links</span><span class="arw"></span></div>
+					<ul>
+						<!--<li><a href="#" class="dbl con"><span></span>Sync With AD</a></li>-->
+                        
+						<!--<li ><a href="#" class="dbl Active-InActive" ><span></span><div translate="AdminCoverPage_ActiveInactive">Active/InActive</div></a></li>-->
+						<li ng-if="isSubModuleAccessibleToUser('Admin', 'User Quick Links', 'View User')"><a href="#" class="dbl Active-InActive" ui-sref="User"><span></span><div translate="AdminCoverPage_User">User</div></a></li>
+						<li ng-if="isSubModuleAccessibleToUser('Admin', 'User Quick Links', 'View Roles and Rights')"><a href="#" class="dbl Roles-Rights" ui-sref="Roles"><span></span><div translate="AdminCoverPage_RolesRights">Roles-Rights</div></a></li>
+					</ul>
+				</div>
+
+				<div class="db-links iac-location" ng-if="isSubModuleAccessibleToUser('Admin', 'Location Quick Links', 'View')">
+					<div class="dbl-title"><span translate="AdminCoverPage_Location">Location</span> <span translate="AdminCoverPage_QuickLinks">Quick Links</span><span class="arw"></span></div>
+					<ul>
+						<li ng-if="isSubModuleAccessibleToUser('Admin', 'Location Quick Links', 'View Region')"><a href="#" class="dbl Region" ui-sref="Region"><span></span><div translate="AdminCoverPage_Region">Region</div></a></li>
+						<li ng-if="isSubModuleAccessibleToUser('Admin', 'Location Quick Links', 'View Countries')"><a href="#" class="dbl Country" ui-sref="Country"><span></span><div translate="AdminCoverPage_Country">Country</div></a></li>
+						<li ng-if="isSubModuleAccessibleToUser('Admin', 'Location Quick Links', 'View State')"><a href="#" class="dbl State" ui-sref="State"><span></span><div translate="AdminCoverPage_State">State</div></a></li>
+					</ul>
+				</div>
+				<div class="db-links iac-plant" ng-if="isSubModuleAccessibleToUser('Admin', 'Plant Quick Links', 'View')">
+					<div class="dbl-title"><span translate="AdminCoverPage_Plant">Plant</span> <span translate="AdminCoverPage_QuickLinks">Quick Links</span><span class="arw"></span></div>
+					<ul>
+						<!--<li><a href="#" class="dbl worktbl" ui-sref="Plant"><span></span>Plant Configuration</a></li>-->
+						<li ng-if="isSubModuleAccessibleToUser('Admin', 'Plant Quick Links', 'View Programs')"><a href="#" class="dbl Program" ui-sref="Program"><span></span><div translate="AdminCoverPage_Program">Program</div></a></li>
+						<!--<li><a href="#" class="dbl MeritPlanning" ui-sref="Equipment"><span></span>Equipment</a></li>-->
+						<li ng-if="isSubModuleAccessibleToUser('Admin', 'Plant Quick Links', 'View Plants')"><a href="#" class="dbl plant" ui-sref="Plant"><span></span><div translate="AdminCoverPage_Plant">Plant</div></a></li>
+                        <li ng-if="isSubModuleAccessibleToUser('Admin', 'Plant Quick Links', 'View DOE Variable')"><a href="#" class="dbl Page-Help" ui-sref="DOEVariableMaster"><span></span><div translate="AdminCoverPage_DOE">DOE Variable Master</div></a></li>
+						<li ng-if="isSubModuleAccessibleToUser('Admin', 'Plant Quick Links', 'View Page Help')"><a href="#" class="dbl Trouble-Shooter-Guide" ui-sref="TroubleShooterList"><span></span><div translate="AdminCoverPage_PageHelp">Page Help</div></a></li>
+					</ul>
+                  
+				</div>
+
+				<!--<div class="db-links  ql-employee">
+					<div class="dbl-title">SMOM <span>Quick Links</span><span class="arw"></span></div>
+					<ul>
+
+						<li><a href="#" class="dbl scope" ><span></span>Tonnage Wall Stock</a></li>
+					</ul>
+
+				</div>-->
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+

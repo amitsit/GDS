@@ -1,0 +1,14 @@
+﻿@using Kendo.Mvc.UI
+
+@model object
+
+@(Html.Kendo().ComboBoxFor(m => m)
+              .Name("ProgramId")
+              .DataTextField("ProgramName")
+              .DataValueField("ProgramId")
+              .HtmlAttributes(new { @style = "width : 100% " })
+              .AutoBind(true)
+              .DataSource(source => source.Read(read => read.Action("GetPrograms", "STMPInputData")))
+              .Placeholder("Select Program")
+)
+

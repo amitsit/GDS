@@ -1,0 +1,55 @@
+﻿<form name="AddOrUpdateCountryform" novalidate ng-controller="AddOrUpdateCountryController">
+    <!--<h1 class="title" ng-bind="PageTitle"></h1>-->
+    <h1 class="title" ng-show="CountryID>0" translate="Country_Edit"></h1>
+    <h1 class="title" ng-show="!CountryID>0" translate="Country_Add"></h1>
+    <div role="tabpanel" class="form-horizontal" id="messages">
+        <div class="alert alert-danger alert-dismissible validationErrors" ng-show="(AddOrUpdateCountryform.$submitted && (!AddOrUpdateCountryform.$valid)) || (AddOrUpdateCountryform.$submitted && CountryObj.SelectedRegion.length==0)">
+         
+            <ul ng-show="(AddOrUpdateCountryform.$submitted && (!AddOrUpdateCountryform.$valid)) || (AddOrUpdateCountryform.$submitted && CountryObj.SelectedRegion.length==0)">
+                <!--<li ng-show="AddOrUpdateCountryform.CountryCd.$error.required">A code is required.</li>-->
+                <li ng-show="AddOrUpdateCountryform.Name.$error.required" translate="Country_ValidationMsg1">Country name is required.</li>  
+                <li ng-show="CountryObj.SelectedRegion.length==0" translate="Country_ValidationMsg2">Select atleast one Region.</li>                                  
+            </ul>
+        </div>
+    </div>
+    <div class="top_msg" translate="Country_TopMsg">This page allow you to lookup Country</div>
+    <div class="wthbox wth_content">
+        <div class="toplinks">
+            <ul>
+                <li ng-if="isSubModuleAccessibleToUser('Admin', 'Location Quick Links', 'Add / Update Country')"><button type="submit" class="save" data-placement="top" data-toggle="tooltip" title="Save" ng-click="SaveCountry(AddOrUpdateCountryform)"></button></li>
+                <li><a class="cancel" data-placement="top" data-toggle="tooltip" title="Cancel" ng-click="cancel()"></a></li>                          
+            </ul>
+        </div>
+
+        <!--<div class="form-group">
+            <label class="col-sm-3 col-lg-2 control-label rn_pad mandatoryField">Code</label>
+            <div class="col-sm-6 col-md-4"><input type="text" maxlength="5" name="CountryCd" class="form-control" ng-model="CountryObj.CountryCd" required="required"></div>
+        </div>-->
+
+        <div class="row form-group">
+            <label class="col-sm-3 col-lg-2 control-label text-right rn_pad mandatoryField" translate="Country_Name">Country Name</label>
+            <div class="col-sm-6 col-md-4"><input type="text" name="Name" class="form-control" maxlength="100" ng-model="CountryObj.CountryName" required="required"></div>
+        </div>
+
+        <div class="row form-group">
+            <label class="col-sm-3 col-lg-2 control-label text-right rn_pad mandatoryField" translate="Region_Header">Region</label>
+            <div class="col-sm-6 col-md-4">
+                <dropdown-multiselect model="CountryObj.SelectedRegion" ng-click="SelectedRegion()" selected="CountryObj.SelectedRegion.length"
+                                      options="RegionList" name="Region" required="required"></dropdown-multiselect>
+                <strong> <span class="control-label" ng-bind="RegionNames"></span></strong>
+            </div>
+        </div>
+
+        <div class="row form-group">
+            <label class="col-sm-3 col-lg-2 control-label text-right rn_pad" translate="Admin_Roles_IsActive">Is Active</label>
+            <div class="col-sm-6 col-md-4">
+                <input type="checkbox" class="cursor-pointer" name="IsActive" id="chkActive" ng-model="CountryObj.IsActive">
+            </div>
+        </div>
+   
+
+       
+    </div>
+</form>
+
+

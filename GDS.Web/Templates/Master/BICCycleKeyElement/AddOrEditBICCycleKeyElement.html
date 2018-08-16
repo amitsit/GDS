@@ -1,0 +1,49 @@
+﻿<form name="AddOrUpdateBICCycleKeyElementform" novalidate ng-controller="AddOrUpdateBICCycleKeyElementController">
+    <h1 class="title" ng-show="BICCycleKeyElementId>0"  translate="Plantequipment_Edit"></h1>
+    <h1 class="title" ng-show="!(BICCycleKeyElementId>0)" translate="BICCycleElement_Add"></h1>
+
+    <div role="tabpanel" class="form-horizontal" id="messages">
+        <div class="alert alert-danger alert-dismissible validationErrors" ng-show="(AddOrUpdateBICCycleKeyElementform.$submitted && (!AddOrUpdateBICCycleKeyElementform.$valid))">
+            <ul ng-show="AddOrUpdateBICCycleKeyElementform .$submitted && (!AddOrUpdateBICCycleKeyElementform.$valid)">
+                <li ng-show="AddOrUpdateBICCycleKeyElementform.ElementName.$error.required" translate="BICCycleElement_validation">A Element name is required.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="top_msg" translate="BICkeyElement_Topmsg">This page allow you to lookup BIC Cycle Key Element</div>
+    <div class="wthbox wth_content">
+        <div class="toplinks">
+            <ul>
+                <li ng-if="isSubModuleAccessibleToUser('DCS', 'General Settings Links', 'Add / Update BIC Cycle Key Element')"><button type="submit" class="save" data-placement="top" data-toggle="tooltip" title="Save" ng-click="SaveBICCycleKeyElement(AddOrUpdateBICCycleKeyElementform)"></button></li>
+                <li><a class="cancel" data-placement="top" data-toggle="tooltip" title="Cancel" ng-click="cancel()"></a></li>
+            </ul>
+        </div>
+
+        <!--<div class="form-group">
+            <label class="col-sm-3 col-lg-2 control-label rn_pad mandatoryField">Code</label>
+            <div class="col-sm-6 col-md-4"><input type="text" maxlength="5" name="CountryCd" class="form-control" ng-model="CountryObj.CountryCd" required="required"></div>
+        </div>-->
+
+        <div class="row form-group">
+            <label class="col-sm-3 col-lg-2 control-label text-right rn_pad mandatoryField" translate="BICCycleElement_Element">Element Name</label>
+            <div class="col-sm-6 col-md-4">
+                <input type="text" name="ElementName" class="form-control text-center" maxlength="150" ng-model="BICCycleKeyElementObj.ElementName" required="required">
+            </div>
+        </div>
+
+        <div class="row form-group">
+            <label class="col-sm-3 col-lg-2 control-label text-right" translate="BICKeyStandard_ElementOrder">Element Order</label>
+            <div class="col-sm-6 col-md-4">
+                <input type="text" name="ElementOrder" class="form-control text-center"  ng-model="BICCycleKeyElementObj.SortOrder">
+            </div>
+        </div>
+
+        <div class="row form-group">
+            <label class="col-sm-3 col-lg-2 text-right control-label rn_pad" translate="Admin_Roles_IsActive">Is Active</label>
+            <div class="col-sm-6 col-md-4">
+                <input type="checkbox" class="cursor-pointer" name="IsActive" id="chkActive" ng-model="BICCycleKeyElementObj.IsActive">
+            </div>
+        </div>
+    </div>
+</form>
+
+

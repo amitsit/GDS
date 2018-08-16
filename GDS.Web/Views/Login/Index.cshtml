@@ -1,0 +1,60 @@
+﻿@model IACBI.Entities.LoginModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+
+    @Scripts.Render("~/bundles/kendo")
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <link href="~/Content/login.css" rel="stylesheet" />
+    <link href="~/Content/styles.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <title>Login</title>
+</head>
+<body class="login-form">
+    <div class="wrapper">
+        @using (Html.BeginForm("Index", "Login", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "login", role = "form" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+
+            <div class="width-full">
+                <p class="title">Sign In</p>
+                <label class="control-label mt-20" style="color: red;">
+                    @Html.Raw(ViewBag.ResponseMessage)
+                </label>    
+            </div>
+
+            <div class="width-full">
+                @Html.TextBoxFor(m => m.Email, new { @placeholder = "Email", type = "email", @autofocus = "", @data_val_required = "The Email field is required" })
+                <i class="icon-envelope icon-login"></i>
+                @Html.ValidationMessageFor(m => m.Email)
+
+            </div>
+            <div class="width-full">
+
+                @Html.TextBoxFor(m => m.Password, new { @placeholder = "Password", type = "password" })
+                <i class="icon-key icon-login"></i>
+                @Html.ValidationMessageFor(m => m.Password)
+            </div>
+
+
+            <div class="width-half">
+                @Html.ActionLink("Forgot your password?", "ForgotPassword", "Login", new { @class = "forgot-pwd" })
+            </div>
+                <div class="width-full">
+                    <button class="state">Login</button>
+                </div>
+                
+        }
+    </div>
+</body>
+</html>

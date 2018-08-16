@@ -1,0 +1,222 @@
+﻿
+<form class="form-horizontal" name="AddOrUpdatePlantform" novalidate ng-controller="AddOrUpdatePlantController">
+    <!--<h1 class="title" ng-bind="PageTitle"></h1>-->
+    <h1 class="title" ng-show="PlantID>0" translate="Plant_Edit"></h1>
+    <h1 class="title" ng-show="!PlantID>0" translate="Plant_Add"></h1>
+    <div role="tabpanel" class="form-horizontal" id="messages">
+        <div class="alert alert-danger alert-dismissible validationErrors" ng-show="(AddOrUpdatePlantform.$submitted && (!AddOrUpdatePlantform.$valid))">
+            <ul ng-show="AddOrUpdatePlantform.$submitted && (!AddOrUpdatePlantform.$valid)">
+
+                <li ng-show="AddOrUpdatePlantform.Name.$error.required" translate="Plant_ValidationMsg1">Name is required.</li>
+                <li ng-show="AddOrUpdatePlantform.PlantName_PressSpecification.$error.required" translate="Plant_ValidationMsg2">Reference Plant Name is required.</li>
+                <li ng-show="AddOrUpdatePlantform.RegionID.$error.required" translate="Plant_ValidationMsg3">Region is required.</li>
+                <li ng-show="AddOrUpdatePlantform.CountryID.$error.required" translate="Plant_ValidationMsg4">Country is required.</li>
+                <li ng-show="AddOrUpdatePlantform.Location.$error.required" translate="Plant_ValidationMsg5">Location is required.</li>
+                <li ng-show="AddOrUpdatePlantform.UnitSystem.$error.required" translate="Plant_ValidationMsg6">Please select Unit system.</li>
+                <li ng-show="AddOrUpdatePlantform.LengthUnit.$error.required" translate="Plant_ValidationMsg6">Please select Unit system.</li>
+
+                <li ng-show="AddOrUpdatePlantform.HeadCount.$error.required" translate="Plant_ValidationMsg7">Head count is required.</li>
+                <li ng-show="AddOrUpdatePlantform.FringeWageRate.$error.required" translate="Plant_ValidationMsg8">Fringe wage rate is required.</li>
+                <li ng-show="AddOrUpdatePlantform.HourlyWageRate.$error.required" translate="Plant_ValidationMsg9">Hourly wage rate is required.</li>
+                <li ng-show="AddOrUpdatePlantform.StdPerfomanceGoal.$error.required" translate="Plant_ValidationMsg10">Std perfomance goal is required.</li>
+                <li ng-show="AddOrUpdatePlantform.AllPerformanceGoal.$error.required" translate="Plant_ValidationMsg11">All performance goal is required.</li>
+                <li ng-show="AddOrUpdatePlantform.MoldingManning.$error.required" translate="Plant_ValidationMsg12">Molding Manning is required.</li>
+                <li ng-show="AddOrUpdatePlantform.DefaultUTLZPercentage.$error.required" translate="Plant_ValidationMsg13">Default UTLZ Percentage is required.</li>
+                <li ng-show="AddOrUpdatePlantform.StdReliefDivisor.$error.required" translate="Plant_ValidationMsg14">Std Relief Divisor is required.</li>
+                <li ng-show="AddOrUpdatePlantform.StdQuotedWeek.$error.required" translate="Plant_ValidationMsg15">Std Quoted Week is required.</li>
+                <li ng-show="AddOrUpdatePlantform.Plantcolor.$error.required" translate="Plant_ValidationMsg16">Plant color is required.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="top_msg" translate="Plant_TopMsg">This page allow you to lookup Plant</div>
+    <div class="wthbox wth_content">
+        <div class="toplinks">
+            <ul>
+                <li ng-if="isSubModuleAccessibleToUser('Admin', 'Plant Quick Links', 'Add / Update Plant')"><button type="submit" class="save" data-placement="top" data-toggle="tooltip" title="Save" ng-click="SavePlant(AddOrUpdatePlantform)"></button></li>
+                <li><a class="cancel" data-placement="top" data-toggle="tooltip" title="Cancel" ui-sref="Plant" ng-click="cancel()"></a></li>
+            </ul>
+        </div>
+
+        <div class="col-md-12">
+
+            <div class="col-md-6">
+
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h3 class="panel-title" translate="Plant_Detail">Plant Details</h3>
+                    </div>
+                    <div class="panel-body pb-0">
+                        <div class="form-group">
+                            <label class="col-sm-6 col-lg-4 control-label rn_pad mandatoryField" translate="Plant_Name">Name</label>
+                            <div class="col-sm-12 col-md-8">
+                                <input type="text" name="Name" class="form-control text-center" maxlength="200" ng-model="PlantObj.PlantName" required="required">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-6 col-lg-4 control-label rn_pad mandatoryField" translate="Plant_SpecificationPlantName">Specification Plant Name<br /></label>
+                            <div class="col-sm-12 col-md-8"><input type="text" name="PlantName_PressSpecification" class="form-control text-center" maxlength="200" ng-model="PlantObj.PlantName_PressSpecification" required="required"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-6 col-lg-4 control-label" translate="Plant_QAD">QAD Plant Name</label>
+                             <div class="col-sm-12 col-md-8"><input type="text" name="PlantName_QAD" class="form-control text-center" maxlength="200" ng-model="PlantObj.PlantName_QAD"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-6 col-lg-4 control-label rn_pad mandatoryField" translate="Plant_Region">Region</label>
+                            <div class="col-sm-12 col-md-8">
+                                <select class="form-control select_list" name="RegionID" ng-model="PlantObj.RegionID" ng-change="onRegionChange()"
+                                        ng-options="region.RegionID as region.RegionName for region in RegionList" required="required">
+                                    <option value="">Select Region</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-6 col-lg-4 control-label rn_pad mandatoryField" translate="Plant_Country">Country</label>
+                            <div class="col-sm-12 col-md-8">
+                                <select class="form-control select_list" name="CountryID" ng-model="PlantObj.CountryID"
+                                        ng-options="country.CountryID as country.CountryName for country in CountryList" required="required" ng-disabled="IsCountryDisabled()">
+                                    <option value="">Select Country</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-6 col-lg-4 control-label rn_pad mandatoryField" translate="Plant_Location">Location</label>
+                            <div class="col-sm-12 col-md-8"><input type="text" name="Location" class="form-control text-center" maxlength="200" ng-model="PlantObj.Location" required="required"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-6 col-lg-4 control-label rn_pad mandatoryField" translate="Plant_Length">Length</label>
+                            <div class="col-sm-12 col-md-8">
+                                <select class="form-control select_list" name="LengthUnit" ng-model="PlantObj.LengthUnit"
+                                        ng-options="l.Id as l.Name for l in Length" required="required">
+                                    <option value="">Select Length</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-6 col-lg-4 control-label rn_pad mandatoryField" translate="Plant_UnitSystem">Unit System</label>
+                            <div class="col-sm-12 col-md-8">
+                                <select class="form-control select_list" name="UnitSystem" ng-model="PlantObj.UnitSystemId"
+                                        ng-options="u.Id as u.Name for u in UnitSystem" required="required">
+                                    <option value="">Select Unit System</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-6 col-lg-4 control-label rn_pad mandatoryField" translate="Plant_DefaultUTLZPercentage">Default UTLZ Percentage</label>
+                            <div class="col-sm-12 col-md-8">
+                                <input type="text" name="DefaultUTLZPercentage" class="form-control text-center" decimal-only="number" ng-model="PlantObj.DefaultUTLZPercentage" required="required">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-6 col-lg-4 control-label rn_pad mandatoryField" translate="Plant_Pressure">Pressure</label>
+                            <div class="col-sm-12 col-md-8">
+                                <select class="form-control select_list" name="PressureUnit" ng-model="PlantObj.PressureUnit"
+                                        ng-options="p.Id as p.Name for p in Pressure" required="required">
+                                    <option value="">Select Pressure</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-6 col-lg-4 control-label rn_pad " translate="Plant_Active">Active</label>
+                            <div class="col-sm-12 col-md-8"><input type="checkbox" class="cursor-pointer text-center" name="IsActive" id="chkActive" ng-model="PlantObj.IsActive"></div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-warning">
+                    <div class="panel-heading">
+                        <h3 class="panel-title" translate="Plant_PlantSpecificParameters">Plant Specific Parameters</h3>
+                    </div>
+                    <div class="panel-body pb-0">
+                        <div class="form-group">
+                            <label class="col-sm-6 col-lg-3 control-label rn_pad mandatoryField" translate="Plant_FringeWage">Fringe Wage Rate</label>
+                            <div class="col-sm-12 col-md-8">
+                                <input type="text" name="FringeWageRate" class="form-control text-center" decimal-only="number 2"  ng-model="PlantObj.FringeWageRate" required="required">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-6 col-lg-3 control-label rn_pad mandatoryField" translate="Plant_HourlyWage">Hourly Wage Rate</label>
+                            <div class="col-sm-12 col-md-8"><input type="text" name="HourlyWageRate" class="form-control text-center" decimal-only="number 2" ng-model="PlantObj.HourlyWageRate" required="required"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-6 col-lg-3 control-label rn_pad mandatoryField" translate="Plant_StdPerfomance">Std Perfomance Goal</label>
+                            <div class="col-sm-12 col-md-8">
+                                <input type="text" name="StdPerfomanceGoal" class="form-control text-center" decimal-only="number 2" ng-model="PlantObj.StdPerfomanceGoal" required="required">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-6 col-lg-3 control-label rn_pad mandatoryField" translate="Plant_AllPerformance">All Performance Goal</label>
+                            <div class="col-sm-12 col-md-8">
+                                <input type="text" name="AllPerformanceGoal" class="form-control text-center" decimal-only="number 2" ng-model="PlantObj.AllPerformanceGoal" required="required">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-6 col-lg-3 control-label rn_pad mandatoryField" translate="Plant_Molding">Molding Manning</label>
+                            <div class="col-sm-12 col-md-8">
+                                <input type="text" name="MoldingManning" class="form-control text-center" decimal-only="number 2" ng-model="PlantObj.MoldingManning" required="required">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-6 col-lg-3 control-label rn_pad mandatoryField" translate="Plant_StdRelief">Std Relief Divisor</label>
+                            <div class="col-sm-12 col-md-8">
+                                <input type="text" name="StdReliefDivisor" class="form-control text-center" decimal-only="number 2" ng-model="PlantObj.StdReliefDivisor" required="required">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-6 col-lg-3 control-label rn_pad mandatoryField" translate="Plant_StdQuoted">Std Quoted Week</label>
+                            <div class="col-sm-12 col-md-8">
+                                <input type="text" name="StdQuotedWeek" class="form-control text-center" decimal-only="number 2" ng-model="PlantObj.StdQuotedWeek" required="required">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-6 col-lg-3 control-label rn_pad mandatoryField" translate="Plant_AvgHC">Avg HC Per Press</label>
+                            <div class="col-sm-12 col-md-8">
+                                <input type="text" name="HeadCount" class="form-control text-center" decimal-only="number 2" ng-model="PlantObj.HeadCount" required="required">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-6 col-lg-3 control-label" translate="Plant_InjectionId">Injection Molding Area Id</label>
+                            <div class="col-sm-12 col-md-8">
+                                <input type="text" name="InjectionMoldingAreaId" class="form-control text-center" maxlength="500"  ng-model="PlantObj.InjectionMoldingAreaId" >
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-6 col-lg-3 control-label mandatoryField" translate="Plant_PlantColor">Plant Color Code</label>
+                            <div class="col-sm-12 col-md-8">
+                                <input type="text" name="Plantcolor" class="form-control text-center" maxlength="7" ng-model="PlantObj.PlantColor" required="required">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-6 col-lg-3 control-label" >Saas Id</label>
+                            <div class="col-sm-12 col-md-8">
+                                <input type="text" name="SaasId" integer-only class="form-control text-center" maxlength="5" ng-model="PlantObj.SaasId" >
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+</form>
+
+

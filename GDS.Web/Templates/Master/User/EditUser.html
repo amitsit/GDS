@@ -1,0 +1,155 @@
+﻿<!--<h1 class="title iac-breadcrumb"> <a ui-sref="Master"><i class="fa fa-home"></i></a></h1>-->
+
+
+<form class="form-horizontal" name="UpdateUserform" novalidate ng-controller="UpdateUserController">
+    <h1 class="title" ng-show="UserID>0" translate="Admin_EditUser"></h1>
+    <h1 class="title" ng-show="!(UserID>0)" translate="Admin_AddUser"></h1>
+    <div role="tabpanel" class="form-horizontal" id="messages">
+        <div class="alert alert-danger alert-dismissible validationErrors" ng-show="(UpdateUserform.$submitted && (!UpdateUserform.$valid)) || (UpdateUserform.$submitted && (ValidateReigion() || ValidatePlant()))">
+            <ul ng-show="(UpdateUserform.$submitted && (!UpdateUserform.$valid)) || (UpdateUserform.$submitted &&  (ValidateReigion() || ValidatePlant()))">
+                
+                <!--<li ng-show="UpdateUserform.UserName.$error.required">User Name is required.</li>-->
+                <li ng-show="UpdateUserform.FirstName.$error.required">First Name is required.</li>
+                <li ng-show="UpdateUserform.LastName.$error.required">Last Name is required.</li>
+                <li ng-show="UpdateUserform.Email.$error.required">Email is required.</li>
+                <li ng-show="UpdateUserform.Email.$error.email">Email Address is Invalid.</li>
+                <!--<li ng-show="UserObj.SelectedPlant.length==0">Select atleast one Plant.</li>-->
+                <li ng-show="UpdateUserform.NetworkId.$error.required">Network Id is required.</li>
+                <li ng-show="ValidateReigion()">Region is Required.</li>
+                <li ng-show="ValidatePlant()">Plant is Required.</li>
+                
+            </ul>
+        </div>
+    </div>
+    <div class="top_msg" translate="Admin_UserTopMsg">This page allow you to lookup User</div>
+    <div class="wthbox wth_content">
+        <div class="toplinks">
+            <ul>
+                <li ng-if="isSubModuleAccessibleToUser('Admin', 'User Quick Links', 'Add / Update User')"><button type="submit" class="save" data-placement="top" data-toggle="tooltip" title="Save" ng-click="SaveUserDetail(UpdateUserform)"></button></li>
+                <li><a class="cancel" data-placement="top" data-toggle="tooltip" title="Cancel" ui-sref="User"></a></li>
+            </ul>
+        </div>
+
+        <div class="col-md-6">
+
+            <!--<div class="form-group">
+                <label class="col-sm-6 col-lg-4 control-label rn_pad mandatoryField" translate="Admin_UserName">User Name</label>
+                <div class="col-sm-12 col-md-8">
+                    <input type="text" name="UserName" class="form-control" maxlength="100" ng-model="UserObj.UserName" required="required">
+                </div>
+            </div>-->
+
+            <div class="form-group">
+                <label class="col-sm-6 col-lg-4 control-label rn_pad mandatoryField" translate="Admin_FirstName">First Name</label>
+                <div class="col-sm-12 col-md-8">
+                    <input type="text" name="FirstName" class="form-control" maxlength="50" ng-model="UserObj.FirstName" required="required">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-6 col-lg-4 control-label rn_pad mandatoryField" translate="Admin_LastName">Last Name</label>
+                <div class="col-sm-12 col-md-8">
+                    <input type="text" name="LastName" class="form-control" maxlength="50" ng-model="UserObj.LastName" required="required">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-6 col-lg-4 control-label rn_pad mandatoryField" translate="Admin_NetworkUserId">Network Id</label>
+                <div class="col-sm-12 col-md-8">
+                    <input type="text" name="NetworkId" class="form-control" maxlength="50" ng-model="UserObj.NetworkUserId" required="required">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-6 col-lg-4 control-label rn_pad mandatoryField" translate="Admin_Email">Email</label>
+                <div class="col-sm-12 col-md-8">
+                    <input type="email" name="Email" class="form-control" maxlength="100" ng-model="UserObj.Email" required="required">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-6 col-lg-4 control-label rn_pad" translate="Admin_Role">Roles</label>
+                <div class="col-sm-12 col-md-8">
+                    <dropdown-multiselect model="UserObj.SelectedRoles" ng-click="SelectedRoles()"
+                                          options="RoleList" name="Role"></dropdown-multiselect>
+                    <strong> <span class="control-label" ng-bind="RoleNames"></span></strong>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-6 col-lg-4 control-label rn_pad" translate="Admin_Active">Active</label>
+                <div class="col-sm-12 col-md-8">
+                    <input type="checkbox" class="cursor-pointer" name="IsActive" id="chkActive" ng-model="UserObj.IsActive">
+                </div>
+            </div>
+            </div>
+        
+            <div class="col-sm-6">
+                <div class="col-sm-12">
+                    <div class="col-sm-4 rns">
+                        <div class="form-group">
+                            <label class="control-label mandatoryField">Available Region</label>
+                            <select class="form-control" multiple ng-model="AddRegionObj" ng-options="option as option.RegionName for option in availableRegions" style="height: 100%; min-height: 150px ;width:200px;" ng-disabled="IsAllRegionSelected"></select>
+                        </div>
+                        <label class="pull-left"><input type="checkbox" class="cursor-pointer" name="ChkAllRegion" ng-model="IsAllRegionSelected" ng-checked="IsAllRegionSelected" ng-change="ChkSectionSelect(IsAllRegionSelected,EnumSection.Region)" />All Regions</label>
+                    </div>
+                    <div class="col-sm-2 rns">
+                        <div class="form-group">
+                            <input ng-disabled="IsAllRegionSelected" class="btn btn-primary" type="button" value=">" ng-click="DropDownMoveItem(AddRegionObj, availableRegions,selectedRegions,EnumSection.Region)" style="width:40px;margin-bottom:5px;margin-top:25px;font-weight:bold;" /><br />
+                            <input ng-disabled="IsAllRegionSelected" class="btn btn-primary" type="button" value=">>" ng-click="DropDownMoveItemAll(availableRegions,selectedRegions,EnumSection.Region)" style="width:40px;margin-bottom:5px;font-weight:bold" /><br />
+                            <input ng-disabled="IsAllRegionSelected" class="btn btn-primary" type="button" value="<" ng-click="DropDownMoveItem(RemoveRegionObj, selectedRegions,availableRegions,EnumSection.Region)" style="width:40px;margin-bottom:5px;font-weight:bold;" /><br />
+                            <input ng-disabled="IsAllRegionSelected" class="btn btn-primary" type="button" value="<<" ng-click="DropDownMoveItemAll(selectedRegions,availableRegions,EnumSection.Region)" style="width:40px;margin-bottom:5px;font-weight:bold;" />
+                        </div>
+                    </div>
+                    <div class="col-sm-4 rns">
+                        <div class="form-group">
+                            <label class="control-label">Selected Region</label>
+                            <select class="form-control" multiple ng-model="RemoveRegionObj" ng-options="option as option.RegionName for option in selectedRegions" style="height: 100%; min-height: 150px ;width:200px;" ng-disabled="IsAllRegionSelected"></select>
+                        </div>
+                        <div class="btnsave col-sm-offset-1">
+                        </div>
+                    </div>
+                </div>
+             
+                <div class="col-sm-12">
+                    <div class="col-sm-4 rns">
+                        <div class="form-group">
+                            <label class="control-label mandatoryField">Available Plant</label>
+                            <select class="form-control" multiple ng-model="AddPlantObj" ng-options="option as option.PlantName for option in availablePlants" style="height: 100%; min-height: 150px ;width:200px;" ng-disabled="IsAllPlantSelected"></select>
+                        </div>
+                        <label class="pull-left"><input type="checkbox" class="cursor-pointer" name="ChkAllPlant" ng-model="IsAllPlantSelected" ng-checked="IsAllPlantSelected" ng-change="ChkSectionSelect(IsAllPlantSelected,EnumSection.Plant)" />All Plants</label>
+                    </div>
+                    <div class="col-sm-2 rns">
+                        <div class="form-group">
+                            <input ng-disabled="IsAllPlantSelected" class="btn btn-primary" type="button" value=">" ng-click="DropDownMoveItem(AddPlantObj, availablePlants,selectedPlants,EnumSection.Plant)" style="width:40px;margin-bottom:5px;margin-top:25px;font-weight:bold;" /><br />
+                            <input ng-disabled="IsAllPlantSelected" class="btn btn-primary" type="button" value=">>" ng-click="DropDownMoveItemAll(availablePlants,selectedPlants,EnumSection.Plant)" style="width:40px;margin-bottom:5px;font-weight:bold" /><br />
+                            <input ng-disabled="IsAllPlantSelected" class="btn btn-primary" type="button" value="<" ng-click="DropDownMoveItem(RemovePlantObj, selectedPlants,availablePlants,EnumSection.Plant)" style="width:40px;margin-bottom:5px;font-weight:bold;" /><br />
+                            <input ng-disabled="IsAllPlantSelected" class="btn btn-primary" type="button" value="<<" ng-click="DropDownMoveItemAll(selectedPlants,availablePlants,EnumSection.Plant)" style="width:40px;margin-bottom:5px;font-weight:bold;" />
+                        </div>
+                    </div>
+                    <div class="col-sm-4 rns">
+                        <div class="form-group">
+                            <label class="control-label">Selected Plant</label>
+                            <select class="form-control" multiple ng-model="RemovePlantObj" ng-options="option as option.PlantName for option in selectedPlants" style="height: 100%; min-height: 150px ;width:200px;" ng-disabled="IsAllPlantSelected"></select>
+                        </div>
+                        <div class="btnsave col-sm-offset-1">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        <div class="col-md-6">
+            <!--<div class="form-group">
+                <label class="col-sm-6 col-lg-4 control-label rn_pad mandatoryField" translate="Admin_Plant">Plant</label>
+                <div class="col-sm-12 col-md-8">
+                    <dropdown-multiselect model="UserObj.SelectedPlant" ng-click="SelectedPlant()" selected="UserObj.SeletedPlant.length"
+                                          options="PlantList" name="Plant" required="required"></dropdown-multiselect>
+                    <strong> <span class="control-label" ng-bind="PlantNames"></span></strong>
+                </div>
+            </div>-->
+
+        
+        </div>
+    </div>
+</form>

@@ -1,0 +1,66 @@
+﻿<form name="AddOrUpdatePlantLaborCostform" novalidate ng-controller="AddOrUpdatePlantLaborCostController">
+    <!--<h1 class="title">{{PageTitle}}</h1>-->
+    <h1 class="title" ng-show="PlantLaborCostId>0" translate="PlantLaborCost_Edit"></h1>
+    <h1 class="title" ng-show="!(PlantLaborCostId>0)" translate="PlantLaborCost_Add"></h1>
+
+    <div role="tabpanel" class="form-horizontal" id="messages">
+        <div class="alert alert-danger alert-dismissible validationErrors" ng-show="(AddOrUpdatePlantLaborCostform.$submitted && (!AddOrUpdatePlantLaborCostform.$valid))">
+            <ul ng-show="AddOrUpdatePlantLaborCostform.$submitted && (!AddOrUpdatePlantLaborCostform.$valid)">
+                <li ng-show="AddOrUpdatePlantLaborCostform.PlantId.$error.required" translate="PlantLaborCost_Validation1">Plant is required.</li>
+                <li ng-show="AddOrUpdatePlantLaborCostform.CategoryId.$error.required" translate="PlantLaborCost_Validation2">Category is required.</li>
+                <li ng-show="AddOrUpdatePlantLaborCostform.Name.$error.required" translate="PlantLaborCost_Validation3">Name is required.</li>
+                <li ng-show="AddOrUpdatePlantLaborCostform.Cost.$error.required" translate="PlantLaborCost_Validation4">Cost is required.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="top_msg" translate="PlantLaborCost_topmsg">This page allow you to plant labor cost</div>
+    <div class="wthbox wth_content">
+        <div class="toplinks">
+            <ul>
+                <li ng-if="isSubModuleAccessibleToUser('DCS', 'General Settings Links', 'Add / Update Plant Labor Cost')"><button type="submit" class="save" data-placement="top" data-toggle="tooltip" title="Save" ng-click="SavePlantLaborCost(AddOrUpdatePlantLaborCostform)"></button></li>
+                <li><a class="cancel" data-placement="top" data-toggle="tooltip" title="Cancel" ui-sref="PlantLaborCost"></a></li>
+            </ul>
+        </div>
+
+        <div class="row form-group">
+            <label class="col-sm-3 col-lg-2 text-right control-label rn_pad mandatoryField" translate="PlantLaborCost_Plant">Plant</label>
+            <div class="col-sm-6 col-md-4">
+                <select class="form-control select_list" name="PlantId" tabindex="1" ng-model="PlantLaborCostModel.PlantId" required="required"
+                        ng-options="plant.PlantID as plant.PlantName for plant in PlantList">
+                    <option value="" translate="PlantLaborCost_SelectPlant">Select Plant</option>
+                </select>
+            </div>
+        </div>
+
+
+        <div class="row form-group">
+            <label class="col-sm-3 col-lg-2 text-right control-label rn_pad mandatoryField" translate="PlantLaborCost_Category">Category</label>
+            <div class="col-sm-6 col-md-4">
+                <select class="form-control select_list" name="CategoryId" tabindex="1" ng-model="PlantLaborCostModel.CategoryId" required="required"
+                        ng-options="category.Id as category.Name for category in LaborCostCategoryList | orderBy:'Name'">
+                    <option value="" translate="PlantLaborCost_SelectCategory">Select Category</option>
+                </select>
+            </div>
+        </div>
+
+
+        <div class="row form-group">
+            <label class="col-sm-3 col-lg-2 text-right control-label rn_pad mandatoryField" translate="PlantLaborCost_Name">Name</label>
+            <div class="col-sm-6 col-md-4">
+                <input type="text" name="Name" class="form-control text-center" maxlength="50" ng-model="PlantLaborCostModel.Name" required="required">
+            </div>
+        </div>
+
+
+        <div class="row form-group">
+            <label class="col-sm-3 col-lg-2 text-right control-label rn_pad mandatoryField" translate="PlantLaborCost_Cost">Cost</label>
+            <div class="col-sm-6 col-md-4">
+                <input type="text" name="Cost" class="form-control text-center" maxlength="50" decimal-only="number 2" ng-model="PlantLaborCostModel.Cost" required="required">
+            </div>
+        </div>
+
+
+    </div>
+</form>
+
+

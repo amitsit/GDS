@@ -1,0 +1,53 @@
+﻿<form name="AddOrUpdateDOEVariableMasterForm" novalidate ng-controller="AddOrUpdateDOEVariableMasterController">
+    <!--<h1 class="title" ng-bind="PageTitle"></h1>-->
+    <h1 class="title" ng-show="VariableId>0" translate="DOE_Edit"></h1>
+    <h1 class="title" ng-show="!VariableId>0" translate="DOE_Add"></h1>
+    <div role="tabpanel" class="form-horizontal" id="messages">
+        <div class="alert alert-danger alert-dismissible validationErrors" ng-show="(AddOrUpdateDOEVariableMasterForm.$submitted && (!AddOrUpdateDOEVariableMasterForm.$valid))">
+            <ul ng-show="AddOrUpdateDOEVariableMasterForm.$submitted && (!AddOrUpdateDOEVariableMasterForm.$valid)">
+                <li ng-show="AddOrUpdateDOEVariableMasterForm.VariableName.$error.required">VariableName is required.</li>
+                <li ng-show="AddOrUpdateDOEVariableMasterForm.Type.$error.required">Type is required.</li>
+                <li ng-show="AddOrUpdateDOEVariableMasterForm.IsActive.$error.required">Variable IsActive is required.</li>
+
+            </ul>
+        </div>
+    </div>
+    <div class="top_msg" translate="DOE_VariableTopMsg">This page allow you to add DOE Variable Master</div>
+    <div class="wthbox wth_content pb-0 MasterDataPanel">
+        <div class="toplinks">
+            <ul>
+                <li ng-if="isSubModuleAccessibleToUser('Admin', 'Plant Quick Links', 'Add / Update DOE Variable')"><button type="submit" class="save" data-placement="top" data-toggle="tooltip" title="Save" ng-click="SaveDOEMaster(AddOrUpdateDOEVariableMasterForm)"></button></li>
+                <li><a class="cancel" data-placement="top" data-toggle="tooltip" title="Cancel" ui-sref="DOEVariableMaster"></a></li>
+            </ul>
+        </div>
+        <div class="row form-group">
+            <label class="col-sm-3 col-lg-2 text-right control-label rn_pad mandatoryField" translate="DOE_VariableName">Variable Name</label>
+            <div class="col-sm-6 col-md-4">
+                <div class="col-sm-6">
+                <input type="text" name="VariableName" class="form-control text-center" maxlength="100" ng-model="DOEVariableMasterModel.VariableName" required="required">
+                </div>
+            </div>
+        </div>
+        <div class="row form-group">
+            <label class="col-sm-3 col-lg-2 text-right control-label rn_pad mandatoryField" translate="DOE_VariableType">Variable Type</label>
+            <div class="col-sm-6 col-md-4">
+                <div class="col-sm-6">
+                    <select class="form-control select_list" name="Type" ng-model="DOEVariableMasterModel.Type"
+                            ng-options="r.Type as r.Type for r in DOEVariableTypeList" required="required">
+                        <option value="" translate="DOE_SelectType">Select Type</option>
+                    </select>
+                    <!--<div class="col-sm-6 col-md-4"><input type="text" name="Type" class="form-control" maxlength="100" ng-model="DOEVariableMasterModel.Type" required="required"></div>-->
+                </div>
+                </div>
+        </div>
+        <div class="row form-group">
+            <label class="col-sm-3 col-lg-2 control-label text-right rn_pad" translate="Admin_Roles_IsActive">Is Active</label>
+            <div class="col-sm-6 col-md-4">
+                <input type="checkbox" class="cursor-pointer" name="IsActive" id="chkActive" ng-model="DOEVariableMasterModel.IsActive">
+            </div>
+        </div>
+    </div>
+</form>
+
+
+

@@ -1,0 +1,35 @@
+﻿<form name="AddOrUpdateRoleForm" novalidate ng-controller="AddOrUpdateRoleController">
+    <h1 class="title" ng-bind="PageTitle"></h1>
+    <div role="tabpanel" class="form-horizontal" id="messages">
+        <div class="alert alert-danger alert-dismissible validationErrors" ng-show="(AddOrUpdateRoleForm.$submitted && (!AddOrUpdateRoleForm.$valid))">
+
+            <ul ng-show="AddOrUpdateRoleForm .$submitted && (!AddOrUpdateRoleForm.$valid)">
+                <li ng-show="AddOrUpdateRoleForm.Name.$error.required" translate="Admin_RoleValidation">Role name is required.</li>            
+            </ul>
+        </div>
+    </div>
+    <div class="top_msg" translate="Admin_Roles_Topmsg">This page allow you to lookup role</div>
+    <div class="wthbox wth_content">
+        <div class="toplinks">
+            <ul>
+                <li ng-if="isSubModuleAccessibleToUser('Admin', 'User Quick Links', 'Add / Update Roles')"><button type="submit" class="save" data-placement="top" data-toggle="tooltip" title="Save" ng-click="AddOrUpdateRole(AddOrUpdateRoleForm)"></button></li>
+                <li><a class="cancel" data-placement="top" data-toggle="tooltip" title="Cancel" ng-click="cancel()"></a></li>
+            </ul>
+        </div>
+
+        <div class="row form-group">
+            <label class="col-sm-3 col-lg-2 control-label text-right rn_pad mandatoryField" translate="Admin_Roles_Name">Name</label>
+            <div class="col-sm-6 col-md-4">
+                <input class="form-control ng-pristine ng-valid-maxlength ng-valid ng-valid-required ng-touched" type="text" name="Name"  maxlength="250" ng-model="RoleObj.RoleName" required="required">
+            </div>
+        </div>
+        <div class="row form-group">
+            <label class="col-sm-3 col-lg-2 control-label text-right rn_pad mandatoryField" translate="Admin_Roles_IsActive">Is Active</label>
+            <div class="col-sm-6 col-md-4">
+                <input type="checkbox" class="cursor-pointer ng-pristine ng-untouched ng-valid" name="IsActive" id="chkActive" ng-model="RoleObj.IsActive">
+            </div>
+        </div>
+        </div>
+</form>
+
+

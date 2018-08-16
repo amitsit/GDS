@@ -1,0 +1,26 @@
+﻿<h1 class="title iac-breadcrumb"><a ui-sref="Master"><i class="fa fa-home"></i></a> <span translate="Country_Header">Countries</span></h1>
+<div class="top_msg" translate="Country_TopMsg">This page allows you to lookup country.</div>
+<div class="wthbox wth_content pb-0 MasterDataPanel" ng-controller="CountryController">
+    <div class="toplinks btnWithText">
+        <ul>
+            <li ng-if="isSubModuleAccessibleToUser('Admin', 'Location Quick Links', 'Add / Update Country')"><a class="add" ui-sref="AddCountry({CountryID:0})" translate="NewButton">NEW</a></li>
+            <li><a class="cancel" data-placement="top" data-toggle="tooltip" title="Cancel" ui-sref="Master"></a></li>
+            <!--<li><button-print></button-print></li>-->
+        </ul>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title" translate="Country_Header">Countries</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered grid table-condensed table-hover" id="tblCountry"></table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,323 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7FB5C690-FCAB-49A7-9EF9-0AE42E282954}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IACBI.Services</RootNamespace>
+    <AssemblyName>IACBI.Services</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\RestaurantPortalAPI\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac">
+      <HintPath>..\packages\Autofac.4.0.1\lib\net45\Autofac.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mvc">
+      <HintPath>..\packages\Autofac.Mvc5.4.0.2\lib\net45\Autofac.Integration.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ClosedXML, Version=0.87.0.0, Culture=neutral, PublicKeyToken=fd1eb21b62ae805b, processorArchitecture=MSIL">
+      <HintPath>..\packages\ClosedXML.0.87.1\lib\net40\ClosedXML.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.5\lib\DocumentFormat.OpenXml.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus">
+      <HintPath>..\packages\EPPlus.4.1.0\lib\net40\EPPlus.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FastMember">
+      <HintPath>..\packages\FastMember.1.0.0.11\lib\net40\FastMember.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Client, Version=2.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Client.2.2.2\lib\net45\Microsoft.AspNet.SignalR.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PushSharp.Apple, Version=1.0.6190.19104, Culture=neutral, PublicKeyToken=cf74b75eab2c0170, processorArchitecture=MSIL">
+      <HintPath>..\packages\PushSharp.Apple.1.0.1\lib\PushSharp.Apple.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PushSharp.Core, Version=1.0.6190.19104, Culture=neutral, PublicKeyToken=cf74b75eab2c0170, processorArchitecture=MSIL">
+      <HintPath>..\packages\PushSharp.Apple.1.0.1\lib\PushSharp.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Spire.Barcode">
+      <HintPath>..\packages\FreeSpire.Office.2.15\lib\net40\Spire.Barcode.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Spire.License">
+      <HintPath>..\packages\FreeSpire.Office.2.15\lib\net40\Spire.License.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Spire.Pdf">
+      <HintPath>..\packages\FreeSpire.Office.2.15\lib\net40\Spire.Pdf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Spire.XLS">
+      <HintPath>..\packages\FreeSpire.Office.2.15\lib\net40\Spire.XLS.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Stripe.net">
+      <HintPath>..\packages\Stripe.net.6.8.0\lib\net45\Stripe.net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.6\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.6\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.6\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.6\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.6\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Caching\CacheExtensions.cs" />
+    <Compile Include="Caching\ICacheManager.cs" />
+    <Compile Include="Caching\MemoryCacheManager.cs" />
+    <Compile Include="Dashboard\DashboardService.cs" />
+    <Compile Include="Dashboard\IDashboardService.cs" />
+    <Compile Include="IMIP\BICVerificationDocument\BICVerificationDocumentService.cs" />
+    <Compile Include="IMIP\BICVerificationDocument\IBICVerificationDocumentService.cs" />
+    <Compile Include="IMIP\ImprovementPlanAction\IImprovementPlanActionService.cs" />
+    <Compile Include="IMIP\ImprovementPlanAction\ImprovementPlanActionService.cs" />
+    <Compile Include="Master\BICCycleKeyElement\BICCycleKeyElementService.cs" />
+    <Compile Include="Master\BICCycleKeyElement\IBICCycleKeyElementService.cs" />
+    <Compile Include="Master\ColorCodeScheme\ColorCodeSchemeService.cs" />
+    <Compile Include="Master\ColorCodeScheme\IColorCodeSchemeService.cs" />
+    <Compile Include="Master\Country\CountryService.cs" />
+    <Compile Include="Master\CTPartThicknessAddition\ICTPartThicknessAdditionService.cs" />
+    <Compile Include="Master\CTPartThicknessAddition\CTPartThicknessAdditionService.cs" />
+    <Compile Include="Master\Country\ICountryService.cs" />
+    <Compile Include="Master\DOEVariableMaster\DOEVariableMasterService.cs" />
+    <Compile Include="Master\DOEVariableMaster\IDOEVariableMasterService.cs" />
+    <Compile Include="Master\MaterialType\IMaterialTypeService.cs" />
+    <Compile Include="Master\MaterialType\MaterialTypeService.cs" />
+    <Compile Include="Master\Material\IMaterialService.cs" />
+    <Compile Include="Master\Material\MaterialService.cs" />
+    <Compile Include="Master\PlantLaborCost\IPlantLaborCostService.cs" />
+    <Compile Include="Master\PlantLaborCost\PlantLaborCostService.cs" />
+    <Compile Include="Master\Plant\IPlantService.cs" />
+    <Compile Include="Master\Plant\PlantService.cs" />
+    <Compile Include="Master\PressBreakDownOrder\IPressBreakDownOrderService.cs" />
+    <Compile Include="Master\PressBreakDownOrder\PressBreakDownOrderService.cs" />
+    <Compile Include="Master\Program\IProgramService.cs" />
+    <Compile Include="Master\Program\ProgramService.cs" />
+    <Compile Include="Master\Region\IRegionService.cs" />
+    <Compile Include="Master\Region\RegionService.cs" />
+    <Compile Include="Master\Role\IRoleService.cs" />
+    <Compile Include="Master\Role\RoleService.cs" />
+    <Compile Include="Master\State\IStateService.cs" />
+    <Compile Include="Master\State\StateService.cs" />
+    <Compile Include="Master\TroubleShooter\ITroubleShooterService.cs" />
+    <Compile Include="Master\TroubleShooter\TroubleShooterService.cs" />
+    <Compile Include="Master\User\IUserService.cs" />
+    <Compile Include="Master\User\UserService.cs" />
+    <Compile Include="Master\UtilityConfiguration\IUtilityConfigurationService.cs" />
+    <Compile Include="Master\UtilityConfiguration\UtilityConfigurationService.cs" />
+    <Compile Include="Master\WallStock\IWallStockService.cs" />
+    <Compile Include="Master\WallStock\WallStockService.cs" />
+    <Compile Include="SMOM\BarrelHeats\BarrelHeatService.cs" />
+    <Compile Include="SMOM\BarrelHeats\IBarrelHeatService.cs" />
+    <Compile Include="SMOM\CavityBalance\CavityBalanceService.cs" />
+    <Compile Include="SMOM\CavityBalance\ICavityBalanceService.cs" />
+    <Compile Include="SMOM\CheckRingStudyWeight\CheckRingStudyWeightService.cs" />
+    <Compile Include="SMOM\CheckRingStudyWeight\ICheckRingStudyWeightService.cs" />
+    <Compile Include="SMOM\ConversionSetup\IConversionSetupService.cs" />
+    <Compile Include="SMOM\ConversionSetup\ConversionSetupService.cs" />
+    <Compile Include="SMOM\CorpIMPD\CorpIMPDService.cs" />
+    <Compile Include="SMOM\CorpIMPD\FinalProcessDataPositionDetails\FinalProcessDataPositionDetailsService.cs" />
+    <Compile Include="SMOM\CorpIMPD\FinalProcessDataPositionDetails\IFinalProcessDataPositionDetailsService.cs" />
+    <Compile Include="SMOM\CorpIMPD\ICorpIMPDService.cs" />
+    <Compile Include="SMOM\CoverPage\CoverPageService.cs" />
+    <Compile Include="SMOM\CoverPage\ICoverPageService.cs" />
+    <Compile Include="SMOM\DOE\DOEService.cs" />
+    <Compile Include="SMOM\DOE\IDOEService.cs" />
+    <Compile Include="SMOM\GateSeal\GateSealService.cs" />
+    <Compile Include="SMOM\GateSeal\IGateSealService.cs" />
+    <Compile Include="SMOM\GPMCalculator\GPMCalculatorService.cs" />
+    <Compile Include="SMOM\GPMCalculator\IGPMCalculatorService.cs" />
+    <Compile Include="SMOM\InitialDataConversionSetup\IInitialDataConversionSetupService.cs" />
+    <Compile Include="SMOM\InitialDataConversionSetup\InitialDataConversionSetupService.cs" />
+    <Compile Include="SMOM\LinearityResults\ILinearityResultsService.cs" />
+    <Compile Include="SMOM\LinearityResults\LinearityResultsService.cs" />
+    <Compile Include="SMOM\MachineLinearity\IMachineLinearityService.cs" />
+    <Compile Include="SMOM\MachineLinearity\MachineLinearityService.cs" />
+    <Compile Include="Master\MaterialData\IMaterialDataService.cs" />
+    <Compile Include="Master\MaterialData\MaterialDataService.cs" />
+    <Compile Include="SMOM\MiscCalculator\IMiscCalculatorService.cs" />
+    <Compile Include="SMOM\MiscCalculator\MiscCalculatorService.cs" />
+    <Compile Include="SMOM\MoldFlowSetup\IMoldFlowSetupService.cs" />
+    <Compile Include="SMOM\MoldFlowSetup\MoldFlowSetupService.cs" />
+    <Compile Include="SMOM\PartAndMoldTemperatureMapping\IPartAndMoldTemperatureMappingService.cs" />
+    <Compile Include="SMOM\PartAndMoldTemperatureMapping\PartAndMoldTemperatureMappingService.cs" />
+    <Compile Include="SMOM\PlasticPressureLosses\IPlasticPressureLossesService.cs" />
+    <Compile Include="SMOM\PlasticPressureLosses\PlasticPressureLossesService.cs" />
+    <Compile Include="SMOM\ProcessReport\IProcessReportService.cs" />
+    <Compile Include="SMOM\ProcessReport\ProcessReportService.cs" />
+    <Compile Include="SMOM\RecoveryTimeStudy\IRecoveryTimeStudyService.cs" />
+    <Compile Include="SMOM\RecoveryTimeStudy\RecoveryTimeStudyService.cs" />
+    <Compile Include="SMOM\RheologyCurve\IRheologyCurveService.cs" />
+    <Compile Include="SMOM\RheologyCurve\RheologyCurveService.cs" />
+    <Compile Include="SMOM\TonnageCalculator\ITonnageCalculatorService.cs" />
+    <Compile Include="SMOM\TonnageCalculator\TonnageCalculatorService.cs" />
+    <Compile Include="SMOM\WaterFlow\IWaterFlowService.cs" />
+    <Compile Include="SMOM\WaterFlow\WaterFlowService.cs" />
+    <Compile Include="STMP\CapacityChart\CapacityChartService.cs" />
+    <Compile Include="STMP\CapacityChart\ICapacityChartService.cs" />
+    <Compile Include="STMP\MainDashboard\MainDashboardService.cs" />
+    <Compile Include="STMP\MainDashboard\IMainDashboardService.cs" />
+    <Compile Include="STMP\LaborPlantSpecific\ILaborPlantSpecificService.cs" />
+    <Compile Include="STMP\LaborPlantSpecific\LaborPlantSpecificService.cs" />
+    <Compile Include="STMP\ManningUtilization\IManningUtilizationService.cs" />
+    <Compile Include="STMP\ManningUtilization\ManningUtilizationService.cs" />
+    <Compile Include="SMOM\WaterSupplyCalculator\IWaterSupplyCalculatorService.cs" />
+    <Compile Include="SMOM\WaterSupplyCalculator\WaterSupplyCalculatorService.cs" />
+    <Compile Include="STMP\MROData\IMRODataService.cs" />
+    <Compile Include="STMP\MROData\MRODataService.cs" />
+    <Compile Include="STMP\ReplacementSavings\IReplacementSavingService.cs" />
+    <Compile Include="STMP\ReplacementSavings\ReplacementSavingService.cs" />
+    <Compile Include="STMP\TLNSavingReport\ITLNSavingReportService.cs" />
+    <Compile Include="STMP\TLNSavingReport\TLNSavingReportService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceDependencyRegister.cs" />
+    <Compile Include="Master\IACCycleGoal\IACCycleGoalService.cs" />
+    <Compile Include="Master\IACCycleGoal\IIACCycleGoalService.cs" />
+    <Compile Include="STMP\CustomerRequirement\ICustomerRequirementService.cs" />
+    <Compile Include="STMP\CustomerRequirement\CustomerRequirementService.cs" />
+    <Compile Include="STMP\DailyRecapRap_PressParameters\DailyRecapRap_PressParametersService.cs" />
+    <Compile Include="STMP\DailyRecapRap_PressParameters\IDailyRecapRap_PressParametersService.cs" />
+    <Compile Include="STMP\InputData\IInputDataService.cs" />
+    <Compile Include="STMP\InputData\InputDataService.cs" />
+    <Compile Include="STMP\PlantEquipmentList\IPlantEquipmentListService.cs" />
+    <Compile Include="STMP\PlantEquipmentList\PlantEquipmentListService.cs" />
+    <Compile Include="STMP\PressBreakDown\IPressBreakDownService.cs" />
+    <Compile Include="STMP\PressBreakDown\PressBreakDownService.cs" />
+    <Compile Include="STMP\STMP_Configuration\IStmpConfigurationService.cs" />
+    <Compile Include="STMP\STMP_Configuration\StmpConfiguration.cs" />
+    <Compile Include="WindowsServices\WindowsService.cs" />
+    <Compile Include="WindowsServices\IWindowsService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GDS.Common\GDS.Common.csproj">
+      <Project>{bc8e56b9-65a1-4852-ab3b-b298771c7eb5}</Project>
+      <Name>GDS.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GDS.Data\GDS.Data.csproj">
+      <Project>{73fb0298-d435-4960-a05b-458982071ff8}</Project>
+      <Name>GDS.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GDS.Entities\GDS.Entities.csproj">
+      <Project>{dea444e3-7c0b-4aae-9a65-4098ecc4380c}</Project>
+      <Name>GDS.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

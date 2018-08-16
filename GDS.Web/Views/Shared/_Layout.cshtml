@@ -1,0 +1,401 @@
+﻿<!DOCTYPE html>
+<html ng-app="IACBI">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http --equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="content-encoding" content="gzip" />
+    <title>@*IAC BI -*@ Global Documentation System</title>
+    <link rel="shortcut icon" href="~/favicon.ico" type="image/x-icon" />
+    <base href="/" />
+    @Scripts.Render("~/bundles/jquery?v=" + @Html.Raw(System.Configuration.ConfigurationManager.AppSettings["ApplicationVersion"]))
+    @Scripts.Render("~/bundles/bootstrap?v=" + @Html.Raw(System.Configuration.ConfigurationManager.AppSettings["ApplicationVersion"]))
+    @Styles.Render("~/bundles/css?v=" + @Html.Raw(System.Configuration.ConfigurationManager.AppSettings["ApplicationVersion"]))
+    @Scripts.Render("~/bundles/angular?v=" + @Html.Raw(System.Configuration.ConfigurationManager.AppSettings["ApplicationVersion"]))
+    @Scripts.Render("~/bundles/modernizr?v=" + @Html.Raw(System.Configuration.ConfigurationManager.AppSettings["ApplicationVersion"]))
+    @Scripts.Render("~/bundles/exportHTMLTABLEtoPDF?v=" + @Html.Raw(System.Configuration.ConfigurationManager.AppSettings["ApplicationVersion"]))
+    <script>
+        function CheckForBrowserVersion() {
+
+            var NeedToShowIEMessage = true;
+            // Opera 8.0+
+            var isOpera = (!!window.opr && !!opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
+            // Firefox 1.0+
+            var isFirefox = typeof InstallTrigger !== 'undefined';
+            // At least Safari 3+: "[object HTMLElementConstructor]"
+            var isSafari = Object.prototype.toString.call(window.HTMLElement).indexOf('Constructor') > 0;
+            // Internet Explorer 6-11
+            var isIE = false || !!document.documentMode;
+            // Edge 20+
+            var isEdge = !isIE && !!window.StyleMedia;
+            // Chrome 1+
+            var isChrome = !!window.chrome && !!window.chrome.webstore;
+            // Blink engine detection
+            var isBlink = (isChrome || isOpera) && !!window.CSS;
+            if (isFirefox || isChrome) {
+                NeedToShowIEMessage = false;
+            }
+            if (NeedToShowIEMessage == true) {
+                if (IE(10) || /rv:11.0/i.test(navigator.userAgent) || /Edge\/\d./i.test(navigator.userAgent)) {
+                    return NeedToShowIEMessage;
+                }
+                else {
+                    window.location.href = '/incompatiblebrowser';
+                }
+            }
+        }
+
+        function IE(v) {
+            return RegExp('msie' + (!isNaN(v)?('\\s'+v):''), 'i').test(navigator.userAgent);
+        }
+
+
+    </script>
+
+    <script src="~/Scripts/jquery.mCustomScrollbar.js"></script>
+    <script src="~/Scripts/moment.js"></script>
+</head>
+<body ng-controller="RoleRightsController" onload="CheckForBrowserVersion()">
+    <div id="wrapper" ng-cloak >
+        <header id="header">
+            <div class="logoimg">
+                <a href="/Home">
+                    <img src="~/Images/logo.jpg" height="65" width="500" alt="IAC">
+                </a>               
+            </div>
+            <ul class="header-right">
+                <li class="hlink homeicon">
+                    <a href="/Home"><i class="fa fa-home"></i></a>
+                </li>
+                <li class="hlink userinfo">
+                    <div class="userimg">
+                        @*<img  ng-src="data:image/jpeg;base64,{{UserImage}}" width="115" height="150" />*@
+                        <img src="~/Content/Images/NoUserPicture.jpg" />
+                    </div>
+                    <div class="usertext">
+                        <h4>{{LoginUserDetail.FirstName}}&nbsp;{{LoginUserDetail.LastName}}</h4>
+                        <p>@User.Identity.Name</p>
+                    </div>
+                </li>
+
+   
+                <li class="hlink dropdown">
+                    <a class="settinglink" data-toggle="dropdown"></a>
+                    <ul class="dropdown-menu set-dropdown pull-right">
+                        <li><a class="cursor-pointer" ng-click="OpenGlobalSettingPopup()"><span >Setting</span></a></li>
+                        <li ng-if="isSubModuleAccessibleToUser('Admin', 'Admin', 'View')"><a class="cursor-pointer" ui-sref="Master"><span>Admin</span></a></li>                                 
+                    </ul>
+                </li>
+            </ul>
+        </header>
+        <!-- header end -->
+        <!-- navigation start -->
+       <nav id="navigation">
+            @*<div class="userinfo-mobile"><h4 ng-bind="'Jeffrey Parr'"></h4><span ng-bind="'SIT30'"></span><a class="logoutlink-mobile"></a></div>
+            <a class="toggleMenu"></a>*@
+        <ul class="menu">
+        <li class="top current">
+            <a href="" class="navlink" >Home</a>
+            <ul>
+                <li><a href="">Turtles</a></li>                
+            </ul>    
+        </li>
+        <li class="top">
+            <a href="" class="navlink" ui-sref="CoreProcesses">Core Processes</a>
+            @*<ul>
+                <li><a href="">Change Management</a></li>
+                <li><a href="">Engineering & Development</a></li>
+                <li><a href="">Manufacturing</a></li>
+                <li><a href="">Program Management</a></li>
+                <li><a href="">Quality Operations</a></li>
+                <li><a href="">Risk Control</a></li>
+            </ul>*@  
+        </li>
+        <li class="top">
+            <a href="" class="navlink" >Management Process</a>
+            <ul>
+                <li><a href="">Communication</a></li>
+                <li><a href="">Continual Improvement</a></li>
+                <li><a href="">Global Management System</a></li>
+                <li><a href="">Leadership and Strategy</a></li>
+                <li><a href="">Management Review</a></li>
+                <li><a href="">Operation Management</a></li>
+            </ul>  
+        </li>
+
+        <li class="top cursor-pointer">
+          <a href="" class="navlink" >Supporting Process</a>
+            <ul>
+                <li><a href=""  >Commercial</a></li>
+                <li><a href="" >Human Resource Management</a></li>     
+                <li><a href="">Training Process</a></li>              
+                <li><a href="">Recruitment and Staffing</a></li>                    
+            </ul>
+        </li>
+
+        <li class="top cursor-pointer">
+            <a href="" class="navlink" ui-sref="Processes" >Processes</a>
+            @*<ul>
+                <li><a href="">Change Management</a></li>
+                <li><a href="">Commercial</a></li>
+                <li><a href="">Engineering and Development</a></li>
+                <li><a href="">Leadership and Strategy</a></li>
+                <li><a href="">Escalation</a></li>
+                <li><a href="">Global Management System</a></li>
+                <li><a href="">Global Turtles</a></li>
+                <li><a href="">Human Resource Management</a></li>
+                <li><a href="">Information Technology</a></li>
+                <li><a href="">Leadeship and Strategy</a></li>
+                <li><a href="">Legal Requirements</a></li>
+                <li><a href="">Logistics</a></li>
+                <li><a href="">Maintenance of Equipment and Tooling</a></li>
+                <li><a href="">Management Review</a></li>
+                <li><a href="">Management System Standards</a></li>
+                <li><a href="">Manufacturing</a></li>
+                <li><a href="">Operations Management</a></li>
+                <li><a href="">Policies</a></li>
+                <li><a href="">Process Engineering </a></li>
+                <li><a href="">Procurement</a></li>
+                <li><a href="">Program Management</a></li>
+                <li><a href="">Quality Operations</a></li>
+                <li><a href="">Risk Control</a></li>
+            </ul>*@  
+        </li>
+        <li class="top cursor-pointer">
+            <a href="" class="navlink" >Region/Plant Specific Pages</a>
+            <ul>
+                <li><a href="">-Europe</a></li>
+                <li><a href="">-North America</a></li>
+                <li><a href="">-Plant Specific</a></li>
+            </ul>
+        </li>
+        <li class="top cursor-pointer">
+            <a href="" class="navlink" >Documentation Logs</a>
+            <ul>
+                <li><a href="">-Master Document List</a></li>
+                <li><a href="">-Change Log</a></li>
+                <li><a href="">-Site Map</a></li>
+            </ul>
+        </li>
+        <li class="top cursor-pointer">
+            <a href="" class="navlink" >Contact Us</a>
+        </li>
+
+        <li class="top cursor-pointer">
+           <a class="navlink" >Search</a>
+        </li>  
+
+            <li class="top cursor-pointer" ui-sref="Home">
+                <a class="navlink">layout1</a>
+            </li> 
+
+            <li class="top cursor-pointer" ui-sref="Home1">
+                <a class="navlink">layout2</a>
+            </li> 
+
+            <li class="top cursor-pointer" ui-sref="Home2">
+                <a class="navlink">layout3</a>
+            </li> 
+
+        </ul>
+       <div class="clear"></div>
+          
+      </nav>
+
+        <!-- navigation end -->
+        <!-- content start -->
+        <div class="loader" data-loading><img class="Centerloader" src="~/Content/Images/Loading.gif" /></div>
+        <section id="content">
+            @*<div style="margin-bottom:10px">
+                <div style="padding:7px;margin-bottom:5px" ng-repeat="item in notifications" ng-class="item.ResourceKey =='info' ? 'alert alert-info' :'alert alert-warning'">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+                </div>
+            </div>*@
+            @RenderBody()
+        </section>
+        <!-- content end -->
+        <!-- footer start -->
+        <footer id="footer">
+            <div class="automotive pull-right">
+                <a href="/Home">
+                    <img src="~/Images/logo.jpg" height="65" width="500" alt="IAC">
+                    @*<img src="~/Images/IAC.png" height="61" width="231" alt="">*@
+                </a>
+            </div>
+
+
+        </footer>
+        <div class="modal fade" id="ModelGlobalSettingModel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="myModalLabel"><span translate="Configuration_AdminLink_Sublink1">Settings</span> </h4>
+                    </div>
+                    <div class="wthbox">
+                        <form name="UnitSettingform">
+                            <div class="panel panel-info">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title text-center"></h3>
+                                </div>
+                                <div class="panel panel-body">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <label class="control-label " translate="Unit">Unit</label>
+                                            <select class="form-control" ng-model="LengthUnit.model" ng-options="LengthUnitObj.Name  for LengthUnitObj in LengthUnit.Options track by LengthUnitObj.Id"
+                                                    ng-model-options="{  updateOn: 'submit'}" ng-change="SetLengthUnitSetting(LengthUnit.model)"></select>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <label class="control-label " translate="Pressure">Pressure</label>
+                                            <select class="form-control" ng-model="PressureUnit.model" ng-options="PressureUnitObj.Name for PressureUnitObj in PressureUnit.Options track by PressureUnitObj.Id"
+                                                    ng-model-options="{ updateOn: 'submit' }" ng-change="SetPressureUnitSetting(PressureUnit.model)"></select>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <label class="control-label " translate="Language">Language</label>
+                                            <select class="form-control" ng-model="Language.model" ng-options="LanguageUnitObj.LanguageName for LanguageUnitObj in Language.Options track by LanguageUnitObj.LanguageCd"
+                                                    ng-model-options="{ updateOn: 'submit' }" ng-change="SetLanguageSetting(Language.model)"></select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal" ng-click="UnitSettingform.$rollbackViewValue();" translate="CancelButton">Cancel</button>
+                                <button type="Submit" class="btn btn-success" ng-click="HideGlobalSettingPopup();" translate="CoverPage_gobtn">Go</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="modal fade" id="Reloadlookup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog modal-md" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="myModalLabel">System Updates</h4>
+                    </div>
+                    <div class="wthbox">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                <h3 class="panel-title text-center">System Updates</h3>
+                            </div>
+                            <div class="panel panel-body">
+                                <div class="row ml-15">
+                                    <b>
+                                        There have been updated to the system. Click OK to refresh the page.<br />
+                                        <span style="color:red;"> Note:  All unsaved changes will be lost.</span>
+                                        <br /><br />
+                                        Click Later to go back and save all changes first.                                       
+                                    </b>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" ng-click="ReloadPage()">OK</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">LATER</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="~/Content/ckeditor/ckeditor.js?v='@Html.Raw(System.Configuration.ConfigurationManager.AppSettings["ApplicationVersion"])'"></script>
+    <script src="~/Content/ckeditor/adapters/jquery.js?v='@Html.Raw(System.Configuration.ConfigurationManager.AppSettings["ApplicationVersion"])'"></script>
+    <script src="~/Scripts/swx-session-storage.min.js"></script>
+    @Scripts.Render("~/bundles/appConfig?v=" + @Html.Raw(System.Configuration.ConfigurationManager.AppSettings["ApplicationVersion"]))
+
+    @Scripts.Render("~/bundles/ControllerAndServices?v=" + @Html.Raw(System.Configuration.ConfigurationManager.AppSettings["ApplicationVersion"]))
+
+    <script>
+
+        $(document).ready(function () {
+
+
+            $(window).keydown(function(event){
+                if(event.keyCode == 13 && event.target.nodeName!="TEXTAREA") {
+                    event.preventDefault();
+                    return false;
+                }
+            });
+
+            ApplicationVersion = '@Html.Raw(System.Configuration.ConfigurationManager.AppSettings["ApplicationVersion"])';
+         
+            $('.datepicker').datepicker({
+                format: 'mm/dd/yyyy',
+                startDate: '-3d'
+            });
+
+        });
+
+
+        app.controller('RoleRightsController', function ($scope, $templateCache,$state, localStorageService,$interval, $stateParams, $rootScope, $location, notificationFactory, configurationService, $compile, $filter) {
+            $rootScope.UserRoleRightsList = @Html.Raw(Json.Encode(@ProjectSession.LoggedInUserDetail.RolesRightsPermissions));
+            $rootScope.LoginUserDetail=@Html.Raw(Json.Encode(@ProjectSession.LoggedInUserDetail));
+            $rootScope.RootScopeUserId =   $rootScope.LoginUserDetail.UserId;
+
+            if (localStorageService.get("_LoginUserUniqueId-" + String($rootScope.RootScopeUserId)) != null) {
+
+                var Id=localStorageService.get("_LoginUserUniqueId-" + String($rootScope.RootScopeUserId)).LoginUserUniqueKey;
+                if($rootScope.LoginUserDetail.LoginUserUniqueKey!=Id){
+                    DeleteApplicationLocalStorage();
+                }
+                var UniqueId={
+                    LoginUserUniqueKey: $rootScope.LoginUserDetail.LoginUserUniqueKey
+                };
+                localStorageService.set("_LoginUserUniqueId-" + String($rootScope.RootScopeUserId), UniqueId);
+
+            } else {
+                DeleteApplicationLocalStorage();
+                var UniqueId={
+                    LoginUserUniqueKey: $rootScope.LoginUserDetail.LoginUserUniqueKey
+                };
+                localStorageService.set("_LoginUserUniqueId-" + String($rootScope.RootScopeUserId), UniqueId);
+            }
+
+            function DeleteApplicationLocalStorage(){
+                localStorage.clear();
+            }
+
+
+            //$interval(function () { CheckVersionNumber(); }, 15000);
+            function CheckVersionNumber() {
+                $.ajax({
+                    method: "GET",
+                    url: "CheckVersionNumber",
+                    async: false,
+                    cache: false,
+                    global: false,
+                    success: function (data) {
+                       
+                        var oldVersion = localStorage.getItem("Version");                                               
+                        if (data != oldVersion && oldVersion!=undefined && oldVersion!="" && oldVersion!=null) {
+                            angular.element("#Reloadlookup").modal('show');
+                        }else{
+                            localStorage.setItem("Version", data);
+                        }
+                    }
+                })
+            };
+
+
+            $rootScope.ReloadPage=function() {   
+                $templateCache.removeAll();
+                window.location.reload(true);
+                return;
+            };
+
+        });
+
+
+
+
+
+
+    </script>
+
+
+
+</body>
+</html>
