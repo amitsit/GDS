@@ -787,6 +787,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Images\close.png" />
+    <Content Include="Images\gds_business_model.jpg" />
     <Content Include="Images\IAC.png" />
     <Content Include="Images\IE0.png" />
     <Content Include="Images\IE1.png" />

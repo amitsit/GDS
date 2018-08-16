@@ -19,24 +19,34 @@ var app = angular.module("IACBI", ["ui.router", "LocalStorageModule", "ngFileUpl
 app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $translateProvider) {
     
 
-   $stateProvider.state({
-       name: 'Home',
+
+
+
+    $stateProvider.state({
+        name: 'Home',
         url: '/Home',
+        templateUrl: '/Templates/Home/Index.html'
+    });
+
+
+   $stateProvider.state({
+       name: 'Home1',
+        url: '/Home1',
         //templateUrl: '/Templates/Home/Index.html'
         templateUrl: '/Templates/Home/ContentTestPage.html'
        
     });
 
    $stateProvider.state({
-       name: 'Home1',
-       url: '/Home1',
+       name: 'Home2',
+       url: '/Home2',
        //templateUrl: '/Templates/Home/Index.html'
        templateUrl: '/Templates/Home/ContentTestPage1.html'
 
    });
    $stateProvider.state({
-       name: 'Home2',
-       url: '/Home2',
+       name: 'Home3',
+       url: '/Home3',
        //templateUrl: '/Templates/Home/Index.html'
        templateUrl: '/Templates/Home/ContentTestPage2.html'
 
