@@ -24,5 +24,5 @@ GDS.Entities/obj/
 packages/
 .vs/
 GDS.API/TempFiles/
-GDS/Release/IACBIWSSetup.msi
-GDS/Release/setup.exe
+
+

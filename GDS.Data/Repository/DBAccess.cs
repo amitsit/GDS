@@ -12,7 +12,7 @@ namespace GDS.Data.Repository
         public DBAccess1()
         {
            // _connectionString = @"Data Source=192.168.1.145\STASQL14;Initial Catalog=IACBI;Integrated Security=False;User Id=IACUser;Password=123;MultipleActiveResultSets=True";
-            _connectionString = ConfigurationManager.ConnectionStrings["IACBIEntitiesADOCS"].ConnectionString;
+            _connectionString = ConfigurationManager.ConnectionStrings["IAC_Auria_GDSEntities"].ConnectionString;
         }
 
         public DBAccess1(string cs)
@@ -97,7 +97,7 @@ namespace GDS.Data.Repository
         public DBAccess()
         {
             // _connectionString = @"Data Source=192.168.1.145\STASQL14;Initial Catalog=IACBI;Integrated Security=False;User Id=IACUser;Password=123;MultipleActiveResultSets=True";
-            _connectionString = ConfigurationManager.ConnectionStrings["IACBIEntitiesADOCS"].ConnectionString;
+            _connectionString = ConfigurationManager.ConnectionStrings["IAC_Auria_GDSEntitiesADOCS"].ConnectionString;            
         }
 
         public DBAccess(string cs)

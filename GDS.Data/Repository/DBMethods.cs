@@ -9,7 +9,7 @@ using GDS.Data.Databases;
 
 namespace GDS.Data.Repository
 {
-    public partial class DBMethods : IACBIEntities
+    public partial class DBMethods : IAC_Auria_GDSEntities
     {
         /// <summary>
         /// Gets the database.

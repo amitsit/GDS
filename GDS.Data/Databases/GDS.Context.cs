@@ -13,10 +13,10 @@ namespace GDS.Data.Databases
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class IACBIEntities : DbContext
+    public partial class IAC_Auria_GDSEntities : DbContext
     {
-        public IACBIEntities()
-            : base("name=IACBIEntities")
+        public IAC_Auria_GDSEntities()
+            : base("name=IAC_Auria_GDSEntities")
         {
         }
     
