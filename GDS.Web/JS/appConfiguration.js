@@ -78,7 +78,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $tra
    $stateProvider.state({
        name: 'AddRole',
        url: '/AddRole?RoleId',
-       templateUrl: '/Templates/Master/Role/Index.html'
+       templateUrl: '/Templates/Master/Role/AddOrUpdateRole.html'
    });
 
     $stateProvider.state({

@@ -29,25 +29,13 @@
 				</div>
 				<div class="db-links iac-plant" ng-if="isSubModuleAccessibleToUser('Admin', 'Plant Quick Links', 'View')">
 					<div class="dbl-title"><span translate="AdminCoverPage_Plant">Plant</span> <span translate="AdminCoverPage_QuickLinks">Quick Links</span><span class="arw"></span></div>
-					<ul>
-						<!--<li><a href="#" class="dbl worktbl" ui-sref="Plant"><span></span>Plant Configuration</a></li>-->
-						<li ng-if="isSubModuleAccessibleToUser('Admin', 'Plant Quick Links', 'View Programs')"><a href="#" class="dbl Program" ui-sref="Program"><span></span><div translate="AdminCoverPage_Program">Program</div></a></li>
+					<ul>						
 						<!--<li><a href="#" class="dbl MeritPlanning" ui-sref="Equipment"><span></span>Equipment</a></li>-->
 						<li ng-if="isSubModuleAccessibleToUser('Admin', 'Plant Quick Links', 'View Plants')"><a href="#" class="dbl plant" ui-sref="Plant"><span></span><div translate="AdminCoverPage_Plant">Plant</div></a></li>
-                        <li ng-if="isSubModuleAccessibleToUser('Admin', 'Plant Quick Links', 'View DOE Variable')"><a href="#" class="dbl Page-Help" ui-sref="DOEVariableMaster"><span></span><div translate="AdminCoverPage_DOE">DOE Variable Master</div></a></li>
-						<li ng-if="isSubModuleAccessibleToUser('Admin', 'Plant Quick Links', 'View Page Help')"><a href="#" class="dbl Trouble-Shooter-Guide" ui-sref="TroubleShooterList"><span></span><div translate="AdminCoverPage_PageHelp">Page Help</div></a></li>
+                      
 					</ul>
                   
 				</div>
-
-				<!--<div class="db-links  ql-employee">
-					<div class="dbl-title">SMOM <span>Quick Links</span><span class="arw"></span></div>
-					<ul>
-
-						<li><a href="#" class="dbl scope" ><span></span>Tonnage Wall Stock</a></li>
-					</ul>
-
-				</div>-->
 			</div>
 		</div>
 	</div>

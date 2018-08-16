@@ -73,9 +73,9 @@
                     if ($rootScope.isSubModuleAccessibleToUser('Admin', 'User Quick Links', 'Configure Role Rights')) {
                         strAction = strAction + "<a><i class='glyphicon glyphicon-cog cursor-pointer' data-original-title='Configure Role' data-toggle='tooltip' data-toggle='tooltip' ng-click='configureRole($event)'></i></a>";
                     }
-                    //if ($rootScope.isSubModuleAccessibleToUser('Admin', 'User Quick Links', 'Delete Roles')) {
-                    //     strAction = strAction + "<a class='actionPadding'><i ng-click='DeleteRole($event)' class='glyphicon glyphicon-trash cursor-pointer'></i></a>";
-                    //}
+                    if ($rootScope.isSubModuleAccessibleToUser('Admin', 'User Quick Links', 'Delete Roles')) {
+                         strAction = strAction + "<a class='actionPadding'><i ng-click='DeleteRole($event)' class='glyphicon glyphicon-trash cursor-pointer'></i></a>";
+                    }
                     return strAction;       
                 }
             }
@@ -100,7 +100,7 @@
         var row = table.row($($event.target).parents('tr')).data();
 
         bootbox.confirm({
-            message: "Do you want to deactivate role: " + row.RoleName + " ?",
+            message: "Do you want to delete role: " + row.RoleName + " ?",
             buttons: {
                 confirm: {
                     label: 'Yes',
@@ -112,18 +112,22 @@
                 }
             },
             callback: function (result) {
-                if (result) {                  
+                if (result) {
                     var promiseRemoveRole = RoleService.RemoveRole($scope.UserId, row.RoleId);
                     promiseRemoveRole.success(function (response) {
-
                         if (response.Success) {
-                            toastr.success($filter("translate")("State_Deactivate"));
-                            GetRoleList();
+
+                            if (response.InsertedId > 1) {
+                                toastr.warning($filter("translate")("Role_Assigneduser"));
+                            } else {
+                                toastr.success($filter("translate")("Role_Delete"));
+                                GetRoleList();
+                            }
                         }
                         else {
                             toastr.warning($filter("translate")("NtfError"));
                         }
-                       
+
                     });
                     promiseRemoveRole.error(function (data, statusCode) {
                     });

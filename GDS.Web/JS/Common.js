@@ -270,7 +270,7 @@ app.service('configurationService', function () {
 
     var configService = {};
 
-    configService.basePath = "IACBI.API/";
+    configService.basePath = "GDS.API/";
 
     configService.pageSize = 10;
 

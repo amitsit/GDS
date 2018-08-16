@@ -18,15 +18,15 @@
             "stateSave": true,
             "columns": [
 
-                  {
+                  //{
 
-                      "className": "dt-center",
-                      "data": "Email", "bSortable": false,
-                      'render': function (data, type, full, meta) {
-                          return '<input type="checkbox" class="individualCheckbox" ng-click="SelectIndividual()" name="id[]"  value="'
-                             + data + '">';
-                      }
-                  },
+                  //    "className": "dt-center",
+                  //    "data": "Email", "bSortable": false,
+                  //    'render': function (data, type, full, meta) {
+                  //        return '<input type="checkbox" class="individualCheckbox" ng-click="SelectIndividual()" name="id[]"  value="'
+                  //           + data + '">';
+                  //    }
+                  //},
 
                 {
                     "title": ($filter("translate")("Admin_FirstName")),
@@ -152,7 +152,7 @@
     init();
 });
 
-app.controller('UpdateUserController', function ($scope, localStorageService, $stateParams, $rootScope, RoleService, $state, $location, UserService, ProgramService, notificationFactory, configurationService, $compile, $filter) {
+app.controller('UpdateUserController', function ($scope, localStorageService, $stateParams, $rootScope, RoleService, $state, $location, UserService,notificationFactory, configurationService, $compile, $filter) {
 
     decodeParams($stateParams);
     BindToolTip();
@@ -382,6 +382,8 @@ app.controller('UpdateUserController', function ($scope, localStorageService, $s
 
         var promiseGetPlantByRegionList = UserService.GetPlantByRegionList($scope.UserObj.RegionIdCsv, $scope.UserID, $scope.LoggedInUserId);
         promiseGetPlantByRegionList.success(function (response) {
+            debugger;
+
             if (response.Success) {
                 $scope.selectedPlants = $filter('filter')(response.Data, { IsSelected: true }, true);
                 $scope.availablePlants = $filter('filter')(response.Data, { IsSelected: false }, true);
