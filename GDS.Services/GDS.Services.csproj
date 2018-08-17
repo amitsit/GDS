@@ -169,6 +169,8 @@
     <Compile Include="Master\State\StateService.cs" />
     <Compile Include="Master\User\IUserService.cs" />
     <Compile Include="Master\User\UserService.cs" />
+    <Compile Include="Process\IProcessService.cs" />
+    <Compile Include="Process\ProcessService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceDependencyRegister.cs" />
   </ItemGroup>

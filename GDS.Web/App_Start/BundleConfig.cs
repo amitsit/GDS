@@ -299,8 +299,9 @@
             //  appConfigBundle.Include("~/Scripts/ui-bootstrap-tpls.js");
 
             var controllerBundle = new Bundle("~/bundles/ControllerAndServices");
-            controllerBundle.IncludeDirectory("~/JS/Master", "*.js", true);                 
-          
+            controllerBundle.IncludeDirectory("~/JS/Master", "*.js", true);
+            controllerBundle.IncludeDirectory("~/JS/Processes", "*.js", true);
+
             bundles.Add(controllerBundle);
         }
     }

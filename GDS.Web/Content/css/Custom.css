@@ -3479,36 +3479,6 @@ select.viewModeBypassCandidate {
     padding-top: 13px;
 }
 
-h1.title.iac-breadcrumb {
-    position: relative;
-    padding-left: 75px !important;
-}
-
-.iac-breadcrumb a {
-    position: absolute;
-    left: 0;
-    top: 4px;
-    color: #0e477c;
-    font-size: 30px;
-    padding-right: 25px;
-}
-
-    .iac-breadcrumb a:after {
-        content: "/";
-        color: #989898;
-        font-size: 30px;
-        position: absolute;
-        right: 0;
-        top: 1px;
-    }
-
-    .iac-breadcrumb a:hover, .iac-breadcrumb a:focus {
-        color: #000;
-    }
-
-.iac-breadcrumb span {
-    font-size: 20px;
-}
 
 .funaction {
     width: auto;
@@ -5759,6 +5729,78 @@ select.form-control {
         color: white;
         height: 40px;
     }
+
   .businessmodelimg{
       width:70%!important;
   }
+
+      .globalbox{
+         margin-top:10%;
+         height: 100px;
+         width: 180px;
+         background-color: #EEC244;
+         border-radius:25px;
+    }
+
+     .processModelbox{         
+         height: 100px;
+         width: 130px;
+         background-color:lightgray;
+         color:#3A618D;
+         border-radius:25px;
+    }
+   .col-sm1_5{
+       float:left;
+       width:12%!important;
+   }
+
+.divCentText
+{
+display:table-cell;
+vertical-align:middle;
+}
+
+.customertableHeader_bl{
+    background-color:rgb(31,78,121) !important;
+    font-size:15px;
+    color:white;
+}
+.customertableHeader_og{
+    background-color:#EEC244   !important;
+    font-size:15px;
+    color:white;
+}
+
+.fs15{
+    font-size:16px!important;
+}
+.arrowdirection{
+    font-size:12px;
+    margin-left:10px;
+    margin-right:10px;
+}
+.fontblack{
+    color:black;
+}
+.fontorang{
+    color:#EEC244!important;
+}
+
+    .tableboxtd {
+        border: 1px solid #81A0C0;
+        font-size: 12px;
+        color: black;
+        line-height: 14px;
+        font-family: arial,helvetica;
+        text-decoration: none;
+        background-color: #DDEEFF;
+    }
+
+  /*.gdsbreadcrumb a:after {
+        content: "/";
+        color: #989898;
+        font-size: 30px;
+        position: absolute;
+        right: 0;
+        top: 1px;
+    }*/

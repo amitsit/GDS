@@ -73,7 +73,7 @@
                         <img src="~/Content/Images/NoUserPicture.jpg" />
                     </div>
                     <div class="usertext">
-                        <h4>{{LoginUserDetail.FirstName}}&nbsp;{{LoginUserDetail.LastName}}</h4>
+                        <h4 ng-bind="LoginUserDetail.FirstName+' '+LoginUserDetail.LastName"></h4>
                         <p>@User.Identity.Name</p>
                     </div>
                 </li>
@@ -92,109 +92,62 @@
         <!-- header end -->
         <!-- navigation start -->
        <nav id="navigation">
-            @*<div class="userinfo-mobile"><h4 ng-bind="'Jeffrey Parr'"></h4><span ng-bind="'SIT30'"></span><a class="logoutlink-mobile"></a></div>
-            <a class="toggleMenu"></a>*@
+            <div class="userinfo-mobile"><h4 ng-bind="LoginUserDetail.FirstName+' '+LoginUserDetail.LastName"></h4><span>@User.Identity.Name</span></div>
+            <a class="toggleMenu"></a>
         <ul class="menu">
-        <li class="top current">
-            <a href="" class="navlink" >Home</a>
+        <li class="top" ng-class="(SelectedMenuId==Enum.Process.Home) ? 'current' : ''">
+            <a href="" class="navlink" ui-sref="Process({MenuId:Enum.Process.Home})">Home</a>
             <ul>
                 <li><a href="">Turtles</a></li>                
             </ul>    
         </li>
-        <li class="top">
-            <a href="" class="navlink" ui-sref="CoreProcesses">Core Processes</a>
-            @*<ul>
-                <li><a href="">Change Management</a></li>
-                <li><a href="">Engineering & Development</a></li>
-                <li><a href="">Manufacturing</a></li>
-                <li><a href="">Program Management</a></li>
-                <li><a href="">Quality Operations</a></li>
-                <li><a href="">Risk Control</a></li>
-            </ul>*@  
+        <li class="top" ng-class="(SelectedMenuId==Enum.Process.CoreProcess) ? 'current' : ''">
+            <a href="" class="navlink" ui-sref="Process({MenuId:Enum.Process.CoreProcess})">Core Processes</a>
         </li>
-        <li class="top">
-            <a href="" class="navlink" >Management Process</a>
-            <ul>
-                <li><a href="">Communication</a></li>
-                <li><a href="">Continual Improvement</a></li>
-                <li><a href="">Global Management System</a></li>
-                <li><a href="">Leadership and Strategy</a></li>
-                <li><a href="">Management Review</a></li>
-                <li><a href="">Operation Management</a></li>
-            </ul>  
+        <li class="top" ng-class="(SelectedMenuId==Enum.Process.ManagementProcess) ? 'current' : ''">
+            <a href="" class="navlink" ui-sref="Process({MenuId:Enum.Process.ManagementProcess})">Management Process</a>           
         </li>
 
-        <li class="top cursor-pointer">
-          <a href="" class="navlink" >Supporting Process</a>
-            <ul>
-                <li><a href=""  >Commercial</a></li>
-                <li><a href="" >Human Resource Management</a></li>     
-                <li><a href="">Training Process</a></li>              
-                <li><a href="">Recruitment and Staffing</a></li>                    
-            </ul>
+        <li class="top" ng-class="(SelectedMenuId==Enum.Process.SupportingProcess) ? 'current' : ''" >
+          <a href="" class="navlink" ui-sref="Process({MenuId:Enum.Process.SupportingProcess})">Supporting Process</a>
         </li>
 
-        <li class="top cursor-pointer">
-            <a href="" class="navlink" ui-sref="Processes" >Processes</a>
-            @*<ul>
-                <li><a href="">Change Management</a></li>
-                <li><a href="">Commercial</a></li>
-                <li><a href="">Engineering and Development</a></li>
-                <li><a href="">Leadership and Strategy</a></li>
-                <li><a href="">Escalation</a></li>
-                <li><a href="">Global Management System</a></li>
-                <li><a href="">Global Turtles</a></li>
-                <li><a href="">Human Resource Management</a></li>
-                <li><a href="">Information Technology</a></li>
-                <li><a href="">Leadeship and Strategy</a></li>
-                <li><a href="">Legal Requirements</a></li>
-                <li><a href="">Logistics</a></li>
-                <li><a href="">Maintenance of Equipment and Tooling</a></li>
-                <li><a href="">Management Review</a></li>
-                <li><a href="">Management System Standards</a></li>
-                <li><a href="">Manufacturing</a></li>
-                <li><a href="">Operations Management</a></li>
-                <li><a href="">Policies</a></li>
-                <li><a href="">Process Engineering </a></li>
-                <li><a href="">Procurement</a></li>
-                <li><a href="">Program Management</a></li>
-                <li><a href="">Quality Operations</a></li>
-                <li><a href="">Risk Control</a></li>
-            </ul>*@  
+        <li class="top" ng-class="(SelectedMenuId==Enum.Process.Processes) ? 'current' : ''" >
+            <a href="" class="navlink" ui-sref="Process({MenuId:Enum.Process.Processes})">Processes</a>           
         </li>
-        <li class="top cursor-pointer">
+        @*<li class="top cursor-pointer">
             <a href="" class="navlink" >Region/Plant Specific Pages</a>
             <ul>
                 <li><a href="">-Europe</a></li>
                 <li><a href="">-North America</a></li>
                 <li><a href="">-Plant Specific</a></li>
             </ul>
-        </li>
-        <li class="top cursor-pointer">
-            <a href="" class="navlink" >Documentation Logs</a>
-            <ul>
+        </li>*@
+        <li class="top ">
+            <a href="" class="navlink" ui-sref="Process({MenuId:Enum.Process.DocumentLog})" >Documentation Logs</a>
+            @*<ul>
                 <li><a href="">-Master Document List</a></li>
                 <li><a href="">-Change Log</a></li>
                 <li><a href="">-Site Map</a></li>
-            </ul>
+            </ul>*@
         </li>
-        <li class="top cursor-pointer">
-            <a href="" class="navlink" >Contact Us</a>
+        <li class="top">
+            <a href="" class="navlink" ui-sref="Process({MenuId:Enum.Process.ConatctUs})">Contact Us</a>
         </li>
 
-        <li class="top cursor-pointer">
-           <a class="navlink" >Search</a>
+        <li class="top">
+           <a class="navlink" ui-sref="Process({MenuId:Enum.Process.Search})">Search</a>
         </li>  
 
-            <li class="top cursor-pointer" ui-sref="Home1">
+            @*<li class="top cursor-pointer" ui-sref="Home1">
                 <a class="navlink">layout1</a>
             </li> 
 
             <li class="top cursor-pointer" ui-sref="Home2">
                 <a class="navlink">layout2</a>
-            </li> 
+            </li>*@ 
 
-            <li class="top cursor-pointer" ui-sref="Home3">
+            <li class="top" ui-sref="Home3">
                 <a class="navlink">layout3</a>
             </li> 
 
@@ -217,16 +170,15 @@
         <!-- content end -->
         <!-- footer start -->
         <footer id="footer">
-            <div class="automotive pull-right">
+            @*<div class="automotive pull-right">
                 <a href="/Home">
-                    <img src="~/Images/logo.jpg" height="65" width="500" alt="IAC">
-                    @*<img src="~/Images/IAC.png" height="61" width="231" alt="">*@
+                    <img src="~/Images/logo.jpg" height="65" width="500" alt="IAC">                   
                 </a>
-            </div>
+            </div>*@
 
 
         </footer>
-        <div class="modal fade" id="ModelGlobalSettingModel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        @*<div class="modal fade" id="ModelGlobalSettingModel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -266,7 +218,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>*@
 
 
         <div class="modal fade" id="Reloadlookup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -332,9 +284,22 @@
 
 
         app.controller('RoleRightsController', function ($scope, $templateCache,$state, localStorageService,$interval, $stateParams, $rootScope, $location, notificationFactory, configurationService, $compile, $filter) {
+            
+            
+            
             $rootScope.UserRoleRightsList = @Html.Raw(Json.Encode(@ProjectSession.LoggedInUserDetail.RolesRightsPermissions));
             $rootScope.LoginUserDetail=@Html.Raw(Json.Encode(@ProjectSession.LoggedInUserDetail));
             $rootScope.RootScopeUserId =   $rootScope.LoginUserDetail.UserId;
+            $rootScope.Enum=enums;
+
+            //debugger;
+            //if(isNullOrUndefinedOrEmpty($stateParams.MenuId)){
+
+            //   $rootScope.SelectedMenuId = parseInt($stateParams.MenuId);
+            //}else{
+            //    $rootScope.SelectedMenuId=0;
+            //}
+               
 
             if (localStorageService.get("_LoginUserUniqueId-" + String($rootScope.RootScopeUserId)) != null) {
 

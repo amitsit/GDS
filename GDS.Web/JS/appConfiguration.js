@@ -133,6 +133,14 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $tra
         templateUrl: '/Templates/Master/User/EditUser.html'
     });
 
+
+    $stateProvider.state({
+        name: 'Process',
+        url: '/Process?MenuId',
+        templateUrl: '/Templates/CoreProcess/Index.html'
+    });
+
+
     $stateProvider.state({
         name: 'Processes',
         url: '/Processes',

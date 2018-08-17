@@ -86,12 +86,14 @@
     <Compile Include="LoggedInUserDetail.cs" />
     <Compile Include="Master\CityMasterModel.cs" />
     <Compile Include="Master\CountryMasterModel.cs" />
+    <Compile Include="Master\MenuModel.cs" />
     <Compile Include="Master\PlantMasterModel.cs" />
     <Compile Include="Master\RegionMasterModel.cs" />
     <Compile Include="Master\RoleModel.cs" />
     <Compile Include="Master\RoleRightsModel.cs" />
     <Compile Include="Master\RoleRightsPermissionModel.cs" />
     <Compile Include="Master\StateMasterModel.cs" />
+    <Compile Include="Master\ProcessModel.cs" />
     <Compile Include="Master\UserMasterModel.cs" />
     <Compile Include="ProjectSession.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

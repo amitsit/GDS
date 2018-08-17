@@ -10,7 +10,8 @@ namespace GDS.Services
     using Master.State;
     using Master.Country;
     using Master.User;
-   
+    using Process;
+
     /// <summary>
     /// Class ServiceDependencyRegister contains all ServiceDependencyRegister related methods and variable.
     /// </summary>
@@ -43,8 +44,10 @@ namespace GDS.Services
             builder.RegisterType<StateService>().As<IStateService>().InstancePerDependency();
      
             builder.RegisterType<UserService>().As<IUserService>().InstancePerDependency();
-           
-      
+
+            builder.RegisterType<ProcessService>().As<IProcessService>().InstancePerDependency();
+
+
         }
     }
 }

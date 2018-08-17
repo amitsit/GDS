@@ -21,7 +21,7 @@
 .menu li li a { padding:7px 10px; height:auto;  color:#fff; display: block; background:#A8A8A6; position: relative; z-index:100; border-bottom: 1px solid #abbf23; }
 .menu li li a:hover{ background:#A8A8A6 !important;}
 
-.menu li.current { background-image:url(/Content/images/navar.png); background-position: center bottom; background-repeat:no-repeat;}
+.menu li.current { background-image:url(/Content/images/navar.png); background-position: center bottom; background-repeat:no-repeat;background-color:lightslategray;}
 
 @media screen and (max-width: 767px) {
 .active { display: block;}
