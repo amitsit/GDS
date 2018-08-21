@@ -6,6 +6,12 @@
         return $http.get(configurationService.basePath + "api/GetProcesses?MenuId=" + menuId);
     }
 
+
+    ProcessService.GetSubProcesses = function (processId) {
+        return $http.get(configurationService.basePath + "api/GetSubProcesses?ProcessId=" + processId);
+    }
+
+    
  
 
     return ProcessService;

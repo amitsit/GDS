@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace GDS.Entities.Master
 {
-   public class ProcessModel
+   public class ProcessModel: SubProcessModel
     {
-        public int? ProcessId { get; set; }
 
         public int? MenuId { get; set; }
 
@@ -16,10 +15,5 @@ namespace GDS.Entities.Master
 
         public bool? IsActive { get; set; }
 
-        public Int16? DisplayOrder { get; set; }
-
-        public int? CreatedBy { get; set; }
-
-        public DateTime? CreatedDate { get; set; }
     }
 }

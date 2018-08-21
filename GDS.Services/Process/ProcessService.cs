@@ -69,5 +69,32 @@ namespace GDS.Services.Process
 
             return response;
         }
+
+        public ApiResponse<SubProcessModel> GetSubProcesses(int? ProcessId)
+        {
+            var response = new ApiResponse<SubProcessModel>();
+
+            try
+            {
+                var MenuIdParam = new SqlParameter
+                {
+                    ParameterName = "ProcessId",
+                    DbType = DbType.Int32,
+                    Value = (object)ProcessId ?? DBNull.Value
+                };
+
+                var result = _repository.ExecuteSQL<SubProcessModel>("GetSubProcessesByProcessId", MenuIdParam).ToList();
+                response.Success = true;
+                response.Data = result;
+            }
+            catch (Exception ex)
+            {
+                _logger.Error(ex);
+                response.Message.Add(ex.Message);
+            }
+
+            return response;
+
+        }
     }
 }

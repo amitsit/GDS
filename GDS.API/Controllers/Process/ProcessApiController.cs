@@ -31,7 +31,6 @@ namespace GDS.API.Controllers.Process
             return this._iProcessService.GetProcesses(MenuId);
         }
 
-
         #endregion
     }
 }

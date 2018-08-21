@@ -1,35 +1,66 @@
 ﻿
 <div class="db-content no-space" ng-controller="ProcessController">
-    <h3 class="title  fontorang"><b><a title="Home"><i class="fa fa-home"></i></a><span class="arrowdirection">&nbsp;&nbsp;</span>  <span><a>Global Documentation System</a>  <span class="arrowdirection">>></span><span class="fontblack">Core Processes</span></span></b></h3>
+
+    <h3 class="title  fontorang">
+    <b><a title="Home"><i class="fa fa-home"></i></a>
+        <span class="arrowdirection">&nbsp;&nbsp;</span>  <span><a>Global Documentation System</a>
+        <span class="arrowdirection">>></span><span class="fontblack">Core Processes</span></span></b>
+     </h3>
+   
     <div class="col-sm-12" ng-if="ProcessDisplayType==Enum.ProcessDisplayType.MultiTable">
-        <div ng-repeat="Process in ProcessListData">
-            <div class="col-sm-4">
+        <div class="col-sm-12">
+            <span class="pull-right mb-10">
+                <button type="button" title="Add Processes" ng-click="showEdit(true,true)" class="btn btn-primary "><i class="glyphicon glyphicon-plus"></i></button>
+                <button type="button" title="Edit Processes" ng-click="showEdit(false)" class="btn btn-primary"><i ng-class="(IsEditMode==false)?'glyphicon glyphicon-pencil':'glyphicon glyphicon-ok'"></i></button>
+            </span> 
+        </div>
+    
+       <div ng-repeat="Process in ProcessListData | unique:'ProcessId':true">
+            <div class="col-sm-4" >
                 <div class="panel panel-default">
                     <div class="panel-body table-responsive">
                         <table class="table table-bordered text-center ">
                             <tr class="pressTitleRow">
                                 <th colspan="2" ng-bind="Process.ProcessName"></th>
+                                <th ng-show="IsEditMode" class="editprocessheader"><a ><i class="glyphicon glyphicon-pencil cursor-pointer" data-original-title="Edit" data-toggle="tooltip"></i></a></th>
+                                
                             </tr>
-                            <tr>
+                            <!--<tr>
                                 <td class="weeklyefficiency"><b><a class="text-white">10</a></b></td>
-                                <td class="font-bold text-left tableboxtd">Proposal and Award</td>
+                                <td class="font-bold text-left tableboxtd">{{}}</td>
+                                <td ng-show="hideEdit" ><a><i class="glyphicon glyphicon-pencil cursor-pointer" data-original-title="Edit" data-toggle="tooltip"></i></a></td>
                             </tr>
                             <tr>
-                                <td class="weeklyefficiency"><b><a class="text-white">20</a></b></td>
+                                <td class="weeklyefficiency"><b><a class="text-white">20767</a></b></td>
                                 <td class="font-bold text-left tableboxtd">Product &amp; Process development</td>
+                                <td ng-show="hideEdit"><a><i class="glyphicon glyphicon-pencil cursor-pointer" data-original-title="Edit" data-toggle="tooltip"></i></a></td>
                             </tr>
                             <tr>
                                 <td class="weeklyefficiency"><b><a class="text-white">30</a></b></td>
                                 <td class="font-bold text-left tableboxtd">Production Readiness</td>
+                                <td ng-show="hideEdit"><a><i class="glyphicon glyphicon-pencil cursor-pointer" data-original-title="Edit" data-toggle="tooltip"></i></a></td>
                             </tr>
                             <tr>
                                 <td class="weeklyefficiency"><b><a class="text-white">40</a></b></td>
                                 <td class="font-bold text-left tableboxtd">Launch</td>
-                            </tr>
+                                <td ng-show="hideEdit"><a><i class="glyphicon glyphicon-pencil cursor-pointer" data-original-title="Edit" data-toggle="tooltip"></i></a></td>
+                            </tr>-->
+                           
+                                <tr ng-repeat="SubProcess in ProcessListData | filter :{ProcessId : Process.ProcessId}: true" >
+                                    <td class="weeklyefficiency"><b><a class="text-white">{{SubProcess.SubProcessCode}}</a></b></td>
+                                    <td class="font-bold text-left tableboxtd">{{SubProcess.SubProcessName}}</td>
+                                    <td ng-show="IsEditMode"><a><i class="glyphicon glyphicon-pencil cursor-pointer" data-original-title="Edit" data-toggle="tooltip"></i></a></td>
+                                </tr>
+                           
                         </table>
                     </div>
                 </div>
+
+
             </div>
+           <div ng-if="(($index+1)%3)==0" class="col-sm-12">
+
+           </div>
         </div> 
     </div>
 

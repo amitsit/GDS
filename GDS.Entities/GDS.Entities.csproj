@@ -94,6 +94,7 @@
     <Compile Include="Master\RoleRightsPermissionModel.cs" />
     <Compile Include="Master\StateMasterModel.cs" />
     <Compile Include="Master\ProcessModel.cs" />
+    <Compile Include="Master\SubProcessModel.cs" />
     <Compile Include="Master\UserMasterModel.cs" />
     <Compile Include="ProjectSession.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

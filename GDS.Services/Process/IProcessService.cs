@@ -11,5 +11,6 @@ namespace GDS.Services.Process
    public interface IProcessService
     {
         ApiResponse<ProcessModel> GetProcesses(int? MenuId);
+        ApiResponse<SubProcessModel> GetSubProcesses(int? ProcessId); 
     }
 }

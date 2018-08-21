@@ -4,9 +4,9 @@
 app.controller('ProcessController', function ($scope, $state, localStorageService, $stateParams,ProcessService, $rootScope, $location,  notificationFactory, configurationService, $compile, $filter) {
     decodeParams($stateParams);
     BindToolTip();
-
+    
     function INIT() {
-
+        $scope.IsEditMode = false;
         $scope.ProcessDisplayType = $rootScope.Enum.ProcessDisplayType.MultiTable;
 
         $scope.MenuId = parseInt($stateParams.MenuId);
@@ -31,9 +31,27 @@ app.controller('ProcessController', function ($scope, $state, localStorageServic
         });
     }
 
+    $scope.showEdit = function (IsAdd) {
+        if (IsAdd) {
+
+        } else {
+            if ($scope.IsEditMode) {
+                $scope.IsEditMode = false;
+            } else {
+                $scope.IsEditMode = true;
+            }
+           
+        }
+       
+    }
+
+    //$scope.redirectTo = function () {
+
+    //  $location.path='1312412';
+        
+    //}
 
     INIT();
-
 
 
 });
