@@ -803,6 +803,7 @@
     <Content Include="JS\Enums.js" />
     <Content Include="JS\Factory\appFactory.js" />
     <Content Include="JS\Filters\appFilters.js" />
+    <Content Include="JS\Home\Controllers\IndexController.js" />
     <Content Include="JS\Master\User\Controllers\UserController.js" />
     <Content Include="JS\Master\User\Services\UserService.js" />
     <Content Include="JS\Master\Country\Controllers\CountryController.js" />
@@ -1079,6 +1080,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="JS\Home\Services\" />
     <Folder Include="StaticImages\" />
     <Folder Include="Views\BaseAdmin\" />
     <Folder Include="Views\Base\" />

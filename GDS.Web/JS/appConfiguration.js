@@ -152,7 +152,11 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $tra
         url: '/CoreProcesses',
         templateUrl: '/Templates/CoreProcess/Index.html'
     });
-
+    $stateProvider.state({
+        name: 'ProcessDetails',
+        url: '/ProcessDetails?MenuId&ProcessId&&SubProcessId&Mode',
+        templateUrl: '/Templates/ProcessDetails/Index.html'
+    });
 
     //any url that doesn't exist in routes redirect to '/'
     $urlRouterProvider.otherwise('/Home');
@@ -194,6 +198,18 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $tra
            
         });
             
+        $rootScope.MenuList = [
+                                { id: 1, name: "Home" },
+                                { id: 2, name: "Core Processes" },
+                                { id: 3, name: "Management Processes" },
+                                { id: 4, name: "Supporting Process" },
+                                { id: 5, name: "Processes" },
+                                { id: 6, name: "Document Logs" },
+                                { id: 7, name: "Contact Us" },
+                                 { id: 8, name: "Search" },
+     
+        ];
+
       
         $rootScope.isSubModuleAccessibleToUser = function (module, subModule, func) {    
             var IsAccessible = false;

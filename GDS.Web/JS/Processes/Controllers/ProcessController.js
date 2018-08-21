@@ -4,13 +4,24 @@
 app.controller('ProcessController', function ($scope, $state, localStorageService, $stateParams,ProcessService, $rootScope, $location,  notificationFactory, configurationService, $compile, $filter) {
     decodeParams($stateParams);
     BindToolTip();
+
+   
     
     function INIT() {
         $scope.IsEditMode = false;
         $scope.ProcessDisplayType = $rootScope.Enum.ProcessDisplayType.MultiTable;
 
         $scope.MenuId = parseInt($stateParams.MenuId);
+
+        $scope.MenuName = "";
         if ($scope.MenuId > 0) {
+
+            var MenuObj = $filter('filter')($rootScope.MenuList, { id: parseInt($scope.MenuId) }, true)[0];
+            if (!isNullOrUndefinedOrEmpty(MenuObj)) {
+                $scope.MenuName = MenuObj.name;
+            }
+
+           
 
             $rootScope.SelectedMenuId = $scope.MenuId;
 
@@ -43,6 +54,9 @@ app.controller('ProcessController', function ($scope, $state, localStorageServic
            
         }
        
+    }
+    $scope.goto = function () {
+
     }
 
     //$scope.redirectTo = function () {

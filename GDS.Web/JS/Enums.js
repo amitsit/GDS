@@ -11,6 +11,7 @@
             ConatctUs: 7,
             Search: 8  
         },
+    
     ProcessDisplayType:{
         List: 1,
         MultiTable:2
@@ -20,6 +21,7 @@
            Success: 1,
            Failed: 2
        }
-
+ 
 
 };
+  
