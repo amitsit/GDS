@@ -20,7 +20,13 @@
        {
            Success: 1,
            Failed: 2
-       }
+       },
+    Mode:
+       {
+           Readonly: 1,
+           Edit: 2,
+           
+       },
  
 
 };

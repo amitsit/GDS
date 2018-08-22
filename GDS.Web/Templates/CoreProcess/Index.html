@@ -1,28 +1,9 @@
 ﻿
-<style>
-    .colsm_5{
-            width:4%;
-}
-    .colsm_1 {
-        width: 1%;
-    }
-    
-    .headerborder{
-        border-right: 1px solid #1f4e79!important;
-    border-left: none!important;
-    }
-         .bh_right_none{
-
-             border-right:none!important;
-         }
-</style>
-
 <div class="db-content no-space" ng-controller="ProcessController">
 
     <h3 class="title  fontorang">
-    <b><a title="Home"><i class="fa fa-home"></i></a>
-        <span class="arrowdirection">&nbsp;&nbsp;</span>  <span><a ui-sref="Home">Global Documentation System</a>
-        <span class="arrowdirection">>></span><span class="fontblack">{{MenuName}}</span></span></b>
+    <b><a  ui-sref="Home" title="Home"><i class="fa fa-home"></i></a>     
+      <span> &nbsp;/&nbsp;&nbsp;</span>  <span class="fontblack">{{MenuName}}</span></b>
      </h3>
    
     <div class="col-sm-12" ng-if="ProcessDisplayType==Enum.ProcessDisplayType.MultiTable">
@@ -66,9 +47,9 @@
                             </tr>-->
                            
                                 <tr ng-repeat="SubProcess in ProcessListData | filter :{ProcessId : Process.ProcessId}: true" >
-                                    <td class="weeklyefficiency colsm_5"><b><a class="text-white">{{SubProcess.SubProcessCode}}</a></b></td>
+                                    <td class="weeklyefficiency colsm_5"><b><a ng-click="GotoProcessDetail(SubProcess,Enum.Mode.Readonly)" class="text-white">{{SubProcess.SubProcessCode}}</a></b></td>
                                     <td class="font-bold text-left tableboxtd col-sm-2">{{SubProcess.SubProcessName}}</td>
-                                    <td class="colsm_1" ng-show="!IsEditMode"><a><i class="glyphicon glyphicon-eye-open editprocessheader" data-original-title="Edit" data-toggle="tooltip"></i></a></td>
+                                    <td class="colsm_1" ng-show="!IsEditMode"><a ng-click="GotoProcessDetail(SubProcess,Enum.Mode.Readonly)"><i class="glyphicon glyphicon-eye-open editprocessheader" data-original-title="Edit" data-toggle="tooltip"></i></a></td>
                                     <td class="colsm_1" ng-show="IsEditMode"><a><i class="glyphicon glyphicon-pencil editprocessheader" data-original-title="Edit" data-toggle="tooltip"></i></a></td>
                                 </tr>
                            

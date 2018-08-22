@@ -152,9 +152,10 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $tra
         url: '/CoreProcesses',
         templateUrl: '/Templates/CoreProcess/Index.html'
     });
+
     $stateProvider.state({
-        name: 'ProcessDetails',
-        url: '/ProcessDetails?MenuId&ProcessId&&SubProcessId&Mode',
+        name: 'ProcessDetail',
+        url: '/ProcessDetail?MenuId&ProcessId&&SubProcessId&Mode',
         templateUrl: '/Templates/ProcessDetails/Index.html'
     });
 

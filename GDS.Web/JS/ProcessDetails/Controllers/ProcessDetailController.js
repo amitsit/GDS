@@ -1,7 +1,7 @@
 ﻿/// <reference path="../../appConfiguration.js" />
 /// <reference path="../Services/CountryService.js" />
 
-app.controller('ProcessController', function ($scope, $state, localStorageService, $stateParams,ProcessService, $rootScope, $location,  notificationFactory, configurationService, $compile, $filter) {
+app.controller('ProcessDetailController', function ($scope, $state, localStorageService, $stateParams,ProcessService, $rootScope, $location,  notificationFactory, configurationService, $compile, $filter) {
     decodeParams($stateParams);
     BindToolTip();
 
@@ -27,14 +27,14 @@ app.controller('ProcessController', function ($scope, $state, localStorageServic
             if ($scope.MenuId == $rootScope.Enum.Process.Processes) {
                 $scope.ProcessDisplayType = $rootScope.Enum.ProcessDisplayType.List;
             }    
-            $scope.GetProcesses($scope.MenuId);
+            //$scope.GetProcesses($scope.MenuId);
         }
 
     }
 
     $scope.GetProcesses = function (MenuId) {
         var promiseGetProcesses = ProcessService.GetProcesses(MenuId);
-        promiseGetProcesses.success(function (response) {            
+        promiseGetProcesses.success(function (response) {   
             $scope.ProcessListData = response.Data;            
         });
         promiseGetProcesses.error(function (data, statusCode) {
@@ -54,17 +54,7 @@ app.controller('ProcessController', function ($scope, $state, localStorageServic
         }
        
     }
-    $scope.GotoProcessDetail = function (SubProcessObj,Mode) {
-      
-        $state.go('ProcessDetail', ({ 'MenuId': SubProcessObj.MenuId, 'ProcessId': SubProcessObj.ProcessId, 'SubProcessId': SubProcessObj.SubProcessId, 'Mode': Mode }));
 
-    }
-
-    //$scope.redirectTo = function () {
-
-    //  $location.path='1312412';
-        
-    //}
 
     INIT();
 

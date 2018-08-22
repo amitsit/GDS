@@ -5027,9 +5027,8 @@ td input {
     color: #000000;
 }
 
-.editprocessheader
-{
-    background-color:white;
+.editprocessheader {
+    background-color: white;
 }
 
 /* keyframes */
@@ -5726,85 +5725,88 @@ select.form-control {
 .IsHavingIssue {
     background-color: #dce0e3 !important;
     color: red;
-    font-weight:bold;
-}
-  .pressTitleRow {
-        font-size: 15px !important;
-        background-color: rgb(31,78,121) !important;
-        color: white;
-        height: 40px;
-          6
-                        line-height: 14px;
-
-    }
-
-  .businessmodelimg{
-      width:70%!important;
-  }
-
-      .globalbox{
-         margin-top:10%;
-         height: 100px;
-         width: 180px;
-         background-color: #EEC244;
-         border-radius:25px;
-    }
-
-     .processModelbox{         
-         height: 100px;
-         width: 130px;
-         background-color:lightgray;
-         color:#3A618D;
-         border-radius:25px;
-    }
-   .col-sm1_5{
-       float:left;
-       width:12%!important;
-   }
-
-.divCentText
-{
-display:table-cell;
-vertical-align:middle;
+    font-weight: bold;
 }
 
-.customertableHeader_bl{
-    background-color:rgb(31,78,121) !important;
-    font-size:15px;
-    color:white;
-}
-.customertableHeader_og{
-    background-color:#EEC244   !important;
-    font-size:15px;
-    color:white;
+.pressTitleRow {
+    font-size: 15px !important;
+    background-color: rgb(31,78,121) !important;
+    color: white;
+    height: 40px;
+    6 line-height: 14px;
 }
 
-.fs15{
-    font-size:16px!important;
-}
-.arrowdirection{
-    font-size:12px;
-    margin-left:10px;
-    margin-right:10px;
-}
-.fontblack{
-    color:black;
-}
-.fontorang{
-    color:#EEC244!important;
+.businessmodelimg {
+    width: 70% !important;
 }
 
-    .tableboxtd {
-        border: 1px solid #81A0C0;
-        font-size: 12px;
-        color: black;
-        line-height: 14px;
-        font-family: arial,helvetica;
-        text-decoration: none;
-        background-color: #DDEEFF;
-    }
-   
-  /*.gdsbreadcrumb a:after {
+.globalbox {
+    margin-top: 10%;
+    height: 100px;
+    width: 180px;
+    background-color: #EEC244;
+    border-radius: 25px;
+}
+
+.processModelbox {
+    height: 100px;
+    width: 130px;
+    background-color: lightgray;
+    color: #3A618D;
+    border-radius: 25px;
+}
+
+.col-sm1_5 {
+    float: left;
+    width: 12% !important;
+}
+
+.divCentText {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.customertableHeader_bl {
+    background-color: rgb(31,78,121) !important;
+    font-size: 15px;
+    color: white;
+}
+
+.customertableHeader_og {
+    background-color: #EEC244 !important;
+    font-size: 15px;
+    color: white;
+}
+
+.fs15 {
+    font-size: 16px !important;
+}
+
+.arrowdirection {
+    font-size: 12px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.fontblack {
+    color: black;
+}
+
+.fontorang {
+    color: #EEC244 !important;
+}
+
+.tableboxtd {
+    border: 1px solid #81A0C0;
+    font-size: 12px;
+    color: black;
+    line-height: 14px;
+    font-family: arial,helvetica;
+    text-decoration: none;
+    background-color: #DDEEFF;
+}
+
+/*.gdsbreadcrumb a:after {
         content: "/";
         color: #989898;
         font-size: 30px;
@@ -5812,3 +5814,20 @@ vertical-align:middle;
         right: 0;
         top: 1px;
     }*/
+
+.colsm_5 {
+    width: 4%;
+}
+
+.colsm_1 {
+    width: 1%;
+}
+
+.headerborder {
+    border-right: 1px solid #1f4e79 !important;
+    border-left: none !important;
+}
+
+.bh_right_none {
+    border-right: none !important;
+}

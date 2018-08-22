@@ -302,7 +302,8 @@
             controllerBundle.IncludeDirectory("~/JS/Home", "*.js", true);
             controllerBundle.IncludeDirectory("~/JS/Master", "*.js", true);
             controllerBundle.IncludeDirectory("~/JS/Processes", "*.js", true);
-
+            controllerBundle.IncludeDirectory("~/JS/ProcessDetails", "*.js", true);
+            
             bundles.Add(controllerBundle);
         }
     }
