@@ -154,9 +154,9 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $tra
     });
 
     $stateProvider.state({
-        name: 'ProcessDetail',
-        url: '/ProcessDetail?MenuId&ProcessId&&SubProcessId&Mode',
-        templateUrl: '/Templates/ProcessDetails/Index.html'
+        name: 'SubProcessDetail',
+        url: '/SubProcessDetail?MenuId&ProcessId&&SubProcessId&RegionId',
+        templateUrl: '/Templates/SubProcess/Index.html'
     });
     $stateProvider.state({
         name: 'EditProcess',
@@ -198,7 +198,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $tra
 
         $rootScope.$state = $state;
  
-        $rootScope.GlobalDateFormat = 'MM/dd/yyyy';
+        $rootScope.GlobalDateFormat = 'dd-MMM-yyyy';//'MM/dd/yyyy';
 
         $rootScope.$on('$viewcontentloaded', function () {
             $templatecache.removeall();

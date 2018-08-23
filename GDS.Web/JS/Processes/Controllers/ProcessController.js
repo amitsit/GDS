@@ -54,9 +54,10 @@ app.controller('ProcessController', function ($scope, $state, localStorageServic
         }
        
     }
-    $scope.GotoProcessDetail = function (SubProcessObj,Mode) {
+    $scope.GotoProcessDetail = function (SubProcessObj, Mode) {
+       
       
-        $state.go('ProcessDetail', ({ 'MenuId': SubProcessObj.MenuId, 'ProcessId': SubProcessObj.ProcessId, 'SubProcessId': SubProcessObj.SubProcessId, 'Mode': Mode }));
+        $state.go('SubProcessDetail', ({ 'MenuId': SubProcessObj.MenuId, 'ProcessId': SubProcessObj.ProcessId, 'SubProcessId': SubProcessObj.SubProcessId, 'RegionId': $rootScope.Enum.Region.Global}));
 
     }
 

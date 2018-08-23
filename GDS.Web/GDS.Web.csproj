@@ -817,6 +817,8 @@
     <Content Include="JS\Processes\Controllers\AddOrUpdateProcessController.js" />
     <Content Include="JS\Processes\Controllers\ProcessController.js" />
     <Content Include="JS\Processes\Services\ProcessService.js" />
+    <Content Include="JS\SubProcess\Controllers\SubProcessController.js" />
+    <Content Include="JS\SubProcess\Services\SubProcessService.js" />
     <Content Include="ResourceFiles\Press Specs.xlsx" />
     <Content Include="Scripts\angular-filter.min.js" />
     <Content Include="Scripts\angular-translate-loader-static-files.js" />
@@ -1034,6 +1036,7 @@
     <Content Include="Templates\Master\State\Index.html" />
     <Content Include="Templates\ProcessDetails\Index.html" />
     <Content Include="Templates\Processes\AddOrUpdateProcess.html" />
+    <Content Include="Templates\SubProcess\Index.html" />
     <Content Include="Templates\Processes\Index.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
