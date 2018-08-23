@@ -1,6 +1,9 @@
-﻿<h1 class="title iac-breadcrumb">
-    <a ui-sref="Home"><i class="fa fa-home"></i></a><span translate="Admin_HomeIcon">Admin Settings</span>
-</h1>
+﻿<h3 class="title  fontorang">
+    <b>
+        <a ui-sref="Home" title="Home"><i class="fa fa-home"></i></a>
+        <span> &nbsp;/&nbsp;&nbsp;</span><span class="fontblack" ng-bind="'Admin Setting'"></span>
+    </b>
+</h3>
 <div class="text-center">
 	<div class="admin_menu menu-center">
 		<div class="panel panel-default">
@@ -23,19 +26,18 @@
 					<div class="dbl-title"><span translate="AdminCoverPage_Location">Location</span> <span translate="AdminCoverPage_QuickLinks">Quick Links</span><span class="arw"></span></div>
 					<ul>
 						<li ng-if="isSubModuleAccessibleToUser('Admin', 'Location Quick Links', 'View Region')"><a href="#" class="dbl Region" ui-sref="Region"><span></span><div translate="AdminCoverPage_Region">Region</div></a></li>
-						<li ng-if="isSubModuleAccessibleToUser('Admin', 'Location Quick Links', 'View Countries')"><a href="#" class="dbl Country" ui-sref="Country"><span></span><div translate="AdminCoverPage_Country">Country</div></a></li>
-						<li ng-if="isSubModuleAccessibleToUser('Admin', 'Location Quick Links', 'View State')"><a href="#" class="dbl State" ui-sref="State"><span></span><div translate="AdminCoverPage_State">State</div></a></li>
+						<!--<li ng-if="isSubModuleAccessibleToUser('Admin', 'Location Quick Links', 'View Countries')"><a href="#" class="dbl Country" ui-sref="Country"><span></span><div translate="AdminCoverPage_Country">Country</div></a></li>
+						<li ng-if="isSubModuleAccessibleToUser('Admin', 'Location Quick Links', 'View State')"><a href="#" class="dbl State" ui-sref="State"><span></span><div translate="AdminCoverPage_State">State</div></a></li>-->
 					</ul>
 				</div>
-				<div class="db-links iac-plant" ng-if="isSubModuleAccessibleToUser('Admin', 'Plant Quick Links', 'View')">
+				<!--<div class="db-links iac-plant" ng-if="isSubModuleAccessibleToUser('Admin', 'Plant Quick Links', 'View')">
 					<div class="dbl-title"><span translate="AdminCoverPage_Plant">Plant</span> <span translate="AdminCoverPage_QuickLinks">Quick Links</span><span class="arw"></span></div>
-					<ul>						
-						<!--<li><a href="#" class="dbl MeritPlanning" ui-sref="Equipment"><span></span>Equipment</a></li>-->
+					<ul>												
 						<li ng-if="isSubModuleAccessibleToUser('Admin', 'Plant Quick Links', 'View Plants')"><a href="#" class="dbl plant" ui-sref="Plant"><span></span><div translate="AdminCoverPage_Plant">Plant</div></a></li>
                       
 					</ul>
                   
-				</div>
+				</div>-->
 			</div>
 		</div>
 	</div>
