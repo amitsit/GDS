@@ -44,5 +44,7 @@ namespace GDS.Entities.Master
 
         public Nullable<DateTime> UpdatedDate { get; set; }
 
+        public string AssignedRegions { get; set; }
+
     }
 }

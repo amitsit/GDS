@@ -28,6 +28,8 @@ app.controller('SubProcessController', function ($scope, $state, localStorageSer
             $scope.RegionId = $rootScope.Enum.Region.Global;
         }
 
+        $scope.RegionList = [];
+
         $scope.UserId = $rootScope.LoginUserDetail.UserId;
         $scope.MenuName = "";
 
@@ -50,9 +52,22 @@ app.controller('SubProcessController', function ($scope, $state, localStorageSer
     $scope.GetSubProcess = function (ProcessId, SubProcessId, RegionId, UserId) {
         var promiseGetProcesses = SubProcessService.GetSubProcess(ProcessId, SubProcessId,RegionId ,UserId);
         promiseGetProcesses.success(function (response) {
-            if (response.Data.length>0) {
+            if (response.Data.length > 0) {              
                 $scope.SubProcessObj = response.Data[0];
-                $scope.GetProcessDocumentBySubProcessIdAndRegionId(SubProcessId, RegionId, UserId);
+                if (!isNullOrUndefinedOrEmpty($scope.SubProcessObj.AssignedRegions)) {
+                    var RegionsList = $scope.SubProcessObj.AssignedRegions.split(";");
+
+                    for (var i = 0; i < RegionsList.length; i++) {
+                        var RegionObj = new Object();
+                        RegionObj.RegionId = parseInt(RegionsList[i].split(',')[0]);
+                        RegionObj.RegionName = RegionsList[i].split(',')[1];
+                        $scope.RegionList.push(RegionObj);
+                    }
+
+                } else {
+                    $scope.RegionList = [];
+                }               
+                $scope.GetProcessDocumentBySubProcessIdAndRegionId($scope.SubProcessObj.SubProcessId, $scope.SubProcessObj.RegionId, UserId);
             }
           
         });
@@ -78,6 +93,10 @@ app.controller('SubProcessController', function ($scope, $state, localStorageSer
             }
         }
         return neefTohide;
+    }
+
+    $scope.ChangeRegion = function (RegionId) {
+        $state.go('SubProcessDetail', ({ 'MenuId': $scope.MenuId, 'ProcessId': $scope.ProcessId, 'SubProcessId': $scope.SubProcessId, 'RegionId': RegionId }));
     }
 
 

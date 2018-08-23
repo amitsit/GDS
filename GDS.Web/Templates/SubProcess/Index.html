@@ -1,9 +1,20 @@
 ﻿
-
+<style>
+    .activetab{
+        background-color:#EEC244 !important;
+        border-top-right-radius:15px;
+        border-top-left-radius:15px;
+    }
+    .inactivetab{
+        background-color:#ddd;
+         border-top-right-radius:15px;
+        border-top-left-radius:15px;
+    }
+</style>
 <div class="db-content no-space" ng-controller="SubProcessController">
     <!--<h3 class="title gdsbreadcrumb"><b><a title="Home homeicon"><i class="fa fa-home"></i></a><span class="arrowdirection">&nbsp;&nbsp;</span>  <span><a>Global Documentation System</a>  <span class="arrowdirection">>></span><a>Supporting Process</a> <span class="arrowdirection">>></span> <a>Human Resource Management</a>  <span class="arrowdirection">>></span>  <span class="fontblack">SHR-10</span></span></b></h3>-->
         
-    <h3 class="title  fontorang">
+    <h3 class="title fontorang">
         <b>
             <a ui-sref="Home" title="Home"><i class="fa fa-home"></i></a>
             <span> &nbsp;/&nbsp;&nbsp;</span><a ui-sref="Process({MenuId:MenuId})" ng-bind="MenuName"></a>  <span class="arrowdirection">>></span>  <span class="fontblack" ng-bind="SubProcessObj.SubProcessName"></span>
@@ -13,13 +24,11 @@
     <div class="col-sm-12 pb-20">
         <div class="col-sm-10">
             <ul class="nav nav-tabs nav-justified col-sm-10" id="ulLinks">
-                <li ><a>Global</a></li>
+                <li ng-class="(Enum.Region.Global==RegionId)?'activetab':'inactivetab'" ng-click="ChangeRegion(Enum.Region.Global)"><a>Global</a></li>
                 <li class="text-right col-sm-2"><h5 class="font-bold">Region Specific Documents :</h5></li>
                 <li>
-                    <ul class="nav nav-tabs nav-justified" id="ulLinks">
-                        <li class="active"><a>Europe</a></li>
-                        <li><a>North America</a></li>
-                        <li><a>Asia</a></li>
+                    <ul class="nav nav-tabs nav-justified" id="ulLinks">                        
+                        <li ng-if="region.RegionId!=Enum.Region.Global" ng-click="ChangeRegion(region.RegionId)" ng-class="(region.RegionId==RegionId)?'activetab':'inactivetab'" ng-repeat="region in RegionList"><a ng-bind="region.RegionName"></a></li>                      
                     </ul>
                 </li>                            
             </ul>                
