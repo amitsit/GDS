@@ -27,6 +27,11 @@
            Edit: 2,
            
        },
+    Region:
+      {
+          Global: -1          
+      },
+
  
 
 };

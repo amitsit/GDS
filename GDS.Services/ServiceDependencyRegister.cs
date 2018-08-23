@@ -11,6 +11,7 @@ namespace GDS.Services
     using Master.Country;
     using Master.User;
     using Process;
+    using SubProcess;
 
     /// <summary>
     /// Class ServiceDependencyRegister contains all ServiceDependencyRegister related methods and variable.
@@ -46,6 +47,8 @@ namespace GDS.Services
             builder.RegisterType<UserService>().As<IUserService>().InstancePerDependency();
 
             builder.RegisterType<ProcessService>().As<IProcessService>().InstancePerDependency();
+
+            builder.RegisterType<SubProcessService>().As<ISubProcessService>().InstancePerDependency();
 
 
         }

@@ -32,6 +32,15 @@ app.controller('ProcessDetailController', function ($scope, $state, localStorage
 
     }
 
+    //$scope.GetProcesses = function (MenuId) {
+    //    var promiseGetProcesses = ProcessService.GetProcesses(MenuId);
+    //    promiseGetProcesses.success(function (response) {   
+    //        $scope.ProcessListData = response.Data;            
+    //    });
+    //    promiseGetProcesses.error(function (data, statusCode) {
+    //    });
+    //}
+
     $scope.GetProcesses = function (MenuId) {
         var promiseGetProcesses = ProcessService.GetProcesses(MenuId);
         promiseGetProcesses.success(function (response) {   

@@ -88,6 +88,7 @@
     <Compile Include="Master\CountryMasterModel.cs" />
     <Compile Include="Master\MenuModel.cs" />
     <Compile Include="Master\PlantMasterModel.cs" />
+    <Compile Include="Master\ProcessDocument.cs" />
     <Compile Include="Master\RegionMasterModel.cs" />
     <Compile Include="Master\RoleModel.cs" />
     <Compile Include="Master\RoleRightsModel.cs" />

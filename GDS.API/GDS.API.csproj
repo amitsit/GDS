@@ -271,6 +271,7 @@
     <Compile Include="Controllers\Master\StateApiController.cs" />
     <Compile Include="Controllers\Master\UserApiController.cs" />
     <Compile Include="Controllers\Process\ProcessApiController.cs" />
+    <Compile Include="Controllers\SubProcess\SubProcessApiController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

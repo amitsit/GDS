@@ -12,6 +12,8 @@ namespace GDS.Entities.Master
 
         public int? ProcessId { get; set; }
 
+        public int? GlobalSubProcessId { get; set; }
+
         public string SubProcessCode { get; set; }
 
         public string SubProcessName { get; set; }
@@ -24,9 +26,13 @@ namespace GDS.Entities.Master
 
         public string SubProcessInput { get; set; }
 
+        public string FundamentalOfProcess { get; set; }
+
         public string SubProcessOutput { get; set; }
 
         public int? RegionId { get; set; }
+
+        public string RegionName { get; set; }
 
         public Int16? DisplayOrder { get; set; }
 

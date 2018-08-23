@@ -173,6 +173,8 @@
     <Compile Include="Process\ProcessService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceDependencyRegister.cs" />
+    <Compile Include="SubProcess\ISubProcessService.cs" />
+    <Compile Include="SubProcess\SubProcessService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
