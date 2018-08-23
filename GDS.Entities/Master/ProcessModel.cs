@@ -15,5 +15,11 @@ namespace GDS.Entities.Master
 
         public bool? IsActive { get; set; }
 
+        public string ProcessDesc { get; set; }
+
+        public string SelectedRegion { get; set; }
+
+      public List<SubProcessModel> SubProcessList { get; set; }
+
     }
 }

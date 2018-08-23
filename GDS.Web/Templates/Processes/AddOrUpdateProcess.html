@@ -1,0 +1,94 @@
+﻿<style>
+    .td_border{
+        border:none;
+    }
+</style>
+
+<form name="AddOrUpdateProcessform" novalidate ng-controller="AddOrUpdateProcessController">
+    <h1 class="title" ng-bind="PageTitle"></h1>
+    <div role="tabpanel" class="form-horizontal" id="messages">
+        <div class="alert alert-danger alert-dismissible validationErrors" ng-show="(AddOrUpdateProcessform.$submitted && (!AddOrUpdateProcessform.$valid))">
+            <ul ng-show="(AddOrUpdateProcessform.$submitted && (!AddOrUpdateProcessform.$valid))">
+
+                <!--<li ng-show="UpdateUserform.UserName.$error.required">User Name is required.</li>-->
+                <li ng-show="AddOrUpdateform.MenuId.$error.required">Menu is required.</li>
+                <li ng-show="AddOrUpdateProcessform.ProcessName.$error.required">Process Name is required.</li>
+                  <!--<li ng-show="UserObj.SelectedPlant.length==0">Select atleast one Plant.</li>-->
+                <!--<li ng-show="ValidateReigion()">Region is Required.</li>-->
+            
+
+            </ul>
+        </div>
+    </div>
+    <div class="top_msg" >This page allow you to lookup Process</div>
+    <div class="wthbox wth_content">
+        <div class="toplinks">
+            <ul>
+                <li><button type="submit" class="save" data-placement="top" data-toggle="tooltip" title="Save" ng-click="SaveProcessDetail(AddOrUpdateProcessform)"></button></li>
+                <li><a class="cancel" data-placement="top" data-toggle="tooltip" title="Cancel"></a></li>
+            </ul>
+        </div>
+        <div class="row form-group">
+            <label class="col-sm-3 col-lg-2 control-label text-right rn_pad mandatoryField">Menu Name</label>
+            <div class="col-sm-3 col-md-2">
+                <select class="form-control select_list" name="MenuId" ng-model="ProcessObj.MenuId" 
+                         data-ng-options="m.id as m.name for m in MasterMenuList"  required="required">
+                    <option value="">-- Select Region --</option>
+                </select>               
+            </div>
+        </div>
+
+        <div class="row form-group">
+            <label class="col-sm-3 col-lg-2 control-label text-right rn_pad mandatoryField">Process Name</label>
+            <div class="col-sm-6 col-md-4"><input type="text" name="ProcessName" class="form-control" maxlength="200" ng-model="ProcessObj.ProcessName" required="required"></div>
+        </div>
+
+        <div class="row form-group">
+            <label class="col-sm-3 col-lg-2 control-label text-right rn_pad ">Process Description</label>
+            <div class="col-sm-6 col-md-4"><textarea name="ProcessDesc" class="form-control"  ng-model="ProcessObj.ProcessDesc"></textarea></div>
+        </div>
+
+
+        <div class="row">
+            <label class="col-sm-3 col-lg-2 control-label text-right rn_pad mandatoryField">Active</label>
+           
+            <div class="col-sm-6 col-md-4"><input type="checkbox" name="IsActive"  ng-model="ProcessObj.IsActive" ng-checked="ProcessObj.IsActive"></div>
+        </div>
+
+        <div class="row form-group">
+            <label class="col-sm-3 col-lg-2 control-label text-right rn_pad">Region</label>
+            <div class="col-sm-6 col-md-4">
+                <dropdown-multiselect model="ProcessObj.SelectedRegion" ng-click="SelectedRegion()"
+                                      options="RegionList" name="RegionId"></dropdown-multiselect>
+                <strong> <span class="control-label" ng-bind="RegionNames"></span></strong>
+            </div>                 
+        </div>
+
+     
+        <div class="row form-group">
+            <label class="col-sm-3 col-lg-2 control-label text-right rn_pad"></label>
+            <div class="col-sm-6 col-md-4">
+            <div class="panel panel-default">
+                <div class="table-responsive">
+                    <!--<div class="row form-group pull-right">-->
+                        
+                    <!--</div>-->
+                    <table class="table table-bordered table-condensed table-responsive text-center ">
+                        <tr>
+                           <th class="text-left" colspan="2"><lebel>Sub Processes</lebel><button type="button" title="Add Processes" ng-click="AddSubprocess()" class="btn btn-primary pull-right"><i class="glyphicon glyphicon-plus"></i></button></th>
+                         
+                        </tr>
+                      <tr ng-repeat="SubProcess in ProcessObj.SubProcessList">
+                         
+                        <td ><div class="col-sm-12"><div class="col-sm-11" ng-bind="SubProcess.SubProcessName"></div><div class="col-sm-1"><i class="glyphicon glyphicon-pencil"></i></div></div></td>
+                      </tr>
+                    </table>
+                </div>
+            </div>
+            </div>
+            </div>
+         
+        </div>
+</form>
+
+

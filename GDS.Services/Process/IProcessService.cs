@@ -11,6 +11,9 @@ namespace GDS.Services.Process
    public interface IProcessService
     {
         ApiResponse<ProcessModel> GetProcesses(int? MenuId);
-        ApiResponse<SubProcessModel> GetSubProcesses(int? ProcessId); 
+        ApiResponse<SubProcessModel> GetSubProcesses(int? ProcessId);
+        ApiResponse<ProcessModel> GetProcessOrSubProcessListByProcessId(int? MenuId, int? ProcessId, int? UserId);
+        BaseApiResponse SaveProcessDetail(int? UserId, ProcessModel ProceeObj);
+
     }
 }

@@ -31,6 +31,19 @@ namespace GDS.API.Controllers.Process
             return this._iProcessService.GetProcesses(MenuId);
         }
 
+        [HttpGet]
+        [Route("GetProcessOrSubProcessListByProcessId")]
+        public ApiResponse<ProcessModel> GetProcessOrSubProcessListByProcessId(int? MenuId,int? ProcessId, int? UserId)
+        {
+            return this._iProcessService.GetProcessOrSubProcessListByProcessId(MenuId, ProcessId, UserId);
+        }
+
+        [HttpPost]
+        [Route("SaveProcessDetail")]
+        public BaseApiResponse SaveProcessDetail(int? UserId, ProcessModel ProceeObj)
+        {
+            return this._iProcessService.SaveProcessDetail(UserId, ProceeObj);
+        }
         #endregion
     }
 }

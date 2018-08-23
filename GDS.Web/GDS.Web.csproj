@@ -814,6 +814,7 @@
     <Content Include="JS\Master\State\Controllers\StateController.js" />
     <Content Include="JS\Master\State\Services\StateService.js" />
     <Content Include="JS\ProcessDetails\Controllers\ProcessDetailController.js" />
+    <Content Include="JS\Processes\Controllers\AddOrUpdateProcessController.js" />
     <Content Include="JS\Processes\Controllers\ProcessController.js" />
     <Content Include="JS\Processes\Services\ProcessService.js" />
     <Content Include="ResourceFiles\Press Specs.xlsx" />
@@ -1032,6 +1033,7 @@
     <Content Include="Templates\Master\State\AddOrEditState.html" />
     <Content Include="Templates\Master\State\Index.html" />
     <Content Include="Templates\ProcessDetails\Index.html" />
+    <Content Include="Templates\Processes\AddOrUpdateProcess.html" />
     <Content Include="Templates\Processes\Index.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>

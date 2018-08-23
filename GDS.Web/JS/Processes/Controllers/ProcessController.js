@@ -60,6 +60,13 @@ app.controller('ProcessController', function ($scope, $state, localStorageServic
 
     }
 
+    $scope.GoToEditProcess = function (Processobj,Mode){
+
+        $state.go('EditProcess', ({ 'MenuId': Processobj.MenuId, 'ProcessId': Processobj.ProcessId, 'Mode': Mode }));
+
+    }
+
+
     //$scope.redirectTo = function () {
 
     //  $location.path='1312412';

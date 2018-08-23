@@ -22,7 +22,7 @@
                             <tr class="pressTitleRow">
                                 <th colspan="2" ng-bind="Process.ProcessName" class="bh_right_none" ></th>
                                 <th ng-show="!IsEditMode" class="headerborder"></th>
-                                <th ng-show="IsEditMode" class="editprocessheader"><a><i class="glyphicon glyphicon-pencil" data-original-title="Edit" data-toggle="tooltip"></i></a></th>
+                                <th ng-show="IsEditMode" class="editprocessheader"><a><i ng-click="GoToEditProcess(Process,Enum.Mode.Edit)" class="glyphicon glyphicon-pencil" data-original-title="Edit" data-toggle="tooltip"></i></a></th>
                               
                             </tr>
                             <!--<tr>

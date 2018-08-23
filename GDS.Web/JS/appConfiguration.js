@@ -158,6 +158,12 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $tra
         url: '/ProcessDetail?MenuId&ProcessId&&SubProcessId&Mode',
         templateUrl: '/Templates/ProcessDetails/Index.html'
     });
+    $stateProvider.state({
+        name: 'EditProcess',
+        url: '/EditProcess?MenuId&ProcessId',
+        templateUrl: '/Templates/Processes/AddOrUpdateProcess.html'
+    });
+
 
     //any url that doesn't exist in routes redirect to '/'
     $urlRouterProvider.otherwise('/Home');
