@@ -137,21 +137,9 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $tra
     $stateProvider.state({
         name: 'Process',
         url: '/Process?MenuId',
-        templateUrl: '/Templates/CoreProcess/Index.html'
-    });
-
-
-    $stateProvider.state({
-        name: 'Processes',
-        url: '/Processes',
         templateUrl: '/Templates/Processes/Index.html'
     });
 
-    $stateProvider.state({
-        name: 'CoreProcesses',
-        url: '/CoreProcesses',
-        templateUrl: '/Templates/CoreProcess/Index.html'
-    });
 
     $stateProvider.state({
         name: 'SubProcessDetail',

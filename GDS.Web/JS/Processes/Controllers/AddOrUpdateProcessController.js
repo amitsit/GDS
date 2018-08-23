@@ -20,20 +20,20 @@
 
         $scope.ProcessObj = new Object();
         if ($scope.ProcessId>0) {
-            $scope.GetProcessOrSubProcessListByProcessId($scope.MenuId, $scope.ProcessId, $scope.UserId);
-
-            GetRegionList();
+            $scope.GetProcessOrSubProcessListByProcessId($scope.MenuId, $scope.ProcessId, $scope.UserId);         
+        } else {
+            $scope.ProcessObj.MenuId = $scope.MenuId;
         }
+
+        GetRegionList();
         
     }
    
 
     $scope.GetProcessOrSubProcessListByProcessId = function (MenuId, ProcessId, UserId) {
         var promiseGetProcessListById = ProcessService.GetProcessOrSubProcessListByProcessId(MenuId, ProcessId, UserId);
-        promiseGetProcessListById.success(function (response) {
-          
-            $scope.ProcessObj = response.Data[0];
-
+        promiseGetProcessListById.success(function (response) {      
+            $scope.ProcessObj = response.Data[0];       
             if (!isNullOrUndefinedOrEmpty(response.Data[0].SelectedRegion)) {
                 $scope.ProcessObj.SelectedRegion = response.Data[0].SelectedRegion.split(',');
                 $scope.SelectedRegion();
@@ -82,8 +82,6 @@
         alert('Under maintenance');
         
     }
-
-  
  
     $scope.SaveProcessDetail = function (form) {
       
@@ -93,19 +91,14 @@
 
             //$scope.UserObj.SelectedPlant = $scope.UserObj.SelectedPlant.toString();
 
-            
-
-           
-
             if (!isNullOrUndefinedOrEmpty($scope.ProcessObj.SelectedRegion)) {
                 $scope.ProcessObj.SelectedRegion = $scope.ProcessObj.SelectedRegion.toString();
             } else {
                 $scope.ProcessObj.SelectedRegion = "";
             }
-
         
             var saveProcess = ProcessService.SaveProcessDetail($scope.UserId, $scope.ProcessObj);
-            debugger;
+        
             saveProcess.success(function (response) {
                 if (response.Success) {
                     if ($scope.ProcessObj.ProcessId> 0) {
@@ -114,7 +107,7 @@
                     else {
                         toastr.success($filter("translate")("NtfAdded"));
                     }
-                    //$state.transitionTo('User');
+                    $state.transitionTo('Process',({'MenuId':$scope.ProcessObj.MenuId}));
                 }
                 else {
                     toastr.error(response.Message[0]);

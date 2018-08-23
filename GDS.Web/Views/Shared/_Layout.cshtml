@@ -293,15 +293,6 @@
             $rootScope.Enum=enums;
       
 
-            //debugger;
-            //if(isNullOrUndefinedOrEmpty($stateParams.MenuId)){
-
-            //   $rootScope.SelectedMenuId = parseInt($stateParams.MenuId);
-            //}else{
-            //    $rootScope.SelectedMenuId=0;
-            //}
-               
-
             if (localStorageService.get("_LoginUserUniqueId-" + String($rootScope.RootScopeUserId)) != null) {
 
                 var Id=localStorageService.get("_LoginUserUniqueId-" + String($rootScope.RootScopeUserId)).LoginUserUniqueKey;

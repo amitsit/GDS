@@ -382,8 +382,7 @@ app.controller('UpdateUserController', function ($scope, localStorageService, $s
 
         var promiseGetPlantByRegionList = UserService.GetPlantByRegionList($scope.UserObj.RegionIdCsv, $scope.UserID, $scope.LoggedInUserId);
         promiseGetPlantByRegionList.success(function (response) {
-            debugger;
-
+    
             if (response.Success) {
                 $scope.selectedPlants = $filter('filter')(response.Data, { IsSelected: true }, true);
                 $scope.availablePlants = $filter('filter')(response.Data, { IsSelected: false }, true);

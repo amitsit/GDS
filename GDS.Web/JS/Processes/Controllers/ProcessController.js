@@ -44,6 +44,8 @@ app.controller('ProcessController', function ($scope, $state, localStorageServic
     $scope.showEdit = function (IsAdd) {
         if (IsAdd) {
 
+            $state.go('EditProcess', ({ 'MenuId': $scope.MenuId, 'ProcessId': 0 }));
+
         } else {
             if ($scope.IsEditMode) {
                 $scope.IsEditMode = false;
