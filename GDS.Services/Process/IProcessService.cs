@@ -15,6 +15,7 @@ namespace GDS.Services.Process
         ApiResponse<SubProcessModel> GetSubProcesses(int? ProcessId);
         ApiResponse<ProcessModel> GetProcessOrSubProcessListByProcessId(int? MenuId, int? ProcessId, int? UserId);
         BaseApiResponse SaveProcessDetail(int? UserId, ProcessModel ProceeObj);
-
+        BaseApiResponse DeleteProcess(int ProcessId, int UserId);
+        
     }
 }

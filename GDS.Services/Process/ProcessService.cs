@@ -93,7 +93,7 @@ namespace GDS.Services.Process
                     DbType = DbType.Boolean,
                     Value = (object)IsActive ?? DBNull.Value
                 };
-                var result = _repository.ExecuteSQL<ProcessModel>("GetProcessByMenuId", MenuIdParam, IsActiveParam).ToList();
+                var result = _repository.ExecuteSQL<ProcessModel>("GetProcessesListByStatus", MenuIdParam, IsActiveParam).ToList();
                 response.Success = true;
                 response.Data = result;
             }
@@ -264,6 +264,38 @@ namespace GDS.Services.Process
                     response.Success = true;
                 }
 
+            }
+            catch (Exception ex)
+            {
+                _logger.Error(ex);
+                response.Message.Add(ex.Message);
+            }
+
+            return response;
+        }
+
+        public BaseApiResponse DeleteProcess(int ProcessId, int UserId)
+        {
+            var response = new BaseApiResponse();
+
+            try
+            {
+                var ProcessIdParam = new SqlParameter
+                {
+                    ParameterName = "ProcessId",
+                    DbType = DbType.Int32,
+                    Value = (object)ProcessId ?? DBNull.Value
+                };
+
+                var UserIdParam = new SqlParameter
+                {
+                    ParameterName = "UserId",
+                    DbType = DbType.Int32,
+                    Value = (object)UserId ?? DBNull.Value
+                };
+
+                var result = _repository.ExecuteSQL<int>("DeleteProcess", ProcessIdParam, UserIdParam).FirstOrDefault();
+                response.Success = (result>0);             
             }
             catch (Exception ex)
             {

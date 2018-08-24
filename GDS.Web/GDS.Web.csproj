@@ -814,6 +814,7 @@
     <Content Include="JS\Master\State\Controllers\StateController.js" />
     <Content Include="JS\Master\State\Services\StateService.js" />
     <Content Include="JS\Processes\Controllers\AddOrUpdateProcessController.js" />
+    <Content Include="JS\Processes\Controllers\ProcessListController.js" />
     <Content Include="JS\Processes\Controllers\ProcessController.js" />
     <Content Include="JS\Processes\Services\ProcessService.js" />
     <Content Include="JS\SubProcess\Controllers\SubProcessController.js" />

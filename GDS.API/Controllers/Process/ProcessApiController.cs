@@ -52,6 +52,14 @@ namespace GDS.API.Controllers.Process
         {
             return this._iProcessService.SaveProcessDetail(UserId, ProceeObj);
         }
+
+        [HttpGet]
+        [Route("DeleteProcess")]
+        public BaseApiResponse DeleteProcess(int ProcessId,int UserId)
+        {
+            return this._iProcessService.DeleteProcess(ProcessId, UserId);
+        }
+        
         #endregion
     }
 }
