@@ -11,6 +11,7 @@ namespace GDS.Services.SubProcess
     public interface ISubProcessService
     {
         ApiResponse<SubProcessModel> GetSubProcess(int? ProcessId, int? SubProcessId, int? RegionId, int? UserId);
+        ApiResponse<SubProcessModel> GetSubProcessListByStatus(int? ProcessId, int? SubProcessId, int? RegionId, int? UserId);
 
         ApiResponse<ProcessDocument> GetProcessDocumentBySubProcessIdAndRegionId(int? SubProcessId, int? RegionId, int? UserId);
     }
