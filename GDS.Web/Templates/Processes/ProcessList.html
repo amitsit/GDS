@@ -1,4 +1,4 @@
-﻿<div class="db-content no-space" ng-controller="ProcessController">
+﻿<div class="db-content no-space" ng-controller="GetProcessListController">
 
     <h3 class="title  fontorang">
         <b>
@@ -7,7 +7,7 @@
         </b>
     </h3>
 
-    <div class="top_msg" >This page allows you to lookup <span ng-bind="MenuName"></span></div>
+    <div class="top_msg" >This page allows you to lookup All Processes <span ng-bind="MenuName"></span></div>
     <div class="wthbox wth_content pb-0 MasterDataPanel">
         <div class="toplinks btnWithText">
             <ul>
@@ -33,12 +33,12 @@
                                         <!--<th>
                                             <input ng-click="SelectAll()" name="select_all" value="1" id="example-select-all" type="checkbox" />
                                         </th>-->
-                                        <th>First Name</th>
-                                        <th>Last Name</th>
-                                        <th>Network Id</th>
-                                        <th>Email</th>
+                                        <th>Process Name</th>
+                                        <th>Menu Name</th>
+                                        <!--<th>Network Id</th>
+                                        <th>Email</th>-->
                                         <th>Created Date</th>
-                                        <th>Action</th>
+                                        <th>Active</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -46,10 +46,10 @@
                                         <!--<td></td>-->
                                         <td>First Name</td>
                                         <td>Last Name</td>
-                                        <td>Network Id</td>
-                                        <td>Email</td>
+                                        <!--<td>Network Id</td>-->
+                                        <!--<td>Email</td>-->
                                         <td>Created Date</td>
-                                        <td>Action</td>
+                                        <td>Active</td>
                                     </tr>
                                 </tbody>
                             </table>

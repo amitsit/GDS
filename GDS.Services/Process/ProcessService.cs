@@ -44,7 +44,7 @@ namespace GDS.Services.Process
 
 
 
-        public ApiResponse<ProcessModel> GetProcesses(int? MenuId)
+        public ApiResponse<ProcessModel> GetProcesses(int? MenuId, bool? IsActive)
         {
             var response = new ApiResponse<ProcessModel>();
 
@@ -56,8 +56,44 @@ namespace GDS.Services.Process
                     DbType = DbType.Int32,
                     Value = (object)MenuId ?? DBNull.Value
                 };
+                var IsActiveParam = new SqlParameter
+                {
+                    ParameterName = "IsActive",
+                    DbType = DbType.Boolean,
+                    Value = (object)IsActive ?? DBNull.Value
+                };
+                var result = _repository.ExecuteSQL<ProcessModel>("GetProcessByMenuId", MenuIdParam, IsActiveParam).ToList();
+                response.Success = true;
+                response.Data = result;
+            }
+            catch (Exception ex)
+            {
+                _logger.Error(ex);
+                response.Message.Add(ex.Message);
+            }
 
-                var result = _repository.ExecuteSQL<ProcessModel>("GetProcessByMenuId", MenuIdParam).ToList();
+            return response;
+        }
+
+        public ApiResponse<ProcessModel> GetProcessesListByStatus(int? MenuId, bool? IsActive)
+        {
+            var response = new ApiResponse<ProcessModel>();
+
+            try
+            {
+                var MenuIdParam = new SqlParameter
+                {
+                    ParameterName = "MenuId",
+                    DbType = DbType.Int32,
+                    Value = (object)MenuId ?? DBNull.Value
+                };
+                var IsActiveParam = new SqlParameter
+                {
+                    ParameterName = "IsActive",
+                    DbType = DbType.Boolean,
+                    Value = (object)IsActive ?? DBNull.Value
+                };
+                var result = _repository.ExecuteSQL<ProcessModel>("GetProcessByMenuId", MenuIdParam, IsActiveParam).ToList();
                 response.Success = true;
                 response.Data = result;
             }
@@ -82,6 +118,8 @@ namespace GDS.Services.Process
                     DbType = DbType.Int32,
                     Value = (object)ProcessId ?? DBNull.Value
                 };
+
+              
 
                 var result = _repository.ExecuteSQL<SubProcessModel>("GetSubProcessesByProcessId", MenuIdParam).ToList();
                 response.Success = true;

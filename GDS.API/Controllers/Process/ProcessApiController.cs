@@ -26,10 +26,18 @@ namespace GDS.API.Controllers.Process
 
         [HttpGet]
         [Route("GetProcesses")]
-        public ApiResponse<ProcessModel> GetProcesses(int? MenuId)
+        public ApiResponse<ProcessModel> GetProcesses(int? MenuId,bool? IsActive)
         {
-            return this._iProcessService.GetProcesses(MenuId);
+            return this._iProcessService.GetProcesses(MenuId, IsActive);
         }
+
+        [HttpGet]
+        [Route("GetProcessesListByStatus")]
+        public ApiResponse<ProcessModel> GetProcessesListByStatus(int? MenuId, bool? IsActive)
+        {
+            return this._iProcessService.GetProcessesListByStatus(MenuId, IsActive);
+        }
+
 
         [HttpGet]
         [Route("GetProcessOrSubProcessListByProcessId")]

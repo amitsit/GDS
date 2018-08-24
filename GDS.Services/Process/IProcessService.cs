@@ -10,7 +10,8 @@ namespace GDS.Services.Process
 {
    public interface IProcessService
     {
-        ApiResponse<ProcessModel> GetProcesses(int? MenuId);
+        ApiResponse<ProcessModel> GetProcesses(int? MenuId,bool? IsActive);
+        ApiResponse<ProcessModel> GetProcessesListByStatus(int? MenuId, bool? IsActive);
         ApiResponse<SubProcessModel> GetSubProcesses(int? ProcessId);
         ApiResponse<ProcessModel> GetProcessOrSubProcessListByProcessId(int? MenuId, int? ProcessId, int? UserId);
         BaseApiResponse SaveProcessDetail(int? UserId, ProcessModel ProceeObj);

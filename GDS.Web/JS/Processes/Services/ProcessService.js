@@ -2,8 +2,12 @@
 
     var ProcessService = {};
 
-    ProcessService.GetProcesses = function (menuId) {
-        return $http.get(configurationService.basePath + "api/GetProcesses?MenuId=" + menuId);
+    ProcessService.GetProcesses = function (menuId,isActive) {
+        return $http.get(configurationService.basePath + "api/GetProcesses?MenuId=" + menuId + "&IsActive=" + isActive);
+    }
+
+    ProcessService.GetProcessesListByStatus = function (menuId, isActive) {
+        return $http.get(configurationService.basePath + "api/GetProcessesListByStatus?MenuId=" + menuId + "&IsActive=" + isActive);
     }
 
 

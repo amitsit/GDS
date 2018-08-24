@@ -12,7 +12,7 @@ app.controller('ProcessController', function ($scope, $state, localStorageServic
         $scope.ProcessDisplayType = $rootScope.Enum.ProcessDisplayType.MultiTable;
 
         $scope.MenuId = parseInt($stateParams.MenuId);
-
+        $scope.IsActive = false;
         $scope.MenuName = "";
         if ($scope.MenuId > 0) {
 
@@ -27,12 +27,12 @@ app.controller('ProcessController', function ($scope, $state, localStorageServic
             if ($scope.MenuId == $rootScope.Enum.Process.Processes) {
                 $scope.ProcessDisplayType = $rootScope.Enum.ProcessDisplayType.List;
             }    
-            $scope.GetProcesses($scope.MenuId);
+            $scope.GetProcesses($scope.MenuId, $scope.IsActive);
         }
     }
 
-    $scope.GetProcesses = function (MenuId) {
-        var promiseGetProcesses = ProcessService.GetProcesses(MenuId);
+    $scope.GetProcesses = function (MenuId, IsActive) {
+        var promiseGetProcesses = ProcessService.GetProcesses(MenuId, IsActive);
         promiseGetProcesses.success(function (response) {          
             $scope.ProcessListData = response.Data;            
         });

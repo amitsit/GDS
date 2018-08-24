@@ -8,7 +8,15 @@
 </style>
 
 <form class="form-horizontal" name="RoleConfigurationform" novalidate ng-controller="RoleConfigurationController">
-    <h1 class="title"> Configure Permissions for :{{RoleName}} </h1>
+    <!--<h1 class="title"> Configure Permissions for :{{RoleName}} </h1>-->
+
+    <h3 class="title  fontorang">
+        <b>
+            <a ui-sref="Home" title="Home"><i class="fa fa-home"></i></a>
+            <span> &nbsp;/&nbsp;&nbsp;</span><a ui-sref="Roles" ng-bind="'Roles'"></a>  <span class="arrowdirection">>></span> <span class="fontblack" ng-show="UserID>0" ng-bind="'Configure Permissions For'"></span><span ng-show="!(UserID>0)" class="fontblack" ng-bind="'Configure Permissions For'"></span>
+        </b>
+        :{{RoleName}}
+    </h3>
 
     <div class="top_msg" translate="ConfigRole_TopMsg">This page allow you to configure role permissions.</div>
     <div class="wthbox wth_content">

@@ -1,5 +1,11 @@
 ﻿<form name="AddOrUpdateRoleForm" novalidate ng-controller="AddOrUpdateRoleController">
-    <h1 class="title" ng-bind="PageTitle"></h1>
+    <!--<h1 class="title" ng-bind="PageTitle"></h1>-->
+    <h3 class="title  fontorang">
+        <b>
+            <a ui-sref="Home" title="Home"><i class="fa fa-home"></i></a>
+            <span> &nbsp;/&nbsp;&nbsp;</span><a ui-sref="Roles" ng-bind="'Roles'"></a>  <span class="arrowdirection">>></span> <span class="fontblack" ng-show="UserID>0" ng-bind="'Role Edit'"></span><span ng-show="!(UserID>0)" class="fontblack" ng-bind="'Add New Role'"></span>
+        </b>
+    </h3>
     <div role="tabpanel" class="form-horizontal" id="messages">
         <div class="alert alert-danger alert-dismissible validationErrors" ng-show="(AddOrUpdateRoleForm.$submitted && (!AddOrUpdateRoleForm.$valid))">
 

@@ -2,8 +2,14 @@
 
 
 <form class="form-horizontal" name="UpdateUserform" novalidate ng-controller="UpdateUserController">
-    <h1 class="title" ng-show="UserID>0" translate="Admin_EditUser"></h1>
-    <h1 class="title" ng-show="!(UserID>0)" translate="Admin_AddUser"></h1>
+    <!--<h1 class="title" ng-show="UserID>0" translate="Admin_EditUser"></h1>
+    <h1 class="title" ng-show="!(UserID>0)" translate="Admin_AddUser"></h1>-->
+    <h3 class="title  fontorang">
+        <b>
+            <a ui-sref="Home" title="Home"><i class="fa fa-home"></i></a>
+            <span> &nbsp;/&nbsp;&nbsp;</span><a ui-sref="User" ng-bind="'User'"></a>  <span class="arrowdirection">>></span> <span class="fontblack" ng-show="UserID>0"  ng-bind="'User Edit'"></span><span ng-show="!(UserID>0)" class="fontblack" ng-bind="'User Edit'"></span>
+        </b>
+    </h3>
     <div role="tabpanel" class="form-horizontal" id="messages">
         <div class="alert alert-danger alert-dismissible validationErrors" ng-show="(UpdateUserform.$submitted && (!UpdateUserform.$valid)) || (UpdateUserform.$submitted && (ValidateReigion() || ValidatePlant()))">
             <ul ng-show="(UpdateUserform.$submitted && (!UpdateUserform.$valid)) || (UpdateUserform.$submitted &&  (ValidateReigion() || ValidatePlant()))">
@@ -112,7 +118,7 @@
                     </div>
                 </div>
              
-                <div class="col-sm-12">
+                <!--<div class="col-sm-12">
                     <div class="col-sm-4 rns">
                         <div class="form-group">
                             <label class="control-label mandatoryField">Available Plant</label>
@@ -136,8 +142,7 @@
                         <div class="btnsave col-sm-offset-1">
                         </div>
                     </div>
-                </div>
-
+                </div>-->
             </div>
 
 

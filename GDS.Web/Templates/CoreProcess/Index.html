@@ -9,6 +9,7 @@
     <div class="col-sm-12" ng-if="ProcessDisplayType==Enum.ProcessDisplayType.MultiTable">
         <div class="col-sm-12">
             <span class="pull-right mb-10">
+               
                 <button type="button" title="Add Processes" ng-click="showEdit(true,true)" class="btn btn-primary "><i class="glyphicon glyphicon-plus"></i></button>
                 <button type="button" title="Edit Processes" ng-click="showEdit(false)" class="btn btn-primary"><i ng-class="(IsEditMode==false)?'glyphicon glyphicon-pencil':'glyphicon glyphicon-ok'"></i></button>
             </span> 
@@ -20,7 +21,7 @@
                     <div class="panel-body table-responsive">
                         <table class="table table-bordered text-center ">
                             <tr class="pressTitleRow">
-                                <th colspan="2" ng-bind="Process.ProcessName" class="bh_right_none" ></th>
+                                <th colspan="" ng-bind="Process.ProcessName" class="bh_right_none" ></th>
                                 <th ng-show="!IsEditMode" class="headerborder"></th>
                                 <th ng-show="IsEditMode" class="editprocessheader"><a><i ng-click="GoToEditProcess(Process,Enum.Mode.Edit)" class="glyphicon glyphicon-pencil" data-original-title="Edit" data-toggle="tooltip"></i></a></th>
                               
