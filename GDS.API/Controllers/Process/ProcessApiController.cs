@@ -23,7 +23,6 @@ namespace GDS.API.Controllers.Process
         #endregion
 
         #region Methods
-
         [HttpGet]
         [Route("GetProcesses")]
         public ApiResponse<ProcessModel> GetProcesses(int? MenuId,bool? IsActive)
