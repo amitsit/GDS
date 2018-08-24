@@ -80,6 +80,59 @@ namespace GDS.Services.SubProcess
             return response;
         }
 
+        public ApiResponse<SubProcessModel> GetSubProcessListByStatus(int? ProcessId, int? SubProcessId, int? RegionId, int? UserId, bool? IsActive)
+        {
+            var response = new ApiResponse<SubProcessModel>();
+
+            try
+            {
+                var ProcessIdParam = new SqlParameter
+                {
+                    ParameterName = "ProcessId",
+                    DbType = DbType.Int32,
+                    Value = (object)ProcessId ?? DBNull.Value
+                };
+                var SubProcessIdParam = new SqlParameter
+                {
+                    ParameterName = "SubProcessId",
+                    DbType = DbType.Int32,
+                    Value = (object)SubProcessId ?? DBNull.Value
+                };
+
+                var RegionIdParam = new SqlParameter
+                {
+                    ParameterName = "RegionId",
+                    DbType = DbType.Int32,
+                    Value = (object)RegionId ?? DBNull.Value
+                };
+
+                var UserIdParam = new SqlParameter
+                {
+                    ParameterName = "UserId",
+                    DbType = DbType.Int32,
+                    Value = (object)UserId ?? DBNull.Value
+                };
+
+                var IsActiveParam = new SqlParameter
+                {
+                    ParameterName = "IsActive",
+                    DbType = DbType.Boolean,
+                    Value = (object)IsActive ?? DBNull.Value
+                };
+
+                var result = _repository.ExecuteSQL<SubProcessModel>("GetSubProcess", ProcessIdParam, SubProcessIdParam, RegionIdParam, UserIdParam, IsActiveParam).ToList();
+                response.Success = true;
+                response.Data = result;
+            }
+            catch (Exception ex)
+            {
+                _logger.Error(ex);
+                response.Message.Add(ex.Message);
+            }
+
+            return response;
+        }
+
 
         public ApiResponse<ProcessDocument> GetProcessDocumentBySubProcessIdAndRegionId(int? SubProcessId, int? RegionId, int? UserId)
         {

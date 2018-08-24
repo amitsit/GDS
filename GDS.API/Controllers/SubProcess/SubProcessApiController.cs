@@ -33,6 +33,13 @@ namespace GDS.API.Controllers.SubProcess
         }
 
         [HttpGet]
+        [Route("GetSubProcessListByStatus")]
+        public ApiResponse<SubProcessModel> GetSubProcessListByStatus(int? ProcessId, int? SubProcessId, int? RegionId, int? UserId,bool? IsActive)
+        {
+            return this._iSubProcessService.GetSubProcessListByStatus(ProcessId, SubProcessId, RegionId, UserId,IsActive);
+        }
+
+        [HttpGet]
         [Route("GetProcessDocumentBySubProcessIdAndRegionId")]
         public ApiResponse<ProcessDocument> GetProcessDocumentBySubProcessIdAndRegionId(int? SubProcessId,int? RegionId, int? UserId)
         {
