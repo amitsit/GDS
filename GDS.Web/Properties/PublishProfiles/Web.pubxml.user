@@ -6,7 +6,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_PublishTargetUrl>D:\GDS\Aug 14,2018\Web</_PublishTargetUrl>
+    <_PublishTargetUrl>D:\GDS\Aug 23,2018\Web</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/Autofac.dll">
@@ -20,6 +20,15 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="bin/EntityFramework.SqlServer.dll">
       <publishTime>08/09/2018 12:08:33</publishTime>
+    </File>
+    <File Include="bin/GDS.Common.dll">
+      <publishTime>08/23/2018 16:04:54</publishTime>
+    </File>
+    <File Include="bin/GDS.Entities.dll">
+      <publishTime>08/23/2018 16:04:55</publishTime>
+    </File>
+    <File Include="bin/GDS.Web.dll">
+      <publishTime>08/23/2018 16:10:01</publishTime>
     </File>
     <File Include="bin/IACBI.Common.dll">
       <publishTime>08/14/2018 15:46:15</publishTime>
@@ -58,7 +67,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/09/2018 12:08:34</publishTime>
     </File>
     <File Include="bin/Microsoft.Web.Infrastructure.dll">
-      <publishTime>07/25/2012 11:48:56</publishTime>
+      <publishTime>08/09/2018 12:08:34</publishTime>
     </File>
     <File Include="bin/Newtonsoft.Json.dll">
       <publishTime>08/09/2018 12:08:34</publishTime>
@@ -823,13 +832,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/09/2018 12:08:31</publishTime>
     </File>
     <File Include="Content/css/bootstrap.css">
-      <publishTime>08/09/2018 14:14:14</publishTime>
+      <publishTime>08/23/2018 15:04:19</publishTime>
     </File>
     <File Include="Content/css/bootstrap.min.css">
       <publishTime>08/09/2018 12:08:31</publishTime>
     </File>
     <File Include="Content/css/Custom.css">
-      <publishTime>08/14/2018 14:54:15</publishTime>
+      <publishTime>08/23/2018 15:26:44</publishTime>
     </File>
     <File Include="Content/css/dataTables.tableTools.css">
       <publishTime>08/09/2018 12:08:31</publishTime>
@@ -868,7 +877,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/09/2018 14:14:14</publishTime>
     </File>
     <File Include="Content/css/nav.css">
-      <publishTime>08/13/2018 15:30:04</publishTime>
+      <publishTime>08/17/2018 17:59:06</publishTime>
     </File>
     <File Include="Content/css/percircle.css">
       <publishTime>08/09/2018 14:14:14</publishTime>
@@ -2085,6 +2094,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Images/close.png">
       <publishTime>08/09/2018 14:14:14</publishTime>
     </File>
+    <File Include="Images/gds_business_model.jpg">
+      <publishTime>08/16/2018 17:07:29</publishTime>
+    </File>
     <File Include="Images/IAC.png">
       <publishTime>08/09/2018 12:08:32</publishTime>
     </File>
@@ -2097,6 +2109,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Images/loading.gif">
       <publishTime>08/09/2018 14:14:14</publishTime>
     </File>
+    <File Include="Images/logo.jpg">
+      <publishTime>08/13/2018 16:14:30</publishTime>
+    </File>
     <File Include="Images/logo_light.png">
       <publishTime>08/09/2018 12:08:32</publishTime>
     </File>
@@ -2107,10 +2122,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/09/2018 14:14:14</publishTime>
     </File>
     <File Include="JS/appConfiguration.js">
-      <publishTime>08/14/2018 14:44:19</publishTime>
+      <publishTime>08/23/2018 15:43:09</publishTime>
     </File>
     <File Include="JS/Common.js">
-      <publishTime>08/09/2018 14:14:14</publishTime>
+      <publishTime>08/16/2018 15:48:36</publishTime>
     </File>
     <File Include="JS/Directives/appDirectives.js">
       <publishTime>08/09/2018 14:14:14</publishTime>
@@ -2119,7 +2134,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/09/2018 12:08:32</publishTime>
     </File>
     <File Include="JS/Enums.js">
-      <publishTime>08/09/2018 14:14:14</publishTime>
+      <publishTime>08/23/2018 11:19:04</publishTime>
     </File>
     <File Include="JS/ExecutiveSummary/Controllers/ExecutiveSummaryController.js">
       <publishTime>08/09/2018 12:08:32</publishTime>
@@ -2159,6 +2174,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="JS/General/Services/DashboardService.js">
       <publishTime>08/09/2018 14:14:14</publishTime>
+    </File>
+    <File Include="JS/Home/Controllers/IndexController.js">
+      <publishTime>08/21/2018 18:03:00</publishTime>
     </File>
     <File Include="JS/IMIP/BICVerificationDocument/Controllers/BICVerificationDocumentController.js">
       <publishTime>08/09/2018 14:14:14</publishTime>
@@ -2272,7 +2290,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/09/2018 14:14:14</publishTime>
     </File>
     <File Include="JS/Master/Role/Controllers/RoleController.js">
-      <publishTime>08/09/2018 14:14:14</publishTime>
+      <publishTime>08/16/2018 16:03:26</publishTime>
     </File>
     <File Include="JS/Master/Role/Services/RoleService.js">
       <publishTime>08/09/2018 12:08:32</publishTime>
@@ -2296,7 +2314,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/09/2018 12:08:32</publishTime>
     </File>
     <File Include="JS/Master/User/Controllers/UserController.js">
-      <publishTime>08/09/2018 14:14:14</publishTime>
+      <publishTime>08/23/2018 16:00:24</publishTime>
     </File>
     <File Include="JS/Master/User/Services/UserService.js">
       <publishTime>08/09/2018 14:14:14</publishTime>
@@ -2312,6 +2330,18 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="JS/Master/WallStock/Services/WallStockService.js">
       <publishTime>08/09/2018 12:08:32</publishTime>
+    </File>
+    <File Include="JS/ProcessDetails/Controllers/ProcessDetailController.js">
+      <publishTime>08/22/2018 10:25:04</publishTime>
+    </File>
+    <File Include="JS/Processes/Controllers/AddOrUpdateProcessController.js">
+      <publishTime>08/23/2018 15:50:35</publishTime>
+    </File>
+    <File Include="JS/Processes/Controllers/ProcessController.js">
+      <publishTime>08/23/2018 15:45:47</publishTime>
+    </File>
+    <File Include="JS/Processes/Services/ProcessService.js">
+      <publishTime>08/23/2018 15:37:19</publishTime>
     </File>
     <File Include="JS/SMOM/BarrelHeats/Controllers/BarrelHeatController.js">
       <publishTime>08/09/2018 14:14:14</publishTime>
@@ -2730,6 +2760,12 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="JS/STMP/TLNSavingReport/Services/TLNSavingReportService.js">
       <publishTime>08/09/2018 14:14:14</publishTime>
     </File>
+    <File Include="JS/SubProcess/Controllers/SubProcessController.js">
+      <publishTime>08/23/2018 15:12:05</publishTime>
+    </File>
+    <File Include="JS/SubProcess/Services/SubProcessService.js">
+      <publishTime>08/23/2018 11:34:52</publishTime>
+    </File>
     <File Include="packages.config">
       <publishTime>08/09/2018 14:14:15</publishTime>
     </File>
@@ -2740,10 +2776,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/09/2018 14:14:14</publishTime>
     </File>
     <File Include="ResourceFiles/lang_en.json">
-      <publishTime>08/09/2018 14:14:14</publishTime>
+      <publishTime>08/16/2018 16:05:21</publishTime>
     </File>
     <File Include="ResourceFiles/lang_es.json">
-      <publishTime>08/09/2018 14:14:14</publishTime>
+      <publishTime>08/16/2018 16:05:36</publishTime>
     </File>
     <File Include="ResourceFiles/Operations &amp; Process Navigator User Registration Details.xlsx">
       <publishTime>08/09/2018 14:14:14</publishTime>
@@ -3160,7 +3196,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/09/2018 12:08:32</publishTime>
     </File>
     <File Include="Scripts/_references.js">
-      <publishTime>08/10/2018 19:08:10</publishTime>
+      <publishTime>08/23/2018 15:37:19</publishTime>
     </File>
     <File Include="StaticImages/MiscCalculatorFormulas.PNG">
       <publishTime>08/09/2018 12:08:32</publishTime>
@@ -3181,7 +3217,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/09/2018 12:08:32</publishTime>
     </File>
     <File Include="Templates/CoreProcess/Index.html">
-      <publishTime>08/14/2018 15:36:30</publishTime>
+      <publishTime>08/23/2018 15:37:19</publishTime>
     </File>
     <File Include="Templates/ExecutiveSummary/ExecutiveSummary.html">
       <publishTime>08/09/2018 14:14:14</publishTime>
@@ -3196,7 +3232,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/14/2018 12:16:50</publishTime>
     </File>
     <File Include="Templates/Home/ContentTestPage2.html">
-      <publishTime>08/14/2018 13:09:54</publishTime>
+      <publishTime>08/20/2018 13:07:11</publishTime>
     </File>
     <File Include="Templates/Home/DashboardHeader.html">
       <publishTime>08/09/2018 14:14:14</publishTime>
@@ -3211,7 +3247,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/09/2018 14:14:14</publishTime>
     </File>
     <File Include="Templates/Home/Index.html">
-      <publishTime>08/13/2018 16:12:09</publishTime>
+      <publishTime>08/21/2018 18:03:00</publishTime>
     </File>
     <File Include="Templates/Home/Index2.html">
       <publishTime>08/09/2018 14:14:14</publishTime>
@@ -3247,7 +3283,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/09/2018 14:14:15</publishTime>
     </File>
     <File Include="Templates/Master/Admin_Links/Index.html">
-      <publishTime>08/09/2018 14:14:15</publishTime>
+      <publishTime>08/23/2018 13:46:54</publishTime>
     </File>
     <File Include="Templates/Master/BICCycleKeyElement/AddOrEditBICCycleKeyElement.html">
       <publishTime>08/09/2018 14:14:15</publishTime>
@@ -3349,10 +3385,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/09/2018 14:14:15</publishTime>
     </File>
     <File Include="Templates/Master/User/EditUser.html">
-      <publishTime>08/09/2018 14:14:15</publishTime>
+      <publishTime>08/23/2018 15:37:19</publishTime>
     </File>
     <File Include="Templates/Master/User/Index.html">
-      <publishTime>08/09/2018 14:14:15</publishTime>
+      <publishTime>08/21/2018 18:03:00</publishTime>
     </File>
     <File Include="Templates/Master/UtilityConfiguration/Index.html">
       <publishTime>08/09/2018 14:14:15</publishTime>
@@ -3363,8 +3399,11 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Templates/Master/WallStock/Index.html">
       <publishTime>08/09/2018 14:14:15</publishTime>
     </File>
+    <File Include="Templates/Processes/AddOrUpdateProcess.html">
+      <publishTime>08/23/2018 15:49:15</publishTime>
+    </File>
     <File Include="Templates/Processes/Index.html">
-      <publishTime>08/14/2018 14:56:05</publishTime>
+      <publishTime>08/23/2018 15:44:18</publishTime>
     </File>
     <File Include="Templates/SMOM/BarrelHeats/Index.html">
       <publishTime>08/09/2018 14:14:15</publishTime>
@@ -3618,6 +3657,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Templates/STMP/TLNSavingReport/Index.html">
       <publishTime>08/09/2018 14:14:15</publishTime>
     </File>
+    <File Include="Templates/SubProcess/Index.html">
+      <publishTime>08/23/2018 14:37:26</publishTime>
+    </File>
     <File Include="Views/Account/ConfirmEmail.cshtml">
       <publishTime>08/09/2018 12:08:32</publishTime>
     </File>
@@ -3715,7 +3757,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/09/2018 12:08:32</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>08/14/2018 14:58:06</publishTime>
+      <publishTime>08/23/2018 16:01:49</publishTime>
     </File>
     <File Include="Views/Shared/_LoginPartial.cshtml">
       <publishTime>08/09/2018 12:08:32</publishTime>
@@ -3739,7 +3781,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/09/2018 12:08:32</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>08/14/2018 15:46:21</publishTime>
+      <publishTime>08/23/2018 16:08:26</publishTime>
     </File>
   </ItemGroup>
 </Project>

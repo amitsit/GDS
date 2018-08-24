@@ -29,12 +29,11 @@ app.controller('ProcessController', function ($scope, $state, localStorageServic
             }    
             $scope.GetProcesses($scope.MenuId);
         }
-
     }
 
     $scope.GetProcesses = function (MenuId) {
         var promiseGetProcesses = ProcessService.GetProcesses(MenuId);
-        promiseGetProcesses.success(function (response) {            
+        promiseGetProcesses.success(function (response) {          
             $scope.ProcessListData = response.Data;            
         });
         promiseGetProcesses.error(function (data, statusCode) {
@@ -43,7 +42,6 @@ app.controller('ProcessController', function ($scope, $state, localStorageServic
 
     $scope.showEdit = function (IsAdd) {
         if (IsAdd) {
-
             $state.go('EditProcess', ({ 'MenuId': $scope.MenuId, 'ProcessId': 0 }));
 
         } else {

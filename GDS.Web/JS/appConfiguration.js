@@ -19,9 +19,6 @@ var app = angular.module("IACBI", ["ui.router", "LocalStorageModule", "ngFileUpl
 app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $translateProvider) {
     
 
-
-
-
     $stateProvider.state({
         name: 'Home',
         url: '/Home',
@@ -39,25 +36,20 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $tra
 
    $stateProvider.state({
        name: 'Home2',
-       url: '/Home2',
-       //templateUrl: '/Templates/Home/Index.html'
+       url: '/Home2',    
        templateUrl: '/Templates/Home/ContentTestPage1.html'
 
    });
    $stateProvider.state({
        name: 'Home3',
-       url: '/Home3',
-       //templateUrl: '/Templates/Home/Index.html'
+       url: '/Home3', 
        templateUrl: '/Templates/Home/ContentTestPage2.html'
-
    });
-
 
    $stateProvider.state({
        name: 'Master',
        url: '/Master',
        templateUrl: '/Templates/Master/Admin_Links/Index.html'
-
    });
 
    $stateProvider.state({
@@ -150,6 +142,12 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $tra
         name: 'EditProcess',
         url: '/EditProcess?MenuId&ProcessId',
         templateUrl: '/Templates/Processes/AddOrUpdateProcess.html'
+    });
+
+    $stateProvider.state({
+        name: 'ProcessList',
+        url: '/ProcessList?MenuId',
+        templateUrl: '/Templates/Processes/ProcessList.html'
     });
 
 

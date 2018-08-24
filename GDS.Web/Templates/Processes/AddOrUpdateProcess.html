@@ -1,22 +1,10 @@
-﻿<style>
-    .td_border{
-        border:none;
-    }
-</style>
-
-<form name="AddOrUpdateProcessform" novalidate ng-controller="AddOrUpdateProcessController">
+﻿<form name="AddOrUpdateProcessform" novalidate ng-controller="AddOrUpdateProcessController">
     <h1 class="title" ng-bind="PageTitle"></h1>
     <div role="tabpanel" class="form-horizontal" id="messages">
         <div class="alert alert-danger alert-dismissible validationErrors" ng-show="(AddOrUpdateProcessform.$submitted && (!AddOrUpdateProcessform.$valid))">
-            <ul ng-show="(AddOrUpdateProcessform.$submitted && (!AddOrUpdateProcessform.$valid))">
-
-                <!--<li ng-show="UpdateUserform.UserName.$error.required">User Name is required.</li>-->
-                <li ng-show="AddOrUpdateform.MenuId.$error.required">Menu is required.</li>
+            <ul ng-show="(AddOrUpdateProcessform.$submitted && (!AddOrUpdateProcessform.$valid))">                
+                <li ng-show="AddOrUpdateProcessform.MenuId.$error.required">Menu is required.</li>
                 <li ng-show="AddOrUpdateProcessform.ProcessName.$error.required">Process Name is required.</li>
-                  <!--<li ng-show="UserObj.SelectedPlant.length==0">Select atleast one Plant.</li>-->
-                <!--<li ng-show="ValidateReigion()">Region is Required.</li>-->
-            
-
             </ul>
         </div>
     </div>
@@ -25,7 +13,7 @@
         <div class="toplinks">
             <ul>
                 <li><button type="submit" class="save" data-placement="top" data-toggle="tooltip" title="Save" ng-click="SaveProcessDetail(AddOrUpdateProcessform)"></button></li>
-                <li><a class="cancel" data-placement="top" data-toggle="tooltip" title="Cancel"></a></li>
+                <li><a class="cancel" data-placement="top" ui-sref="Process({MenuId:MenuId})" data-toggle="tooltip" title="Cancel"></a></li>
             </ul>
         </div>
         <div class="row form-group">
@@ -50,9 +38,9 @@
 
 
         <div class="row">
-            <label class="col-sm-3 col-lg-2 control-label text-right rn_pad mandatoryField">Active</label>
+            <label class="col-sm-3 col-lg-2 control-label text-right rn_pad ">Active</label>
            
-            <div class="col-sm-6 col-md-4"><input type="checkbox" name="IsActive"  ng-model="ProcessObj.IsActive" ng-checked="ProcessObj.IsActive"></div>
+            <div class="col-sm-6 col-md-4"><input type="checkbox" name="IsActive"  ng-model="ProcessObj.IsActive" ng-checked="ProcessObj.IsActive" ></div>
         </div>
 
         <div class="row form-group">
