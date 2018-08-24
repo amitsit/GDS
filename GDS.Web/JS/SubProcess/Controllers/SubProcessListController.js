@@ -50,7 +50,7 @@ app.controller('SubProcessListController', function ($scope, $state, localStorag
     }
 
     $scope.GetSubProcessListByStatus = function (ProcessId, SubProcessId, RegionId, UserId,IsActive) {
-        var promiseGetProcesses = SubProcessService.GetSubProcessListByStatus(ProcessId, SubProcessId, RegionId, UserId,IsActive);
+        var promiseGetProcesses = SubProcessService.GetSubProcessListByStatus(ProcessId, SubProcessId, RegionId, UserId, IsActive);
         promiseGetProcesses.success(function (response) {
             if (response.Data.length > 0) {
                 $scope.SubProcessObj = response.Data[0];

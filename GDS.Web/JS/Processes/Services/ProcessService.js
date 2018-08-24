@@ -23,5 +23,10 @@
         return $http.post(configurationService.basePath + "api/SaveProcessDetail?UserId=" + UserId, ProcessObj);
     }
 
+    ProcessService.DeleteProcess = function (ProcessId,UserId) {
+        return $http.get(configurationService.basePath + "api/DeleteProcess?ProcessId=" + ProcessId + "&UserId=" + UserId);
+    }
+    
+
     return ProcessService;
 });

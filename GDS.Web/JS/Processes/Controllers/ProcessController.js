@@ -12,7 +12,7 @@ app.controller('ProcessController', function ($scope, $state, localStorageServic
         $scope.ProcessDisplayType = $rootScope.Enum.ProcessDisplayType.MultiTable;
 
         $scope.MenuId = parseInt($stateParams.MenuId);
-        $scope.IsActive = false;
+        $scope.IsActive = true;
         $scope.MenuName = "";
         if ($scope.MenuId > 0) {
 
