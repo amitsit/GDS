@@ -31,7 +31,7 @@
                                 <td class="weeklyefficiency colsm_5"><b><a ng-click="GotoProcessDetail(SubProcess,Enum.Mode.Readonly)" class="text-white">{{SubProcess.SubProcessCode}}</a></b></td>
                                 <td class="font-bold text-left tableboxtd col-sm-2">{{SubProcess.SubProcessName}}</td>
                                 <td class="colsm_1" ng-show="!IsEditMode"><a ng-click="GotoProcessDetail(SubProcess,Enum.Mode.Readonly)"><i class="glyphicon glyphicon-eye-open editprocessheader" data-original-title="Edit" data-toggle="tooltip"></i></a></td>
-                                <td class="colsm_1" ng-show="IsEditMode"><a><i class="glyphicon glyphicon-pencil editprocessheader" data-original-title="Edit" data-toggle="tooltip"></i></a></td>
+                                <td class="colsm_1" ng-show="IsEditMode"><a ui-sref="EditSubProcess({MenuId:MenuId,ProcessId:Process.ProcessId,ProcessName:Process.ProcessName,SubProcessId:SubProcess.SubProcessId,SubProcessName:SubProcess.SubProcessName})"><i class="glyphicon glyphicon-pencil editprocessheader" data-original-title="Edit" data-toggle="tooltip"></i></a></td>
                             </tr>
 
                         </table>

@@ -5852,3 +5852,9 @@ select.form-control {
 .td_border {
     border: none;
 }
+input[type="radio"], input[type="checkbox"]{
+    margin:0px;
+}
+.cursor-pointer{
+    cursor:pointer!important;
+}

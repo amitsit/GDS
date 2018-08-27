@@ -156,6 +156,11 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $tra
         templateUrl: '/Templates/SubProcess/SubProcessList.html'
     });
 
+    $stateProvider.state({
+        name: 'EditSubProcess',
+        url: '/EditSubProcess?MenuId&ProcessId&ProcessName&SubProcessId&SubProcessName',
+        templateUrl: '/Templates/SubProcess/AddOrUpdateSubProcess.html'
+    });
 
     //any url that doesn't exist in routes redirect to '/'
     $urlRouterProvider.otherwise('/Home');
