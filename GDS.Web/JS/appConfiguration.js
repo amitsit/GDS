@@ -125,6 +125,11 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $tra
         templateUrl: '/Templates/Master/User/EditUser.html'
     });
 
+    $stateProvider.state({
+        name: 'ContactUS',
+        url: '/ContactUS',
+        templateUrl: '/Templates/ContactUs/Index.html'
+    });
 
     $stateProvider.state({
         name: 'Process',
@@ -152,7 +157,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $tra
 
     $stateProvider.state({
         name: 'SubProcessList',
-        url: '/SubProcessList?MenuId&ProcessId&&SubProcessId&RegionId',
+        url: '/SubProcessList?MenuId&ProcessId&ProcessName&RegionId',
         templateUrl: '/Templates/SubProcess/SubProcessList.html'
     });
 

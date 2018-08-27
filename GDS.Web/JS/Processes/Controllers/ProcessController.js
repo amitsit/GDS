@@ -14,7 +14,7 @@ app.controller('ProcessController', function ($scope, $state, localStorageServic
         $scope.MenuId = parseInt($stateParams.MenuId);
         $scope.IsActive = true;
         $scope.MenuName = "";
-        if ($scope.MenuId > 0) {
+        if ($scope.MenuId > 0) { 
 
             var MenuObj = $filter('filter')($rootScope.MenuList, { id: parseInt($scope.MenuId) }, true)[0];
             if (!isNullOrUndefinedOrEmpty(MenuObj)) {
@@ -66,6 +66,13 @@ app.controller('ProcessController', function ($scope, $state, localStorageServic
         $state.go('EditProcess', ({ 'MenuId': Processobj.MenuId, 'ProcessId': Processobj.ProcessId, 'ProcessName': Processobj.ProcessName}));
 
     }
+
+    //$scope.GoToSubProcessList = function (SubProcessListobj, Mode) {
+
+    //    $state.go('SubProcessList', ({ 'MenuId': SubProcessListobj.MenuId, 'ProcessId': SubProcessListobj.ProcessId, 'ProcessName': SubProcessListobj.ProcessName, 'RegionId': SubProcessListobj.RegionId }));
+
+    //}
+
 
 
     //$scope.redirectTo = function () {

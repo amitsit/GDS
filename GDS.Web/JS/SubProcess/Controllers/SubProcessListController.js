@@ -8,31 +8,31 @@ app.controller('SubProcessListController', function ($scope, $state, localStorag
 
     function INIT() {
         $scope.IsEditMode = false;
-        $scope.ProcessDisplayType = $rootScope.Enum.ProcessDisplayType.MultiTable;
+        
+        //$scope.ProcessDisplayType = $rootScope.Enum.ProcessDisplayType.MultiTable;
 
         $scope.MenuId = parseInt($stateParams.MenuId);
         $scope.ProcessId = parseInt($stateParams.ProcessId);
-        $scope.SubProcessId = parseInt($stateParams.SubProcessId);
-        $scope.IsActive = false;
+       $scope.SubProcessId = parseInt($stateParams.SubProcessId);
+       $scope.ProcessName = String($stateParams.ProcessName);
         $scope.RegionId = parseInt($stateParams.RegionId);
 
         if (isNullOrUndefinedOrEmpty($scope.ProcessId)) {
             $scope.ProcessId = 0;
         }
-
         if (isNullOrUndefinedOrEmpty($scope.SubProcessId)) {
             $scope.SubProcessId = 0;
         }
 
-        if (isNullOrUndefinedOrEmpty($scope.RegionId)) {
+        if (isNullOrUndefinedOrEmpty($scope.RegionId) || isNaN($scope.RegionId)) {
             $scope.RegionId = $rootScope.Enum.Region.Global;
         }
 
-        $scope.RegionList = [];
 
+        //$scope.RegionList = [];
         $scope.UserId = $rootScope.LoginUserDetail.UserId;
         $scope.MenuName = "";
-
+       
         if ($scope.MenuId > 0) {
 
             var MenuObj = $filter('filter')($rootScope.MenuList, { id: parseInt($scope.MenuId) }, true)[0];
@@ -46,43 +46,33 @@ app.controller('SubProcessListController', function ($scope, $state, localStorag
                 $scope.ProcessDisplayType = $rootScope.Enum.ProcessDisplayType.List;
             }
             $scope.IsActive = false;
-            $scope.GetSubProcessListByStatus($scope.ProcessId, $scope.SubProcessId, $scope.RegionId, $scope.UserId);
+                
+            $scope.GetSubProcessListByStatus($scope.ProcessId, $scope.RegionId, $scope.UserId, $scope.IsActive);
+           
         }
     }
 
-    $scope.GetSubProcessListByStatus = function (ProcessId, SubProcessId, RegionId, UserId,IsActive) {
-        var promiseGetProcesses = SubProcessService.GetSubProcessListByStatus(ProcessId, SubProcessId, RegionId, UserId, IsActive);
-        promiseGetProcesses.success(function (response) {
-            if (response.Data.length > 0) {
-                $scope.SubProcessObj = response.Data[0];
-                if (!isNullOrUndefinedOrEmpty($scope.SubProcessObj.AssignedRegions)) {
-                    var RegionsList = $scope.SubProcessObj.AssignedRegions.split(";");
-
-                    for (var i = 0; i < RegionsList.length; i++) {
-                        var RegionObj = new Object();
-                        RegionObj.RegionId = parseInt(RegionsList[i].split(',')[0]);
-                        RegionObj.RegionName = RegionsList[i].split(',')[1];
-                        $scope.RegionList.push(RegionObj);
-                    }
-
-                } else {
-                    $scope.RegionList = [];
-                }
-                $scope.GetProcessDocumentBySubProcessIdAndRegionId($scope.SubProcessObj.SubProcessId, $scope.SubProcessObj.RegionId, UserId);
-            }
-
+   
+    $scope.GetSubProcessListByStatus = function (ProcessId, RegionId, UserId,IsActive)
+    {
+       
+        var promiseGetSubProcessListByStatus = SubProcessService.GetSubProcessListByStatus(ProcessId, RegionId, UserId, IsActive);
+        promiseGetSubProcessListByStatus.success(function (response) {
+            $scope.SubProcessListData = response.Data;
+            BindprocessList();
         });
-        promiseGetProcesses.error(function (data, statusCode) {
+        promiseGetSubProcessListByStatus.error(function (data, statusCode) {
         });
     }
+
 
     function BindprocessList() {
-        if ($.fn.DataTable.isDataTable("#tblProcess")) {
-            $('#tblProcess').DataTable().destroy();
+        if ($.fn.DataTable.isDataTable("#tblSubProcess")) {
+            $('#tblSubProcess').DataTable().destroy();
         }
-
-        $('#tblProcess').DataTable({
-            data: $scope.ProcessListData,
+     
+        $('#tblSubProcess').DataTable({
+            data: $scope.SubProcessListData,
             "bDestroy": true,
             "dom": '<"top"f><"table-responsive"rt><"bottom"lip<"clear">>',
             "aaSorting": [1, "desc"],
@@ -146,7 +136,7 @@ app.controller('SubProcessListController', function ($scope, $state, localStorag
         var table = $('#tblProcess').DataTable();
         var row = table.row($($event.target).parents('tr')).data();
         bootbox.dialog({
-            message: "Do you want to delete a process" + ' - ' + row.ProcessName + "?",
+            message: "Do you want to delete a sub process" + ' - ' + row.SubProcessName + "?",
             title: "Confirmation",
             className: "model",
             buttons: {
@@ -155,10 +145,10 @@ app.controller('SubProcessListController', function ($scope, $state, localStorag
                         label: "Yes",
                         className: "btn btn-primary theme-btn",
                         callback: function () {
-                            var deleteProcess = ProcessService.DeleteSubProcess(row.ProcessId, $scope.UserId);
+                            var deleteProcess = SubProcessService.DeleteSubProcess(row.ProcessId, $scope.UserId);
                             deleteProcess.success(function (p) {
                                 notificationFactory.successDelete();
-                                $scope.GetSubProcessListByStatus($scope.ProcessId,$scope.SubProcessId,$scope.RegionId,$scope.UserId,$scope.IsActive);
+                                $scope.GetSubProcessListByStatus($scope.ProcessId,$scope.RegionId,$scope.UserId,$scope.IsActive);
 
                             });
                             deleteProcess.error(function (pl, statusCode) {

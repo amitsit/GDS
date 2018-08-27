@@ -131,8 +131,8 @@
                 <li><a href="">-Site Map</a></li>
             </ul>*@
         </li>
-        <li class="top">
-            <a href="" class="navlink" ui-sref="Process({MenuId:Enum.Process.ConatctUs})">Contact Us</a>
+        <li class="top"  ng-class="(SelectedMenuId==Enum.Process.ContactUs) ? 'current' : ''">
+            <a href="" class="navlink" ui-sref="ContactUS">Contact Us</a>
         </li>
 
         <li class="top">
