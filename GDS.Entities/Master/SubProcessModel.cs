@@ -16,6 +16,9 @@ namespace GDS.Entities.Master
 
         public string SubProcessCode { get; set; }
 
+        public string ProcessName { get; set; }
+        public bool? IsActive { get; set; }
+
         public string SubProcessName { get; set; }
 
         public string SubProcessModelPath { get; set; }

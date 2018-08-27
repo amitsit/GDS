@@ -46,6 +46,23 @@ namespace GDS.API.Controllers.SubProcess
             return this._iSubProcessService.GetProcessDocumentBySubProcessIdAndRegionId(SubProcessId, RegionId, UserId);
         }
 
+        [HttpGet]
+        [Route("DeleteSubProcessFromRegion")]
+        public BaseApiResponse DeleteSubProcessFromRegion(int SubProcessId, int RegionId, int UserId)
+        {
+            return this._iSubProcessService.DeleteSubProcessFromRegion(SubProcessId, RegionId, UserId);
+        }
+
+        [HttpPost]
+        [Route("SaveSubProcessDetail")]
+        public ApiResponse<SubProcessModel> SaveSubProcessDetail(int UserId, SubProcessModel SubProcessObj)
+        {
+            return this._iSubProcessService.SaveSubProcessDetail(UserId, SubProcessObj);
+        }
+
+        
+
+
         #endregion
 
     }

@@ -13,9 +13,15 @@
         return $http.get(configurationService.basePath + "api/GetProcessDocumentBySubProcessIdAndRegionId?SubProcessId=" + subProcessId + "&RegionId=" + regionId + "&UserId=" + userId);
     }
 
+    SubProcessService.DeleteSubProcessFromRegion = function (subProcessId, regionId, userId) {
+        return $http.get(configurationService.basePath + "api/DeleteSubProcessFromRegion?SubProcessId=" + subProcessId + "&RegionId=" + regionId + "&UserId=" + userId );
+    }
 
+    SubProcessService.SaveSubProcessDetail = function (userId,SubProcessobj) {
+        return $http.post(configurationService.basePath + "api/SaveSubProcessDetail?UserId=" + userId, SubProcessobj);
+    }
     
- 
+    
 
     return SubProcessService;
 });

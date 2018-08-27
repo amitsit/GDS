@@ -56,12 +56,12 @@
     <script src="~/Scripts/moment.js"></script>
 </head>
 <body ng-controller="RoleRightsController" onload="CheckForBrowserVersion()">
-    <div id="wrapper" ng-cloak >
+    <div id="wrapper" ng-cloak>
         <header id="header">
             <div class="logoimg">
                 <a href="/Home">
                     <img src="~/Images/logo.jpg" height="65" width="500" alt="IAC">
-                </a>               
+                </a>
             </div>
             <ul class="header-right">
                 <li class="hlink homeicon">
@@ -78,147 +78,133 @@
                     </div>
                 </li>
 
-   
+
                 <li class="hlink dropdown">
                     <a class="settinglink" data-toggle="dropdown"></a>
                     <ul class="dropdown-menu set-dropdown pull-right">
                         @*<li><a class="cursor-pointer" ng-click="OpenGlobalSettingPopup()"><span >Setting</span></a></li>*@
                         @*ng-if="isSubModuleAccessibleToUser('Admin', 'Admin', 'View')"*@
-                        <li ><a class="cursor-pointer" ui-sref="Master"><span>Admin</span></a></li>                                 
+                        <li><a class="cursor-pointer" ui-sref="Master"><span>Admin</span></a></li>
                     </ul>
                 </li>
             </ul>
         </header>
         <!-- header end -->
         <!-- navigation start -->
-       <nav id="navigation">
+        <nav id="navigation">
             <div class="userinfo-mobile"><h4 ng-bind="LoginUserDetail.FirstName+' '+LoginUserDetail.LastName"></h4><span>@User.Identity.Name</span></div>
             <a class="toggleMenu"></a>
-        <ul class="menu">
-        <li class="top" ng-class="(SelectedMenuId==Enum.Process.Home) ? 'current' : ''">
-            <a href="" class="navlink" ui-sref="Process({MenuId:Enum.Process.Home})">Home</a>
-            @*<ul>
-                <li><a href="">Turtles</a></li>                
-            </ul>*@    
-        </li>
-        <li class="top" ng-class="(SelectedMenuId==Enum.Process.CoreProcess) ? 'current' : ''">
-            <a href="" class="navlink" ui-sref="Process({MenuId:Enum.Process.CoreProcess})">Core Processes</a>
-        </li>
-        <li class="top" ng-class="(SelectedMenuId==Enum.Process.ManagementProcess) ? 'current' : ''">
-            <a href="" class="navlink" ui-sref="Process({MenuId:Enum.Process.ManagementProcess})">Management Process</a>           
-        </li>
+            <ul class="menu">
+                <li class="top" ng-class="(SelectedMenuId==Enum.Process.Home) ? 'current' : ''">
+                    <a href="" class="navlink" ui-sref="Home">Home</a>   
+                    @*ui-sref="Process({MenuId:Enum.Process.Home})"*@
+                </li>
+                <li class="top" ng-class="(SelectedMenuId==Enum.Process.ManagementProcess) ? 'current' : ''">
+                    <a href="" class="navlink" ui-sref="Process({MenuId:Enum.Process.ManagementProcess})">Management Process</a>
+                </li>
 
-        <li class="top" ng-class="(SelectedMenuId==Enum.Process.SupportingProcess) ? 'current' : ''" >
-          <a href="" class="navlink" ui-sref="Process({MenuId:Enum.Process.SupportingProcess})">Supporting Process</a>
-        </li>
+                <li class="top" ng-class="(SelectedMenuId==Enum.Process.CoreProcess) ? 'current' : ''">
+                    <a href="" class="navlink" ui-sref="Process({MenuId:Enum.Process.CoreProcess})">Core Processes</a>
+                </li>
 
-        <li class="top" ng-class="(SelectedMenuId==Enum.Process.Processes) ? 'current' : ''" >
-            <a href="" class="navlink" ui-sref="Process({MenuId:Enum.Process.Processes})">Processes</a>           
-        </li>
-        @*<li class="top cursor-pointer">
-            <a href="" class="navlink" >Region/Plant Specific Pages</a>
-            <ul>
-                <li><a href="">-Europe</a></li>
-                <li><a href="">-North America</a></li>
-                <li><a href="">-Plant Specific</a></li>
+                <li class="top" ng-class="(SelectedMenuId==Enum.Process.SupportingProcess) ? 'current' : ''">
+                    <a href="" class="navlink" ui-sref="Process({MenuId:Enum.Process.SupportingProcess})">Supporting Process</a>
+                </li>
+
+                @*<li class="top" ng-class="(SelectedMenuId==Enum.Process.Processes) ? 'current' : ''">
+                    <a href="" class="navlink" ui-sref="Process({MenuId:Enum.Process.Processes})">Processes</a>
+                </li>*@               
+                <li class="top ">
+                    <a href="" class="navlink" ui-sref="Process({MenuId:Enum.Process.DocumentLog})">Documentation Logs</a>
+                </li>
+                <li class="top">
+                    <a href="" class="navlink" ui-sref="Process({MenuId:Enum.Process.ConatctUs})">Contact Us</a>
+                </li>
+
+                <li class="top">
+                    <a class="navlink" ui-sref="Process({MenuId:Enum.Process.Search})">Search</a>
+                </li>
+
+                @*<li class="top cursor-pointer" ui-sref="Home1">
+                        <a class="navlink">layout1</a>
+                    </li>
+
+                    <li class="top cursor-pointer" ui-sref="Home2">
+                        <a class="navlink">layout2</a>
+                    </li>*@
+
+                @*<li class="top" ui-sref="Home3">
+                        <a class="navlink">layout3</a>
+                    </li>*@
+
             </ul>
-        </li>*@
-        <li class="top ">
-            <a href="" class="navlink" ui-sref="Process({MenuId:Enum.Process.DocumentLog})" >Documentation Logs</a>
-            @*<ul>
-                <li><a href="">-Master Document List</a></li>
-                <li><a href="">-Change Log</a></li>
-                <li><a href="">-Site Map</a></li>
-            </ul>*@
-        </li>
-        <li class="top">
-            <a href="" class="navlink" ui-sref="Process({MenuId:Enum.Process.ConatctUs})">Contact Us</a>
-        </li>
+            <div class="clear"></div>
 
-        <li class="top">
-           <a class="navlink" ui-sref="Process({MenuId:Enum.Process.Search})">Search</a>
-        </li>  
-
-            @*<li class="top cursor-pointer" ui-sref="Home1">
-                <a class="navlink">layout1</a>
-            </li> 
-
-            <li class="top cursor-pointer" ui-sref="Home2">
-                <a class="navlink">layout2</a>
-            </li>*@ 
-
-            @*<li class="top" ui-sref="Home3">
-                <a class="navlink">layout3</a>
-            </li>*@ 
-
-        </ul>
-       <div class="clear"></div>
-          
-      </nav>
+        </nav>
 
         <!-- navigation end -->
         <!-- content start -->
         <div class="loader" data-loading><img class="Centerloader" src="~/Content/Images/Loading.gif" /></div>
         <section id="content">
             @*<div style="margin-bottom:10px">
-                <div style="padding:7px;margin-bottom:5px" ng-repeat="item in notifications" ng-class="item.ResourceKey =='info' ? 'alert alert-info' :'alert alert-warning'">
-                    <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
-                </div>
-            </div>*@
+                    <div style="padding:7px;margin-bottom:5px" ng-repeat="item in notifications" ng-class="item.ResourceKey =='info' ? 'alert alert-info' :'alert alert-warning'">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+                    </div>
+                </div>*@
             @RenderBody()
         </section>
         <!-- content end -->
         <!-- footer start -->
         <footer id="footer">
             @*<div class="automotive pull-right">
-                <a href="/Home">
-                    <img src="~/Images/logo.jpg" height="65" width="500" alt="IAC">                   
-                </a>
-            </div>*@
+                    <a href="/Home">
+                        <img src="~/Images/logo.jpg" height="65" width="500" alt="IAC">
+                    </a>
+                </div>*@
 
 
         </footer>
         @*<div class="modal fade" id="ModelGlobalSettingModel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title" id="myModalLabel"><span translate="Configuration_AdminLink_Sublink1">Settings</span> </h4>
-                    </div>
-                    <div class="wthbox">
-                        <form name="UnitSettingform">
-                            <div class="panel panel-info">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title text-center"></h3>
-                                </div>
-                                <div class="panel panel-body">
-                                    <div class="row">
-                                        <div class="col-sm-3">
-                                            <label class="control-label " translate="Unit">Unit</label>
-                                            <select class="form-control" ng-model="LengthUnit.model" ng-options="LengthUnitObj.Name  for LengthUnitObj in LengthUnit.Options track by LengthUnitObj.Id"
-                                                    ng-model-options="{  updateOn: 'submit'}" ng-change="SetLengthUnitSetting(LengthUnit.model)"></select>
-                                        </div>
-                                        <div class="col-sm-3">
-                                            <label class="control-label " translate="Pressure">Pressure</label>
-                                            <select class="form-control" ng-model="PressureUnit.model" ng-options="PressureUnitObj.Name for PressureUnitObj in PressureUnit.Options track by PressureUnitObj.Id"
-                                                    ng-model-options="{ updateOn: 'submit' }" ng-change="SetPressureUnitSetting(PressureUnit.model)"></select>
-                                        </div>
-                                        <div class="col-sm-3">
-                                            <label class="control-label " translate="Language">Language</label>
-                                            <select class="form-control" ng-model="Language.model" ng-options="LanguageUnitObj.LanguageName for LanguageUnitObj in Language.Options track by LanguageUnitObj.LanguageCd"
-                                                    ng-model-options="{ updateOn: 'submit' }" ng-change="SetLanguageSetting(Language.model)"></select>
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="myModalLabel"><span translate="Configuration_AdminLink_Sublink1">Settings</span> </h4>
+                        </div>
+                        <div class="wthbox">
+                            <form name="UnitSettingform">
+                                <div class="panel panel-info">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title text-center"></h3>
+                                    </div>
+                                    <div class="panel panel-body">
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <label class="control-label " translate="Unit">Unit</label>
+                                                <select class="form-control" ng-model="LengthUnit.model" ng-options="LengthUnitObj.Name  for LengthUnitObj in LengthUnit.Options track by LengthUnitObj.Id"
+                                                        ng-model-options="{  updateOn: 'submit'}" ng-change="SetLengthUnitSetting(LengthUnit.model)"></select>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <label class="control-label " translate="Pressure">Pressure</label>
+                                                <select class="form-control" ng-model="PressureUnit.model" ng-options="PressureUnitObj.Name for PressureUnitObj in PressureUnit.Options track by PressureUnitObj.Id"
+                                                        ng-model-options="{ updateOn: 'submit' }" ng-change="SetPressureUnitSetting(PressureUnit.model)"></select>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <label class="control-label " translate="Language">Language</label>
+                                                <select class="form-control" ng-model="Language.model" ng-options="LanguageUnitObj.LanguageName for LanguageUnitObj in Language.Options track by LanguageUnitObj.LanguageCd"
+                                                        ng-model-options="{ updateOn: 'submit' }" ng-change="SetLanguageSetting(Language.model)"></select>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-danger" data-dismiss="modal" ng-click="UnitSettingform.$rollbackViewValue();" translate="CancelButton">Cancel</button>
-                                <button type="Submit" class="btn btn-success" ng-click="HideGlobalSettingPopup();" translate="CoverPage_gobtn">Go</button>
-                            </div>
-                        </form>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal" ng-click="UnitSettingform.$rollbackViewValue();" translate="CancelButton">Cancel</button>
+                                    <button type="Submit" class="btn btn-success" ng-click="HideGlobalSettingPopup();" translate="CoverPage_gobtn">Go</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>*@
+            </div>*@
 
 
         <div class="modal fade" id="Reloadlookup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -238,7 +224,7 @@
                                         There have been updated to the system. Click OK to refresh the page.<br />
                                         <span style="color:red;"> Note:  All unsaved changes will be lost.</span>
                                         <br /><br />
-                                        Click Later to go back and save all changes first.                                       
+                                        Click Later to go back and save all changes first.
                                     </b>
                                 </div>
                             </div>
@@ -274,7 +260,7 @@
             });
 
             ApplicationVersion = '@Html.Raw(System.Configuration.ConfigurationManager.AppSettings["ApplicationVersion"])';
-         
+
             $('.datepicker').datepicker({
                 format: 'mm/dd/yyyy',
                 startDate: '-3d'
@@ -284,14 +270,14 @@
 
 
         app.controller('RoleRightsController', function ($scope, $templateCache,$state, localStorageService,$interval, $stateParams, $rootScope, $location, notificationFactory, configurationService, $compile, $filter) {
-            
-            
-            
+
+
+
             $rootScope.UserRoleRightsList = @Html.Raw(Json.Encode(@ProjectSession.LoggedInUserDetail.RolesRightsPermissions));
             $rootScope.LoginUserDetail=@Html.Raw(Json.Encode(@ProjectSession.LoggedInUserDetail));
             $rootScope.RootScopeUserId =   $rootScope.LoginUserDetail.UserId;
             $rootScope.Enum=enums;
-      
+
 
             if (localStorageService.get("_LoginUserUniqueId-" + String($rootScope.RootScopeUserId)) != null) {
 
@@ -326,8 +312,8 @@
                     cache: false,
                     global: false,
                     success: function (data) {
-                       
-                        var oldVersion = localStorage.getItem("Version");                                               
+
+                        var oldVersion = localStorage.getItem("Version");
                         if (data != oldVersion && oldVersion!=undefined && oldVersion!="" && oldVersion!=null) {
                             angular.element("#Reloadlookup").modal('show');
                         }else{
@@ -338,7 +324,7 @@
             };
 
 
-            $rootScope.ReloadPage=function() {   
+            $rootScope.ReloadPage=function() {
                 $templateCache.removeAll();
                 window.location.reload(true);
                 return;

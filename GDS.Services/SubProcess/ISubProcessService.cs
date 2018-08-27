@@ -12,7 +12,11 @@ namespace GDS.Services.SubProcess
     {
         ApiResponse<SubProcessModel> GetSubProcess(int? ProcessId, int? SubProcessId, int? RegionId, int? UserId);
         ApiResponse<SubProcessModel> GetSubProcessListByStatus(int? ProcessId, int? SubProcessId, int? RegionId, int? UserId ,bool? IsActive);
-
         ApiResponse<ProcessDocument> GetProcessDocumentBySubProcessIdAndRegionId(int? SubProcessId, int? RegionId, int? UserId);
+        BaseApiResponse DeleteSubProcessFromRegion(int SubProcessId, int RegionId, int UserId);
+
+        ApiResponse<SubProcessModel> SaveSubProcessDetail(int UserId,SubProcessModel SubProcessObj);
+
+        
     }
 }
