@@ -140,7 +140,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $tra
     });
     $stateProvider.state({
         name: 'EditProcess',
-        url: '/EditProcess?MenuId&ProcessId',
+        url: '/EditProcess?MenuId&ProcessId&ProcessName',
         templateUrl: '/Templates/Processes/AddOrUpdateProcess.html'
     });
 

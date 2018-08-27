@@ -45,6 +45,7 @@ app.controller('SubProcessListController', function ($scope, $state, localStorag
             if ($scope.MenuId == $rootScope.Enum.Process.Processes) {
                 $scope.ProcessDisplayType = $rootScope.Enum.ProcessDisplayType.List;
             }
+            $scope.IsActive = false;
             $scope.GetSubProcessListByStatus($scope.ProcessId, $scope.SubProcessId, $scope.RegionId, $scope.UserId);
         }
     }
@@ -75,27 +76,106 @@ app.controller('SubProcessListController', function ($scope, $state, localStorag
         });
     }
 
-    $scope.GetProcessDocumentBySubProcessIdAndRegionId = function (SubProcessId, RegionId, UserId) {
-        var promiseGetProcessDocumentBySubProcessIdAndRegionId = SubProcessService.GetProcessDocumentBySubProcessIdAndRegionId(SubProcessId, RegionId, UserId);
-        promiseGetProcessDocumentBySubProcessIdAndRegionId.success(function (response) {
-            $scope.ProcessDocuments = response.Data;
-        });
-        promiseGetProcessDocumentBySubProcessIdAndRegionId.error(function (data, statusCode) {
-        });
-    }
-
-    $scope.IsEmptyHeader = function () {
-        var neefTohide = false;
-        if (!isNullOrUndefinedOrEmpty($scope.SubProcessObj)) {
-            if (isNullOrUndefinedOrEmpty($scope.SubProcessObj.SubProcessInput) && isNullOrUndefinedOrEmpty($scope.SubProcessObj.FundamentalOfProcess) && isNullOrUndefinedOrEmpty($scope.SubProcessObj.SubProcessOutput)) {
-                var neefTohide = true;
-            }
+    function BindprocessList() {
+        if ($.fn.DataTable.isDataTable("#tblProcess")) {
+            $('#tblProcess').DataTable().destroy();
         }
-        return neefTohide;
+
+        $('#tblProcess').DataTable({
+            data: $scope.ProcessListData,
+            "bDestroy": true,
+            "dom": '<"top"f><"table-responsive"rt><"bottom"lip<"clear">>',
+            "aaSorting": [1, "desc"],
+            "aLengthMenu": [10, 20, 50, 100, 200],
+            "pageLength": 10,
+            "stateSave": true,
+            "columns": [
+                 {
+                     "title": 'Process Name',
+                     "data": "ProcessName",
+                     "className": "dt-left",
+                     "render": function (data, type, row) {
+                         return data;
+                     }
+                 },
+                  {
+                 "title": "Sub Process name",
+                 "className": "dt-center",
+                 "data": "SubProcessName",
+                 "render": function (data, type, row) {
+                     return data;
+                 }
+             },
+             {
+                 "title": "Active",
+                 "className": "dt-center",
+                 "data": "IsActive",
+                 "render": function (data, type, row) {
+                     return (row.IsActive) ? "Yes" : "No";
+                 }
+             },
+
+            {
+                "title": "Action",
+                "data": null,
+                "sClass": "action dt-center",
+                "sorting": "false",
+                "render": function (data, type, row) {
+                    var strAction = '';
+                    strAction = "<a><i ui-sref='EditProcess({MenuId:" + $scope.MenuId + ",ProcessId:" + row.ProcessId +",SubProcessId:" + $scope.SubProcessId +"})' class='glyphicon glyphicon-pencil  cursor-pointer' data-original-title='Edit' data-toggle='tooltip'></i></a>";
+                    //if ($rootScope.isSubModuleAccessibleToUser('Admin', 'Location Quick Links', 'Delete Region')) {
+                    strAction = strAction + "<a ng-click='DeleteSubProcess($event)' ><i  class='glyphicon glyphicon-trash cursor-pointer' data-original-title='Delete' data-toggle='tooltip'></i></a>";
+                    //} ng-click='DeleteRegion($event)'
+                    return strAction;
+                }
+            }
+            ],
+            "initComplete": function () {
+            },
+            "fnDrawCallback": function () {
+                BindToolTip();
+            },
+            "fnCreatedRow": function (nRow, aData, iDataIndex) {
+                $compile(angular.element(nRow).contents())($scope);
+            }
+        });
+
     }
 
-    $scope.ChangeRegion = function (RegionId) {
-        $state.go('SubProcessDetail', ({ 'MenuId': $scope.MenuId, 'ProcessId': $scope.ProcessId, 'SubProcessId': $scope.SubProcessId, 'RegionId': RegionId }));
+    $scope.DeleteSubProcess = function ($event) {
+        var table = $('#tblProcess').DataTable();
+        var row = table.row($($event.target).parents('tr')).data();
+        bootbox.dialog({
+            message: "Do you want to delete a process" + ' - ' + row.ProcessName + "?",
+            title: "Confirmation",
+            className: "model",
+            buttons: {
+                success:
+                    {
+                        label: "Yes",
+                        className: "btn btn-primary theme-btn",
+                        callback: function () {
+                            var deleteProcess = ProcessService.DeleteSubProcess(row.ProcessId, $scope.UserId);
+                            deleteProcess.success(function (p) {
+                                notificationFactory.successDelete();
+                                $scope.GetSubProcessListByStatus($scope.ProcessId,$scope.SubProcessId,$scope.RegionId,$scope.UserId,$scope.IsActive);
+
+                            });
+                            deleteProcess.error(function (pl, statusCode) {
+                                exceptionService.ShowException(pl, statusCode);
+                            });
+                        }
+                    },
+                danger:
+                    {
+                        label: "No",
+                        className: "btn btn-default",
+                        callback: function () {
+                            return true;
+                        }
+                    }
+            }
+        });
     }
 
 

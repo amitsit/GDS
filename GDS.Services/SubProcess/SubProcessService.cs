@@ -120,9 +120,9 @@ namespace GDS.Services.SubProcess
                     Value = (object)IsActive ?? DBNull.Value
                 };
 
-                var result = _repository.ExecuteSQL<SubProcessModel>("GetSubProcess", ProcessIdParam, SubProcessIdParam, RegionIdParam, UserIdParam, IsActiveParam).ToList();
-                response.Success = true;
-                response.Data = result;
+                //var result = _repository.ExecuteSQL<SubProcessModel>("GetSubProcess", ProcessIdParam, SubProcessIdParam, RegionIdParam, UserIdParam, IsActiveParam).ToList();
+                //response.Success = true;
+                //response.Data = result;
             }
             catch (Exception ex)
             {

@@ -1,5 +1,10 @@
 ﻿<form name="AddOrUpdateProcessform" novalidate ng-controller="AddOrUpdateProcessController">
-    <h1 class="title" ng-bind="PageTitle"></h1>
+    <h3 class="title  fontorang">
+        <b>
+            <a ui-sref="Home" title="Home"><i class="fa fa-home"></i></a>
+            <span> &nbsp;/&nbsp;&nbsp;</span><a ui-sref="Process({MenuId:MenuId})" ng-bind="MenuName"></a><span class="arrowdirection">>></span> <span class="fontblack" ng-show="ProcessId>0" ng-bind="ProcessName"></span><span ng-show="!(ProcessId>0)" class="fontblack" ng-bind="'Add Process'"></span>
+        </b>
+    </h3>
     <div role="tabpanel" class="form-horizontal" id="messages">
         <div class="alert alert-danger alert-dismissible validationErrors" ng-show="(AddOrUpdateProcessform.$submitted && (!AddOrUpdateProcessform.$valid))">
             <ul ng-show="(AddOrUpdateProcessform.$submitted && (!AddOrUpdateProcessform.$valid))">                
