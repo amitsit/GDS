@@ -80,7 +80,7 @@ namespace GDS.Services.SubProcess
             return response;
         }
 
-        public ApiResponse<SubProcessModel> GetSubProcessListByStatus(int? ProcessId, int? SubProcessId, int? RegionId, int? UserId, bool? IsActive)
+        public ApiResponse<SubProcessModel> GetSubProcessListByStatus(int? ProcessId, int? RegionId, int? UserId, bool? IsActive)
         {
             var response = new ApiResponse<SubProcessModel>();
 
@@ -92,12 +92,7 @@ namespace GDS.Services.SubProcess
                     DbType = DbType.Int32,
                     Value = (object)ProcessId ?? DBNull.Value
                 };
-                var SubProcessIdParam = new SqlParameter
-                {
-                    ParameterName = "SubProcessId",
-                    DbType = DbType.Int32,
-                    Value = (object)SubProcessId ?? DBNull.Value
-                };
+                
 
                 var RegionIdParam = new SqlParameter
                 {
@@ -120,7 +115,7 @@ namespace GDS.Services.SubProcess
                     Value = (object)IsActive ?? DBNull.Value
                 };
 
-                var result = _repository.ExecuteSQL<SubProcessModel>("GetSubProcess", ProcessIdParam, SubProcessIdParam, RegionIdParam, UserIdParam, IsActiveParam).ToList();
+                var result = _repository.ExecuteSQL<SubProcessModel>("GetSubProcessListByStatus", ProcessIdParam, RegionIdParam, UserIdParam, IsActiveParam).ToList();
                 response.Success = true;
                 response.Data = result;
             }

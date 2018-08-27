@@ -6,6 +6,7 @@
         $scope.UserId = $rootScope.LoginUserDetail.UserId;
         $scope.MenuId = parseInt($stateParams.MenuId);
         $scope.MenuName = "";
+       
         if ($scope.MenuId > 0) {
 
             var MenuObj = $filter('filter')($rootScope.MenuList, { id: parseInt($scope.MenuId) }, true)[0];
@@ -15,12 +16,14 @@
             $rootScope.SelectedMenuId = $scope.MenuId;
 
             $scope.IsActive = false;
+           
             $scope.GetProcessesListByStatus($scope.MenuId, $scope.IsActive);
         }
        
     }
-
+  
     $scope.GetProcessesListByStatus = function (MenuId, IsActive) {
+  
         var promiseGetProcessesListByStatus = ProcessService.GetProcessesListByStatus(MenuId, IsActive);
         promiseGetProcessesListByStatus.success(function (response) {
             $scope.ProcessListData = response.Data;

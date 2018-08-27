@@ -5832,6 +5832,10 @@ select.form-control {
     border-right: none !important;
 }
 
+.bh_left_none{
+    border-left:none !important
+}
+
 .nav-tabs > li > a:hover {
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;

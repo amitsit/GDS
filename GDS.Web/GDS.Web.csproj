@@ -798,6 +798,7 @@
     <Content Include="Images\prev.png" />
     <Content Include="JS\appConfiguration.js" />
     <Content Include="JS\Common.js" />
+    <Content Include="JS\ContactUs\ContactUsController.js" />
     <Content Include="JS\Directives\appDirectives.js" />
     <Content Include="JS\dirPagination.js" />
     <Content Include="JS\Enums.js" />
@@ -839,6 +840,7 @@
     <Content Include="Scripts\swx-session-storage.min.js" />
     <Content Include="Scripts\underscore.min.js" />
     <Content Include="Scripts\utils.js" />
+    <Content Include="Templates\ContactUs\Index.html" />
     <Content Include="Templates\CoreProcess\Index.html" />
     <Content Include="Templates\Home\ContentTestPage2.html" />
     <Content Include="Templates\Home\ContentTestPage.html" />

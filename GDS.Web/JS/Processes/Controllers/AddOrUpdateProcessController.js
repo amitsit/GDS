@@ -11,6 +11,19 @@
         $scope.UserId = $rootScope.LoginUserDetail.UserId;
         $scope.MenuId = parseInt($stateParams.MenuId);
         $scope.ProcessId = parseInt($stateParams.ProcessId);
+        $scope.ProcessName = String($stateParams.ProcessName);
+        if (isNullOrUndefinedOrEmpty($scope.ProcessName)) {
+            $scope.ProcessName = "";
+        }
+
+        if ($scope.MenuId > 0) {
+
+            var MenuObj = $filter('filter')($rootScope.MenuList, { id: parseInt($scope.MenuId) }, true)[0];
+            if (!isNullOrUndefinedOrEmpty(MenuObj)) {
+                $scope.MenuName = MenuObj.name;
+            }
+            $rootScope.SelectedMenuId = $scope.MenuId;
+        }
 
 
         $scope.MasterMenuList = [
