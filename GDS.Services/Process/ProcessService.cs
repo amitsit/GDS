@@ -93,9 +93,10 @@ namespace GDS.Services.Process
                     DbType = DbType.Boolean,
                     Value = (object)IsActive ?? DBNull.Value
                 };
-                //var result = _repository.ExecuteSQL<ProcessModel>("GetProcessesListByStatus", MenuIdParam, IsActiveParam).ToList();
-                //response.Success = true;
-                //response.Data = result;
+
+                var result = _repository.ExecuteSQL<ProcessModel>("GetProcessesListByStatus", MenuIdParam, IsActiveParam).ToList();
+                response.Success = true;
+                response.Data = result;
             }
             catch (Exception ex)
             {

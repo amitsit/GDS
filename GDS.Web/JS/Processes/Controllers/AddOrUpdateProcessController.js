@@ -2,6 +2,10 @@
     decodeParams($stateParams);
     BindToolTip();
 
+    var RegionType = {
+        Global: "-1",
+        Other: "1"
+    };
 
     function INIT() {
         $scope.UserId = $rootScope.LoginUserDetail.UserId;
@@ -31,6 +35,8 @@
                        
         ];
 
+       
+
         $scope.ProcessObj = new Object();
         if ($scope.ProcessId>0) {
             $scope.GetProcessOrSubProcessListByProcessId($scope.MenuId, $scope.ProcessId, $scope.UserId);         
@@ -46,11 +52,22 @@
     $scope.GetProcessOrSubProcessListByProcessId = function (MenuId, ProcessId, UserId) {
         var promiseGetProcessListById = ProcessService.GetProcessOrSubProcessListByProcessId(MenuId, ProcessId, UserId);
         promiseGetProcessListById.success(function (response) {      
-            $scope.ProcessObj = response.Data[0];       
-            if (!isNullOrUndefinedOrEmpty(response.Data[0].SelectedRegion)) {
-                $scope.ProcessObj.SelectedRegion = response.Data[0].SelectedRegion.split(',');
-                $scope.SelectedRegion();
+            $scope.ProcessObj = response.Data[0];
+            if ($scope.ProcessObj.SelectedRegion=="-1") {
+                $scope.ProcessObj.RegionType = RegionType.Global;
+                $scope.ProcessObj.SelectedRegion = [];
+            } else {
+                if (!isNullOrUndefinedOrEmpty(response.Data[0].SelectedRegion)) {
+                    $scope.ProcessObj.SelectedRegion = response.Data[0].SelectedRegion.split(',');
+                    if ($scope.ProcessObj.SelectedRegion.length>0) {
+                        $scope.ProcessObj.RegionType = RegionType.Other;
+                    }
+                    $scope.SelectedRegion();
+                } else {
+                    $scope.ProcessObj.SelectedRegion = [];
+                } 
             }
+           
 
         });
         promiseGetProcessListById.error(function (data, statusCode) {
@@ -64,7 +81,7 @@
             $scope.RegionListData = response.Data;
             $scope.RegionList = [];        
             angular.forEach($scope.RegionListData, function (Region, i) {
-                if (Region.IsActive) {
+                if (Region.IsActive && Region.RegionID!=-1) {
                     var RegionObj = new Object();
                     RegionObj.name = Region.RegionName;
                     RegionObj.id = Region.RegionID;
@@ -104,11 +121,17 @@
 
             //$scope.UserObj.SelectedPlant = $scope.UserObj.SelectedPlant.toString();
 
-            if (!isNullOrUndefinedOrEmpty($scope.ProcessObj.SelectedRegion)) {
-                $scope.ProcessObj.SelectedRegion = $scope.ProcessObj.SelectedRegion.toString();
+            if ($scope.ProcessObj.RegionType == RegionType.Global)
+            {
+                $scope.ProcessObj.SelectedRegion = RegionType.Global;
             } else {
-                $scope.ProcessObj.SelectedRegion = "";
+                if (!isNullOrUndefinedOrEmpty($scope.ProcessObj.SelectedRegion)) {
+                    $scope.ProcessObj.SelectedRegion = $scope.ProcessObj.SelectedRegion.toString();
+                } else {
+                    $scope.ProcessObj.SelectedRegion = "";
+                }
             }
+          
         
             var saveProcess = ProcessService.SaveProcessDetail($scope.UserId, $scope.ProcessObj);
         
