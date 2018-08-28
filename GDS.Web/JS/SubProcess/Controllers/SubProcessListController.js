@@ -137,7 +137,7 @@ app.controller('SubProcessListController', function ($scope, $state, localStorag
         var table = $('#tblSubProcess').DataTable();
         var row = table.row($($event.target).parents('tr')).data();
         bootbox.dialog({
-            message: "Do you want to delete a sub process from region" + ' - ' + row.SubProcessName + "?",
+            message: "Do you want to delete a sub process from all region" + ' - ' + row.SubProcessName + "?",
             title: "Confirmation",
             className: "model",
             buttons: {
@@ -167,7 +167,7 @@ app.controller('SubProcessListController', function ($scope, $state, localStorag
                     }
             }
         });
-        debugger;
+       
        
     }
 

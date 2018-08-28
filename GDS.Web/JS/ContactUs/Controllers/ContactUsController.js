@@ -42,6 +42,28 @@
 
 
   
+    //$scope.showEdit = function () {
+       
+    //        if ($scope.IsEditMode) {
+    //            $scope.IsEditMode = false;
+    //        } else {
+    //            $scope.IsEditMode = true;
+    //        }
+           
+    $scope.showEdit = function (IsAdd)
+        {
+            if (IsAdd) {
+                $state.go('EditContactUS', ({ 'MenuId': $scope.MenuId, 'ContactId': 0 }));
+
+            }
+            if ($scope.IsEditMode) {
+                $scope.IsEditMode = false;
+            }
+            else
+            {
+                $scope.IsEditMode = true;
+            }
+        }
 
 
 

@@ -130,6 +130,11 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $tra
         url: '/ContactUS?MenuId',
         templateUrl: '/Templates/ContactUs/Index.html'
     });
+    $stateProvider.state({
+        name: 'EditContactUS',
+        url: '/EditContactUS?MenuId',
+        templateUrl: '/Templates/ContactUs/AddOrUpdateContactUs.html'
+    });
 
     $stateProvider.state({
         name: 'DocumentLog',
