@@ -133,10 +133,11 @@ app.controller('SubProcessListController', function ($scope, $state, localStorag
     }
 
     $scope.DeleteSubProcess = function ($event) {
-        var table = $('#tblProcess').DataTable();
+      
+        var table = $('#tblSubProcess').DataTable();
         var row = table.row($($event.target).parents('tr')).data();
         bootbox.dialog({
-            message: "Do you want to delete a sub process" + ' - ' + row.SubProcessName + "?",
+            message: "Do you want to delete a sub process from region" + ' - ' + row.SubProcessName + "?",
             title: "Confirmation",
             className: "model",
             buttons: {
@@ -145,7 +146,7 @@ app.controller('SubProcessListController', function ($scope, $state, localStorag
                         label: "Yes",
                         className: "btn btn-primary theme-btn",
                         callback: function () {
-                            var deleteProcess = SubProcessService.DeleteSubProcess(row.ProcessId, $scope.UserId);
+                            var deleteProcess = SubProcessService.DeleteSubProcess(row.ProcessId,row.SubProcessId,$scope.UserId);
                             deleteProcess.success(function (p) {
                                 notificationFactory.successDelete();
                                 $scope.GetSubProcessListByStatus($scope.ProcessId,$scope.RegionId,$scope.UserId,$scope.IsActive);
@@ -166,6 +167,8 @@ app.controller('SubProcessListController', function ($scope, $state, localStorag
                     }
             }
         });
+        debugger;
+       
     }
 
 

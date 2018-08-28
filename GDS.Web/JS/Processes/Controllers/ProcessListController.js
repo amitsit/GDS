@@ -92,6 +92,7 @@
     }
 
     $scope.DeleteProcess = function ($event) {
+    
         var table = $('#tblProcess').DataTable();
         var row = table.row($($event.target).parents('tr')).data();
         bootbox.dialog({

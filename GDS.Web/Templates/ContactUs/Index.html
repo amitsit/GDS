@@ -3,132 +3,49 @@
     <h3 class="title  fontorang">
         <b>
             <a ui-sref="Home" title="Home"><i class="fa fa-home"></i></a>
-            <span> &nbsp;/&nbsp;&nbsp;</span>  <span class="fontblack">{{MenuName}}</span>
+            <span> &nbsp;/&nbsp;&nbsp;</span> <span class="fontblack">{{MenuName}}</span>
         </b>
     </h3>
 
     <div class="col-sm-12">
-        <!--<div class="col-sm-12">
+        <div class="col-sm-12">
             <span class="pull-right mb-10">
-                <button type="button" title="View All Processes" ui-sref="ProcessList({MenuId:MenuId})" class="btn btn-primary "><i class="glyphicon glyphicon-eye-open"></i>&nbsp; View All Process</button>
-                <button type="button" title="Add Processes" ng-click="showEdit(true)" class="btn btn-primary "><i class="glyphicon glyphicon-plus"></i></button>
-                <button type="button" title="Edit Processes" ng-click="showEdit(false)" class="btn btn-primary"><i ng-class="(IsEditMode==false)?'glyphicon glyphicon-pencil':'glyphicon glyphicon-ok'"></i></button>
+                <button type="button" title="View All Contacts" ui-sref="ProcessList({MenuId:MenuId})" class="btn btn-primary "><i class="glyphicon glyphicon-eye-open"></i>&nbsp; View All Contacts</button>
+                <button type="button" title="Add Contact" ng-click="showEdit(true)" class="btn btn-primary "><i class="glyphicon glyphicon-plus"></i></button>
+                <button type="button" title="Edit Contact" ng-click="showEdit(false)" class="btn btn-primary"><i ng-class="(IsEditMode==false)?'glyphicon glyphicon-pencil':'glyphicon glyphicon-ok'"></i></button>
             </span>
-        </div>-->
-
-        <!--<div>-->
+        </div>
+       
+        <div ng-repeat="Contact in ContactListData | unique:'ContactId':true">
             <div class="col-sm-4">
                 <div class="panel panel-default">
                     <div class="panel-body table-responsive">
                         <table class="table table-bordered text-center ">
-                            <tr class="pressTitleRow">
-                                <!--<th colspan="2" class="bh_right_none"></th>
+                            <tr>
                                 <th ng-show="!IsEditMode" class="headerborder"></th>
-                                <th ng-show="IsEditMode" class="editprocessheader"><a><i ng-click="GoToEditProcess(Process,Enum.Mode.Edit)" class="glyphicon glyphicon-pencil" data-original-title="Edit" data-toggle="tooltip"></i></a></th>-->
-                                <th class="font-bold text-center" colspan="1"><label>CORPORATE QUALITY</label></th>
+                                <th ng-show="IsEditMode" class="editprocessheader"><a><i ng-click="GoToEditProcess(Process,Enum.Mode.Edit)" class="glyphicon glyphicon-pencil" data-original-title="Edit" data-toggle="tooltip"></i></a></th>
 
                             </tr>
-                            <tr>
-                          
-                                <td class="font-bold text-center"><label>Lonnie Holmquist</label></td>
-                               
-                                <!--<td class="colsm_1" ng-show="!IsEditMode"><a ng-click="GotoProcessDetail(SubProcess,Enum.Mode.Readonly)"><i class="glyphicon glyphicon-eye-open editprocessheader" data-original-title="Edit" data-toggle="tooltip"></i></a></td>
-                                <td class="colsm_1" ng-show="IsEditMode"><a ui-sref="EditSubProcess({MenuId:MenuId,ProcessId:Process.ProcessId,ProcessName:Process.ProcessName,SubProcessId:SubProcess.SubProcessId,SubProcessName:SubProcess.SubProcessName})"><i class="glyphicon glyphicon-pencil editprocessheader" data-original-title="Edit" data-toggle="tooltip"></i></a></td>-->
-                            </tr>
-                            <tr>
-                                <td class="font-bold text-center"><label>mailto:LHolmquist@iacgroup.com</label></td>
+                            <tr class="pressTitleRow">
+                                <td  class="bh_right_none">
+                                    <div ng-bind-html="Contact.ContactDetail"></div>
+                                </td>
                             </tr>
 
                         </table>
-
-
                     </div>
                 </div>
 
             </div>
-        <div class="col-sm-4">
-            <div class="panel panel-default">
-                <div class="panel-body table-responsive">
-                    <table class="table table-bordered text-center ">
-                        <tr class="pressTitleRow">
-                            <!--<th colspan="2" class="bh_right_none"></th>
-                        <th ng-show="!IsEditMode" class="headerborder"></th>
-                        <th ng-show="IsEditMode" class="editprocessheader"><a><i ng-click="GoToEditProcess(Process,Enum.Mode.Edit)" class="glyphicon glyphicon-pencil" data-original-title="Edit" data-toggle="tooltip"></i></a></th>-->
-                            <th class="font-bold text-center" colspan="1"><label>CORPORATE QUALITY</label></th>
+            <div ng-if="(($index+1)%3)==0" class="col-sm-12">
 
-                        </tr>
-                        <tr>
-
-                            <td class="font-bold text-center"><label>Lonnie Holmquist</label></td>
-
-                            <!--<td class="colsm_1" ng-show="!IsEditMode"><a ng-click="GotoProcessDetail(SubProcess,Enum.Mode.Readonly)"><i class="glyphicon glyphicon-eye-open editprocessheader" data-original-title="Edit" data-toggle="tooltip"></i></a></td>
-                        <td class="colsm_1" ng-show="IsEditMode"><a ui-sref="EditSubProcess({MenuId:MenuId,ProcessId:Process.ProcessId,ProcessName:Process.ProcessName,SubProcessId:SubProcess.SubProcessId,SubProcessName:SubProcess.SubProcessName})"><i class="glyphicon glyphicon-pencil editprocessheader" data-original-title="Edit" data-toggle="tooltip"></i></a></td>-->
-                        </tr>
-                        <tr>
-                            <td class="font-bold text-center"><label>mailto:LHolmquist@iacgroup.com</label></td>
-                        </tr>
-
-                    </table>
-
-
-                </div>
             </div>
-
         </div>
-        <div class="col-sm-4">
-            <div class="panel panel-default">
-                <div class="panel-body table-responsive">
-                    <table class="table table-bordered text-center ">
-                        <tr class="pressTitleRow">
-                            <!--<th colspan="2" class="bh_right_none"></th>
-                        <th ng-show="!IsEditMode" class="headerborder"></th>
-                        <th ng-show="IsEditMode" class="editprocessheader"><a><i ng-click="GoToEditProcess(Process,Enum.Mode.Edit)" class="glyphicon glyphicon-pencil" data-original-title="Edit" data-toggle="tooltip"></i></a></th>-->
-                            <th class="font-bold text-center" colspan="1"><label>CORPORATE QUALITY</label></th>
 
-                        </tr>
-                        <tr>
-
-                            <td class="font-bold text-center"><label>Lonnie Holmquist</label></td>
-
-                            <!--<td class="colsm_1" ng-show="!IsEditMode"><a ng-click="GotoProcessDetail(SubProcess,Enum.Mode.Readonly)"><i class="glyphicon glyphicon-eye-open editprocessheader" data-original-title="Edit" data-toggle="tooltip"></i></a></td>
-                        <td class="colsm_1" ng-show="IsEditMode"><a ui-sref="EditSubProcess({MenuId:MenuId,ProcessId:Process.ProcessId,ProcessName:Process.ProcessName,SubProcessId:SubProcess.SubProcessId,SubProcessName:SubProcess.SubProcessName})"><i class="glyphicon glyphicon-pencil editprocessheader" data-original-title="Edit" data-toggle="tooltip"></i></a></td>-->
-                        </tr>
-                        <tr>
-                            <td class="font-bold text-center"><label>mailto:LHolmquist@iacgroup.com</label></td>
-                        </tr>
-
-                    </table>
-
-
-                </div>
-            </div>
-
-        </div>
-            <!--<div ng-if="(($index+1)%3)==0" class="col-sm-12">
-
-            </div>-->
-        <!--</div>-->
+      
     </div>
 
 
-    <!--<div class="col-sm-8 col-lg-offset-2 mt-30" ng-if="ProcessDisplayType==Enum.ProcessDisplayType.List">
-        <table class="table table-responsive table-bordered col-lg-8 fs16">
-            <thead>
-                <tr class="pressTitleRow">
-                    <th class="col-sm-4">Process</th>
-                    <th class="col-sm-8">Interested Departments</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr ng-repeat="Process in ProcessListData">
-                    <td><a href="" ng-bind="Process.ProcessName"></a></td>
-                    <td class="font-bold">Business Units, Operations, Engineering</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>-->
-
-
-
+  
 </div>
 

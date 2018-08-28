@@ -1,6 +1,42 @@
 ﻿<!DOCTYPE html>
 <html ng-app="IACBI">
+
 <head>
+    <style>
+        .search input[type=text] {
+    position: absolute;
+    top: 8px;
+    height:28px;
+    background: white;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font: normal 12px arial;
+    color: #838b97;
+    width: 288px;
+    outline: none;
+    border-radius:3px;
+}
+
+          .search input[type=button] {
+    position: relative;
+    top: 15px;
+    height:28px;
+    left:130px;
+    background: white;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font: normal 12px arial;
+    color: #838b97;
+    width: 288px;
+    outline: none;
+    border-radius:3px;
+}
+
+ 
+
+    </style>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http --equiv="X-UA-Compatible" content="IE=Edge" />
@@ -96,34 +132,53 @@
             <a class="toggleMenu"></a>
             <ul class="menu">
                 <li class="top" ng-class="(SelectedMenuId==Enum.Process.Home) ? 'current' : ''">
-                    <a href="" class="navlink" ui-sref="Home">Home</a>   
-                    @*ui-sref="Process({MenuId:Enum.Process.Home})"*@
+                    <a href="" class="navlink" ui-sref="Home">Home</a>
+                    @*<ul>
+                            <li><a href="">Turtles</a></li>
+                        </ul>*@
                 </li>
                 <li class="top" ng-class="(SelectedMenuId==Enum.Process.ManagementProcess) ? 'current' : ''">
                     <a href="" class="navlink" ui-sref="Process({MenuId:Enum.Process.ManagementProcess})">Management Process</a>
                 </li>
-
                 <li class="top" ng-class="(SelectedMenuId==Enum.Process.CoreProcess) ? 'current' : ''">
                     <a href="" class="navlink" ui-sref="Process({MenuId:Enum.Process.CoreProcess})">Core Processes</a>
                 </li>
+            
 
                 <li class="top" ng-class="(SelectedMenuId==Enum.Process.SupportingProcess) ? 'current' : ''">
                     <a href="" class="navlink" ui-sref="Process({MenuId:Enum.Process.SupportingProcess})">Supporting Process</a>
                 </li>
 
-                @*<li class="top" ng-class="(SelectedMenuId==Enum.Process.Processes) ? 'current' : ''">
+                @*<li class="top"  ng-class="(SelectedMenuId==Enum.Process.Processes) ? 'current' : ''">
                     <a href="" class="navlink" ui-sref="Process({MenuId:Enum.Process.Processes})">Processes</a>
-                </li>*@               
-                <li class="top ">
-                    <a href="" class="navlink" ui-sref="Process({MenuId:Enum.Process.DocumentLog})">Documentation Logs</a>
+                </li>*@
+                @*<li class="top cursor-pointer">
+                        <a href="" class="navlink" >Region/Plant Specific Pages</a>
+                        <ul>
+                            <li><a href="">-Europe</a></li>
+                            <li><a href="">-North America</a></li>
+                            <li><a href="">-Plant Specific</a></li>
+                        </ul>
+                    </li>*@
+                <li class="top" ng-class="(SelectedMenuId==Enum.Process.DocumentLog) ? 'current' : ''">
+                    <a href="" class="navlink" ui-sref="DocumentLog({MenuId:Enum.Process.DocumentLog})">Documentation Logs</a>
+                    @*<ul>
+                            <li><a href="">-Master Document List</a></li>
+                            <li><a href="">-Change Log</a></li>
+                            <li><a href="">-Site Map</a></li>
+                        </ul>*@
+                </li>
+                <li class="top" ng-class="(SelectedMenuId==Enum.Process.ConatctUs) ? 'current' : ''">
+                    <a href="" class="navlink" ui-sref="ContactUS({MenuId:Enum.Process.ConatctUs})">Contact Us</a>
                 </li>
                 <li class="top">
-                    <a href="" class="navlink" ui-sref="Process({MenuId:Enum.Process.ConatctUs})">Contact Us</a>
+                    <div class="search">
+                        <input type="text" placeholder="Search Here" id="Gsearch" />
+                        <button type="button" class="glyphicon glyphicon-search" 
+                                style="border:none;width:22px; top:9px;line-height:2!important;left:266px;" ng-click="RedirectToSearch()" />
+                    </div>
                 </li>
-
-                <li class="top">
-                    <a class="navlink" ui-sref="Process({MenuId:Enum.Process.Search})">Search</a>
-                </li>
+                
 
                 @*<li class="top cursor-pointer" ui-sref="Home1">
                         <a class="navlink">layout1</a>
@@ -270,8 +325,15 @@
 
 
         app.controller('RoleRightsController', function ($scope, $templateCache,$state, localStorageService,$interval, $stateParams, $rootScope, $location, notificationFactory, configurationService, $compile, $filter) {
-
-
+            var gSearchValue = '';
+            function INIT() {
+               
+                if (window.location.href.toLowerCase().indexOf('search?q=')>0) {
+                   
+                    $("#Gsearch").val(decodeURI( window.location.href.toLowerCase().split('search?q=')[1]));
+                }
+            }
+             
 
             $rootScope.UserRoleRightsList = @Html.Raw(Json.Encode(@ProjectSession.LoggedInUserDetail.RolesRightsPermissions));
             $rootScope.LoginUserDetail=@Html.Raw(Json.Encode(@ProjectSession.LoggedInUserDetail));
@@ -329,6 +391,17 @@
                 window.location.reload(true);
                 return;
             };
+
+            $rootScope.RedirectToSearch=function() {
+                var searchValue =  $("#Gsearch").val();
+                if (!isNullOrUndefinedOrEmpty(searchValue)) 
+                {
+                    $templateCache.removeAll();
+                    window.location.href = "Search?q="+searchValue+"";
+                }
+            };
+
+            INIT();
 
         });
 

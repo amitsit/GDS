@@ -127,14 +127,26 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $tra
 
     $stateProvider.state({
         name: 'ContactUS',
-        url: '/ContactUS',
+        url: '/ContactUS?MenuId',
         templateUrl: '/Templates/ContactUs/Index.html'
+    });
+
+    $stateProvider.state({
+        name: 'DocumentLog',
+        url: '/DocumentLog?MenuId',
+        templateUrl: '/Templates/DocumentationLogs/Index.html'
     });
 
     $stateProvider.state({
         name: 'Process',
         url: '/Process?MenuId',
         templateUrl: '/Templates/Processes/Index.html'
+    });
+
+    $stateProvider.state({
+        name: 'Search',
+        url: '/Search?q',
+        templateUrl: '/Templates/Search/Index.html'
     });
 
 
