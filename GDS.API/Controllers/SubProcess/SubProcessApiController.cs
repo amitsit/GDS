@@ -34,9 +34,9 @@ namespace GDS.API.Controllers.SubProcess
 
         [HttpGet]
         [Route("GetSubProcessListByStatus")]
-        public ApiResponse<SubProcessModel> GetSubProcessListByStatus(int? ProcessId, int? SubProcessId, int? RegionId, int? UserId,bool? IsActive)
+        public ApiResponse<SubProcessModel> GetSubProcessListByStatus(int? ProcessId, int? RegionId, int? UserId,bool? IsActive)
         {
-            return this._iSubProcessService.GetSubProcessListByStatus(ProcessId, SubProcessId, RegionId, UserId,IsActive);
+            return this._iSubProcessService.GetSubProcessListByStatus(ProcessId, RegionId, UserId,IsActive);
         }
 
         [HttpGet]
@@ -45,6 +45,23 @@ namespace GDS.API.Controllers.SubProcess
         {
             return this._iSubProcessService.GetProcessDocumentBySubProcessIdAndRegionId(SubProcessId, RegionId, UserId);
         }
+
+        [HttpGet]
+        [Route("DeleteSubProcessFromRegion")]
+        public BaseApiResponse DeleteSubProcessFromRegion(int SubProcessId, int RegionId, int UserId)
+        {
+            return this._iSubProcessService.DeleteSubProcessFromRegion(SubProcessId, RegionId, UserId);
+        }
+
+        [HttpPost]
+        [Route("SaveSubProcessDetail")]
+        public ApiResponse<SubProcessModel> SaveSubProcessDetail(int UserId, SubProcessModel SubProcessObj)
+        {
+            return this._iSubProcessService.SaveSubProcessDetail(UserId, SubProcessObj);
+        }
+
+        
+
 
         #endregion
 

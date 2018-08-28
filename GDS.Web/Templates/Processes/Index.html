@@ -26,17 +26,26 @@
                                 <th ng-show="!IsEditMode" class="headerborder"></th>
                                 <th ng-show="IsEditMode" class="editprocessheader"><a><i ng-click="GoToEditProcess(Process,Enum.Mode.Edit)" class="glyphicon glyphicon-pencil" data-original-title="Edit" data-toggle="tooltip"></i></a></th>
 
-                            </tr>                        
+                            </tr>
                             <tr ng-if="SubProcess.SubProcessId>0" ng-repeat="SubProcess in ProcessListData | filter :{ProcessId : Process.ProcessId}: true">
                                 <td class="weeklyefficiency colsm_5"><b><a ng-click="GotoProcessDetail(SubProcess,Enum.Mode.Readonly)" class="text-white">{{SubProcess.SubProcessCode}}</a></b></td>
                                 <td class="font-bold text-left tableboxtd col-sm-2">{{SubProcess.SubProcessName}}</td>
                                 <td class="colsm_1" ng-show="!IsEditMode"><a ng-click="GotoProcessDetail(SubProcess,Enum.Mode.Readonly)"><i class="glyphicon glyphicon-eye-open editprocessheader" data-original-title="Edit" data-toggle="tooltip"></i></a></td>
                                 <td class="colsm_1" ng-show="IsEditMode"><a ui-sref="EditSubProcess({MenuId:MenuId,ProcessId:Process.ProcessId,ProcessName:Process.ProcessName,SubProcessId:SubProcess.SubProcessId,SubProcessName:SubProcess.SubProcessName})"><i class="glyphicon glyphicon-pencil editprocessheader" data-original-title="Edit" data-toggle="tooltip"></i></a></td>
                             </tr>
-                            
-                        </table>
-                        
-                    </div>
+                          
+                            <tr ng-show="IsEditMode">
+                                <td class="bh_right_none"></td>
+                                <td colspan="2" class="bh_left_none bh_right_none ">
+                                    <button type="button" title="Add New Sub Processes" class="btn btn-sm btn-primary pull-right" ui-sref="SubProcessList({MenuId:MenuId,ProcessId:Process.ProcessId,ProcessName:Process.ProcessName})"><i class="glyphicon glyphicon-plus"></i></button>                                   
+                                    <button type="button" title="View All Sub Processes" class="btn btn-sm btn-primary pull-right mr-10" ui-sref="SubProcessList({MenuId:MenuId,ProcessId:Process.ProcessId,ProcessName:Process.ProcessName})"><i class="glyphicon glyphicon-eye-open"></i>&nbsp; View All</button>                                                                        
+                                </td>                                
+                            </tr>
+                               
+                    </table>
+
+
+                </div>
                 </div>
 
             </div>
