@@ -132,6 +132,12 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $tra
         templateUrl: '/Templates/Processes/Index.html'
     });
 
+    $stateProvider.state({
+        name: 'Search',
+        url: '/Search?q',
+        templateUrl: '/Templates/Search/Index.html'
+    });
+
 
     $stateProvider.state({
         name: 'SubProcessDetail',
