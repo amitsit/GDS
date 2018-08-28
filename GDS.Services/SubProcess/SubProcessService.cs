@@ -246,5 +246,66 @@ namespace GDS.Services.SubProcess
             return response;
 
         }
+
+
+        public BaseApiResponse SaveDocument(int UserId, ProcessDocument ProcessDocumentObj)
+        {
+            var response = new BaseApiResponse();
+
+            try
+            {
+                object[] paramList =
+                {
+                    new SqlParameter("DocumentId",(object)ProcessDocumentObj.DocumentId ??(object)DBNull.Value)
+                  , new SqlParameter("ProcessId",(object)ProcessDocumentObj.ProcessId??(object)DBNull.Value)
+                  , new SqlParameter("SubProcessId",(object)ProcessDocumentObj.SubProcessId??(object)DBNull.Value)
+                  , new SqlParameter("RegionId",(object)ProcessDocumentObj.RegionId??(object)DBNull.Value)
+                  , new SqlParameter("DocumentCode",(object)ProcessDocumentObj.DocumentCode??(object)DBNull.Value)
+                  , new SqlParameter("DocumentTitle",(object)ProcessDocumentObj.DocumentTitle??(object)DBNull.Value)
+                  , new SqlParameter("DocumentPath",(object)ProcessDocumentObj.DocumentPath??(object)DBNull.Value)
+                  , new SqlParameter("ReleaseDate",(object)ProcessDocumentObj.ReleaseDate??(object)DBNull.Value)
+                  , new SqlParameter("IsActive",(object)ProcessDocumentObj.IsActive??(object)DBNull.Value)
+                  , new SqlParameter("DisplayOrder",(object)ProcessDocumentObj.DisplayOrder??(object)DBNull.Value)               
+                  , new SqlParameter("UserId",(object)UserId??(object)DBNull.Value)
+                };
+
+                var result = _repository.ExecuteSQL<int>("AddOrUpdateDocument", paramList).FirstOrDefault();
+                response.Success = (result > 0);                
+
+            }
+            catch (Exception ex)
+            {
+                _logger.Error(ex);
+                response.Message.Add(ex.Message);
+            }
+
+            return response;
+        }
+
+       public BaseApiResponse DeleteDocument(int UserId, int SubProcessDocumentId)
+        {
+            var response = new BaseApiResponse();
+
+            try
+            {
+                object[] paramList =
+                {
+                    new SqlParameter("SubProcessDocumentId",(object)SubProcessDocumentId ??(object)DBNull.Value) 
+                  , new SqlParameter("UserId",(object)UserId??(object)DBNull.Value)
+                };
+
+                var result = _repository.ExecuteSQL<int>("DeleteDocument", paramList).FirstOrDefault();
+                response.Success = (result > 0);
+
+            }
+            catch (Exception ex)
+            {
+                _logger.Error(ex);
+                response.Message.Add(ex.Message);
+            }
+
+            return response;
+
+        }
     }
 }

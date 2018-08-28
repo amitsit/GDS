@@ -20,7 +20,16 @@
     SubProcessService.SaveSubProcessDetail = function (userId,SubProcessobj) {
         return $http.post(configurationService.basePath + "api/SaveSubProcessDetail?UserId=" + userId, SubProcessobj);
     }
+
+    SubProcessService.SaveDocument = function (userId, DocumentObj) {
+        return $http.post(configurationService.basePath + "api/SaveDocument?UserId=" + userId, DocumentObj);
+    }
     
+
+    SubProcessService.DeleteDocument = function (userId, SubProcessDocumentId) {
+        return $http.get(configurationService.basePath + "api/DeleteDocument?UserId=" + userId + "&SubProcessDocumentId=" + SubProcessDocumentId);
+    }
+
     
 
     return SubProcessService;

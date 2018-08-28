@@ -32,7 +32,11 @@ namespace GDS.Entities.Master
 
         public Nullable<DateTime> UpdatedDate { get; set; }
 
-       public int? SubProcessId { get; set; }
-      
+        public int? SubProcessId { get; set; }
+
+        public int? ProcessId { get; set; }
+
+        public int? SubProcessDocumentId { get; set; }
+
     }
 }

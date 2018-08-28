@@ -1,6 +1,11 @@
-﻿<div ng-controller="AddOrUpdateSubProcessController">
+﻿<style>
+    .selectrgionDropdown{
+        background-color:dimgray!important;
+        color:white;
+    }
+</style>
 
-
+<div ng-controller="AddOrUpdateSubProcessController">
     <form name="AddOrUpdateSubProcessform" novalidate>
         <h3 class="title  fontorang">
             <b>
@@ -71,10 +76,10 @@
                         <label class="col-sm-3 col-lg-2 control-label text-right rn_pad ">Process Owner</label>
                         <div class="col-sm-6 col-md-8"><input type="text" name="SubProcessOwner" class="form-control" maxlength="100" ng-model="SubProcessObj.SubProcessOwner"></div>
                     </div>
-                    <div class="row form-group">
+                    <!--<div class="row form-group">
                         <label class="col-sm-3 col-lg-2 control-label text-right rn_pad ">Display Order</label>
                         <div class="col-sm-6 col-md-8"><input type="text" integer-only name="DisplayOrder" class="form-control" maxlength="5" ng-model="SubProcessObj.DisplayOrder"></div>
-                    </div>
+                    </div>-->
                     <div class="row">
                         <label class="col-sm-3 col-lg-2 control-label text-right rn_pad ">Active</label>
                         <div class="col-sm-6 col-md-8"><input type="checkbox" class="cursor-pointer" name="IsActive" ng-model="SubProcessObj.IsActive" ng-checked="SubProcessObj.IsActive"></div>
@@ -84,10 +89,10 @@
                             <div class="panel-heading">Document List</div>
                             <div class="panel-body" ng-if="SubProcessId>0">
                                 <div class="row form-group">
-                                    <label class="col-sm-3 col-lg-1 control-label text-right rn_pad">Region </label>
+                                    <label class="col-sm-3 col-lg-1 control-label text-right rn_pad">Selected Region </label>
                                     <div class="col-sm-3 col-md-2">
-                                        <select class="form-control select_list" name="RegionId" ng-model="SubProcessObj.RegionId"
-                                                data-ng-options="region.RegionID as region.RegionName for region in RegionListData">
+                                        <select class="form-control select_list selectrgionDropdown" name="RegionId" ng-model="SubProcessObj.RegionId"
+                                                data-ng-options="region.RegionID as region.RegionName for region in RegionListData" ng-change="ChangeRegion(SubProcessObj.RegionId)">
                                             <option value="">-- Select Region --</option>
                                         </select>
                                     </div>
@@ -117,7 +122,7 @@
                                                 <td class="text-center" ng-bind="document.DocumentCode"></td>
                                                 <td class="text-center" ng-bind="document.DocumentTitle"></td>
                                                 <td class="text-center" ng-bind="document.ReleaseDate|date:GlobalDateFormat"></td>
-                                                <td class="text-center"><a class="btn-primary btn-sm" ng-click="OpenDocumentPopup(document)"><i class="glyphicon glyphicon-pencil"></i></a>&nbsp;<a class="btn-primary btn-sm"><i class="glyphicon glyphicon-trash"></i></a></td>
+                                                <td class="text-center"><a class="btn-primary btn-sm" ng-click="OpenDocumentPopup(document)"><i class="glyphicon glyphicon-pencil"></i></a>&nbsp;<a class="btn-primary btn-sm" ng-click="DeleteDocument(document)"><i class="glyphicon glyphicon-trash"></i></a></td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -145,7 +150,8 @@
                 <div class="wthbox">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <h3 class="panel-title text-center">Add/Edit Document</h3>
+                            <h3 class="panel-title text-center" ng-show="DocumentObj.DocumentId>0">Edit Document</h3>
+                            <h3 class="panel-title text-center" ng-show="!(DocumentObj.DocumentId>0)">Add Document</h3>
                         </div>
                         <div class="panel panel-body">
                             <form name="AddOrUpdateDocumentform" novalidate>
@@ -193,7 +199,7 @@
                                 </div>
                                 <div class="row form-group">
                                     <label class="col-sm-3 col-lg-2 control-label text-right rn_pad">Active</label>
-                                    <div class="col-sm-6 col-md-4"><input type="checkbox" name="DocumentTitle" class="cursor-pointer" ng-model="DocumentObj.IsActive" ng-checked="DocumentObj.IsActive"></div>
+                                    <div class="col-sm-6 col-md-4"><input type="checkbox" name="IsActive" class="cursor-pointer" ng-model="DocumentObj.IsActive" ng-checked="DocumentObj.IsActive"></div>
                                 </div>
                                 <!--<div class="row form-group">
                                     <label class="col-sm-3 col-lg-2 control-label text-right rn_pad">Display Order</label>
@@ -203,7 +209,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-success">Save</button>
+                        <button type="submit" class="btn btn-success" ng-click="SaveDocument(AddOrUpdateDocumentform)">Save</button>
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
                     </div>
                 </div>

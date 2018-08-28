@@ -20,6 +20,8 @@ namespace GDS.Services.SubProcess
 
         ApiResponse<SubProcessModel> SaveSubProcessDetail(int UserId,SubProcessModel SubProcessObj);
 
-        
+        BaseApiResponse SaveDocument(int UserId, ProcessDocument ProcessDocumentObj);
+
+        BaseApiResponse DeleteDocument(int UserId, int SubProcessDocumentId);
     }
 }

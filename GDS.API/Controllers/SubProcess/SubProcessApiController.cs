@@ -60,9 +60,20 @@ namespace GDS.API.Controllers.SubProcess
             return this._iSubProcessService.SaveSubProcessDetail(UserId, SubProcessObj);
         }
 
+        [HttpPost]
+        [Route("SaveDocument")]
+        public BaseApiResponse SaveDocument(int UserId, ProcessDocument ProcessDocumentObj)
+        {
+            return this._iSubProcessService.SaveDocument(UserId, ProcessDocumentObj);
+        }
+
+        [HttpGet]
+        [Route("DeleteDocument")]
+        public BaseApiResponse DeleteDocument(int UserId, int SubProcessDocumentId)
+        {
+            return this._iSubProcessService.DeleteDocument(UserId, SubProcessDocumentId);
+        }
         
-
-
         #endregion
 
     }
