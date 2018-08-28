@@ -1043,6 +1043,7 @@
     <Content Include="Templates\Master\State\Index.html" />
     <Content Include="Templates\Processes\AddOrUpdateProcess.html" />
     <Content Include="Templates\Processes\ProcessList.html" />
+    <Content Include="Templates\Search\Index.html" />
     <Content Include="Templates\SubProcess\AddOrUpdateSubProcess.html" />
     <Content Include="Templates\SubProcess\Index.html" />
     <Content Include="Templates\Processes\Index.html" />
