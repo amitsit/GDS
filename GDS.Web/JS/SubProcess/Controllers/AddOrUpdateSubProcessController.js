@@ -75,8 +75,7 @@
     $scope.GetProcessDocumentBySubProcessIdAndRegionId = function (SubProcessId, RegionId, UserId) {
         var promiseGetProcessDocumentBySubProcessIdAndRegionId = SubProcessService.GetProcessDocumentBySubProcessIdAndRegionId(SubProcessId, RegionId, UserId);
         promiseGetProcessDocumentBySubProcessIdAndRegionId.success(function (response) {
-            $scope.ProcessDocuments = response.Data;
-            debugger;
+            $scope.ProcessDocuments = response.Data;       
         });
         promiseGetProcessDocumentBySubProcessIdAndRegionId.error(function (data, statusCode) {
         });

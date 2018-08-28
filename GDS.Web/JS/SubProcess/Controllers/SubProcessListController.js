@@ -80,9 +80,17 @@ app.controller('SubProcessListController', function ($scope, $state, localStorag
             "pageLength": 10,
             "stateSave": true,
             "columns": [
-                 {
-                     "title": 'Process Name',
-                     "data": "ProcessName",
+                 //{
+                 //    "title": 'Process Name',
+                 //    "data": "ProcessName",
+                 //    "className": "dt-left",
+                 //    "render": function (data, type, row) {
+                 //        return data;
+                 //    }
+                 //},
+                    {
+                     "title": 'Sub Process Code',
+                     "data": "SubProcessCode",
                      "className": "dt-left",
                      "render": function (data, type, row) {
                          return data;
@@ -167,7 +175,7 @@ app.controller('SubProcessListController', function ($scope, $state, localStorag
                     }
             }
         });
-        debugger;
+
        
     }
 
