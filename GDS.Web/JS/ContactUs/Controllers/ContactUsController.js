@@ -1,8 +1,6 @@
-﻿app.controller('ContactUsController', function ($scope, $state, localStorageService, $stateParams, ProcessService, $rootScope, $location, notificationFactory, configurationService, $compile, $filter) {
+﻿app.controller('ContactUsController', function ($scope, $state, localStorageService, $stateParams, ContactUsService, $rootScope, $location, notificationFactory, configurationService, $compile, $filter) {
     decodeParams($stateParams);
     BindToolTip();
-
-
 
     function INIT() {
      
@@ -29,9 +27,19 @@
               
             //$scope.GetProcesses($scope.MenuId, $scope.IsActive);
         }
+
+        $scope.GetContacts(0, 1);
     }
 
-  
+    $scope.GetContacts = function (ContactId, UserId) {
+        var promiseGetContacts = ContactUsService.GetContactUs(ContactId, UserId);
+        promiseGetContacts.success(function (response) {
+            $scope.ContactListData = response.Data;
+        });
+        promiseGetContacts.error(function (data, statusCode) {
+        });
+    }
+
 
   
 
