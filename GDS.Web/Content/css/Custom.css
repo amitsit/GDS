@@ -5862,3 +5862,6 @@ input[type="radio"], input[type="checkbox"]{
 .cursor-pointer{
     cursor:pointer!important;
 }
+    .bg-white {
+        background-color: white !important;
+    }

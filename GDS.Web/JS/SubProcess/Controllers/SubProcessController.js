@@ -4,8 +4,8 @@
 app.controller('SubProcessController', function ($scope, $state, localStorageService, $stateParams, SubProcessService, $rootScope, $location, notificationFactory, configurationService, $compile, $filter) {
     decodeParams($stateParams);
     BindToolTip();
-   
-    
+
+
     function INIT() {
         $scope.IsEditMode = false;
         $scope.ProcessDisplayType = $rootScope.Enum.ProcessDisplayType.MultiTable;
@@ -39,7 +39,7 @@ app.controller('SubProcessController', function ($scope, $state, localStorageSer
             if (!isNullOrUndefinedOrEmpty(MenuObj)) {
                 $scope.MenuName = MenuObj.name;
             }
-          
+
             $rootScope.SelectedMenuId = $scope.MenuId;
 
             if ($scope.MenuId == $rootScope.Enum.Process.Processes) {
@@ -48,11 +48,12 @@ app.controller('SubProcessController', function ($scope, $state, localStorageSer
             $scope.GetSubProcess($scope.ProcessId, $scope.SubProcessId, $scope.RegionId, $scope.UserId);
         }
     }
+  
 
     $scope.GetSubProcess = function (ProcessId, SubProcessId, RegionId, UserId) {
-        var promiseGetProcesses = SubProcessService.GetSubProcess(ProcessId, SubProcessId,RegionId ,UserId);
+        var promiseGetProcesses = SubProcessService.GetSubProcess(ProcessId, SubProcessId, RegionId, UserId);
         promiseGetProcesses.success(function (response) {
-            if (response.Data.length > 0) {              
+            if (response.Data.length > 0) {
                 $scope.SubProcessObj = response.Data[0];
                 if (!isNullOrUndefinedOrEmpty($scope.SubProcessObj.AssignedRegions)) {
                     var RegionsList = $scope.SubProcessObj.AssignedRegions.split(";");
@@ -66,16 +67,16 @@ app.controller('SubProcessController', function ($scope, $state, localStorageSer
 
                 } else {
                     $scope.RegionList = [];
-                }               
+                }
                 $scope.GetProcessDocumentBySubProcessIdAndRegionId($scope.SubProcessObj.SubProcessId, $scope.SubProcessObj.RegionId, UserId);
             }
-          
+
         });
         promiseGetProcesses.error(function (data, statusCode) {
         });
     }
 
-    $scope.GetProcessDocumentBySubProcessIdAndRegionId = function (SubProcessId,RegionId,UserId) {
+    $scope.GetProcessDocumentBySubProcessIdAndRegionId = function (SubProcessId, RegionId, UserId) {
         var promiseGetProcessDocumentBySubProcessIdAndRegionId = SubProcessService.GetProcessDocumentBySubProcessIdAndRegionId(SubProcessId, RegionId, UserId);
         promiseGetProcessDocumentBySubProcessIdAndRegionId.success(function (response) {
             $scope.ProcessDocuments = response.Data;
@@ -86,8 +87,7 @@ app.controller('SubProcessController', function ($scope, $state, localStorageSer
 
     $scope.IsEmptyHeader = function () {
         var neefTohide = false;
-        if (!isNullOrUndefinedOrEmpty($scope.SubProcessObj))
-        {
+        if (!isNullOrUndefinedOrEmpty($scope.SubProcessObj)) {
             if (isNullOrUndefinedOrEmpty($scope.SubProcessObj.SubProcessInput) && isNullOrUndefinedOrEmpty($scope.SubProcessObj.FundamentalOfProcess) && isNullOrUndefinedOrEmpty($scope.SubProcessObj.SubProcessOutput)) {
                 var neefTohide = true;
             }
@@ -102,5 +102,5 @@ app.controller('SubProcessController', function ($scope, $state, localStorageSer
 
     INIT();
 
-
+    
 });

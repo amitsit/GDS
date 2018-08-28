@@ -1,7 +1,7 @@
 ﻿app.controller('AddOrUpdateSubProcessController', function ($scope, $state, localStorageService, $stateParams, $rootScope, SubProcessService, $location, RegionService, notificationFactory, configurationService, $compile, $filter) {
     decodeParams($stateParams);
     BindToolTip();
-
+    createDatePicker();
 
     function INIT() {
         $scope.UserId = $rootScope.LoginUserDetail.UserId;
@@ -149,6 +149,30 @@
                     }
             }
         });
+    }
+
+    $scope.OpenDocumentPopup = function (Document) {
+        $scope.DocumentObj = new Object();
+        if (isNullOrUndefinedOrEmpty(Document)) {
+            $scope.DocumentObj = new Object();
+            if (isNullOrUndefinedOrEmpty($scope.SubProcessObj.RegionId)) {
+                $scope.DocumentObj.RegionId = $rootScope.Enum.Region.Global;
+            } else {
+                $scope.DocumentObj.RegionId = $scope.SubProcessObj.RegionId;
+            }      
+            $scope.date = new Date();
+            $scope.DocumentObj.ReleaseDate = $filter('date')($scope.date, $rootScope.GlobalDateFormat);
+
+            $scope.DocumentObj.ProcessId = $scope.ProcessId;
+            $scope.DocumentObj.ProcessId = $scope.SubProcessObj.SubProcessId;
+
+        }
+
+        angular.element("#DocumentModelPopup").modal('show');
+
+        $scope.date = new Date();
+        $scope.GenInfoModel.Date = $filter('date')($scope.date, $rootScope.GlobalDateFormat);
+        
     }
 
 
