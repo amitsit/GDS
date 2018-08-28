@@ -27,11 +27,11 @@
 
 
         $scope.MasterMenuList = [
-                          { id: 1, name: "Home" },
-                          { id: 2, name: "Core Processes" },
+                          //{ id: 1, name: "Home" },
                           { id: 3, name: "Management Processes" },
+                          { id: 2, name: "Core Processes" },                      
                           { id: 4, name: "Supporting Process" },
-                          { id: 5, name: "Processes" }
+                          //{ id: 5, name: "Processes" }
                        
         ];
 
@@ -42,6 +42,7 @@
             $scope.GetProcessOrSubProcessListByProcessId($scope.MenuId, $scope.ProcessId, $scope.UserId);         
         } else {
             $scope.ProcessObj.MenuId = $scope.MenuId;
+            $scope.ProcessObj.IsActive = true;
         }
 
         GetRegionList();
@@ -108,10 +109,10 @@
 
     }
 
-    $scope.AddSubprocess = function () {
-        alert('Under maintenance');
+    //$scope.AddSubprocess = function () {
+    //    alert('Under maintenance');
         
-    }
+    //}
  
     $scope.SaveProcessDetail = function (form) {
       
@@ -121,17 +122,17 @@
 
             //$scope.UserObj.SelectedPlant = $scope.UserObj.SelectedPlant.toString();
 
-            if ($scope.ProcessObj.RegionType == RegionType.Global)
-            {
-                $scope.ProcessObj.SelectedRegion = RegionType.Global;
-            } else {
-                if (!isNullOrUndefinedOrEmpty($scope.ProcessObj.SelectedRegion)) {
-                    $scope.ProcessObj.SelectedRegion = $scope.ProcessObj.SelectedRegion.toString();
-                } else {
-                    $scope.ProcessObj.SelectedRegion = "";
-                }
-            }
-          
+            //if ($scope.ProcessObj.RegionType == RegionType.Global)
+            //{
+            //    $scope.ProcessObj.SelectedRegion = RegionType.Global;
+            //} else {
+            //    if (!isNullOrUndefinedOrEmpty($scope.ProcessObj.SelectedRegion)) {
+            //        $scope.ProcessObj.SelectedRegion = $scope.ProcessObj.SelectedRegion.toString();
+            //    } else {
+            //        $scope.ProcessObj.SelectedRegion = "";
+            //    }
+            //}
+           $scope.ProcessObj.SelectedRegion = RegionType.Global
         
             var saveProcess = ProcessService.SaveProcessDetail($scope.UserId, $scope.ProcessObj);
         
@@ -139,11 +140,14 @@
                 if (response.Success) {
                     if ($scope.ProcessObj.ProcessId> 0) {
                         toastr.success($filter("translate")("NtfUpdated"));
+                          $state.transitionTo('Process',({'MenuId':$scope.ProcessObj.MenuId}));
                     }
                     else {
                         toastr.success($filter("translate")("NtfAdded"));
+                        $state.transitionTo('Process', ({ 'MenuId': $scope.ProcessObj.MenuId, 'ProcessId': response.InsertedId }));
+                        
                     }
-                    $state.transitionTo('Process',({'MenuId':$scope.ProcessObj.MenuId}));
+                  
                 }
                 else {
                     toastr.error(response.Message[0]);

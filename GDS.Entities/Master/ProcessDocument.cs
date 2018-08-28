@@ -14,7 +14,9 @@ namespace GDS.Entities.Master
 
         public string DocumentTitle { get; set; }
 
-        public string DocumentPath { get; set; }
+        public string DocumentPath { get; set; }  
+
+        public int? SubProcessDocumentId { get; set; }
 
         public Nullable<DateTime> ReleaseDate { get; set; }
 
@@ -32,11 +34,11 @@ namespace GDS.Entities.Master
 
         public Nullable<DateTime> UpdatedDate { get; set; }
 
-        public int? SubProcessId { get; set; }
-
         public int? ProcessId { get; set; }
 
-        public int? SubProcessDocumentId { get; set; }
+        public int? SubProcessId { get; set; }
+
+      
 
     }
 }

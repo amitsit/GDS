@@ -48,7 +48,7 @@
             <div class="col-sm-6 col-md-4"><input type="checkbox" name="IsActive"  ng-model="ProcessObj.IsActive" ng-checked="ProcessObj.IsActive" ></div>
         </div>
 
-        <div class="row form-group">
+        <!--<div class="row form-group">
             <br />
             <label class="col-sm-3 col-lg-2 control-label text-right rn_pad pt-5">Region</label>
 
@@ -64,10 +64,10 @@
                 </div>
                                                                           
             </div>                 
-        </div>
+        </div>-->
         <br />
      
-        <div class="row form-group">
+        <div class="row form-group" ng-show="ProcessObj.ProcessId>0">
             <label class="col-sm-3 col-lg-2 control-label text-right rn_pad"></label>
             <div class="col-sm-6 col-md-4">
             <div class="panel panel-default">
@@ -77,12 +77,12 @@
                     <!--</div>-->
                     <table class="table table-bordered table-condensed table-responsive text-center ">
                         <tr>
-                           <th class="text-left" colspan="2"><lebel>Sub Processes</lebel><button type="button" title="Add Processes" ng-click="AddSubprocess()" class="btn btn-primary pull-right"><i class="glyphicon glyphicon-plus"></i></button></th>
+                           <th class="text-left" colspan="2"><lebel>Sub Processes</lebel><button type="button" title="Add Sub Process" ui-sref="EditSubProcess({MenuId:MenuId,ProcessId:ProcessObj.ProcessId,ProcessName:ProcessObj.ProcessName,SubProcessId:0,SubProcessName:''})" class="btn btn-primary pull-right"><i class="glyphicon glyphicon-plus"></i></button></th>
                          
                         </tr>
                       <tr ng-repeat="SubProcess in ProcessObj.SubProcessList">
                          
-                        <td ><div class="col-sm-12"><div class="col-sm-11" ng-bind="SubProcess.SubProcessName"></div><div class="col-sm-1"><i class="glyphicon glyphicon-pencil"></i></div></div></td>
+                        <td ><div class="col-sm-12"><div class="col-sm-11" ng-bind="SubProcess.SubProcessName"></div><div class="col-sm-1"><a title="Edit :{{SubProcess.SubProcessName}}" class="btn btn-primary btn-sm" ui-sref="EditSubProcess({MenuId:MenuId,ProcessId:ProcessObj.ProcessId,ProcessName:ProcessObj.ProcessName,SubProcessId:SubProcess.SubProcessId,SubProcessName:SubProcess.SubProcessName})"><i class="glyphicon glyphicon-pencil"></i></a></div></div></td>
                       </tr>
                     </table>
                 </div>

@@ -259,10 +259,11 @@ namespace GDS.Services.Process
                 
 
 
-                var result = _repository.ExecuteSQL<int>("AddorUpdateProcessDetaile", UserIdParam, MenuIdParam, ProcessIdParam, ProcessNameParam, ProcessDescParam, IsActiveParam, DisplayOrderParam, RegionIdParam).FirstOrDefault();
+                var result = _repository.ExecuteSQL<int>("AddorUpdateProcessDetails", UserIdParam, MenuIdParam, ProcessIdParam, ProcessNameParam, ProcessDescParam, IsActiveParam, DisplayOrderParam, RegionIdParam).FirstOrDefault();
                 if (result > 0)
                 {
                     response.Success = true;
+                    response.InsertedId = result;
                 }
 
             }
