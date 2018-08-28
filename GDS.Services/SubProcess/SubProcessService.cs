@@ -246,5 +246,42 @@ namespace GDS.Services.SubProcess
             return response;
 
         }
+        public BaseApiResponse DeleteSubProcess(int? ProcessId, int? SubProcessId, int? UserId)
+        {
+            var response = new BaseApiResponse();
+
+            try
+            {
+                var ProcessIdParam = new SqlParameter
+                {
+                    ParameterName = "ProcessId",
+                    DbType = DbType.Int32,
+                    Value = (object)ProcessId ?? DBNull.Value
+                };
+                var SubProcessIdParam = new SqlParameter
+                {
+                    ParameterName = "SubProcessId",
+                    DbType = DbType.Int32,
+                    Value = (object)SubProcessId ?? DBNull.Value
+                };
+                var UserIdParam = new SqlParameter
+                {
+                    ParameterName = "UserId",
+                    DbType = DbType.Int32,
+                    Value = (object)UserId ?? DBNull.Value
+                };
+
+               // var result = _repository.ExecuteSQL<int>("DeleteSubProcess", ProcessIdParam, SubProcessIdParam, UserIdParam).FirstOrDefault();
+               //response.Success = (result > 0);
+            }
+            catch (Exception ex)
+            {
+                _logger.Error(ex);
+                response.Message.Add(ex.Message);
+            }
+
+            return response;
+        }
+
     }
 }

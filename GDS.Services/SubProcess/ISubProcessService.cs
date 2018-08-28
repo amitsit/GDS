@@ -19,7 +19,7 @@ namespace GDS.Services.SubProcess
         BaseApiResponse DeleteSubProcessFromRegion(int SubProcessId, int RegionId, int UserId);
 
         ApiResponse<SubProcessModel> SaveSubProcessDetail(int UserId,SubProcessModel SubProcessObj);
+            BaseApiResponse DeleteSubProcess(int? ProcessId, int? SubProcessId, int? UserId);
 
-        
     }
 }
