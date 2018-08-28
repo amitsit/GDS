@@ -132,25 +132,26 @@
             <a class="toggleMenu"></a>
             <ul class="menu">
                 <li class="top" ng-class="(SelectedMenuId==Enum.Process.Home) ? 'current' : ''">
-                    <a href="" class="navlink" ui-sref="Process({MenuId:Enum.Process.Home})">Home</a>
+                    <a href="" class="navlink" ui-sref="Home">Home</a>
                     @*<ul>
                             <li><a href="">Turtles</a></li>
                         </ul>*@
                 </li>
-                <li class="top" ng-class="(SelectedMenuId==Enum.Process.CoreProcess) ? 'current' : ''">
-                    <a href="" class="navlink" ui-sref="Process({MenuId:Enum.Process.CoreProcess})">Core Processes</a>
-                </li>
                 <li class="top" ng-class="(SelectedMenuId==Enum.Process.ManagementProcess) ? 'current' : ''">
                     <a href="" class="navlink" ui-sref="Process({MenuId:Enum.Process.ManagementProcess})">Management Process</a>
                 </li>
+                <li class="top" ng-class="(SelectedMenuId==Enum.Process.CoreProcess) ? 'current' : ''">
+                    <a href="" class="navlink" ui-sref="Process({MenuId:Enum.Process.CoreProcess})">Core Processes</a>
+                </li>
+            
 
                 <li class="top" ng-class="(SelectedMenuId==Enum.Process.SupportingProcess) ? 'current' : ''">
                     <a href="" class="navlink" ui-sref="Process({MenuId:Enum.Process.SupportingProcess})">Supporting Process</a>
                 </li>
 
-                <li class="top" ng-class="(SelectedMenuId==Enum.Process.Processes) ? 'current' : ''">
+                @*<li class="top"  ng-class="(SelectedMenuId==Enum.Process.Processes) ? 'current' : ''">
                     <a href="" class="navlink" ui-sref="Process({MenuId:Enum.Process.Processes})">Processes</a>
-                </li>
+                </li>*@
                 @*<li class="top cursor-pointer">
                         <a href="" class="navlink" >Region/Plant Specific Pages</a>
                         <ul>
