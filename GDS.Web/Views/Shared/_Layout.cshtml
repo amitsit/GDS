@@ -160,8 +160,8 @@
                             <li><a href="">-Plant Specific</a></li>
                         </ul>
                     </li>*@
-                <li class="top">
-                    <a href="" class="navlink" ui-sref="Process({MenuId:Enum.Process.DocumentLog})">Documentation Logs</a>
+                <li class="top" ng-class="(SelectedMenuId==Enum.Process.DocumentLog) ? 'current' : ''">
+                    <a href="" class="navlink" ui-sref="DocumentLog({MenuId:Enum.Process.DocumentLog})">Documentation Logs</a>
                     @*<ul>
                             <li><a href="">-Master Document List</a></li>
                             <li><a href="">-Change Log</a></li>
