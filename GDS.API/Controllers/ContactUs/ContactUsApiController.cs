@@ -30,6 +30,26 @@ namespace GDS.API.Controllers.ContactUs
         {
             return this._iContactUsService.GetContactUs(ContactId,  UserId);
         }
+
+        [HttpGet]
+        [Route("GetContactUsDetail")]
+        public ApiResponse<ContactUsModel> GetContactUsDetail(int? ContactId, int? UserId)
+        {
+            return this._iContactUsService.GetContactUsDetail(ContactId, UserId);
+        }
+        [HttpGet]
+        [Route("GetContactUsDetail")]
+        public ApiResponse<ContactUsModel> GetContactListByStatus(int? MenuId, int? UserId,bool? IsActive)
+        {
+            return this._iContactUsService.GetContactListByStatus(MenuId, UserId,IsActive);
+        }
+
+        [HttpPost]
+        [Route("SaveContactDetail")]
+        public BaseApiResponse SaveContactDetail(int? UserId, ContactUsModel ContactObj)
+        {
+            return this._iContactUsService.SaveContactDetail(UserId, ContactObj);
+        }
         #endregion
     }
 }

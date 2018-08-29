@@ -798,7 +798,9 @@
     <Content Include="Images\prev.png" />
     <Content Include="JS\appConfiguration.js" />
     <Content Include="JS\Common.js" />
+    <Content Include="JS\ContactUs\Controllers\AddOrUpdateContactUsController.js" />
     <Content Include="JS\ContactUs\Controllers\ContactUsController.js" />
+    <Content Include="JS\ContactUs\Controllers\ContactListController.js" />
     <Content Include="JS\ContactUs\Services\ContactUsService.js" />
     <Content Include="JS\Directives\appDirectives.js" />
     <Content Include="JS\dirPagination.js" />
@@ -842,6 +844,8 @@
     <Content Include="Scripts\swx-session-storage.min.js" />
     <Content Include="Scripts\underscore.min.js" />
     <Content Include="Scripts\utils.js" />
+    <Content Include="Templates\ContactUs\AddOrUpdateContactUs.html" />
+    <Content Include="Templates\ContactUs\ContactList.html" />
     <Content Include="Templates\ContactUs\Index.html" />
     <Content Include="Templates\CoreProcess\Index.html" />
     <Content Include="Templates\DocumentationLogs\Index.html" />

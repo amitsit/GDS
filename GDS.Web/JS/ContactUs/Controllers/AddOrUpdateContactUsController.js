@@ -3,13 +3,15 @@
     BindToolTip();
 
     function INIT() {
-     
+      
+        
         $scope.IsEditMode = false;
         $scope.ProcessDisplayType = $rootScope.Enum.ProcessDisplayType.MultiTable;
-
+        $scope.UserId = $rootScope.LoginUserDetail.UserId;
         $scope.MenuId = parseInt($stateParams.MenuId);
-        $scope.IsActive = true;
+       
         $scope.MenuName = "";
+        $scope.ContactId = parseInt($stateParams.ContactId);
       
         if ($scope.MenuId > 0) {
 
@@ -27,15 +29,26 @@
               
             //$scope.GetProcesses($scope.MenuId, $scope.IsActive);
         }
+        $scope.ContactObj = new Object();
+        if ($scope.ContactId > 0) {
 
-        $scope.GetContacts(0, 1);
+            $scope.GetContactUsDetail($scope.ContactId, $scope.UserId);
+        } else {
+            $scope.ContactObj.MenuId = $scope.MenuId;
+            $scope.ContactObj.IsActive = true;
+        }
+      
+   
+      
     }
 
-    $scope.GetContacts = function (ContactId, UserId) {
-        var promiseGetContacts = ContactUsService.GetContactUs(ContactId, UserId);
+    $scope.GetContactUsDetail = function (ContactId, UserId) {
+        var promiseGetContacts = ContactUsService.GetContactUsDetail(ContactId, UserId);
         promiseGetContacts.success(function (response) {
-            $scope.ContactListData = response.Data;
+         
+            $scope.ContactObj = response.Data[0];
         });
+     
         promiseGetContacts.error(function (data, statusCode) {
         });
     }
@@ -67,35 +80,23 @@
 
 
     $scope.SaveContactDetail = function (form) {
-
+        debugger;
         form.$submitted = true;
         if (form.$valid) {
-            $scope.ProcessObj.LoggedInUserId = $scope.LoggedInUserId;
+            $scope.ContactObj.LoggedInUserId = $scope.LoggedInUserId;
 
-            //$scope.UserObj.SelectedPlant = $scope.UserObj.SelectedPlant.toString();
+            var saveContact = ContactUsService.SaveContactDetail($scope.UserId, $scope.ContactObj);
 
-            if ($scope.ProcessObj.RegionType == RegionType.Global) {
-                $scope.ProcessObj.SelectedRegion = RegionType.Global;
-            } else {
-                if (!isNullOrUndefinedOrEmpty($scope.ProcessObj.SelectedRegion)) {
-                    $scope.ProcessObj.SelectedRegion = $scope.ProcessObj.SelectedRegion.toString();
-                } else {
-                    $scope.ProcessObj.SelectedRegion = "";
-                }
-            }
-
-
-            var saveProcess = ProcessService.SaveProcessDetail($scope.UserId, $scope.ProcessObj);
-
-            saveProcess.success(function (response) {
+            saveContact.success(function (response) {
+                
                 if (response.Success) {
-                    if ($scope.ProcessObj.ProcessId > 0) {
+                    if ($scope.ContactObj.ContactId > 0) {
                         toastr.success($filter("translate")("NtfUpdated"));
                     }
                     else {
                         toastr.success($filter("translate")("NtfAdded"));
                     }
-                    $state.transitionTo('Process', ({ 'MenuId': $scope.ProcessObj.MenuId }));
+                    $state.transitionTo('ContactUS', ({ 'MenuId': $scope.MenuId }));
                 }
                 else {
                     toastr.error(response.Message[0]);
@@ -107,8 +108,8 @@
         }
     };
 
-
+    
     INIT();
-
+    
 
 });
