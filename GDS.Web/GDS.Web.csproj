@@ -821,6 +821,8 @@
     <Content Include="JS\Processes\Controllers\ProcessController.js" />
     <Content Include="JS\Processes\Controllers\ProcessListController.js" />
     <Content Include="JS\Processes\Services\ProcessService.js" />
+    <Content Include="JS\Search\Controllers\SearchListController.js" />
+    <Content Include="JS\Search\Services\SearchService.js" />
     <Content Include="JS\SubProcess\Controllers\AddOrUpdateSubProcessController.js" />
     <Content Include="JS\SubProcess\Controllers\SubProcessController.js" />
     <Content Include="JS\SubProcess\Controllers\SubProcessListController.js" />
@@ -1045,6 +1047,7 @@
     <Content Include="Templates\Processes\AddOrUpdateProcess.html" />
     <Content Include="Templates\Processes\ProcessList.html" />
     <Content Include="Templates\Search\Index.html" />
+    <Content Include="Templates\Search\SearchList.html" />
     <Content Include="Templates\SubProcess\AddOrUpdateSubProcess.html" />
     <Content Include="Templates\SubProcess\Index.html" />
     <Content Include="Templates\Processes\Index.html" />

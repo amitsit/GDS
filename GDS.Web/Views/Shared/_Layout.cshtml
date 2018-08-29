@@ -2,41 +2,7 @@
 <html ng-app="IACBI">
 
 <head>
-    <style>
-        .search input[type=text] {
-    position: absolute;
-    top: 8px;
-    height:28px;
-    background: white;
-    border: none;
-    padding: 0;
-    margin: 0;
-    font: normal 12px arial;
-    color: #838b97;
-    width: 288px;
-    outline: none;
-    border-radius:3px;
-}
 
-          .search input[type=button] {
-    position: relative;
-    top: 15px;
-    height:28px;
-    left:130px;
-    background: white;
-    border: none;
-    padding: 0;
-    margin: 0;
-    font: normal 12px arial;
-    color: #838b97;
-    width: 288px;
-    outline: none;
-    border-radius:3px;
-}
-
- 
-
-    </style>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http --equiv="X-UA-Compatible" content="IE=Edge" />
@@ -171,14 +137,19 @@
                 <li class="top" ng-class="(SelectedMenuId==Enum.Process.ConatctUs) ? 'current' : ''">
                     <a href="" class="navlink" ui-sref="ContactUS({MenuId:Enum.Process.ConatctUs})">Contact Us</a>
                 </li>
-                <li class="top">
+                @*<li class="top">
                     <div class="search">
                         <input type="text" placeholder="Search Here" id="Gsearch" />
                         <button type="button" class="glyphicon glyphicon-search" 
                                 style="border:none;width:22px; top:9px;line-height:2!important;left:266px;" ng-click="RedirectToSearch()" />
                     </div>
-                </li>
+                </li>*@
                 
+
+                <li class="top" ng-class="(SelectedMenuId==Enum.Process.Search) ? 'current' : ''">
+                    <a href="" class="navlink" ui-sref="Search({MenuId:Enum.Process.Search})">Search</a>
+                </li>
+
 
                 @*<li class="top cursor-pointer" ui-sref="Home1">
                         <a class="navlink">layout1</a>
@@ -325,15 +296,7 @@
 
 
         app.controller('RoleRightsController', function ($scope, $templateCache,$state, localStorageService,$interval, $stateParams, $rootScope, $location, notificationFactory, configurationService, $compile, $filter) {
-            var gSearchValue = '';
-            function INIT() {
-               
-                if (window.location.href.toLowerCase().indexOf('search?q=')>0) {
-                   
-                    $("#Gsearch").val(decodeURI( window.location.href.toLowerCase().split('search?q=')[1]));
-                }
-            }
-             
+          
 
             $rootScope.UserRoleRightsList = @Html.Raw(Json.Encode(@ProjectSession.LoggedInUserDetail.RolesRightsPermissions));
             $rootScope.LoginUserDetail=@Html.Raw(Json.Encode(@ProjectSession.LoggedInUserDetail));
@@ -392,16 +355,8 @@
                 return;
             };
 
-            $rootScope.RedirectToSearch=function() {
-                var searchValue =  $("#Gsearch").val();
-                if (!isNullOrUndefinedOrEmpty(searchValue)) 
-                {
-                    $templateCache.removeAll();
-                    window.location.href = "Search?q="+searchValue+"";
-                }
-            };
+         
 
-            INIT();
 
         });
 

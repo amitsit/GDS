@@ -82,7 +82,7 @@
                     <tbody class="fs15">
                         <tr ng-repeat="Document  in ProcessDocuments">
                             <td class="pt-20 pb-20"><h4 class="font-bold" ng-bind="Document.DocumentCode"></h4></td>
-                            <td class="font-bold"><a ng-bind="Document.DocumentTitle"></a></td>
+                            <td class="font-bold"><a ng-href="{{Document.DocumentPath}}" target="_blank" ng-bind="Document.DocumentTitle"></a></td>
                             <td><h4 class="font-bold" ng-bind="Document.ReleaseDate | date:GlobalDateFormat"></h4></td>
                         </tr>
                     </tbody>

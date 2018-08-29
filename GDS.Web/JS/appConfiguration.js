@@ -148,11 +148,11 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $tra
         templateUrl: '/Templates/Processes/Index.html'
     });
 
-    $stateProvider.state({
-        name: 'Search',
-        url: '/Search?q',
-        templateUrl: '/Templates/Search/Index.html'
-    });
+    //$stateProvider.state({
+    //    name: 'Search',
+    //    url: '/Search?q',
+    //    templateUrl: '/Templates/Search/Index.html'
+    //});
 
 
     $stateProvider.state({
@@ -182,6 +182,13 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $tra
         name: 'EditSubProcess',
         url: '/EditSubProcess?MenuId&ProcessId&ProcessName&SubProcessId&SubProcessName',
         templateUrl: '/Templates/SubProcess/AddOrUpdateSubProcess.html'
+    });
+
+
+    $stateProvider.state({
+        name: 'Search',
+        url: '/Search?MenuId&SearchText',
+        templateUrl: '/Templates/Search/SearchList.html'
     });
 
     //any url that doesn't exist in routes redirect to '/'

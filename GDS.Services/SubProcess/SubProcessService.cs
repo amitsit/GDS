@@ -128,9 +128,9 @@ namespace GDS.Services.SubProcess
             return response;
         }
 
-        public ApiResponse<ProcessDocument> GetProcessDocumentBySubProcessIdAndRegionId(int? SubProcessId, int? RegionId, int? UserId)
+        public ApiResponse<DocumentMasterModel> GetProcessDocumentBySubProcessIdAndRegionId(int? SubProcessId, int? RegionId, int? UserId)
         {
-            var response = new ApiResponse<ProcessDocument>();
+            var response = new ApiResponse<DocumentMasterModel>();
 
             try
             {
@@ -153,7 +153,7 @@ namespace GDS.Services.SubProcess
                     Value = (object)UserId ?? DBNull.Value
                 };
 
-                var result = _repository.ExecuteSQL<ProcessDocument>("GetProcessDocumentBySubProcessIdAndRegionId", SubProcessIdParam, RegionIdParam, UserIdParam).ToList();
+                var result = _repository.ExecuteSQL<DocumentMasterModel>("GetProcessDocumentBySubProcessIdAndRegionId", SubProcessIdParam, RegionIdParam, UserIdParam).ToList<DocumentMasterModel>();
                 response.Success = true;
                 response.Data = result;
             }
@@ -333,8 +333,8 @@ namespace GDS.Services.SubProcess
                     Value = (object)UserId ?? DBNull.Value
                 };
 
-                // var result = repository.ExecuteSQL<int>("DeleteSubProcess", ProcessIdParam, SubProcessIdParam, UserIdParam).FirstOrDefault();
-                //response.Success = (result > 0);
+                var result = _repository.ExecuteSQL<int>("DeleteSubProcess", ProcessIdParam, SubProcessIdParam, UserIdParam).FirstOrDefault();
+                response.Success = (result > 0);
             }
             catch (Exception ex)
             {

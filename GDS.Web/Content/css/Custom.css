@@ -5862,6 +5862,9 @@ input[type="radio"], input[type="checkbox"]{
 .cursor-pointer{
     cursor:pointer!important;
 }
-    .bg-white {
+ .bg-white {
         background-color: white !important;
     }
+ .txtseach{
+     color:#1A0DBE!important;
+ }

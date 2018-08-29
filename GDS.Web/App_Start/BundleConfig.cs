@@ -305,7 +305,7 @@
             controllerBundle.IncludeDirectory("~/JS/SubProcess", "*.js", true);
             controllerBundle.IncludeDirectory("~/JS/ContactUs", "*.js", true);
             controllerBundle.IncludeDirectory("~/JS/DocumentationLogs", "*.js", true);
-
+            controllerBundle.IncludeDirectory("~/JS/Search", "*.js", true);
 
             bundles.Add(controllerBundle);
         }

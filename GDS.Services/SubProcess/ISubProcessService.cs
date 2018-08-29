@@ -14,7 +14,7 @@ namespace GDS.Services.SubProcess
 
         ApiResponse<SubProcessModel> GetSubProcessListByStatus(int? ProcessId, int? RegionId, int? UserId ,bool? IsActive);
 
-        ApiResponse<ProcessDocument> GetProcessDocumentBySubProcessIdAndRegionId(int? SubProcessId, int? RegionId, int? UserId);
+        ApiResponse<DocumentMasterModel> GetProcessDocumentBySubProcessIdAndRegionId(int? SubProcessId, int? RegionId, int? UserId);
 
         BaseApiResponse DeleteSubProcessFromRegion(int SubProcessId, int RegionId, int UserId);
 

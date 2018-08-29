@@ -3,6 +3,38 @@
 <head>
     <title></title>
     <meta charset="utf-8" />
+    <style>
+        .search input[type=text] {
+            position: absolute;
+            top: 8px;
+            height: 28px;
+            background: white;
+            border: none;
+            padding: 0;
+            margin: 0;
+            font: normal 12px arial;
+            color: #838b97;
+            width: 288px;
+            outline: none;
+            border-radius: 3px;
+        }
+
+        .search input[type=button] {
+            position: relative;
+            top: 15px;
+            height: 28px;
+            left: 130px;
+            background: white;
+            border: none;
+            padding: 0;
+            margin: 0;
+            font: normal 12px arial;
+            color: #838b97;
+            width: 288px;
+            outline: none;
+            border-radius: 3px;
+        }
+    </style>
 </head>
 <body>
     <div ng-controller="SubProcessController"> 
@@ -32,5 +64,24 @@
         <gcse:searchresults-only></gcse:searchresults-only>
 
     </div>
+   <script>
+       //var gSearchValue = '';
+       //function INIT() {
+
+       //    if (window.location.href.toLowerCase().indexOf('search?q=') > 0) {
+
+       //        $("#Gsearch").val(decodeURI(window.location.href.toLowerCase().split('search?q=')[1]));
+       //    }
+       //}
+
+       //$rootScope.RedirectToSearch = function () {
+       //    var searchValue = $("#Gsearch").val();
+       //    if (!isNullOrUndefinedOrEmpty(searchValue)) {
+       //        $templateCache.removeAll();
+       //        window.location.href = "Search?q=" + searchValue + "";
+       //    }
+       //};
+
+   </script>
 </body>
 </html>
