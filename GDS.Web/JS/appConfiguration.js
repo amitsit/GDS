@@ -131,8 +131,14 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $tra
         templateUrl: '/Templates/ContactUs/Index.html'
     });
     $stateProvider.state({
+        name: 'ContactUSList',
+        url: '/ContactUSList?MenuId',
+        templateUrl: '/Templates/ContactUs/ContactList.html'
+    });
+
+    $stateProvider.state({
         name: 'EditContactUS',
-        url: '/EditContactUS?MenuId',
+        url: '/EditContactUS?MenuId&ContactId',
         templateUrl: '/Templates/ContactUs/AddOrUpdateContactUs.html'
     });
 

@@ -8,6 +8,7 @@
     };
 
     function INIT() {
+        
         $scope.UserId = $rootScope.LoginUserDetail.UserId;
         $scope.MenuId = parseInt($stateParams.MenuId);
         $scope.ProcessId = parseInt($stateParams.ProcessId);
@@ -35,10 +36,11 @@
                        
         ];
 
-       
+      
 
         $scope.ProcessObj = new Object();
-        if ($scope.ProcessId>0) {
+        if ($scope.ProcessId > 0) {
+          
             $scope.GetProcessOrSubProcessListByProcessId($scope.MenuId, $scope.ProcessId, $scope.UserId);         
         } else {
             $scope.ProcessObj.MenuId = $scope.MenuId;
@@ -51,6 +53,7 @@
    
 
     $scope.GetProcessOrSubProcessListByProcessId = function (MenuId, ProcessId, UserId) {
+      
         var promiseGetProcessListById = ProcessService.GetProcessOrSubProcessListByProcessId(MenuId, ProcessId, UserId);
         promiseGetProcessListById.success(function (response) {      
             $scope.ProcessObj = response.Data[0];
@@ -160,6 +163,7 @@
     };
 
 
-
+    
     INIT();
+   
 });

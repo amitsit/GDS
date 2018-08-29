@@ -10,7 +10,8 @@
         $scope.MenuId = parseInt($stateParams.MenuId);
         $scope.IsActive = true;
         $scope.MenuName = "";
-      
+        $scope.ContactId = parseInt($stateParams.ContactId);
+       
         if ($scope.MenuId > 0) {
 
             var MenuObj = $filter('filter')($rootScope.MenuList, { id: parseInt($scope.MenuId) }, true)[0];
@@ -24,16 +25,17 @@
             if ($scope.MenuId == $rootScope.Enum.Process.Processes) {
                 $scope.ProcessDisplayType = $rootScope.Enum.ProcessDisplayType.List;
             }
-              
+            $scope.GetContacts(0, 1);
             //$scope.GetProcesses($scope.MenuId, $scope.IsActive);
         }
 
-        $scope.GetContacts(0, 1);
+        //$scope.GetContacts(0, 1);
     }
 
     $scope.GetContacts = function (ContactId, UserId) {
         var promiseGetContacts = ContactUsService.GetContactUs(ContactId, UserId);
         promiseGetContacts.success(function (response) {
+            debugger;
             $scope.ContactListData = response.Data;
         });
         promiseGetContacts.error(function (data, statusCode) {
@@ -53,7 +55,7 @@
     $scope.showEdit = function (IsAdd)
         {
             if (IsAdd) {
-                $state.go('EditContactUS', ({ 'MenuId': $scope.MenuId, 'ContactId': 0 }));
+                $state.go('EditContactUS', ({ 'MenuId': $scope.MenuId, 'ContactId': $scope.ContactId }));
 
             }
             if ($scope.IsEditMode) {
