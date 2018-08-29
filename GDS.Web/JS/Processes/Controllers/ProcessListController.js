@@ -71,7 +71,7 @@
                 "sorting": "false",
                 "render": function (data, type, row) {
                     var strAction = '';                  
-                    strAction = "<a><i ui-sref='EditProcess({MenuId:" + $scope.MenuId + ",ProcessId:" + row.ProcessId + "})' class='glyphicon glyphicon-pencil  cursor-pointer' data-original-title='Edit' data-toggle='tooltip'></i></a>";
+                    strAction = "<a ng-click='GotoProcessEdit($event)'><i  class='glyphicon glyphicon-pencil  cursor-pointer' data-original-title='Edit' data-toggle='tooltip'></i></a>";
                     //if ($rootScope.isSubModuleAccessibleToUser('Admin', 'Location Quick Links', 'Delete Region')) {
                     strAction = strAction + "<a ng-click='DeleteProcess($event)' ><i  class='glyphicon glyphicon-trash cursor-pointer' data-original-title='Delete' data-toggle='tooltip'></i></a>";
                     //} ng-click='DeleteRegion($event)'
@@ -89,6 +89,13 @@
             }
         });
 
+    }
+
+    $scope.GotoProcessEdit = function ($event) {
+        var table = $('#tblProcess').DataTable();
+        var row = table.row($($event.target).parents('tr')).data();
+
+        $state.go("EditProcess", ({ 'MenuId': $scope.MenuId, 'ProcessId': row.ProcessId, 'ProcessName': row.ProcessName }));
     }
 
     $scope.DeleteProcess = function ($event) {

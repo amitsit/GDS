@@ -35,12 +35,9 @@
                           //{ id: 5, name: "Processes" }
                        
         ];
-
-      
-
+     
         $scope.ProcessObj = new Object();
-        if ($scope.ProcessId > 0) {
-          
+        if ($scope.ProcessId > 0) {          
             $scope.GetProcessOrSubProcessListByProcessId($scope.MenuId, $scope.ProcessId, $scope.UserId);         
         } else {
             $scope.ProcessObj.MenuId = $scope.MenuId;
