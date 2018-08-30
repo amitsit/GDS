@@ -5842,13 +5842,13 @@ select.form-control {
 }
 
 .activetab {
-    background-color: #EEC244 !important;
+    background-color: #EEC244!important;
     border-top-right-radius: 15px;
     border-top-left-radius: 15px;
 }
 
 .inactivetab {
-    background-color: #ddd;
+    background-color:#839DD2;
     border-top-right-radius: 15px;
     border-top-left-radius: 15px;
 }
@@ -5868,3 +5868,12 @@ input[type="radio"], input[type="checkbox"]{
  .txtseach{
      color:#1A0DBE!important;
  }
+
+ .activetab a{
+     color:white!important;
+ }
+ .inactivetab a{
+     color:black!important;
+
+ }
+

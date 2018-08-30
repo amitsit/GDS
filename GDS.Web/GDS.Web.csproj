@@ -804,7 +804,7 @@
     <Content Include="JS\ContactUs\Services\ContactUsService.js" />
     <Content Include="JS\Directives\appDirectives.js" />
     <Content Include="JS\dirPagination.js" />
-    <Content Include="JS\DocumentationLogs\DocumentationLogsController.js" />
+    <Content Include="JS\ChangeLogs\ChangeLogsController.js" />
     <Content Include="JS\Enums.js" />
     <Content Include="JS\Factory\appFactory.js" />
     <Content Include="JS\Filters\appFilters.js" />
@@ -850,7 +850,7 @@
     <Content Include="Templates\ContactUs\ContactList.html" />
     <Content Include="Templates\ContactUs\Index.html" />
     <Content Include="Templates\CoreProcess\Index.html" />
-    <Content Include="Templates\DocumentationLogs\Index.html" />
+    <Content Include="Templates\ChangeLogs\Index.html" />
     <Content Include="Templates\Home\ContentTestPage2.html" />
     <Content Include="Templates\Home\ContentTestPage.html" />
     <Content Include="Templates\Home\ContentTestPage1.html" />

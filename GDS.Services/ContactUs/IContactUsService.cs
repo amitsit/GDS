@@ -14,6 +14,7 @@ namespace GDS.Services.ContactUs
         ApiResponse<ContactUsModel> GetContactUs(int? ContactId, int? UserId);
         ApiResponse<ContactUsModel> GetContactUsDetail(int? ContactId, int? UserId);
         ApiResponse<ContactUsModel> GetContactListByStatus(int? MenuId, int? UserId,bool? IsActive);
+        BaseApiResponse DeleteContact(int? ContactId,int? UserId);
         BaseApiResponse SaveContactDetail(int? UserId, ContactUsModel ContactObj);
 
 

@@ -68,7 +68,7 @@ namespace GDS.Services.ContactUs
             return response;
         }
 
-        public ApiResponse<ContactUsModel> GetContactListByStatus(int? MenuId, int? UserId,bool? IsActive)
+        public ApiResponse<ContactUsModel> GetContactListByStatus(int? MenuId, int? UserId, bool? IsActive)
         {
             var response = new ApiResponse<ContactUsModel>();
 
@@ -76,7 +76,7 @@ namespace GDS.Services.ContactUs
             {
                 var MenuIdParam = new SqlParameter
                 {
-                    ParameterName = "ContactId",
+                    ParameterName = "MenuId",
                     DbType = DbType.Int32,
                     Value = (object)MenuId ?? DBNull.Value
                 };
@@ -204,6 +204,41 @@ namespace GDS.Services.ContactUs
                     response.Success = true;
                     response.InsertedId = result;
                 }
+
+            }
+            catch (Exception ex)
+            {
+                _logger.Error(ex);
+                response.Message.Add(ex.Message);
+            }
+
+            return response;
+        }
+
+        public BaseApiResponse DeleteContact(int? ContactId, int? UserId)
+        {
+            var response = new BaseApiResponse();
+
+            try
+            {
+                var ContactIdParam = new SqlParameter
+                {
+                    ParameterName = "ContactId",
+                    DbType = DbType.Int32,
+                    Value = (object)ContactId ?? DBNull.Value
+                };
+
+               
+                var UserIdParam = new SqlParameter
+                {
+                    ParameterName = "UserId",
+                    DbType = DbType.Int32,
+                    Value = (object)UserId ?? DBNull.Value
+                };
+
+               
+                var result = _repository.ExecuteSQL<int>("DeleteContact", ContactIdParam,UserIdParam).FirstOrDefault();
+                response.Success = (result > 0);
 
             }
             catch (Exception ex)

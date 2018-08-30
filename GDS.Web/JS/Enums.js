@@ -7,7 +7,7 @@
             ManagementProcess: 3,
             SupportingProcess: 4,
             Processes: 5,
-            DocumentLog: 6,
+            ChangeLog: 6,
             ConatctUs: 7,
             Search: 8  
         },

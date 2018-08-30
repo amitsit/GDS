@@ -89,14 +89,22 @@ app.controller('SubProcessListController', function ($scope, $state, localStorag
                  //    }
                  //},
                     {
-                     "title": 'Contact Detail',
-                     "data": "ContactDetail",
+                     "title": 'Sub Process Code',
+                     "data": "SubProcessCode",
+                     "className": "dt-left",
+                     "render": function (data, type, row) {
+                         return data;
+                     }
+                    },
+                    {
+                     "title": 'Sub Process Name',
+                     "data": "SubProcessName",
                      "className": "dt-left",
                      "render": function (data, type, row) {
                          return data;
                      }
                  },
-                     
+                                      
                {
                  "title": "Active",
                  "className": "dt-center",

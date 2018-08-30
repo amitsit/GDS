@@ -37,11 +37,19 @@ namespace GDS.API.Controllers.ContactUs
         {
             return this._iContactUsService.GetContactUsDetail(ContactId, UserId);
         }
+
         [HttpGet]
-        [Route("GetContactUsDetail")]
+        [Route("GetContactListByStatus")]
         public ApiResponse<ContactUsModel> GetContactListByStatus(int? MenuId, int? UserId,bool? IsActive)
         {
             return this._iContactUsService.GetContactListByStatus(MenuId, UserId,IsActive);
+        }
+
+        [HttpGet]
+        [Route("DeleteContact")]
+        public BaseApiResponse DeleteContact(int? ContactId, int? UserId)
+        {
+            return this._iContactUsService.DeleteContact(ContactId, UserId);
         }
 
         [HttpPost]
@@ -50,6 +58,8 @@ namespace GDS.API.Controllers.ContactUs
         {
             return this._iContactUsService.SaveContactDetail(UserId, ContactObj);
         }
+
+        
         #endregion
     }
 }

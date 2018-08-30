@@ -143,9 +143,9 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $tra
     });
 
     $stateProvider.state({
-        name: 'DocumentLog',
-        url: '/DocumentLog?MenuId',
-        templateUrl: '/Templates/DocumentationLogs/Index.html'
+        name: 'ChangeLog',
+        url: '/ChangeLog?MenuId',
+        templateUrl: '/Templates/ChangeLogs/Index.html'
     });
 
     $stateProvider.state({
@@ -243,7 +243,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $tra
                                 { id: 3, name: "Management Processes" },
                                 { id: 4, name: "Supporting Process" },
                                 { id: 5, name: "Processes" },
-                                { id: 6, name: "Document Logs" },
+                                { id: 6, name: "Change Logs" },
                                 { id: 7, name: "Contact Us" },
                                  { id: 8, name: "Search" },
      

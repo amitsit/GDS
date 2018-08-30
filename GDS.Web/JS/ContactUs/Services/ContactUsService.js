@@ -10,10 +10,15 @@
     }
 
     ContactUsService.GetContactListByStatus = function (menuId, userId, isActive) {
-        return $http.get(configurationService.basePath + "api/GetContactListByStatus?MenuId=" + menuId + "&UserId=" + userId + "&IsActive" + isActive);
+        return $http.get(configurationService.basePath + "api/GetContactListByStatus?MenuId=" + menuId + "&UserId=" + userId + "&IsActive=" + isActive);
     }
+
     ContactUsService.SaveContactDetail = function (UserId, ProcessObj) {
         return $http.post(configurationService.basePath + "api/SaveContactDetail?UserId=" + UserId, ProcessObj);
+    }
+
+    ContactUsService.DeleteContact = function (contactId, userId) {
+        return $http.get(configurationService.basePath + "api/DeleteContact?ContactId=" + contactId + "&UserId=" + userId);
     }
     return ContactUsService;
 });

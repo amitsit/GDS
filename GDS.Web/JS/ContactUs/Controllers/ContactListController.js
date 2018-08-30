@@ -1,4 +1,4 @@
-﻿app.controller('ContactListController', function ($scope, $state, localStorageService, $stateParams, ProcessService, $rootScope, $location, notificationFactory, configurationService, $compile, $filter) {
+﻿app.controller('ContactListController', function ($scope, $state, localStorageService, $stateParams, ContactUsService, $rootScope, $location, notificationFactory, configurationService, $compile, $filter) {
     decodeParams($stateParams);
     BindToolTip();
     
@@ -17,15 +17,18 @@
 
             $scope.IsActive = false;
            
-            $scope.GetContactListByStatus($scope.MenuId,$scope.UserId, $scope.IsActive);
+            $scope.GetContactListByStatus($scope.MenuId, $scope.UserId, $scope.IsActive);
+          
         }
       
     }
   
     $scope.GetContactListByStatus = function (MenuId,UserId,IsActive) {
-  
+    
         var promiseGetContactListByStatus = ContactUsService.GetContactListByStatus(MenuId, UserId, IsActive);
+     
         promiseGetContactListByStatus.success(function (response) {
+          
             $scope.ContactListData = response.Data;
             BindContactList();
         });
@@ -38,8 +41,8 @@
             $('#tblContact').DataTable().destroy();
         }
 
-        $('#tblProcess').DataTable({
-            data: $scope.ProcessListData,
+        $('#tblContact').DataTable({
+            data: $scope.ContactListData,
             "bDestroy": true,
             "dom": '<"top"f><"table-responsive"rt><"bottom"lip<"clear">>',
             "aaSorting": [1, "desc"],
@@ -48,11 +51,9 @@
             "stateSave": true,
             "columns": [
                  {
-                     "title": 'Contact Detail',
-                     "data": "ContactDetail",
-                     "className": "dt-left",
+                     "title": 'Contact Detail',                                 
                      "render": function (data, type, row) {                    
-                         return data;
+                         return "<div ng-bind-html=" + row.ContactDetail+ "></div>";
                      }
                  },
              {
@@ -88,6 +89,7 @@
                 $compile(angular.element(nRow).contents())($scope);
             }
         });
+      
 
     }
 
@@ -95,8 +97,9 @@
     
         var table = $('#tblContact').DataTable();
         var row = table.row($($event.target).parents('tr')).data();
+      
         bootbox.dialog({
-            message: "Do you want to delete a Contact" + ' - ' + row.ProcessName + "?",
+            message: "Do you want to delete a Contact" + ' - ' + row.ContactId + "?",
             title: "Confirmation",
             className: "model",
             buttons: {
@@ -105,8 +108,11 @@
                         label: "Yes",
                         className: "btn btn-primary theme-btn",
                         callback: function () {
-                            var deleteProcess = ContactUsService.GetContactListByStatus(MenuId, UserId, IsActive);
+                        
+                            var deleteProcess = ContactUsService.DeleteContact(row.ContactId, $scope.UserId);
+                          
                             deleteProcess.success(function (p) {
+                               
                                 notificationFactory.successDelete();
                                 $scope.GetContactListByStatus($scope.MenuId,$scope.UserId ,$scope.IsActive);
                               

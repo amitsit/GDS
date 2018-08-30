@@ -35,7 +35,7 @@
     $scope.GetContacts = function (ContactId, UserId) {
         var promiseGetContacts = ContactUsService.GetContactUs(ContactId, UserId);
         promiseGetContacts.success(function (response) {
-            debugger;
+      
             $scope.ContactListData = response.Data;
         });
         promiseGetContacts.error(function (data, statusCode) {

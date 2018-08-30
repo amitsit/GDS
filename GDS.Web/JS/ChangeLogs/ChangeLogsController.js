@@ -1,4 +1,4 @@
-﻿app.controller('DocumentationLogsController', function ($scope, $state, localStorageService, $stateParams, ProcessService, $rootScope, $location, notificationFactory, configurationService, $compile, $filter) {
+﻿app.controller('ChangeLogsController', function ($scope, $state, localStorageService, $stateParams, ProcessService, $rootScope, $location, notificationFactory, configurationService, $compile, $filter) {
     decodeParams($stateParams);
     BindToolTip();
 
@@ -33,5 +33,5 @@
 
     INIT();
 
-
+    debugger;
 });
