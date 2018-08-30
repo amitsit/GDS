@@ -5837,18 +5837,19 @@ select.form-control {
 }
 
 .nav-tabs > li > a:hover {
+    background-color:#839DD2;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
 }
 
 .activetab {
-    background-color: #EEC244!important;
+    background-color: #839DD2 !important;
     border-top-right-radius: 15px;
     border-top-left-radius: 15px;
 }
 
 .inactivetab {
-    background-color:#839DD2;
+    background-color:#ddd;
     border-top-right-radius: 15px;
     border-top-left-radius: 15px;
 }
