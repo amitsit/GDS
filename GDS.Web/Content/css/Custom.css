@@ -5877,4 +5877,10 @@ input[type="radio"], input[type="checkbox"]{
      color:black!important;
 
  }
+ .customertableHeader_nb{
+     background-color: #839DD2 !important;
+    font-size: 15px;
+    color: white;
+}
+ }
 

@@ -22,7 +22,7 @@
         <div class="row form-group">
             <label class="col-sm-3 col-lg-1 control-label text-right rn_pad mandatoryField">Search</label>
             <div class="col-sm-3 col-md-4">
-               <input type="text" name="SearchText" maxlength="200" ng-model="txtSearch"  class="form-control" required="required"/>
+               <input type="text" name="SearchText" my-enter="SearchText(AddOrUpdateSearchform)" maxlength="200" ng-model="txtSearch"  class="form-control" required="required"/>
             </div>
             <div  class="col-sm-3 col-md-1">
                 <button type="submit" class="btn btn-info" ng-click="SearchText(AddOrUpdateSearchform)">
@@ -41,18 +41,18 @@
                 <ul>
                     <li ng-repeat="SearchObj in SearchListData">
                         <div ng-if="SearchObj.SearchType==1" class="col-sm-12">
-                            <h4><a  ui-sref="Process({MenuId:SearchObj.MenuId})" ng-bind="SearchObj.ProcessName"></a></h4>                                                   
+                            <h4><a target="_blank"  ui-sref="Process({MenuId:SearchObj.MenuId})" ng-bind="SearchObj.ProcessName"></a></h4>                                                   
                             <hr />
                         </div>
                         <div ng-if="SearchObj.SearchType==2" class="col-sm-12">
-                            <h4 class="mb-5"><a ui-sref="Process({MenuId:SearchObj.MenuId})" ng-bind="SearchObj.ProcessName"></a></h4>
-                            <span>&nbsp;&nbsp;<a ui-sref="SubProcessDetail({MenuId:SearchObj.MenuId,ProcessId:SearchObj.ProcessId,SubProcessId:SearchObj.SubProcessId,RegionId:-1})" ng-bind="SearchObj.SubProcessCode +' '+SearchObj.SubProcessName"></a></span>                        
+                            <h4 class="mb-5"><a target="_blank" ui-sref="Process({MenuId:SearchObj.MenuId})" ng-bind="SearchObj.ProcessName"></a></h4>
+                            <span>&nbsp;&nbsp;<a target="_blank" ui-sref="SubProcessDetail({MenuId:SearchObj.MenuId,ProcessId:SearchObj.ProcessId,SubProcessId:SearchObj.SubProcessId,RegionId:-1})" ng-bind="SearchObj.SubProcessCode +' '+SearchObj.SubProcessName"></a></span>                        
                             <hr />
                         </div>
 
                         <div ng-if="SearchObj.SearchType==3" class="col-sm-12">
                             <h4 class="mb-5"><a ui-sref="Process({MenuId:SearchObj.MenuId})" ng-bind="SearchObj.ProcessName"></a></h4>
-                            <span>&nbsp;&nbsp;<a ui-sref="SubProcessDetail({MenuId:SearchObj.MenuId,ProcessId:SearchObj.ProcessId,SubProcessId:SearchObj.SubProcessId,RegionId:SearchObj.RegionId})" ng-bind="SearchObj.SubProcessCode +':'+SearchObj.SubProcessName +' | '+SearchObj.DocumentCode+' : '+SearchObj.DocumentTitle+' ('+SearchObj.RegionName+')'"></a></span>
+                            <span>&nbsp;&nbsp;<a ui-sref="SubProcessDetail({MenuId:SearchObj.MenuId,ProcessId:SearchObj.ProcessId,SubProcessId:SearchObj.SubProcessId,RegionId:SearchObj.RegionId})" ng-bind="SearchObj.SubProcessCode +':'+SearchObj.SubProcessName+'|'+SearchObj.DocumentCode+' : '+SearchObj.DocumentTitle+' ('+SearchObj.RegionName+')'"></a></span>
                             <hr />
                         </div>
                       
