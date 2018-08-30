@@ -30,76 +30,77 @@
         promiseGetContactListByStatus.success(function (response) {
           
             $scope.ContactListData = response.Data;
-            BindContactList();
+            //BindContactList();
         });
         promiseGetContactListByStatus.error(function (data, statusCode) {
         });
     }
 
-    function BindContactList() {
-        if ($.fn.DataTable.isDataTable("#tblContact")) {
-            $('#tblContact').DataTable().destroy();
-        }
+    //function BindContactList() {
+    //    if ($.fn.DataTable.isDataTable("#tblContact")) {
+    //        $('#tblContact').DataTable().destroy();
+    //    }
 
-        $('#tblContact').DataTable({
-            data: $scope.ContactListData,
-            "bDestroy": true,
-            "dom": '<"top"f><"table-responsive"rt><"bottom"lip<"clear">>',
-            "aaSorting": [1, "desc"],
-            "aLengthMenu": [10, 20, 50, 100, 200],
-            "pageLength": 10,
-            "stateSave": true,
-            "columns": [
-                 {
-                     "title": 'Contact Detail',                                 
-                     "render": function (data, type, row) {                    
-                         return "<div ng-bind-html=" + row.ContactDetail+ "></div>";
-                     }
-                 },
-             {
-                 "title": "Active",
-                 "className": "dt-center",
-                 "data": "IsActive",
-                 "render": function (data, type, row) {
-                     return (row.IsActive) ? "Yes" : "No";
-                 }
-             },
+    //    $('#tblContact').DataTable({
+    //        data: $scope.ContactListData,
+    //        "bDestroy": true,
+    //        "dom": '<"top"f><"table-responsive"rt><"bottom"lip<"clear">>',
+    //        "aaSorting": [1, "desc"],
+    //        "aLengthMenu": [10, 20, 50, 100, 200],
+    //        "pageLength": 10,
+    //        "stateSave": true,
+    //        "columns": [
+    //             {
+    //                 "title": 'Contact Detail',
+    //                 "data":'ContactDetail'
+    //                 //"render": function (data, type, row) {                    
+    //                 //    return "<div ng-bind-html="+ row.ContactDetail+ ">''</div>";
+    //                 //}
+    //             },
+    //         {
+    //             "title": "Active",
+    //             "className": "dt-center",
+    //             "data": "IsActive",
+    //             "render": function (data, type, row) {
+    //                 return (row.IsActive) ? "Yes" : "No";
+    //             }
+    //         },
           
-            {
-                "title": "Action",
-                "data": null,
-                "sClass": "action dt-center",
-                "sorting": "false",
-                "render": function (data, type, row) {
-                    var strAction = '';                  
-                    strAction = "<a><i ui-sref='EditContactUS({MenuId:" + $scope.MenuId + ",ContactId:" + row.ContactId + "})' class='glyphicon glyphicon-pencil  cursor-pointer' data-original-title='Edit' data-toggle='tooltip'></i></a>";
-                    //if ($rootScope.isSubModuleAccessibleToUser('Admin', 'Location Quick Links', 'Delete Region')) {
-                    strAction = strAction + "<a ng-click='DeleteContact($event)' ><i  class='glyphicon glyphicon-trash cursor-pointer' data-original-title='Delete' data-toggle='tooltip'></i></a>";
-                    //} ng-click='DeleteRegion($event)'
-                    return strAction;
-                }
-            }
-            ],
-            "initComplete": function () {
-            },
-            "fnDrawCallback": function () {
-                BindToolTip();               
-            },
-            "fnCreatedRow": function (nRow, aData, iDataIndex) {
-                $compile(angular.element(nRow).contents())($scope);
-            }
-        });
+    //        {
+    //            "title": "Action",
+    //            "data": null,
+    //            "sClass": "action dt-center",
+    //            "sorting": "false",
+    //            "render": function (data, type, row) {
+    //                var strAction = '';                  
+    //                strAction = "<a><i ui-sref='EditContactUS({MenuId:" + $scope.MenuId + ",ContactId:" + row.ContactId + "})' class='glyphicon glyphicon-pencil  cursor-pointer' data-original-title='Edit' data-toggle='tooltip'></i></a>";
+    //                //if ($rootScope.isSubModuleAccessibleToUser('Admin', 'Location Quick Links', 'Delete Region')) {
+    //                strAction = strAction + "<a ng-click='DeleteContact($event)' ><i  class='glyphicon glyphicon-trash cursor-pointer' data-original-title='Delete' data-toggle='tooltip'></i></a>";
+    //                //} ng-click='DeleteRegion($event)'
+    //                return strAction;
+    //            }
+    //        }
+    //        ],
+    //        "initComplete": function () {
+    //        },
+    //        "fnDrawCallback": function () {
+    //            BindToolTip();               
+    //        },
+    //        "fnCreatedRow": function (nRow, aData, iDataIndex) {
+    //            $compile(angular.element(nRow).contents())($scope);
+    //        }
+    //    });
       
 
-    }
+    //}
 
-    $scope.DeleteContact = function ($event) {
+    $scope.DeleteContact = function (contactObj) {
     
-        var table = $('#tblContact').DataTable();
-        var row = table.row($($event.target).parents('tr')).data();
+        //var table = $('#tblContact').DataTable();
+        //var row = table.row($($event.target).parents('tr')).data();
       
         bootbox.dialog({
-            message: "Do you want to delete a Contact" + ' - ' + row.ContactId + "?",
+            message: "Do you want to delete a Contact ?",
             title: "Confirmation",
             className: "model",
             buttons: {
@@ -109,7 +110,7 @@
                         className: "btn btn-primary theme-btn",
                         callback: function () {
                         
-                            var deleteProcess = ContactUsService.DeleteContact(row.ContactId, $scope.UserId);
+                            var deleteProcess = ContactUsService.DeleteContact(contactObj.ContactId, $scope.UserId);
                           
                             deleteProcess.success(function (p) {
                                
