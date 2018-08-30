@@ -20,8 +20,8 @@
                 <h4><b><u ng-bind="SubProcessObj.SubProcessCode"></u></b>&nbsp;&nbsp;<b ng-bind="SubProcessObj.SubProcessName"></b></h4>
             </div>
             <div class="col-lg-2 mt-10">
-                <div class="processModelbox divCentText pull-right">
-                    <h4 class="text-center mt-25"><a><i><b>Process<br />Model</b></i></a></h4>
+                <div class="processModelbox divCentText pull-right" ng-hide="SubProcessObj.SubProcessModelPath=='' || SubProcessObj.SubProcessModelPath==null">
+                    <h4 class="text-center mt-25"><a ng-href="{{SubProcessObj.SubProcessModelPath}}" target="_blank"><i><b>Process<br />Model</b></i></a></h4>
                 </div>
             </div>
         </div>
