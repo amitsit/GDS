@@ -1,11 +1,11 @@
-﻿app.controller('ChangeLogsController', function ($scope, $state, localStorageService, $stateParams, ProcessService, $rootScope, $location, notificationFactory, configurationService, $compile, $filter) {
+﻿app.controller('ChangeLogsController', function ($scope, $state, localStorageService, $stateParams, ChangeLogsServices, $rootScope, $location, notificationFactory, configurationService, $compile, $filter) {
     decodeParams($stateParams);
     BindToolTip();
 
 
 
     function INIT() {
-     
+      
         $scope.IsEditMode = false;
         $scope.ProcessDisplayType = $rootScope.Enum.ProcessDisplayType.MultiTable;
 
@@ -27,11 +27,21 @@
                 $scope.ProcessDisplayType = $rootScope.Enum.ProcessDisplayType.List;
             }
               
-            //$scope.GetProcesses($scope.MenuId, $scope.IsActive);
+           $scope.GetChangeLogs($scope.MenuId);
         }
+    }
+    $scope.GetChangeLogs =  function(MenuId){
+      
+        var promiseGetContacts = ChangeLogsServices.GetChangeLogs($scope.MenuId);
+        promiseGetContacts.success(function (response) {
+
+            $scope.ContactListData = response.Data;
+        });
+        promiseGetContacts.error(function (data, statusCode) {
+        });
     }
 
     INIT();
 
-    debugger;
+  
 });

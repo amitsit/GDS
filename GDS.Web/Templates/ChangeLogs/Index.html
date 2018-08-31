@@ -1,85 +1,41 @@
-﻿<div class="db-content no-space" ng-controller="ChangeLogsController">
+﻿<style>
+    .tr_border{
+      border-left:1px #ddd;
+      border-right:1px #ddd;
+    }
+</style>
 
+<div class="no-space" ng-controller="ChangeLogsController">
     <h3 class="title  fontorang">
         <b>
             <a ui-sref="Home" title="Home"><i class="fa fa-home"></i></a>
-            <span> &nbsp;/&nbsp;&nbsp;</span> <span class="fontblack">{{MenuName}}</span>
+            <span> &nbsp;/&nbsp;&nbsp;</span>  <span class="fontblack">{{MenuName}}</span>
         </b>
     </h3>
 
-    <!--<div>
-        <div class="col-sm-4">
+    <div class="top_msg">This page allows you to lookup All Change Logs</div>
+    <div class="wthbox wth_content pb-0 MasterDataPanel">
+        <div class="col-sm-12">
+            <!--<h1>Year</h1>-->
             <div class="panel panel-default">
                 <div class="panel-body table-responsive">
                     <table class="table table-bordered text-center ">
                         <tr class="pressTitleRow">
-                            
-                            <th class="font-bold text-center" colspan="1"><label>CORPORATE QUALITY</label></th>
-
+                            <th class="col-sm-2 "><label>Date of Change</label></th>
+                            <th class="col-sm-2 text-left font-bold"><label>Process Code</label></th>
+                            <th class="col-sm-8 text-left font-bold"><label>Action</label></th>
                         </tr>
                         <tr>
-
-                            <td class="font-bold text-center"><label>Lonnie Holmquist</label></td>
-
-                        </tr>
-                        <tr>
-                            <td class="font-bold text-center"><label>mailto:LHolmquist@iacgroup.com</label></td>
+                            <td class="col-sm-2 text-center font-bold"><label>Date of Change</label></td>
+                            <th class="col-sm-2 text-left font-bold"></th>
+                            <td class="col-sm-2 text-center font-bold"><label>Action</label></td>
                         </tr>
 
                     </table>
-
-
                 </div>
             </div>
 
         </div>
-        <div class="col-sm-4">
-            <div class="panel panel-default">
-                <div class="panel-body table-responsive">
-                    <table class="table table-bordered text-center ">
-                        <tr class="pressTitleRow">
-
-                            <th class="font-bold text-center" colspan="1"><label>CORPORATE QUALITY</label></th>
-
-                        </tr>
-                        <tr>
-
-                            <td class="font-bold text-center"><label>Wiel Höppener</label></td>
-
-
-                        </tr>
-                        <tr>
-                            <td class="font-bold text-center"><label>mailto:wiel.hoeppener@iacgroup.com</label></td>
-                        </tr>
-
-                    </table>
-
-
-                </div>
-            </div>
-
-        </div>
-        <div class="col-sm-4">
-            <div class="panel panel-default">
-                <div class="panel-body table-responsive">
-                    <table class="table table-bordered text-center ">
-                        <tr class="pressTitleRow"></tr>
-                        <tr>
-                            <td class="font-bold text-center"><label>mailto:LHolmquist@iacgroup.com</label></td>
-                        </tr>
-
-                    </table>
-
-
-                </div>
-            </div>
-
-        </div>
-    </div>-->
+</div>
     </div>
-
-
-   
-
-
 

@@ -797,6 +797,7 @@
     <Content Include="Images\next.png" />
     <Content Include="Images\prev.png" />
     <Content Include="JS\appConfiguration.js" />
+    <Content Include="JS\ChangeLogs\Services\ChangeLogsServices.js" />
     <Content Include="JS\Common.js" />
     <Content Include="JS\ContactUs\Controllers\AddOrUpdateContactUsController.js" />
     <Content Include="JS\ContactUs\Controllers\ContactUsController.js" />
@@ -804,7 +805,7 @@
     <Content Include="JS\ContactUs\Services\ContactUsService.js" />
     <Content Include="JS\Directives\appDirectives.js" />
     <Content Include="JS\dirPagination.js" />
-    <Content Include="JS\ChangeLogs\ChangeLogsController.js" />
+    <Content Include="JS\ChangeLogs\Controllers\ChangeLogsController.js" />
     <Content Include="JS\Enums.js" />
     <Content Include="JS\Factory\appFactory.js" />
     <Content Include="JS\Filters\appFilters.js" />
