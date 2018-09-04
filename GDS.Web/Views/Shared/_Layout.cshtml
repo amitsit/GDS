@@ -133,11 +133,7 @@
                     </li>*@
                 <li class="top" ng-class="(SelectedMenuId==Enum.Process.ChangeLog) ? 'current' : ''">
                     <a href="" class="navlink" ui-sref="ChangeLog({MenuId:Enum.Process.ChangeLog})">Change Logs</a>
-                    @*<ul>
-                            <li><a href="">-Master Document List</a></li>
-                            <li><a href="">-Change Log</a></li>
-                            <li><a href="">-Site Map</a></li>
-                        </ul>*@
+
                 </li>
                 <li class="top" ng-class="(SelectedMenuId==Enum.Process.ConatctUs) ? 'current' : ''">
                     <a href="" class="navlink" ui-sref="ContactUS({MenuId:Enum.Process.ConatctUs})">Contact Us</a>
@@ -187,13 +183,10 @@
         <!-- content end -->
         <!-- footer start -->
         <footer id="footer">
-            @*<div class="automotive pull-right">
-                    <a href="/Home">
-                        <img src="~/Images/logo.jpg" height="65" width="500" alt="IAC">
-                    </a>
-                </div>*@
-
-
+            <div class="footer-copyright py-3 mt-15 col-lg-offset-1">
+                © 2018 Copyright:
+                <label>Global Document System</label>
+            </div>
         </footer>
         @*<div class="modal fade" id="ModelGlobalSettingModel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                 <div class="modal-dialog modal-lg" role="document">
