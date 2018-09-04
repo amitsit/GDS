@@ -7,6 +7,10 @@
         $scope.MenuId = parseInt($stateParams.MenuId);
         $scope.MenuName = "";
        
+        //--Check is Page Accessible
+        $rootScope.CheckIsPageAccessible("Process", "Process", "View All Process");
+        //
+
         if ($scope.MenuId > 0) {
 
             var MenuObj = $filter('filter')($rootScope.MenuList, { id: parseInt($scope.MenuId) }, true)[0];
@@ -70,11 +74,13 @@
                 "sClass": "action dt-center",
                 "sorting": "false",
                 "render": function (data, type, row) {
-                    var strAction = '';                  
-                    strAction = "<a ng-click='GotoProcessEdit($event)'><i  class='glyphicon glyphicon-pencil  cursor-pointer' data-original-title='Edit' data-toggle='tooltip'></i></a>";
-                    //if ($rootScope.isSubModuleAccessibleToUser('Admin', 'Location Quick Links', 'Delete Region')) {
+                    var strAction = '';
+                    if ($rootScope.isSubModuleAccessibleToUser('Process', 'Process', 'Add / Update Process')) {
+                     strAction = "<a ng-click='GotoProcessEdit($event)'><i  class='glyphicon glyphicon-pencil  cursor-pointer' data-original-title='Edit' data-toggle='tooltip'></i></a>";
+                    }                   
+                    if ($rootScope.isSubModuleAccessibleToUser('Process', 'Process', 'Delete Process')) {
                     strAction = strAction + "<a ng-click='DeleteProcess($event)' ><i  class='glyphicon glyphicon-trash cursor-pointer' data-original-title='Delete' data-toggle='tooltip'></i></a>";
-                    //} ng-click='DeleteRegion($event)'
+                    } 
                     return strAction;
                 }
             }

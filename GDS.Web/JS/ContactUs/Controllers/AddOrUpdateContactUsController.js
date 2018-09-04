@@ -4,7 +4,9 @@
 
     function INIT() {
       
-        
+        //--Check is Page Accessible
+        $rootScope.CheckIsPageAccessible("Contact Us", "Contact Us", "Add / Update Contact Us");
+        //
         $scope.IsEditMode = false;
         $scope.ProcessDisplayType = $rootScope.Enum.ProcessDisplayType.MultiTable;
         $scope.UserId = $rootScope.LoginUserDetail.UserId;
@@ -19,7 +21,6 @@
             if (!isNullOrUndefinedOrEmpty(MenuObj)) {
                 $scope.MenuName = MenuObj.name;
             }
-
 
             $rootScope.SelectedMenuId = $scope.MenuId;
 

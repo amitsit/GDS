@@ -9,6 +9,11 @@
 
     function INIT() {
         
+
+        //--Check is Page Accessible
+        $rootScope.CheckIsPageAccessible("Process", "Process", "Add / Update Process");
+        //
+
         $scope.UserId = $rootScope.LoginUserDetail.UserId;
         $scope.MenuId = parseInt($stateParams.MenuId);
         $scope.ProcessId = parseInt($stateParams.ProcessId);

@@ -10,7 +10,7 @@
     <div class="wthbox wth_content pb-0 MasterDataPanel">
         <div class="toplinks btnWithText">
             <ul>            
-                <li><a class="add" data-placement="top" data-toggle="tooltip" title="Add Process"  ui-sref="EditProcess({MenuId:MenuId,ProcessId:0})">New</a></li>                
+                <li ng-show="isSubModuleAccessibleToUser('Process', 'Process', 'Add / Update Process')"><a class="add" data-placement="top" data-toggle="tooltip" title="Add Process"  ui-sref="EditProcess({MenuId:MenuId,ProcessId:0})">New</a></li>                
                 <li><a class="cancel" data-placement="top" data-toggle="tooltip" title="Cancel" ui-sref="Process({MenuId:MenuId})"></a></li>                
             </ul>
         </div>

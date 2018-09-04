@@ -428,7 +428,8 @@
                             if($rootScope.LoginUserDetail.UserId>0){
                                 angular.element("#LoginModelPopup").modal('hide');
                                 //Reload Page
-                                window.location.reload();
+                                //window.location.reload();
+                                $state.reload();
 
                                 $rootScope.RootScopeUserId = $rootScope.LoginUserDetail.UserId;
                                 $rootScope.UserRoleRightsList=$rootScope.LoggedInUserDetail.RolesRightsPermissions;

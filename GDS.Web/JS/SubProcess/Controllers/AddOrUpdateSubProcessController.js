@@ -4,6 +4,16 @@
     createDatePicker();
 
     function INIT() {
+
+        //--Check is Page Accessible
+        if ($rootScope.isSubModuleAccessibleToUser('Sub Process', 'Sub Process', 'Add / Update Sub Process') || $rootScope.isSubModuleAccessibleToUser('Sub Process', 'Document', 'Add / Update Document')) {
+
+        } else {
+            $rootScope.CheckIsPageAccessible("Sub Process", "Sub Process", "Add / Update Sub Process");
+        }
+       
+        //
+
         $scope.UserId = $rootScope.LoginUserDetail.UserId;
         $scope.MenuId = parseInt($stateParams.MenuId);
         $scope.ProcessId = parseInt($stateParams.ProcessId);

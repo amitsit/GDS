@@ -11,6 +11,10 @@ app.controller('SubProcessListController', function ($scope, $state, localStorag
         
         //$scope.ProcessDisplayType = $rootScope.Enum.ProcessDisplayType.MultiTable;
 
+        //--Check is Page Accessible
+        $rootScope.CheckIsPageAccessible("Sub Process", "Sub Process", "View All Sub Process");
+        //
+
         $scope.MenuId = parseInt($stateParams.MenuId);
         $scope.ProcessId = parseInt($stateParams.ProcessId);
        $scope.SubProcessId = parseInt($stateParams.SubProcessId);
@@ -119,12 +123,15 @@ app.controller('SubProcessListController', function ($scope, $state, localStorag
                 "data": null,
                 "sClass": "action dt-center",
                 "sorting": "false",
-                "render": function (data, type, row) {
+                "render": function (data, type, row) {       
                     var strAction = '';
-                    strAction = "<a><i ui-sref='EditProcess({MenuId:" + $scope.MenuId + ",ProcessId:" + row.ProcessId +",SubProcessId:" + $scope.SubProcessId +"})' class='glyphicon glyphicon-pencil  cursor-pointer' data-original-title='Edit' data-toggle='tooltip'></i></a>";
-                    //if ($rootScope.isSubModuleAccessibleToUser('Admin', 'Location Quick Links', 'Delete Region')) {
+                    if ($rootScope.isSubModuleAccessibleToUser('Sub Process', 'Sub Process', 'Add / Update Sub Process')) {
+                        strAction = "<a ng-click='EditSubProcess($event)' ><i class='glyphicon glyphicon-pencil  cursor-pointer' data-original-title='Edit' data-toggle='tooltip'></i></a>";
+                    }
+                    
+                    if ($rootScope.isSubModuleAccessibleToUser('Sub Process', 'Sub Process', 'Delete Sub Process')) {
                     strAction = strAction + "<a ng-click='DeleteSubProcess($event)' ><i  class='glyphicon glyphicon-trash cursor-pointer' data-original-title='Delete' data-toggle='tooltip'></i></a>";
-                    //} ng-click='DeleteRegion($event)'
+                    } 
                     return strAction;
                 }
             }
@@ -139,6 +146,12 @@ app.controller('SubProcessListController', function ($scope, $state, localStorag
             }
         });
 
+    }
+
+    $scope.EditSubProcess = function ($event) {
+        var table = $('#tblSubProcess').DataTable();
+        var row = table.row($($event.target).parents('tr')).data(); 
+        $state.go("EditSubProcess", ({ "MenuId": $scope.MenuId, "ProcessId": row.ProcessId, "ProcessName": row.ProcessName, "SubProcessName": row.SubProcessName, "SubProcessId": row.SubProcessId }));
     }
 
     $scope.DeleteSubProcess = function ($event) {

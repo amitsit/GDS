@@ -1,7 +1,4 @@
-﻿
-
-
-namespace GDS.Web.Controllers
+﻿namespace GDS.Web.Controllers
 {
     using System;
     using System.Collections.Generic;
@@ -16,7 +13,7 @@ namespace GDS.Web.Controllers
     using Entities.Master;
     using GDS.Entities;
 
-    public class HomeController:Controller
+    public class HomeController : Controller
     {
 
         public ActionResult Index()
@@ -25,6 +22,17 @@ namespace GDS.Web.Controllers
             {
                 ProjectSession.LoggedInUserDetail = new Entities.LoggedInUserDetail(); 
                 ProjectSession.LoggedInUserDetail.RolesRightsPermissions = new System.Collections.Generic.List<Entities.Master.RoleRightsPermissionModel>();
+            }else
+            {
+                if (ProjectSession.LoggedInUserDetail.UserId > 0)
+                {
+                    // Assign Right
+                    var tblRoleRights = this.GetRoleRights();
+                    if (tblRoleRights != null)
+                    {
+                        ProjectSession.LoggedInUserDetail.RolesRightsPermissions = tblRoleRights;
+                    }
+                }
             }
 
             return this.View();
