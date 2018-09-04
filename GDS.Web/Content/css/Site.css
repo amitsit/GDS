@@ -490,9 +490,10 @@ a.dbl:hover span {
     bottom: 0;
     width: 100%;
     height: 70px;
-    background: #FFF;
+    background: #7F7F7F;
     border-top: 1px solid #dcdfe3;
     overflow: hidden;
+
 }
 
 .automotive {
