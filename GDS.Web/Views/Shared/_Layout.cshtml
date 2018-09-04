@@ -184,9 +184,9 @@
         <!-- footer start -->
         <footer id="footer">
             <div class="col-lg-12 py-3 mt-15 text-center">
-                <ul class="list-inline ">                  
+                <ul class="list-inline ">     
                     <li class="top" >
-                        <a href="" class="navlink text-white" ng-class="(SelectedMenuId==Enum.Process.Home) ? 'footer-active' : ''" ui-sref="Home">Home</a> <span> &nbsp;| </span>
+                        <a href="" class="navlink text-white"  ng-class="(SelectedMenuId==Enum.Process.Home || SelectedMenuId=='') ? 'footer-active' : ''" ui-sref="Home">Home</a> <span> &nbsp;| </span>
                     </li>
                     <li class="top" >
                         <a href="" class="navlink text-white" ng-class="(SelectedMenuId==Enum.Process.ManagementProcess) ? 'footer-active' : ''" ui-sref="Process({MenuId:Enum.Process.ManagementProcess})">Management Process</a><span> &nbsp;| </span>
