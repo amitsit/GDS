@@ -16,5 +16,7 @@ namespace GDS.Services.Master.User
         ApiResponse<RegionMasterModel> GetRegionsByUserId(int? UserId, int? LoggedInUserId);
         ApiResponse<PlantMasterModel> GetPlantByRegionList(string Regions, int? UserId, int? LoggedInUserId);
         ApiResponse<RoleRightsPermissionModel> GetLoginUserRoleRights(int? UserId);
+
+        ApiResponse<UserMasterModel> LoginUser(string Id, string Password);
     }
 }

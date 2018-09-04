@@ -10,7 +10,7 @@ app.controller('ProcessController', function ($scope, $state, localStorageServic
     function INIT() {
         $scope.IsEditMode = false;
         $scope.ProcessDisplayType = $rootScope.Enum.ProcessDisplayType.MultiTable;
-
+        $scope.UserId = $rootScope.LoginUserDetail.UserId;
         $scope.MenuId = parseInt($stateParams.MenuId);
         $scope.IsActive = true;
         $scope.MenuName = "";

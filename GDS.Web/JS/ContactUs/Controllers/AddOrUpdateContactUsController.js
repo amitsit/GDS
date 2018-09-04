@@ -79,8 +79,7 @@
     //    }
 
 
-    $scope.SaveContactDetail = function (form) {
-        debugger;
+    $scope.SaveContactDetail = function (form) {  
         form.$submitted = true;
         if (form.$valid) {
             $scope.ContactObj.LoggedInUserId = $scope.LoggedInUserId;

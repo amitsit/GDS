@@ -33,6 +33,9 @@
                 }
                 else
                 {
+                  
+                    var aa = HttpContext.Current.User.Identity.Name;
+
                     ProjectSession.LoggedInUserDetail = GetUserDetailByNetworkUserId(HttpContext.Current.User.Identity.Name);
                 }
 

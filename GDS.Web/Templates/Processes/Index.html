@@ -8,7 +8,7 @@
     </h3>
 
     <div class="col-sm-12" ng-if="ProcessDisplayType==Enum.ProcessDisplayType.MultiTable">
-        <div class="col-sm-12">
+        <div class="col-sm-12" ng-if="UserId>0">
             <span class="pull-right mb-10">
                 <button type="button" title="View All Processes"  ui-sref="ProcessList({MenuId:MenuId})" class="btn btn-primary "><i class="glyphicon glyphicon-eye-open"></i>&nbsp; View All Process</button>
                 <button type="button" title="Add Processes" ng-click="showEdit(true)" class="btn btn-primary "><i class="glyphicon glyphicon-plus"></i></button>

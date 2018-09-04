@@ -31,6 +31,13 @@
       {
           Global: -1          
       },
+    LoginValidation:
+    {
+        None:0,
+        Id: 1,
+        Password:2
+    },
+
 
  
 

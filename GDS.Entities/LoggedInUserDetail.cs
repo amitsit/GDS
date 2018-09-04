@@ -101,5 +101,7 @@ namespace GDS.Entities
 
         public List<RoleRightsPermissionModel> RolesRightsPermissions { get; set; }
         public string LoginUserUniqueKey { get; set; }
+
+        public int? AuthenticationFlag { get; set; }
     }
 }

@@ -25,5 +25,7 @@ namespace GDS.Entities.Master
         public string RegionIdCsv { get; set; }
         public string PlantIdCsv { get; set; }
 
+        public int AuthenticationFlag { get; set; }
+
     }
 }

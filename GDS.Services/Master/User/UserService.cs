@@ -301,6 +301,52 @@ namespace GDS.Services.Master.User
         }
 
 
+        public ApiResponse<UserMasterModel> LoginUser(string Id, string Password)
+        {
+            var response = new ApiResponse<UserMasterModel>();
+
+            try
+            {
+                var IdParam = new SqlParameter
+                {
+                    ParameterName = "Id",
+                    DbType = DbType.String,
+                    Value = Id
+                };
+
+                var PasswordParam = new SqlParameter
+                {
+                    ParameterName = "Password",
+                    DbType = DbType.String,
+                    Value = Password
+                };
+
+                var result = _repository.ExecuteSQL<UserMasterModel>("LoginUser", IdParam,PasswordParam).ToList();
+
+         
+                if (result.Count>0)
+                {
+                    if (result[0].AuthenticationFlag>0)
+                    {
+                        response.Success = false;
+                    }else
+                    {
+                        response.Success = true;
+                    }
+                }
+
+              
+                response.Data = result;
+            }
+            catch (Exception ex)
+            {
+                _logger.Error(ex);
+                response.Message.Add(ex.Message);
+            }
+            return response;
+        }
+
+
         #endregion
 
 

@@ -66,6 +66,13 @@ namespace GDS.API.Controllers.Master
             return _iService.GetLoginUserRoleRights(UserId);
         }
 
+        [HttpGet]
+        [Route("LoginUser")]
+        public ApiResponse<UserMasterModel> LoginUser(string Id, string Password)
+        {
+            return _iService.LoginUser(Id,Password);
+        }
+
 
     }
 }

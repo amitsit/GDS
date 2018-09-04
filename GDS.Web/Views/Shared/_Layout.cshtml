@@ -56,6 +56,7 @@
 
     <script src="~/Scripts/jquery.mCustomScrollbar.js"></script>
     <script src="~/Scripts/moment.js"></script>
+
 </head>
 <body ng-controller="RoleRightsController" onload="CheckForBrowserVersion()">
     <div id="wrapper" ng-cloak>
@@ -69,24 +70,28 @@
                 <li class="hlink homeicon">
                     <a href="/Home"><i class="fa fa-home"></i></a>
                 </li>
-                <li class="hlink userinfo">
+                <li class="hlink userinfo" ng-show="RootScopeUserId>0">
                     <div class="userimg">
                         @*<img  ng-src="data:image/jpeg;base64,{{UserImage}}" width="115" height="150" />*@
                         <img src="~/Content/Images/NoUserPicture.jpg" />
                     </div>
-                    <div class="usertext">
+                    <div class="usertext" >
                         <h4 ng-bind="LoginUserDetail.FirstName+' '+LoginUserDetail.LastName"></h4>
                         <p>@User.Identity.Name</p>
                     </div>
                 </li>
+                <li class="hlink userinfo" ng-show="!(RootScopeUserId>0)">
+                    <button type="submit" name="go" ng-click="OpenLogin()" class="btn btn-lg btn-primary btn-block">Sign in</button>
+                </li>
 
 
-                <li class="hlink dropdown">
+                <li class="hlink dropdown" ng-show="RootScopeUserId>0">
                     <a class="settinglink" data-toggle="dropdown"></a>
                     <ul class="dropdown-menu set-dropdown pull-right">
                         @*<li><a class="cursor-pointer" ng-click="OpenGlobalSettingPopup()"><span >Setting</span></a></li>*@
                         @*ng-if="isSubModuleAccessibleToUser('Admin', 'Admin', 'View')"*@
                         <li><a class="cursor-pointer" ui-sref="Master"><span>Admin</span></a></li>
+                        <li><a class="cursor-pointer" ng-click="SignOut()"><span>Sign Out</span></a></li>
                     </ul>
                 </li>
             </ul>
@@ -264,6 +269,56 @@
             </div>
         </div>
 
+
+        <div class="modal fade" id="LoginModelPopup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog modal-md" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="myModalLabel">Global Documentation System</h4>
+                    </div>
+                    <div class="wthbox">
+                        <form name="LoginForm" novalidate>
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title text-center">Sign In</h3>
+                                </div>
+                                <div class="panel panel-body">
+
+                                    <div role="tabpanel" class="form-horizontal" id="messages">
+                                        <div class="alert alert-danger alert-dismissible validationErrors" ng-show="(LoginForm.$submitted && (!LoginForm.$valid))">
+                                            <ul ng-show="(LoginForm.$submitted && (!LoginForm.$valid))">
+                                                <li ng-show="LoginForm.Email.$error.required">Email is required.</li>
+                                                <li ng-show="LoginForm.Email.$error.email">Invalid email address.</li>
+                                                <li ng-show="LoginForm.Password.$error.required">Password is required.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="row form-group">                                        
+                                        <label class="col-sm-3 col-lg-2 control-label text-right rn_pad mandatoryField">Email :</label>
+                                        <div class="col-sm-6 col-md-7"><input type="email" ng-keypress="ChangeIdPassword(Enum.LoginValidation.Id)" name="Email" class="form-control" maxlength="200" ng-model="Login.Email" required="required"></div>
+                                        <div class="text-danger col-md-2" ng-show="InvalidIdPassword==Enum.LoginValidation.Id">Invalid</div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <label class="col-sm-3 col-lg-2 control-label text-right rn_pad mandatoryField">Password :</label>
+                                        <div class="col-sm-6 col-md-7"><input type="password" ng-keypress="ChangeIdPassword(Enum.LoginValidation.Password)" name="Password" class="form-control " maxlength="50" ng-model="Login.Password" required="required"></div>
+                                        <div class="text-danger col-md-2" ng-show="InvalidIdPassword==Enum.LoginValidation.Password">{{InvalidIdPassword}}Invalid</div>
+                                      </div>
+
+
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <input type="submit" class="btn btn-success" ng-click="UserLogin(LoginForm)">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
     </div>
 
     <script src="~/Content/ckeditor/ckeditor.js?v='@Html.Raw(System.Configuration.ConfigurationManager.AppSettings["ApplicationVersion"])'"></script>
@@ -276,8 +331,6 @@
     <script>
 
         $(document).ready(function () {
-
-
             $(window).keydown(function(event){
                 if(event.keyCode == 13 && event.target.nodeName!="TEXTAREA") {
                     event.preventDefault();
@@ -295,38 +348,104 @@
         });
 
 
-        app.controller('RoleRightsController', function ($scope, $templateCache,$state, localStorageService,$interval, $stateParams, $rootScope, $location, notificationFactory, configurationService, $compile, $filter) {
-          
-
-            $rootScope.UserRoleRightsList = @Html.Raw(Json.Encode(@ProjectSession.LoggedInUserDetail.RolesRightsPermissions));
-            $rootScope.LoginUserDetail=@Html.Raw(Json.Encode(@ProjectSession.LoggedInUserDetail));
-            $rootScope.RootScopeUserId =   $rootScope.LoginUserDetail.UserId;
+        app.controller('RoleRightsController', function ($scope, $templateCache,$state, localStorageService,$interval, $stateParams, $rootScope, $location, notificationFactory, configurationService, $compile, $filter) {   
             $rootScope.Enum=enums;
 
+            $rootScope.LoginUserDetail=@Html.Raw(Json.Encode(@ProjectSession.LoggedInUserDetail));
+            if(isNullOrUndefinedOrEmpty($rootScope.LoginUserDetail.UserId)){
+                $rootScope.LoginUserDetail.UserId=0;
+            }
+            if($rootScope.LoginUserDetail.UserId>0){
+          
+                 $rootScope.RootScopeUserId = $rootScope.LoginUserDetail.UserId;
 
-            if (localStorageService.get("_LoginUserUniqueId-" + String($rootScope.RootScopeUserId)) != null) {
+                 $rootScope.UserRoleRightsList = @Html.Raw(Json.Encode(@ProjectSession.LoggedInUserDetail.RolesRightsPermissions));
+                GetSetUserCache();
+            }
 
-                var Id=localStorageService.get("_LoginUserUniqueId-" + String($rootScope.RootScopeUserId)).LoginUserUniqueKey;
-                if($rootScope.LoginUserDetail.LoginUserUniqueKey!=Id){
-                    DeleteApplicationLocalStorage();
+            function GetSetUserCache(){
+                if($rootScope.LoginUserDetail.UserId>0){
+                    if (localStorageService.get("_LoginUserUniqueId-" + String($rootScope.RootScopeUserId)) != null) {
+
+                        var Id=localStorageService.get("_LoginUserUniqueId-" + String($rootScope.RootScopeUserId)).LoginUserUniqueKey;
+                        if($rootScope.LoginUserDetail.LoginUserUniqueKey!=Id){
+                            DeleteApplicationLocalStorage();
+                        }
+                        var UniqueId={
+                            LoginUserUniqueKey: $rootScope.LoginUserDetail.LoginUserUniqueKey
+                        };
+                        localStorageService.set("_LoginUserUniqueId-" + String($rootScope.RootScopeUserId), UniqueId);
+
+                    } else {
+                        DeleteApplicationLocalStorage();
+                        var UniqueId={
+                            LoginUserUniqueKey: $rootScope.LoginUserDetail.LoginUserUniqueKey
+                        };
+                        localStorageService.set("_LoginUserUniqueId-" + String($rootScope.RootScopeUserId), UniqueId);
+                    }
                 }
-                var UniqueId={
-                    LoginUserUniqueKey: $rootScope.LoginUserDetail.LoginUserUniqueKey
-                };
-                localStorageService.set("_LoginUserUniqueId-" + String($rootScope.RootScopeUserId), UniqueId);
+            }
+            
+            $scope.OpenLogin=function(){
+                delete $scope.Login;
+                $scope.Login=new Object();
+                angular.element("#LoginModelPopup").modal('show');
+            }
+            $scope.UserLogin=function(form){
+                form.$submitted = true;
+                if (form.$valid) {
+                    $.ajax({
+                        method: "GET",
+                        url: "Login?Id="+$scope.Login.Email+"&Password="+$scope.Login.Password,
+                        async: false,
+                        cache: false,
+                        global: false,
+                        success: function (data) {                        
+                            $rootScope.LoginUserDetail=data;
+                            if($rootScope.LoginUserDetail.UserId>0){
+                                angular.element("#LoginModelPopup").modal('hide');
+                                //Reload Page
+                                window.location.reload();
 
-            } else {
-                DeleteApplicationLocalStorage();
-                var UniqueId={
-                    LoginUserUniqueKey: $rootScope.LoginUserDetail.LoginUserUniqueKey
-                };
-                localStorageService.set("_LoginUserUniqueId-" + String($rootScope.RootScopeUserId), UniqueId);
+                                $rootScope.RootScopeUserId = $rootScope.LoginUserDetail.UserId;
+                                $rootScope.UserRoleRightsList=$rootScope.LoggedInUserDetail.RolesRightsPermissions;
+                                GetSetUserCache();
+                            }else{
+                                $scope.InvalidIdPassword=  $rootScope.LoginUserDetail.AuthenticationFlag;
+                            }
+
+                     
+                        }
+                    });
+                }            
+            }
+
+            $scope.ChangeIdPassword=function(Flag){
+
+                if( $scope.InvalidIdPassword==$rootScope.Enum.LoginValidation.Id && Flag==$rootScope.Enum.LoginValidation.Id){
+                    $scope.InvalidIdPassword=$rootScope.Enum.LoginValidation.None;
+                }
+                if( $scope.InvalidIdPassword==$rootScope.Enum.LoginValidation.Password && Flag==$rootScope.Enum.LoginValidation.Password){
+                    $scope.InvalidIdPassword=$rootScope.Enum.LoginValidation.None;
+                }
+            }
+
+            $scope.SignOut=function(){
+                $.ajax({
+                    method: "GET",
+                    url: "SignOut",
+                    async: false,
+                    cache: false,
+                    global: false,
+                    success: function (data) {                     
+                        window.location.reload();
+                    }
+                });
             }
 
             function DeleteApplicationLocalStorage(){
                 localStorage.clear();
             }
-
 
             //$interval(function () { CheckVersionNumber(); }, 15000);
             function CheckVersionNumber() {
@@ -348,22 +467,15 @@
                 })
             };
 
-
             $rootScope.ReloadPage=function() {
                 $templateCache.removeAll();
                 window.location.reload(true);
                 return;
             };
 
-         
 
 
         });
-
-
-
-
-
 
     </script>
 
