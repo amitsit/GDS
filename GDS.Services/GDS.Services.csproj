@@ -157,6 +157,8 @@
     <Compile Include="Caching\CacheExtensions.cs" />
     <Compile Include="Caching\ICacheManager.cs" />
     <Compile Include="Caching\MemoryCacheManager.cs" />
+    <Compile Include="ChangeLogs\ChangeLogsServices.cs" />
+    <Compile Include="ChangeLogs\IChangeLogsServices.cs" />
     <Compile Include="ContactUs\ContactUsService.cs" />
     <Compile Include="ContactUs\IContactUsService.cs" />
     <Compile Include="Master\Country\CountryService.cs" />

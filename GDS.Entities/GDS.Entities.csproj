@@ -84,6 +84,7 @@
   <ItemGroup>
     <Compile Include="ApplicationUser.cs" />
     <Compile Include="LoggedInUserDetail.cs" />
+    <Compile Include="Master\ChangeLogsModel.cs" />
     <Compile Include="Master\CityMasterModel.cs" />
     <Compile Include="Master\ContactUsModel.cs" />
     <Compile Include="Master\CountryMasterModel.cs" />

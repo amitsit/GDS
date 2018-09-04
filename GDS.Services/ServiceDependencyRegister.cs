@@ -14,6 +14,7 @@ namespace GDS.Services
     using SubProcess;
     using ContactUs;
     using Search;
+    using ChangeLogs;
 
     /// <summary>
     /// Class ServiceDependencyRegister contains all ServiceDependencyRegister related methods and variable.
@@ -55,7 +56,8 @@ namespace GDS.Services
             builder.RegisterType<ContactUsService>().As<IContactUsService>().InstancePerDependency();
 
             builder.RegisterType<SearchService>().As<ISearchService>().InstancePerDependency();
-            
+            builder.RegisterType<ChangeLogsServices>().As<IChangeLogsServices>().InstancePerDependency();
+
         }
     }
 }
