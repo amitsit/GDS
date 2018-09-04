@@ -5733,7 +5733,7 @@ select.form-control {
     background-color: rgb(31,78,121) !important;
     color: white;
     height: 40px;
-   line-height: 14px;
+    line-height: 14px;
 }
 
 .businessmodelimg {
@@ -5832,12 +5832,12 @@ select.form-control {
     border-right: none !important;
 }
 
-.bh_left_none{
-    border-left:none !important
+.bh_left_none {
+    border-left: none !important;
 }
 
 .nav-tabs > li > a:hover {
-    background-color:#839DD2;
+    background-color: #839DD2;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
 }
@@ -5849,7 +5849,7 @@ select.form-control {
 }
 
 .inactivetab {
-    background-color:#ddd;
+    background-color: #ddd;
     border-top-right-radius: 15px;
     border-top-left-radius: 15px;
 }
@@ -5857,50 +5857,63 @@ select.form-control {
 .td_border {
     border: none;
 }
-input[type="radio"], input[type="checkbox"]{
-    margin:0px;
-}
-.cursor-pointer{
-    cursor:pointer!important;
-}
- .bg-white {
-        background-color: white !important;
-    }
- .txtseach{
-     color:#1A0DBE!important;
- }
 
- .activetab a{
-     color:white!important;
- }
- .inactivetab a{
-     color:black!important;
+input[type="radio"], input[type="checkbox"] {
+    margin: 0px;
+}
 
- }
- .customertableHeader_nb{
-     background-color: #839DD2 !important;
+.cursor-pointer {
+    cursor: pointer !important;
+}
+
+.bg-white {
+    background-color: white !important;
+}
+
+.txtseach {
+    color: #1A0DBE !important;
+}
+
+.activetab a {
+    color: white !important;
+}
+
+.inactivetab a {
+    color: black !important;
+}
+
+.customertableHeader_nb {
+    background-color: #839DD2 !important;
     font-size: 15px;
     color: white;
 }
- .th_header{
-     text-align:left!important;
-      
- }
 
- .tr_color{
-     font-size: 15px !important;
-    background-color:#33A1DE!important;
+.th_header {
+    text-align: left !important;
+}
+
+.tr_color {
+    font-size: 15px !important;
+    background-color: #33A1DE !important;
     color: white;
     height: 40px;
-   line-height: 14px;
- }
+    line-height: 14px;
+}
 
- .tablebox{
-      border: 1px solid #81A0C0;
+.tablebox {
+    border: 1px solid #81A0C0;
     font-size: 14px;
     color: black;
     line-height: 14px;
     font-family: arial,helvetica;
     text-decoration: none;
- }
+}
 
+.tablebox1 {
+    line-height: 42px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    color: black;
+    font-family: arial,helvetica;
+    text-decoration: none;
+}

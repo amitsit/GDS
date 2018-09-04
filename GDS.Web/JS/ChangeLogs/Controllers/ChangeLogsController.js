@@ -33,11 +33,11 @@
     $scope.GetChangeLogs = function (UserId) {
       
         var promiseGetChangeLogs = ChangeLogsServices.GetChangeLogs($scope.MenuId);
-        debugger;
+       
         promiseGetChangeLogs.success(function (response) {
 
             $scope.ChangeLogsData = response.Data;
-            debugger;
+        
         });
         promiseGetChangeLogs.error(function (data, statusCode) {
         });

@@ -23,12 +23,12 @@
                         <table class="table table-bordered text-center ">
                             <tr class="pressTitleRow">                       
                                 <th class="col-sm-1 "><label>Date of Change</label></th>
-                                <th class="col-sm-1 text-left font-bold"><label>Code</label></th>
-                                <th class="col-sm-2 text-left font-bold"><label>Process Name</label></th>
-                                <th class="col-sm-2 text-left font-bold"><label>Sub Process Name</label></th>
-                                <th class="col-sm-2 text-left font-bold"><label>Document Title</label></th>
-                                <th class="col-sm-2 text-left font-bold"><label>Description</label></th>
-                                <th class="col-sm-2 text-left font-bold"><label>Action</label></th>
+                                <th class="col-sm-1 text-center font-bold"><label>Code</label></th>
+                                <th class="col-sm-2 text-center font-bold"><label>Process Name</label></th>
+                                <th class="col-sm-2 text-center font-bold"><label>Sub Process Name</label></th>
+                                <th class="col-sm-2 text-center font-bold"><label>Document Title</label></th>
+                                <th class="col-sm-2 text-center font-bold"><label>Description</label></th>
+                                <th class="col-sm-2 text-center font-bold"><label>Action</label></th>
                             </tr>
                             <tr ng-repeat="ChangeLogYear in ChangeLogsData | unique:'Year':true">  
                             
@@ -36,17 +36,17 @@
                                     <table class="col-sm-12">
                                       <tr class="tr_color">
                                             <th colspan="7" class="th_header " >
-                                               <label ng-bind="ChangeLogYear.Year"></label> 
+                                               <label ng-bind="ChangeLogYear.Year" class="col-sm-1 text-center"></label> 
                                             </th>
                                             </tr>
                                         <tr ng-if="ChangeLog.Year==ChangeLog.Year" ng-repeat="ChangeLog in ChangeLogsData">
-                                            <td class="col-sm-1 text-center tablebox ">{{ChangeLog.CreatedDate | date:GlobalDateFormat}}</td>
-                                            <td class="col-sm-1 text-center tablebox ">{{ChangeLog.Code}}</td>
-                                            <td class="col-sm-2 text-center tablebox ">{{ChangeLog.ProcessName}}</td>
-                                            <td class="col-sm-2 text-center tablebox ">{{ChangeLog.SubProcessName}}</td>
-                                            <th class="col-sm-2 text-center  tablebox">{{ChangeLog.DocumentTitle}}</th>
-                                            <td class="col-sm-2 text-center tablebox">{{ChangeLog.Description}}</td>
-                                            <td class="col-sm-2 text-center tablebox">{{ChangeLog.Action}}</td>
+                                            <td class="col-sm-1 text-center tablebox1 " ng-bind="ChangeLog.CreatedDate | date:GlobalDateFormat"></td>
+                                            <td class="col-sm-1 text-center tablebox1 " ng-bind="ChangeLog.Code"></td>
+                                            <td class="col-sm-2 text-center tablebox1 " ng-bind="ChangeLog.ProcessName"></td>
+                                            <td class="col-sm-2 text-center tablebox1 " ng-bind="ChangeLog.SubProcessName"></td>
+                                            <th class="col-sm-2 text-center tablebox1" ng-bind="ChangeLog.DocumentTitle"></th>
+                                            <td class="col-sm-2 text-center tablebox1" ng-bind="ChangeLog.Description"></td>
+                                            <td class="col-sm-2 text-center tablebox1" ng-bind="ChangeLog.Action"></td>
                                             
                                         </tr>
                                     </table>
