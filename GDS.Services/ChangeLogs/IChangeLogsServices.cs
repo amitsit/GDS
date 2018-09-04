@@ -16,5 +16,7 @@ namespace GDS.Services.ChangeLogs
 
         BaseApiResponse DeleteChangeLog(string GUID, int? UserId);
 
+        BaseApiResponse SaveChangeLog(int? UserId, ChangeLogsModel ChangeLogObj);
+
     }
 }

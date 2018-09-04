@@ -75,7 +75,7 @@ namespace GDS.Services.ChangeLogs
             {
                 var GuIdParam = new SqlParameter
                 {
-                    ParameterName = "ContactId",
+                    ParameterName = "GUID",
                     DbType = DbType.String,
                     Value = (object)GUID ?? DBNull.Value
                 };
@@ -87,7 +87,7 @@ namespace GDS.Services.ChangeLogs
                     Value = (object)UserId ?? DBNull.Value
                 };
 
-                var result = _repository.ExecuteSQL<ChangeLogsModel>("GetChangeLog", GuIdParam, UserIdParam).ToList();
+                var result = _repository.ExecuteSQL<ChangeLogsModel>("GetChangeLogDetail", GuIdParam, UserIdParam).ToList();
                 response.Success = true;
                 response.Data = result;
             }
@@ -135,6 +135,97 @@ namespace GDS.Services.ChangeLogs
             }
 
             return response;
+        }
+
+       public BaseApiResponse SaveChangeLog(int? UserId, ChangeLogsModel ChangeLogObj)
+        {
+            var response = new BaseApiResponse();
+
+            try
+            {
+                var UserIdParam = new SqlParameter
+                {
+                    ParameterName = "UserId",
+                    DbType = DbType.Int32,
+                    Value = (object)UserId ?? DBNull.Value
+                };
+
+                var GUIDParam = new SqlParameter
+                {
+                    ParameterName = "GUID",
+                    DbType = DbType.String,
+                    Value = (object)ChangeLogObj.GUID ?? DBNull.Value
+                };
+
+
+                var CodeParam = new SqlParameter
+                {
+                    ParameterName = "Code",
+                    DbType = DbType.String,
+                    Value = (object)ChangeLogObj.Code ?? DBNull.Value
+                };
+
+                var ProcessIdParam = new SqlParameter
+                {
+                    ParameterName = "ProcessId",
+                    DbType = DbType.Int32,
+                    Value = (object)ChangeLogObj.ProcessId ?? DBNull.Value
+                };
+
+                var SubProcessIdParam = new SqlParameter
+                {
+                    ParameterName = "SubProcessId",
+                    DbType = DbType.Int32,
+                    Value = (object)ChangeLogObj.SubProcessId ?? DBNull.Value
+                };
+
+                var DocumentIdParam = new SqlParameter
+                {
+                    ParameterName = "DocumentId",
+                    DbType = DbType.Int32,
+                    Value = (object)ChangeLogObj.DocumentId ?? DBNull.Value
+                };
+
+                var DescriptionParam = new SqlParameter
+                {
+                    ParameterName = "Description",
+                    DbType = DbType.String,
+                    Value = (object)ChangeLogObj.Description ?? DBNull.Value
+                };
+
+                var ActionParam = new SqlParameter
+                {
+                    ParameterName = "Action",
+                    DbType = DbType.String,
+                    Value = (object)ChangeLogObj.Action ?? DBNull.Value
+                };
+
+                var CreatedDateParam = new SqlParameter
+                {
+                    ParameterName = "CreatedDate",
+                    DbType = DbType.DateTime,
+                    Value = (object)ChangeLogObj.CreatedDate ?? DBNull.Value
+                };
+
+                var CreatedByParam = new SqlParameter
+                {
+                    ParameterName = "CreatedBy",
+                    DbType = DbType.Int32,
+                    Value = (object)ChangeLogObj.CreatedBy ?? DBNull.Value
+                };
+
+                var result = _repository.ExecuteSQL<int>("AddOrUpdateChangeLog", UserIdParam, GUIDParam, CodeParam, ProcessIdParam, SubProcessIdParam, DocumentIdParam, DescriptionParam, ActionParam, CreatedDateParam, CreatedByParam).FirstOrDefault();
+                response.Success = (result > 0);
+
+            }
+            catch (Exception ex)
+            {
+                _logger.Error(ex);
+                response.Message.Add(ex.Message);
+            }
+
+            return response;
+
         }
 
 

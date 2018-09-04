@@ -5,72 +5,70 @@
             <span> &nbsp;/&nbsp;&nbsp;</span><a ui-sref="Process({MenuId:MenuId})" ng-bind="MenuName"></a>
         </b>
     </h3>
-    <!--<div role="tabpanel" class="form-horizontal" id="messages">
-        <div class="alert alert-danger alert-dismissible validationErrors" ng-show="(AddOrUpdateProcessform.$submitted && (!AddOrUpdateProcessform.$valid))">
-            <ul ng-show="(AddOrUpdateProcessform.$submitted && (!AddOrUpdateProcessform.$valid))">
-                <li ng-show="AddOrUpdateProcessform.MenuId.$error.required">Menu is required.</li>
-                <li ng-show="AddOrUpdateProcessform.ProcessName.$error.required">Process Name is required.</li>
+    <div role="tabpanel" class="form-horizontal" id="messages">
+        <div class="alert alert-danger alert-dismissible validationErrors" ng-show="(UpdateChangeLogform.$submitted && (!UpdateChangeLogform.$valid))">
+            <ul ng-show="(UpdateChangeLogform.$submitted && (!UpdateChangeLogform.$valid))">
+                <li ng-show="UpdateChangeLogform.CreatedDate.$error.required">Date of Change is required.</li>
+                <li ng-show="UpdateChangeLogform.Action.$error.required">Action is required.</li>
             </ul>
         </div>
-    </div>-->
-    <div class="top_msg">This page allow you to lookup Process</div>
+    </div>
+    <div class="top_msg">This page allow you to lookup Change logs.</div>
     <div class="wthbox wth_content">
         <div class="toplinks">
             <ul>
-                <li><button type="submit" class="save" data-placement="top" data-toggle="tooltip" title="Save" ng-click="SaveChangeLogDetail(UpdateChangeLogform)"></button></li>
+                <li><button type="submit" class="save" data-placement="top" data-toggle="tooltip" title="Save" ng-click="SaveChangeLog(UpdateChangeLogform)"></button></li>
                 <li><a class="cancel" data-placement="top" ui-sref="ChangeLog({MenuId:MenuId})" data-toggle="tooltip" title="Cancel"></a></li>
             </ul>
-        </div>
-      
+        </div>           
 
         <div class="row form-group">
-            <label class="col-sm-3 col-lg-2 control-label text-right rn_pad">Process Name</label>
-            <div class="col-sm-6 col-md-4"><input type="text" name="ProcessName" class="form-control" maxlength="200" ng-model="ChangeLog.ProcessName" required="required"></div>
+            <label class="col-sm-3 col-lg-2 control-label text-right rn_pad">Code</label>
+            <div class="col-sm-6 col-md-4"><input type="text" name="Code" class="form-control" maxlength="50" ng-model="ChangeLogsData.Code"></div>
+        </div>
+
+        <div class="row form-group">
+            <label class="col-sm-3 col-lg-2 control-label text-right rn_pad ">Process Name</label>
+            <div class="col-sm-6 col-md-4"><input type="text" name="ProcessName" class="form-control" ng-value="ChangeLogsData.ProcessName" readonly="readonly"/></div>
         </div>
 
         <div class="row form-group">
             <label class="col-sm-3 col-lg-2 control-label text-right rn_pad ">Sub Process Name</label>
-            <div class="col-sm-6 col-md-4"><textarea name="SubProcessName" class="form-control" ng-model="ChangeLog.SubProcessName"></textarea></div>
+            <div class="col-sm-6 col-md-4"><input type="text" name="SubProcessName" class="form-control" ng-value="ChangeLogsData.SubProcessName" readonly="readonly"/></div>
         </div>
 
 
         <div class="row  form-group">
-            <label class="col-sm-3 col-lg-2 control-label text-right rn_pad ">Document Name</label>
+            <label class="col-sm-3 col-lg-2 control-label text-right rn_pad ">Document Title</label>
 
-            <div class="col-sm-6 col-md-4"><textarea name="SubProcessName" class="form-control" ng-model="ChangeLog.DocumentName"></textarea></div>
+            <div class="col-sm-6 col-md-4"><input type="text" name="DocumentName" class="form-control" ng-value="ChangeLogsData.DocumentTitle" readonly="readonly" /></div>
         </div>
+
+        <div class="row form-group">
+            <label class="col-sm-3 col-lg-2 control-label text-right rn_pad mandatoryField">Date of Change</label>
+            <div class="col-sm-6 col-md-3">
+                <div class="input-group myDatePicker date">
+                    <input type="text" class="form-control text-center" name="CreatedDate" ng-model="ChangeLogsData.CreatedDate" required="required" />
+                    <span class="input-group-addon cursor-pointer">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+
 
         <div class="row  form-group">
             <label class="col-sm-3 col-lg-2 control-label text-right rn_pad ">Description</label>
 
-            <div class="col-sm-6 col-md-4"><textarea name="SubProcessName" class="form-control" ng-model="ChangeLog.Description"></textarea></div>
+            <div class="col-sm-6 col-md-4"><textarea name="SubProcessName" class="form-control" ng-model="ChangeLogsData.Description"></textarea></div>
         </div>
 
         <div class="row  form-group">
-            <label class="col-sm-3 col-lg-2 control-label text-right rn_pad ">Action</label>
+            <label class="col-sm-3 col-lg-2 control-label text-right rn_pad mandatoryField">Action</label>
 
-            <div class="col-sm-6 col-md-4"><textarea name="SubProcessName" class="form-control" ng-model="ChangeLog.Action"></textarea></div>
+            <div class="col-sm-6 col-md-4"><textarea name="Action" class="form-control" maxlength="200" ng-model="ChangeLogsData.Action" required="required"></textarea></div>
         </div>
-        <!--<div class="row form-group">
-            <br />
-            <label class="col-sm-3 col-lg-2 control-label text-right rn_pad pt-5">Region</label>
-
-            <div class="col-sm-12 col-md-8">
-                <div class="col-sm-2 pt-5">
-                    <input type="radio" style="cursor:pointer" ng-model="ProcessObj.RegionType" value="-1">&nbsp;<b>Global</b>&nbsp;&nbsp;&nbsp;
-                    <input type="radio" style="cursor:pointer" ng-model="ProcessObj.RegionType" value="1">&nbsp;<b>Other</b>
-                </div>
-                <div class="col-sm-6" ng-show="ProcessObj.RegionType==1">
-                    <dropdown-multiselect model="ProcessObj.SelectedRegion" ng-click="SelectedRegion()"
-                                          options="RegionList" name="RegionId"></dropdown-multiselect>
-                    <strong> <span class="control-label" ng-bind="RegionNames"></span></strong>
-                </div>
-
-            </div>
-        </div>-->
       
-
-       
 
     </div>
 </form>

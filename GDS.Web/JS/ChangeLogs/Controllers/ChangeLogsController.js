@@ -5,7 +5,7 @@
 
 
     function INIT() {
-      
+
         $scope.IsEditMode = false;
         $scope.ProcessDisplayType = $rootScope.Enum.ProcessDisplayType.MultiTable;
         $scope.UserId = $rootScope.LoginUserDetail.UserId;
@@ -43,8 +43,7 @@
         });
     }
 
-    $scope.GoToEditChangeLog = function (ChangeLog, Mode) {
-        debugger;
+    $scope.GoToEditChangeLog = function (ChangeLog, Mode) {   
         $state.go('EditChangeLog', ({ 'MenuId': $scope.MenuId, 'GUID': ChangeLog.GUID, 'UserId': ChangeLog.UserId }));
 
     }
@@ -65,15 +64,15 @@
                         className: "btn btn-primary theme-btn",
                         callback: function () {
                         
-                            var deleteProcess = ChangeLogsServices.DeleteChangeLog(ChangeLogObj.GUID, $scope.UserId);
+                            var deleteChangeLog = ChangeLogsServices.DeleteChangeLog(ChangeLogObj.GUID, $scope.UserId);
                            
-                            deleteProcess.success(function (p) {
+                            deleteChangeLog.success(function (p) {
                                
                                 notificationFactory.successDelete();
                                 $scope.GetChangeLogs($scope.UserId);
                               
                             });
-                            deleteProcess.error(function (pl, statusCode) {
+                            deleteChangeLog.error(function (pl, statusCode) {
                                 exceptionService.ShowException(pl, statusCode);
                             });
                         }

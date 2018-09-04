@@ -43,6 +43,12 @@ namespace GDS.API.Controllers.ChangeLogs
             return this._iChangeLogsServices.DeleteChangeLog(GUID, UserId);
         }
 
+        [HttpPost]
+        [Route("SaveChangeLog")]
+        public BaseApiResponse SaveChangeLog(int? UserId, ChangeLogsModel ChangeLogObj)
+        {
+            return this._iChangeLogsServices.SaveChangeLog(UserId, ChangeLogObj);
+        }
 
 
     }

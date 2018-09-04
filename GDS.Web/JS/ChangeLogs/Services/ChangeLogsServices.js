@@ -10,8 +10,12 @@
         return $http.get(configurationService.basePath + "api/DeleteChangeLog?GUID=" + guId + "&UserId=" + userId);
     }
 
-    ChangeLogsServices.GetChangeLogsDetail = function (contactId, userId) {
-        return $http.get(configurationService.basePath + "api/GetChangeLogsDetail?GUID=" + guId + "&UserId=" + userId);
+    ChangeLogsServices.GetChangeLogsDetail = function (GUID, userId) {
+        return $http.get(configurationService.basePath + "api/GetChangeLogsDetail?GUID=" + GUID + "&UserId=" + userId);
+    }
+
+    ChangeLogsServices.SaveChangeLog = function (userId,ChangeLogObj) {
+        return $http.post(configurationService.basePath + "api/SaveChangeLog?UserId=" + userId,ChangeLogObj);
     }
     
     return ChangeLogsServices;

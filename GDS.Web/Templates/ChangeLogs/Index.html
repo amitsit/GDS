@@ -52,9 +52,9 @@
                                                     <div class="col-sm-8">
                                                         <span ng-bind="ChangeLog.Action"></span>
                                                     </div>
-                                                    <div class="col-sm-4 ml-0 mr-0">
-                                                        <a class="pull-left mr-10" title="Edit" data-original-title="Edit" data-toggle="tooltip"><i class="glyphicon glyphicon-pencil " ng-click="GoToEditChangeLog(ChangeLog,Enum.Mode.Edit)"></i></a>
-                                                         <a class="pull-left" title="Delete" data-original-title="Delete" data-toggle="tooltip" ng-click="DeleteChangeLog(ChangeLog)"><i class="glyphicon glyphicon-trash"></i></a>
+                                                    <div class="col-sm-4 ml-0 mr-0"  >
+                                                        <a ng-show="isSubModuleAccessibleToUser('Change Logs', 'Change Logs', 'Update Change Logs')" class="pull-left mr-10" title="Edit" data-original-title="Edit" data-toggle="tooltip"><i class="glyphicon glyphicon-pencil " ng-click="GoToEditChangeLog(ChangeLog,Enum.Mode.Edit)"></i></a>
+                                                         <a ng-show="isSubModuleAccessibleToUser('Change Logs', 'Change Logs', 'Delete Change Logs')" class="pull-left" title="Delete" data-original-title="Delete" data-toggle="tooltip" ng-click="DeleteChangeLog(ChangeLog)"><i class="glyphicon glyphicon-trash"></i></a>
                                                     </div>
                                                 </div>                                                                                                                                              
                                             </td>
