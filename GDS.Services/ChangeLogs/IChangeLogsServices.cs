@@ -12,5 +12,9 @@ namespace GDS.Services.ChangeLogs
     {
         ApiResponse<ChangeLogsModel> GetChangeLogs(int? UserId);
 
+        ApiResponse<ChangeLogsModel> GetChangeLogsDetail(string GUID,int? UserId);
+
+        BaseApiResponse DeleteChangeLog(string GUID, int? UserId);
+
     }
 }

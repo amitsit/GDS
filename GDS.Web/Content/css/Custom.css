@@ -5917,6 +5917,13 @@ input[type="radio"], input[type="checkbox"] {
     font-family: arial,helvetica;
     text-decoration: none;
 }
+
+.tableSize {
+    margin-bottom: -6px!important;
+    margin-left: -6px!important;
+  
+    width: 100.65%!important;
+}
 #footer .footer-active{
     color:#80e889!important;
 

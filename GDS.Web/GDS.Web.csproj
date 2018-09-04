@@ -834,6 +834,7 @@
     <Content Include="Images\next.png" />
     <Content Include="Images\prev.png" />
     <Content Include="JS\appConfiguration.js" />
+    <Content Include="JS\ChangeLogs\Controllers\UpdateChangeLogController.js" />
     <Content Include="JS\ChangeLogs\Services\ChangeLogsServices.js" />
     <Content Include="JS\Common.js" />
     <Content Include="JS\ContactUs\Controllers\AddOrUpdateContactUsController.js" />
@@ -884,6 +885,7 @@
     <Content Include="Scripts\swx-session-storage.min.js" />
     <Content Include="Scripts\underscore.min.js" />
     <Content Include="Scripts\utils.js" />
+    <Content Include="Templates\ChangeLogs\UpdateChangeLog.html" />
     <Content Include="Templates\ContactUs\AddOrUpdateContactUs.html" />
     <Content Include="Templates\ContactUs\ContactList.html" />
     <Content Include="Templates\ContactUs\Index.html" />

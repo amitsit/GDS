@@ -149,6 +149,12 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $tra
     });
 
     $stateProvider.state({
+        name: 'EditChangeLog',
+        url: '/EditChangeLog?MenuId&GUID&UserId',
+        templateUrl: '/Templates/ChangeLogs/UpdateChangeLog.html'
+    });
+
+    $stateProvider.state({
         name: 'Process',
         url: '/Process?MenuId',
         templateUrl: '/Templates/Processes/Index.html'

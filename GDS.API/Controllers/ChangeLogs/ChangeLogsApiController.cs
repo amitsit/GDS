@@ -29,6 +29,21 @@ namespace GDS.API.Controllers.ChangeLogs
             return this._iChangeLogsServices.GetChangeLogs(UserId);
         }
 
+        [HttpGet]
+        [Route("GetChangeLogsDetail")]
+        public ApiResponse<ChangeLogsModel> GetChangeLogsDetail(string GUID,int? UserId)
+        {
+            return this._iChangeLogsServices.GetChangeLogsDetail(GUID,UserId);
+        }
+
+        [HttpGet]
+        [Route("DeleteChangeLog")]
+        public BaseApiResponse DeleteChangeLog(string GUID,int? UserId)
+        {
+            return this._iChangeLogsServices.DeleteChangeLog(GUID, UserId);
+        }
+
+
 
     }
 }

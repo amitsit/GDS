@@ -29,24 +29,31 @@
                                 <th class="col-sm-2 text-center font-bold"><label>Document Title</label></th>
                                 <th class="col-sm-2 text-center font-bold"><label>Description</label></th>
                                 <th class="col-sm-2 text-center font-bold"><label>Action</label></th>
+                              
                             </tr>
                             <tr ng-repeat="ChangeLogYear in ChangeLogsData | unique:'Year':true">  
                             
                                 <td colspan="7" >
-                                    <table class="col-sm-12">
+                                    <table class="col-sm-12 tableSize">
                                       <tr class="tr_color">
                                             <th colspan="7" class="th_header " >
                                                <label ng-bind="ChangeLogYear.Year" class="col-sm-1 text-center"></label> 
                                             </th>
                                             </tr>
                                         <tr ng-if="ChangeLog.Year==ChangeLog.Year" ng-repeat="ChangeLog in ChangeLogsData">
-                                            <td class="col-sm-1 text-center tablebox1 " ng-bind="ChangeLog.CreatedDate | date:GlobalDateFormat"></td>
-                                            <td class="col-sm-1 text-center tablebox1 " ng-bind="ChangeLog.Code"></td>
-                                            <td class="col-sm-2 text-center tablebox1 " ng-bind="ChangeLog.ProcessName"></td>
-                                            <td class="col-sm-2 text-center tablebox1 " ng-bind="ChangeLog.SubProcessName"></td>
-                                            <th class="col-sm-2 text-center tablebox1" ng-bind="ChangeLog.DocumentTitle"></th>
-                                            <td class="col-sm-2 text-center tablebox1" ng-bind="ChangeLog.Description"></td>
-                                            <td class="col-sm-2 text-center tablebox1" ng-bind="ChangeLog.Action"></td>
+                                            <td class="col-sm-1 text-center tablebox1  " ng-bind="ChangeLog.CreatedDate | date:GlobalDateFormat"></td>
+                                            <td class="col-sm-1 text-center tablebox1  " ng-bind="ChangeLog.Code"></td>
+                                            <td class="col-sm-2 text-center tablebox1  " ng-bind="ChangeLog.ProcessName"></td>
+                                            <td class="col-sm-2 text-center tablebox1  " ng-bind="ChangeLog.SubProcessName"></td>
+                                            <td class="col-sm-2 text-center tablebox1 " ng-bind="ChangeLog.DocumentTitle"></td>
+                                            <td class="col-sm-2 text-center tablebox1 " ng-bind="ChangeLog.Description"></td>
+                                            <td class="col-sm-2 text-center tablebox1 " ng-bind="ChangeLog.Action">
+                                   
+                                            </td>
+                                            <td>
+                                                <a class="pull-right" title="Edit" data-original-title="Edit" data-toggle="tooltip"><i class="glyphicon glyphicon-pencil " ng-click="GoToEditChangeLog(ChangeLog,Enum.Mode.Edit)"></i></a> 
+                                                <a class="pull-right" title="Delete" data-original-title="Delete" data-toggle="tooltip" ng-click="DeleteChangeLog(ChangeLog)"><i class="glyphicon glyphicon-trash"></i></a>
+                                            </td>
                                             
                                         </tr>
                                     </table>
