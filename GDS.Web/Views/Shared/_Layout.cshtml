@@ -75,7 +75,7 @@
                         @*<img  ng-src="data:image/jpeg;base64,{{UserImage}}" width="115" height="150" />*@
                         <img src="~/Content/Images/NoUserPicture.jpg" />
                     </div>
-                    <div class="usertext" >
+                    <div class="usertext">
                         <h4 ng-bind="LoginUserDetail.FirstName+' '+LoginUserDetail.LastName"></h4>
                         <p>@User.Identity.Name</p>
                     </div>
@@ -114,15 +114,15 @@
                 <li class="top" ng-class="(SelectedMenuId==Enum.Process.CoreProcess) ? 'current' : ''">
                     <a href="" class="navlink" ui-sref="Process({MenuId:Enum.Process.CoreProcess})">Core Processes</a>
                 </li>
-            
+
 
                 <li class="top" ng-class="(SelectedMenuId==Enum.Process.SupportingProcess) ? 'current' : ''">
                     <a href="" class="navlink" ui-sref="Process({MenuId:Enum.Process.SupportingProcess})">Supporting Process</a>
                 </li>
 
                 @*<li class="top"  ng-class="(SelectedMenuId==Enum.Process.Processes) ? 'current' : ''">
-                    <a href="" class="navlink" ui-sref="Process({MenuId:Enum.Process.Processes})">Processes</a>
-                </li>*@
+                        <a href="" class="navlink" ui-sref="Process({MenuId:Enum.Process.Processes})">Processes</a>
+                    </li>*@
                 @*<li class="top cursor-pointer">
                         <a href="" class="navlink" >Region/Plant Specific Pages</a>
                         <ul>
@@ -139,13 +139,13 @@
                     <a href="" class="navlink" ui-sref="ContactUS({MenuId:Enum.Process.ConatctUs})">Contact Us</a>
                 </li>
                 @*<li class="top">
-                    <div class="search">
-                        <input type="text" placeholder="Search Here" id="Gsearch" />
-                        <button type="button" class="glyphicon glyphicon-search" 
-                                style="border:none;width:22px; top:9px;line-height:2!important;left:266px;" ng-click="RedirectToSearch()" />
-                    </div>
-                </li>*@
-                
+                        <div class="search">
+                            <input type="text" placeholder="Search Here" id="Gsearch" />
+                            <button type="button" class="glyphicon glyphicon-search"
+                                    style="border:none;width:22px; top:9px;line-height:2!important;left:266px;" ng-click="RedirectToSearch()" />
+                        </div>
+                    </li>*@
+
 
                 <li class="top" ng-class="(SelectedMenuId==Enum.Process.Search) ? 'current' : ''">
                     <a href="" class="navlink" ui-sref="Search({MenuId:Enum.Process.Search})">Search</a>
@@ -183,7 +183,37 @@
         <!-- content end -->
         <!-- footer start -->
         <footer id="footer">
-            <div class="footer-copyright py-3 mt-15 col-lg-offset-1">
+            <div class="col-lg-12 py-3 mt-15 text-center">
+                <ul class="list-inline ">     
+                    <li class="top" >
+                        <a href="" class="navlink text-white"  ng-class="(SelectedMenuId==Enum.Process.Home || SelectedMenuId=='') ? 'footer-active' : ''" ui-sref="Home">Home</a> <span> &nbsp;| </span>
+                    </li>
+                    <li class="top" >
+                        <a href="" class="navlink text-white" ng-class="(SelectedMenuId==Enum.Process.ManagementProcess) ? 'footer-active' : ''" ui-sref="Process({MenuId:Enum.Process.ManagementProcess})">Management Process</a><span> &nbsp;| </span>
+                    </li>
+                    <li class="top" >
+                        <a href="" class="navlink text-white" ng-class="(SelectedMenuId==Enum.Process.CoreProcess) ? 'footer-active' : ''" ui-sref="Process({MenuId:Enum.Process.CoreProcess})">Core Processes</a> <span>&nbsp; | </span>
+                    </li>
+
+
+                    <li class="top" >
+                        <a href="" class="navlink text-white"  ng-class="(SelectedMenuId==Enum.Process.SupportingProcess) ? 'footer-active' : ''" ui-sref="Process({MenuId:Enum.Process.SupportingProcess})">Supporting Process</a> <span>&nbsp; | </span>
+                    </li>
+
+
+                    <li class="top" >
+                        <a href="" class="navlink text-white" ng-class="(SelectedMenuId==Enum.Process.ChangeLog) ? 'footer-active' : ''" ui-sref="ChangeLog({MenuId:Enum.Process.ChangeLog})">Change Logs</a> <span> &nbsp;| </span>
+
+                    </li>
+                    <li class="top" >
+                        <a href="" class="navlink text-white" ng-class="(SelectedMenuId==Enum.Process.ConatctUs) ? 'footer-active' : ''" ui-sref="ContactUS({MenuId:Enum.Process.ConatctUs})">Contact Us</a> <span> &nbsp;| </span>
+                    </li>
+                    <li class="top" >
+                        <a href="" ng-class="(SelectedMenuId==Enum.Process.Search) ? 'footer-active' : ''" class="navlink text-white" ui-sref="Search({MenuId:Enum.Process.Search})">Search</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-copyright pull-right text-white py-3  mr-25">
                 © 2018 Copyright:
                 <label>Global Document System</label>
             </div>
@@ -287,7 +317,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="row form-group">                                        
+                                    <div class="row form-group">
                                         <label class="col-sm-3 col-lg-2 control-label text-right rn_pad mandatoryField">Email :</label>
                                         <div class="col-sm-6 col-md-7"><input type="email" ng-keypress="ChangeIdPassword(Enum.LoginValidation.Id)" name="Email" class="form-control" maxlength="200" ng-model="Login.Email" required="required"></div>
                                         <div class="text-danger col-md-2" ng-show="InvalidIdPassword==Enum.LoginValidation.Id">Invalid</div>
@@ -296,7 +326,7 @@
                                         <label class="col-sm-3 col-lg-2 control-label text-right rn_pad mandatoryField">Password :</label>
                                         <div class="col-sm-6 col-md-7"><input type="password" ng-keypress="ChangeIdPassword(Enum.LoginValidation.Password)" name="Password" class="form-control " maxlength="50" ng-model="Login.Password" required="required"></div>
                                         <div class="text-danger col-md-2" ng-show="InvalidIdPassword==Enum.LoginValidation.Password">{{InvalidIdPassword}}Invalid</div>
-                                      </div>
+                                    </div>
 
 
                                 </div>
@@ -341,7 +371,7 @@
         });
 
 
-        app.controller('RoleRightsController', function ($scope, $templateCache,$state, localStorageService,$interval, $stateParams, $rootScope, $location, notificationFactory, configurationService, $compile, $filter) {   
+        app.controller('RoleRightsController', function ($scope, $templateCache,$state, localStorageService,$interval, $stateParams, $rootScope, $location, notificationFactory, configurationService, $compile, $filter) {
             $rootScope.Enum=enums;
 
             $rootScope.LoginUserDetail=@Html.Raw(Json.Encode(@ProjectSession.LoggedInUserDetail));
@@ -349,10 +379,10 @@
                 $rootScope.LoginUserDetail.UserId=0;
             }
             if($rootScope.LoginUserDetail.UserId>0){
-          
-                 $rootScope.RootScopeUserId = $rootScope.LoginUserDetail.UserId;
 
-                 $rootScope.UserRoleRightsList = @Html.Raw(Json.Encode(@ProjectSession.LoggedInUserDetail.RolesRightsPermissions));
+                $rootScope.RootScopeUserId = $rootScope.LoginUserDetail.UserId;
+
+                $rootScope.UserRoleRightsList = @Html.Raw(Json.Encode(@ProjectSession.LoggedInUserDetail.RolesRightsPermissions));
                 GetSetUserCache();
             }
 
@@ -378,7 +408,7 @@
                     }
                 }
             }
-            
+
             $scope.OpenLogin=function(){
                 delete $scope.Login;
                 $scope.Login=new Object();
@@ -393,12 +423,13 @@
                         async: false,
                         cache: false,
                         global: false,
-                        success: function (data) {                        
+                        success: function (data) {
                             $rootScope.LoginUserDetail=data;
                             if($rootScope.LoginUserDetail.UserId>0){
                                 angular.element("#LoginModelPopup").modal('hide');
                                 //Reload Page
-                                window.location.reload();
+                                //window.location.reload();
+                                $state.reload();
 
                                 $rootScope.RootScopeUserId = $rootScope.LoginUserDetail.UserId;
                                 $rootScope.UserRoleRightsList=$rootScope.LoggedInUserDetail.RolesRightsPermissions;
@@ -407,10 +438,10 @@
                                 $scope.InvalidIdPassword=  $rootScope.LoginUserDetail.AuthenticationFlag;
                             }
 
-                     
+
                         }
                     });
-                }            
+                }
             }
 
             $scope.ChangeIdPassword=function(Flag){
@@ -430,7 +461,7 @@
                     async: false,
                     cache: false,
                     global: false,
-                    success: function (data) {                     
+                    success: function (data) {
                         window.location.reload();
                     }
                 });
@@ -465,8 +496,6 @@
                 window.location.reload(true);
                 return;
             };
-
-
 
         });
 

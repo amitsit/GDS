@@ -8,11 +8,11 @@
     </h3>
 
     <div class="col-sm-12" ng-if="ProcessDisplayType==Enum.ProcessDisplayType.MultiTable">
-        <div class="col-sm-12" ng-if="UserId>0">
+        <div class="col-sm-12" ng-if="UserId>0" ng-show="isSubModuleAccessibleToUser('Process', 'Process', 'View All Process') || isSubModuleAccessibleToUser('Process', 'Process', 'Add / Update Process')">
             <span class="pull-right mb-10">
-                <button type="button" title="View All Processes"  ui-sref="ProcessList({MenuId:MenuId})" class="btn btn-primary "><i class="glyphicon glyphicon-eye-open"></i>&nbsp; View All Process</button>
-                <button type="button" title="Add Processes" ng-click="showEdit(true)" class="btn btn-primary "><i class="glyphicon glyphicon-plus"></i></button>
-                <button type="button" title="Edit Processes" ng-click="showEdit(false)" class="btn btn-primary"><i ng-class="(IsEditMode==false)?'glyphicon glyphicon-pencil':'glyphicon glyphicon-ok'"></i></button>
+                <button type="button" ng-show="isSubModuleAccessibleToUser('Process', 'Process', 'View All Process')" title="View All Processes"  ui-sref="ProcessList({MenuId:MenuId})" class="btn btn-primary "><i class="glyphicon glyphicon-eye-open"></i>&nbsp; View All Process</button>
+                <button type="button" ng-show="isSubModuleAccessibleToUser('Process', 'Process', 'Add / Update Process')" title="Add Processes" ng-click="showEdit(true)" class="btn btn-primary "><i class="glyphicon glyphicon-plus"></i></button>
+                <button type="button" ng-show="isSubModuleAccessibleToUser('Process', 'Process', 'Add / Update Process')" title="Edit Processes" ng-click="showEdit(false)" class="btn btn-primary"><i ng-class="(IsEditMode==false)?'glyphicon glyphicon-pencil':'glyphicon glyphicon-ok'"></i></button>
             </span>
         </div>
 
@@ -24,21 +24,21 @@
                             <tr class="pressTitleRow">
                                 <th colspan="2" ng-bind="Process.ProcessName" class="bh_right_none"></th>
                                 <th ng-show="!IsEditMode" class="headerborder"></th>
-                                <th ng-show="IsEditMode" class="editprocessheader"><a><i ng-click="GoToEditProcess(Process,Enum.Mode.Edit)" class="glyphicon glyphicon-pencil" data-original-title="Edit" data-toggle="tooltip"></i></a></th>
+                                <th  ng-show="IsEditMode && isSubModuleAccessibleToUser('Process', 'Process', 'Add / Update Process')" class="editprocessheader"><a><i ng-click="GoToEditProcess(Process,Enum.Mode.Edit)" class="glyphicon glyphicon-pencil" data-original-title="Edit" data-toggle="tooltip"></i></a></th>
 
                             </tr>
                             <tr ng-if="SubProcess.SubProcessId>0" ng-repeat="SubProcess in ProcessListData | filter :{ProcessId : Process.ProcessId}: true">
                                 <td class="weeklyefficiency colsm_5"><b><a ng-click="GotoProcessDetail(SubProcess,Enum.Mode.Readonly)" class="text-white">{{SubProcess.SubProcessCode}}</a></b></td>
                                 <td class="font-bold text-left tableboxtd col-sm-2">{{SubProcess.SubProcessName}}</td>
                                 <td class="colsm_1" ng-show="!IsEditMode"><a ng-click="GotoProcessDetail(SubProcess,Enum.Mode.Readonly)"><i class="glyphicon glyphicon-eye-open editprocessheader" data-original-title="Edit" data-toggle="tooltip"></i></a></td>
-                                <td class="colsm_1" ng-show="IsEditMode"><a ui-sref="EditSubProcess({MenuId:MenuId,ProcessId:Process.ProcessId,ProcessName:Process.ProcessName,SubProcessId:SubProcess.SubProcessId,SubProcessName:SubProcess.SubProcessName})"><i class="glyphicon glyphicon-pencil editprocessheader" data-original-title="Edit" data-toggle="tooltip"></i></a></td>
+                                <td class="colsm_1" ng-show="IsEditMode"><a ng-show="isSubModuleAccessibleToUser('Sub Process', 'Sub Process', 'Add / Update Sub Process')" ui-sref="EditSubProcess({MenuId:MenuId,ProcessId:Process.ProcessId,ProcessName:Process.ProcessName,SubProcessId:SubProcess.SubProcessId,SubProcessName:SubProcess.SubProcessName})"><i class="glyphicon glyphicon-pencil editprocessheader" data-original-title="Edit" data-toggle="tooltip"></i></a></td>
                             </tr>
                           
-                            <tr ng-show="IsEditMode">
+                            <tr ng-show="IsEditMode && (isSubModuleAccessibleToUser('Sub Process', 'Sub Process', 'View All Sub Process') || isSubModuleAccessibleToUser('Sub Process', 'Sub Process', 'Add / Update Sub Process'))" >
                                 <td class="bh_right_none"></td>
-                                <td colspan="2" class="bh_left_none bh_right_none ">
-                                    <button type="button" title="Add New Sub Processes" class="btn btn-sm btn-primary pull-right" ui-sref="EditSubProcess({MenuId:MenuId,ProcessId:Process.ProcessId,ProcessName:Process.ProcessName,SubProcessId:0,SubProcessName:''})"><i class="glyphicon glyphicon-plus"></i></button>                                   
-                                    <button type="button" title="View All Sub Processes" class="btn btn-sm btn-primary pull-right mr-10" ui-sref="SubProcessList({MenuId:MenuId,ProcessId:Process.ProcessId,ProcessName:Process.ProcessName})"><i class="glyphicon glyphicon-eye-open"></i>&nbsp; View All</button>                                                                        
+                                <td colspan="2" class="bh_left_none bh_right_none">
+                                    <button ng-show="isSubModuleAccessibleToUser('Sub Process', 'Sub Process', 'Add / Update Sub Process')" type="button" title="Add New Sub Processes" class="btn btn-sm btn-primary pull-right" ui-sref="EditSubProcess({MenuId:MenuId,ProcessId:Process.ProcessId,ProcessName:Process.ProcessName,SubProcessId:0,SubProcessName:''})"><i class="glyphicon glyphicon-plus"></i></button>                                   
+                                    <button ng-show="isSubModuleAccessibleToUser('Sub Process', 'Sub Process', 'View All Sub Process')" type="button" title="View All Sub Processes" class="btn btn-sm btn-primary pull-right mr-10" ui-sref="SubProcessList({MenuId:MenuId,ProcessId:Process.ProcessId,ProcessName:Process.ProcessName})"><i class="glyphicon glyphicon-eye-open"></i>&nbsp; View All</button>                                                                        
                                 </td>                                
                             </tr>
                                

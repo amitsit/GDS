@@ -251,7 +251,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $tra
                                 { id: 5, name: "Processes" },
                                 { id: 6, name: "Change Logs" },
                                 { id: 7, name: "Contact Us" },
-                                 { id: 8, name: "Search" },
+                                { id: 8, name: "Search" },
      
         ];
 

@@ -2,7 +2,12 @@
     decodeParams($stateParams);
     BindToolTip();
     
-    function INIT(){      
+    function INIT(){   
+    
+           //--Check is Page Accessible
+        $rootScope.CheckIsPageAccessible("Contact Us", "Contact Us", "View All Contacts");
+        //
+
         $scope.UserId = $rootScope.LoginUserDetail.UserId;
         $scope.MenuId = parseInt($stateParams.MenuId);
         $scope.MenuName = "";

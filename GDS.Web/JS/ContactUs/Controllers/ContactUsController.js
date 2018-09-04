@@ -11,7 +11,7 @@
         $scope.IsActive = true;
         $scope.MenuName = "";
         $scope.ContactId = parseInt($stateParams.ContactId);
-       
+        $scope.UserId = $rootScope.LoginUserDetail.UserId;
         if ($scope.MenuId > 0) {
 
             var MenuObj = $filter('filter')($rootScope.MenuList, { id: parseInt($scope.MenuId) }, true)[0];

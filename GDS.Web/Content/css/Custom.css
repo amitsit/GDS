@@ -5924,3 +5924,7 @@ input[type="radio"], input[type="checkbox"] {
   
     width: 100.65%!important;
 }
+#footer .footer-active{
+    color:#80e889!important;
+
+}
