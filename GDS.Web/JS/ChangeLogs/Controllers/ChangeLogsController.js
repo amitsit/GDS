@@ -43,7 +43,52 @@
         });
     }
 
+    $scope.GoToEditChangeLog = function (ChangeLog, Mode) {
+        debugger;
+        $state.go('EditChangeLog', ({ 'MenuId': $scope.MenuId, 'GUID': ChangeLog.GUID, 'UserId': ChangeLog.UserId }));
 
+    }
+
+    $scope.DeleteChangeLog = function (ChangeLogObj) {
+    
+        //var table = $('#tblContact').DataTable();
+        //var row = table.row($($event.target).parents('tr')).data();
+      
+        bootbox.dialog({
+            message: "Do you want to delete a change Log ?",
+            title: "Confirmation",
+            className: "model",
+            buttons: {
+                success:
+                    {
+                        label: "Yes",
+                        className: "btn btn-primary theme-btn",
+                        callback: function () {
+                        
+                            var deleteProcess = ChangeLogsServices.DeleteChangeLog(ChangeLogObj.GUID, $scope.UserId);
+                           
+                            deleteProcess.success(function (p) {
+                               
+                                notificationFactory.successDelete();
+                                $scope.GetChangeLogs($scope.UserId);
+                              
+                            });
+                            deleteProcess.error(function (pl, statusCode) {
+                                exceptionService.ShowException(pl, statusCode);
+                            });
+                        }
+                    },
+                danger:
+                    {
+                        label: "No",
+                        className: "btn btn-default",
+                        callback: function () {
+                            return true;
+                        }
+                    }
+            }
+        });
+    }
 
     INIT();
 

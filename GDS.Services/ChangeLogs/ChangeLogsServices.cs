@@ -67,6 +67,76 @@ namespace GDS.Services.ChangeLogs
          return response;
         }
 
+        public ApiResponse<ChangeLogsModel> GetChangeLogsDetail(string GUID, int? UserId)
+        {
+            var response = new ApiResponse<ChangeLogsModel>();
+
+            try
+            {
+                var GuIdParam = new SqlParameter
+                {
+                    ParameterName = "ContactId",
+                    DbType = DbType.String,
+                    Value = (object)GUID ?? DBNull.Value
+                };
+
+                var UserIdParam = new SqlParameter
+                {
+                    ParameterName = "UserId",
+                    DbType = DbType.Int32,
+                    Value = (object)UserId ?? DBNull.Value
+                };
+
+                var result = _repository.ExecuteSQL<ChangeLogsModel>("GetChangeLog", GuIdParam, UserIdParam).ToList();
+                response.Success = true;
+                response.Data = result;
+            }
+            catch (Exception ex)
+            {
+                _logger.Error(ex);
+                response.Message.Add(ex.Message);
+            }
+
+            return response;
+        }
+
+
+
+        public BaseApiResponse DeleteChangeLog(string GUID, int? UserId)
+        {
+            var response = new BaseApiResponse();
+
+            try
+            {
+                var GuIdParam = new SqlParameter
+                {
+                    ParameterName = "GUID",
+                    DbType = DbType.String,
+                    Value = (object)GUID ?? DBNull.Value
+                };
+
+
+                var UserIdParam = new SqlParameter
+                {
+                    ParameterName = "UserId",
+                    DbType = DbType.Int32,
+                    Value = (object)UserId ?? DBNull.Value
+                };
+
+
+                var result = _repository.ExecuteSQL<int>("DeleteChangeLog", GuIdParam, UserIdParam).FirstOrDefault();
+                response.Success = (result > 0);
+
+            }
+            catch (Exception ex)
+            {
+                _logger.Error(ex);
+                response.Message.Add(ex.Message);
+            }
+
+            return response;
+        }
+
 
     }
 }

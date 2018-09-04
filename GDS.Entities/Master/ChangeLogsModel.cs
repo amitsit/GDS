@@ -11,7 +11,9 @@ namespace GDS.Entities.Master
     {
         public int? UserId { get; set; }
 
-         public int? ProcessId { get; set; }
+        public string GUID { get; set; }
+
+        public int? ProcessId { get; set; }
 
         public int? SubProcessId { get; set; }
 
