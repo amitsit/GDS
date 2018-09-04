@@ -34,17 +34,17 @@ namespace GDS.Services.ChangeLogs
         }
         #endregion
 
-        public ApiResponse<ChangeLogsModel> GetChangeLogs(int? MenuId)
+        public ApiResponse<ChangeLogsModel> GetChangeLogs(int? UserId)
         {
             var response = new ApiResponse<ChangeLogsModel>();
 
             try
             {
-                var MenuIdParam = new SqlParameter
+                var UserIdParam = new SqlParameter
                 {
-                    ParameterName = "MenuId",
+                    ParameterName = "UserId",
                     DbType = DbType.Int32,
-                    Value = (object)MenuId ?? DBNull.Value
+                    Value = (object)UserId ?? DBNull.Value
                 };
 
                 //var UserIdParam = new SqlParameter
@@ -54,9 +54,9 @@ namespace GDS.Services.ChangeLogs
                 //    Value = (object)UserId ?? DBNull.Value
                 //};
 
-                var result = _repository.ExecuteSQL<ChangeLogsModel>("GetContactUs", MenuId).ToList();
-                //response.Success = true;
-                //response.Data = result;
+                var result = _repository.ExecuteSQL<ChangeLogsModel>("GetChangeLog", UserIdParam).ToList();
+                response.Success = true;
+                response.Data = result;
             }
             catch (Exception ex)
             {

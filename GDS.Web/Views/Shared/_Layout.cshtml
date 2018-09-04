@@ -128,22 +128,12 @@
                     </li>*@
                 <li class="top" ng-class="(SelectedMenuId==Enum.Process.ChangeLog) ? 'current' : ''">
                     <a href="" class="navlink" ui-sref="ChangeLog({MenuId:Enum.Process.ChangeLog})">Change Logs</a>
-                    @*<ul>
-                            <li><a href="">-Master Document List</a></li>
-                            <li><a href="">-Change Log</a></li>
-                            <li><a href="">-Site Map</a></li>
-                        </ul>*@
+                   
                 </li>
                 <li class="top" ng-class="(SelectedMenuId==Enum.Process.ConatctUs) ? 'current' : ''">
                     <a href="" class="navlink" ui-sref="ContactUS({MenuId:Enum.Process.ConatctUs})">Contact Us</a>
                 </li>
-                @*<li class="top">
-                    <div class="search">
-                        <input type="text" placeholder="Search Here" id="Gsearch" />
-                        <button type="button" class="glyphicon glyphicon-search" 
-                                style="border:none;width:22px; top:9px;line-height:2!important;left:266px;" ng-click="RedirectToSearch()" />
-                    </div>
-                </li>*@
+              
                 
 
                 <li class="top" ng-class="(SelectedMenuId==Enum.Process.Search) ? 'current' : ''">
@@ -151,17 +141,6 @@
                 </li>
 
 
-                @*<li class="top cursor-pointer" ui-sref="Home1">
-                        <a class="navlink">layout1</a>
-                    </li>
-
-                    <li class="top cursor-pointer" ui-sref="Home2">
-                        <a class="navlink">layout2</a>
-                    </li>*@
-
-                @*<li class="top" ui-sref="Home3">
-                        <a class="navlink">layout3</a>
-                    </li>*@
 
             </ul>
             <div class="clear"></div>
@@ -182,15 +161,13 @@
         <!-- content end -->
         <!-- footer start -->
         <footer id="footer">
-            @*<div class="automotive pull-right">
-                    <a href="/Home">
-                        <img src="~/Images/logo.jpg" height="65" width="500" alt="IAC">
-                    </a>
-                </div>*@
-
-
-        </footer>
-        @*<div class="modal fade" id="ModelGlobalSettingModel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="footer-copyright py-3 mt-15 col-lg-offset-1">
+                © 2018 Copyright:
+                <label>Global Document System</label>
+            </div>
+          </footer>
+      
+            @*<div class="modal fade" id="ModelGlobalSettingModel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                 <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -233,38 +210,38 @@
             </div>*@
 
 
-        <div class="modal fade" id="Reloadlookup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog modal-md" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title" id="myModalLabel">System Updates</h4>
-                    </div>
-                    <div class="wthbox">
-                        <div class="panel panel-info">
-                            <div class="panel-heading">
-                                <h3 class="panel-title text-center">System Updates</h3>
-                            </div>
-                            <div class="panel panel-body">
-                                <div class="row ml-15">
-                                    <b>
-                                        There have been updated to the system. Click OK to refresh the page.<br />
-                                        <span style="color:red;"> Note:  All unsaved changes will be lost.</span>
-                                        <br /><br />
-                                        Click Later to go back and save all changes first.
-                                    </b>
+            <div class="modal fade" id="Reloadlookup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog modal-md" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="myModalLabel">System Updates</h4>
+                        </div>
+                        <div class="wthbox">
+                            <div class="panel panel-info">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title text-center">System Updates</h3>
+                                </div>
+                                <div class="panel panel-body">
+                                    <div class="row ml-15">
+                                        <b>
+                                            There have been updated to the system. Click OK to refresh the page.<br />
+                                            <span style="color:red;"> Note:  All unsaved changes will be lost.</span>
+                                            <br /><br />
+                                            Click Later to go back and save all changes first.
+                                        </b>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" ng-click="ReloadPage()">OK</button>
-                            <button type="button" class="btn btn-default" data-dismiss="modal">LATER</button>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" ng-click="ReloadPage()">OK</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">LATER</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-    </div>
+</div>
 
     <script src="~/Content/ckeditor/ckeditor.js?v='@Html.Raw(System.Configuration.ConfigurationManager.AppSettings["ApplicationVersion"])'"></script>
     <script src="~/Content/ckeditor/adapters/jquery.js?v='@Html.Raw(System.Configuration.ConfigurationManager.AppSettings["ApplicationVersion"])'"></script>

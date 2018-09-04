@@ -24,9 +24,9 @@ namespace GDS.API.Controllers.ChangeLogs
 
         [HttpGet]
         [Route("GetChangeLogs")]
-        public ApiResponse<ChangeLogsModel> GetChangeLogs(int? MenuId)
+        public ApiResponse<ChangeLogsModel> GetChangeLogs(int? UserId)
         {
-            return this._iChangeLogsServices.GetChangeLogs(MenuId);
+            return this._iChangeLogsServices.GetChangeLogs(UserId);
         }
 
 

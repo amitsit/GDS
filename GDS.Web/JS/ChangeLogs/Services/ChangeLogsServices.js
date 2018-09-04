@@ -2,8 +2,8 @@
 
     var ChangeLogsServices = {};
 
-    ChangeLogsServices.GetChangeLogs = function (menuId) {
-        return $http.get(configurationService.basePath + "api/GetChangeLogs?MenuId=" + menuId);
+    ChangeLogsServices.GetChangeLogs = function (userId) {
+        return $http.get(configurationService.basePath + "api/GetChangeLogs?UserId=" + userId);
     }
     
     return ChangeLogsServices;

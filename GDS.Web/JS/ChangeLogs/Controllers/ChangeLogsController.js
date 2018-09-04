@@ -8,7 +8,7 @@
       
         $scope.IsEditMode = false;
         $scope.ProcessDisplayType = $rootScope.Enum.ProcessDisplayType.MultiTable;
-
+        $scope.UserId = $rootScope.LoginUserDetail.UserId;
         $scope.MenuId = parseInt($stateParams.MenuId);
         $scope.IsActive = true;
         $scope.MenuName = "";
@@ -27,19 +27,23 @@
                 $scope.ProcessDisplayType = $rootScope.Enum.ProcessDisplayType.List;
             }
               
-           $scope.GetChangeLogs($scope.MenuId);
+           $scope.GetChangeLogs($scope.UserId);
         }
     }
-    $scope.GetChangeLogs =  function(MenuId){
+    $scope.GetChangeLogs = function (UserId) {
       
-        var promiseGetContacts = ChangeLogsServices.GetChangeLogs($scope.MenuId);
-        promiseGetContacts.success(function (response) {
+        var promiseGetChangeLogs = ChangeLogsServices.GetChangeLogs($scope.MenuId);
+        debugger;
+        promiseGetChangeLogs.success(function (response) {
 
-            $scope.ContactListData = response.Data;
+            $scope.ChangeLogsData = response.Data;
+            debugger;
         });
-        promiseGetContacts.error(function (data, statusCode) {
+        promiseGetChangeLogs.error(function (data, statusCode) {
         });
     }
+
+
 
     INIT();
 

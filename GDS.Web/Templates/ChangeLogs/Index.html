@@ -15,26 +15,50 @@
 
     <div class="top_msg">This page allows you to lookup All Change Logs</div>
     <div class="wthbox wth_content pb-0 MasterDataPanel">
-        <div class="col-sm-12">
-            <!--<h1>Year</h1>-->
-            <div class="panel panel-default">
-                <div class="panel-body table-responsive">
-                    <table class="table table-bordered text-center ">
-                        <tr class="pressTitleRow">
-                            <th class="col-sm-2 "><label>Date of Change</label></th>
-                            <th class="col-sm-2 text-left font-bold"><label>Process Code</label></th>
-                            <th class="col-sm-8 text-left font-bold"><label>Action</label></th>
-                        </tr>
-                        <tr>
-                            <td class="col-sm-2 text-center font-bold"><label>Date of Change</label></td>
-                            <th class="col-sm-2 text-left font-bold"></th>
-                            <td class="col-sm-2 text-center font-bold"><label>Action</label></td>
-                        </tr>
+        <div>
+            <div class="col-sm-12">
+                <!--<h1>Year</h1>-->
+                <div class="panel panel-default">
+                    <div class="panel-body table-responsive">
+                        <table class="table table-bordered text-center ">
+                            <tr class="pressTitleRow">                       
+                                <th class="col-sm-1 "><label>Date of Change</label></th>
+                                <th class="col-sm-1 text-left font-bold"><label>Code</label></th>
+                                <th class="col-sm-2 text-left font-bold"><label>Process Name</label></th>
+                                <th class="col-sm-2 text-left font-bold"><label>Sub Process Name</label></th>
+                                <th class="col-sm-2 text-left font-bold"><label>Document Title</label></th>
+                                <th class="col-sm-2 text-left font-bold"><label>Description</label></th>
+                                <th class="col-sm-2 text-left font-bold"><label>Action</label></th>
+                            </tr>
+                            <tr ng-repeat="ChangeLogYear in ChangeLogsData | unique:'Year':true">  
+                            
+                                <td colspan="7" >
+                                    <table class="col-sm-12">
+                                      <tr class="tr_color">
+                                            <th colspan="7" class="th_header " >
+                                               <label ng-bind="ChangeLogYear.Year"></label> 
+                                            </th>
+                                            </tr>
+                                        <tr ng-if="ChangeLog.Year==ChangeLog.Year" ng-repeat="ChangeLog in ChangeLogsData">
+                                            <td class="col-sm-1 text-center tablebox ">{{ChangeLog.CreatedDate | date:GlobalDateFormat}}</td>
+                                            <td class="col-sm-1 text-center tablebox ">{{ChangeLog.Code}}</td>
+                                            <td class="col-sm-2 text-center tablebox ">{{ChangeLog.ProcessName}}</td>
+                                            <td class="col-sm-2 text-center tablebox ">{{ChangeLog.SubProcessName}}</td>
+                                            <th class="col-sm-2 text-center  tablebox">{{ChangeLog.DocumentTitle}}</th>
+                                            <td class="col-sm-2 text-center tablebox">{{ChangeLog.Description}}</td>
+                                            <td class="col-sm-2 text-center tablebox">{{ChangeLog.Action}}</td>
+                                            
+                                        </tr>
+                                    </table>
+                                </td>                                                            
+                               
+                            </tr>
 
-                    </table>
+                        </table>
+                    </div>
                 </div>
-            </div>
 
+            </div>
         </div>
 </div>
     </div>

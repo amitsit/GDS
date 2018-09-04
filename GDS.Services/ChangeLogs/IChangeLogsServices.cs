@@ -10,7 +10,7 @@ namespace GDS.Services.ChangeLogs
 {
     public interface IChangeLogsServices
     {
-        ApiResponse<ChangeLogsModel> GetChangeLogs(int? MenuId);
+        ApiResponse<ChangeLogsModel> GetChangeLogs(int? UserId);
 
     }
 }
