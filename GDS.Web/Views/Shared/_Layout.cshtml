@@ -423,7 +423,7 @@
                         async: false,
                         cache: false,
                         global: false,
-                        success: function (data) {
+                        success: function (data) {                        
                             $rootScope.LoginUserDetail=data;
                             if($rootScope.LoginUserDetail.UserId>0){
                                 angular.element("#LoginModelPopup").modal('hide');
@@ -432,7 +432,7 @@
                                 $state.reload();
 
                                 $rootScope.RootScopeUserId = $rootScope.LoginUserDetail.UserId;
-                                $rootScope.UserRoleRightsList=$rootScope.LoggedInUserDetail.RolesRightsPermissions;
+                                $rootScope.UserRoleRightsList=$rootScope.LoginUserDetail.RolesRightsPermissions;
                                 GetSetUserCache();
                             }else{
                                 $scope.InvalidIdPassword=  $rootScope.LoginUserDetail.AuthenticationFlag;

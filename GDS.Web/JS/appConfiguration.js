@@ -258,13 +258,15 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $tra
       
         $rootScope.isSubModuleAccessibleToUser = function (module, subModule, func) {    
             var IsAccessible = false;
-            if ($rootScope.UserRoleRightsList.length>0) {
-                var Obj = $filter('filter')($rootScope.UserRoleRightsList, { ModuleName: module, SubmoduleName: subModule, FunctionName: func }, true).length >= 1;
-                if(Obj)
-                {
-                    IsAccessible = true;
+            if ($rootScope.RootScopeUserId>0) {
+                if ($rootScope.UserRoleRightsList.length > 0) {
+                    var Obj = $filter('filter')($rootScope.UserRoleRightsList, { ModuleName: module, SubmoduleName: subModule, FunctionName: func }, true).length >= 1;
+                    if (Obj) {
+                        IsAccessible = true;
+                    }
                 }
             }
+           
             return IsAccessible;
         }
 

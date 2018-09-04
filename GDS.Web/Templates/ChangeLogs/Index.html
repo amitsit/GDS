@@ -40,21 +40,24 @@
                                                <label ng-bind="ChangeLogYear.Year" class="col-sm-1 text-center"></label> 
                                             </th>
                                             </tr>
-                                        <tr ng-if="ChangeLog.Year==ChangeLog.Year" ng-repeat="ChangeLog in ChangeLogsData">
+                                        <tr ng-show="ChangeLog.Year==ChangeLog.Year" ng-repeat="ChangeLog in ChangeLogsData">
                                             <td class="col-sm-1 text-center tablebox1  " ng-bind="ChangeLog.CreatedDate | date:GlobalDateFormat"></td>
                                             <td class="col-sm-1 text-center tablebox1  " ng-bind="ChangeLog.Code"></td>
                                             <td class="col-sm-2 text-center tablebox1  " ng-bind="ChangeLog.ProcessName"></td>
                                             <td class="col-sm-2 text-center tablebox1  " ng-bind="ChangeLog.SubProcessName"></td>
                                             <td class="col-sm-2 text-center tablebox1 " ng-bind="ChangeLog.DocumentTitle"></td>
                                             <td class="col-sm-2 text-center tablebox1 " ng-bind="ChangeLog.Description"></td>
-                                            <td class="col-sm-2 text-center tablebox1 " ng-bind="ChangeLog.Action">
-                                   
+                                            <td class="col-sm-2 text-center tablebox1 " >
+                                                <div class="col-sm-12">
+                                                    <div class="col-sm-8">
+                                                        <span ng-bind="ChangeLog.Action"></span>
+                                                    </div>
+                                                    <div class="col-sm-4 ml-0 mr-0">
+                                                        <a class="pull-left mr-10" title="Edit" data-original-title="Edit" data-toggle="tooltip"><i class="glyphicon glyphicon-pencil " ng-click="GoToEditChangeLog(ChangeLog,Enum.Mode.Edit)"></i></a>
+                                                         <a class="pull-left" title="Delete" data-original-title="Delete" data-toggle="tooltip" ng-click="DeleteChangeLog(ChangeLog)"><i class="glyphicon glyphicon-trash"></i></a>
+                                                    </div>
+                                                </div>                                                                                                                                              
                                             </td>
-                                            <td>
-                                                <a class="pull-right" title="Edit" data-original-title="Edit" data-toggle="tooltip"><i class="glyphicon glyphicon-pencil " ng-click="GoToEditChangeLog(ChangeLog,Enum.Mode.Edit)"></i></a> 
-                                                <a class="pull-right" title="Delete" data-original-title="Delete" data-toggle="tooltip" ng-click="DeleteChangeLog(ChangeLog)"><i class="glyphicon glyphicon-trash"></i></a>
-                                            </td>
-                                            
                                         </tr>
                                     </table>
                                 </td>                                                            
