@@ -338,7 +338,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $tra
             //    localStorageService.set("previousParams", $state.previousParams);
             //}
             if (!(fromParams == toParams)) {
-                //encodeParams(toParams);
+                encodeParams(toParams);
 
             }
             // to track previous url

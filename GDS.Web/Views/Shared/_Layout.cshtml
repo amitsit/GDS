@@ -77,7 +77,7 @@
                     </div>
                     <div class="usertext">
                         <h4 ng-bind="LoginUserDetail.FirstName+' '+LoginUserDetail.LastName"></h4>
-                        <p>@User.Identity.Name</p>
+                        @*<p>@User.Identity.Name</p>*@
                     </div>
                 </li>
                 <li class="hlink userinfo" ng-show="!(RootScopeUserId>0)">
@@ -369,10 +369,14 @@
                 startDate: '-3d'
             });
 
+            setTimeout(function () { SetAnchorLinks(); }, 15000);
+
         });
 
 
         app.controller('RoleRightsController', function ($scope, $templateCache,$state, localStorageService,$interval, $stateParams, $rootScope, $location, notificationFactory, configurationService, $compile, $filter) {
+            decodeParams($stateParams);
+            BindToolTip();
             $rootScope.Enum=enums;
 
             $rootScope.LoginUserDetail=@Html.Raw(Json.Encode(@ProjectSession.LoggedInUserDetail));
@@ -491,13 +495,15 @@
                         }
                     }
                 })
-            };
+            };          
 
             $rootScope.ReloadPage=function() {
                 $templateCache.removeAll();
                 window.location.reload(true);
                 return;
             };
+
+          
 
         });
 
