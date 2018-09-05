@@ -56,7 +56,10 @@ namespace GDS.Services.Master.User
                 };
 
                 var result = _repository.ExecuteSQL<UserMasterModel>("usp_UserMaster_get", userIDParam).ToList();
-
+                if(userId > 0 && result.Count>0)
+                {
+                    result[0].Password = Security.Decrypt(result[0].Password);
+                }
                 response.Success = true;
                 response.Data = result;
             }
@@ -158,12 +161,13 @@ namespace GDS.Services.Master.User
                     Value = (object)UserObj.Email
                 };
 
-                //var SelectedPlantParam = new SqlParameter
-                //{
-                //    ParameterName = "p_SelectedPlant",
-                //    DbType = DbType.String,
-                //    Value = !string.IsNullOrWhiteSpace(UserObj.SelectedPlant) ? UserObj.SelectedPlant : (object)DBNull.Value
-                //};
+                var PasswordParam = new SqlParameter
+                {
+                    ParameterName = "Password",
+                    DbType = DbType.String,
+                    Value = (object)Security.Encrypt(UserObj.Password) ?? (object)DBNull.Value
+                };
+
                 var SelectedRegionParam = new SqlParameter
                 {
                     ParameterName = "RegionIdCsv",
@@ -208,7 +212,7 @@ namespace GDS.Services.Master.User
 
                 var result = "";
 
-                    result = _repository.ExecuteSQL<string>("usp_UserMaster_update", UserIDParam, UserNameParam, FirstNameParam, LastNameParam, EmailParam, SelectedRegionParam, SelectedPlantParam, SelectedRolesParam, IsActiveParam, LoggedInUserIdParam, NetworkUserIdParam).FirstOrDefault();
+                    result = _repository.ExecuteSQL<string>("usp_UserMaster_update", UserIDParam, UserNameParam, FirstNameParam, LastNameParam, EmailParam, PasswordParam, SelectedRegionParam, SelectedPlantParam, SelectedRolesParam, IsActiveParam, LoggedInUserIdParam, NetworkUserIdParam).FirstOrDefault();
 
                 if (result=="1")
                 {
@@ -318,7 +322,7 @@ namespace GDS.Services.Master.User
                 {
                     ParameterName = "Password",
                     DbType = DbType.String,
-                    Value = Password
+                    Value =Security.Encrypt(Password)
                 };
 
                 var result = _repository.ExecuteSQL<UserMasterModel>("LoginUser", IdParam,PasswordParam).ToList();

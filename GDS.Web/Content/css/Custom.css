@@ -5919,12 +5919,21 @@ input[type="radio"], input[type="checkbox"] {
 }
 
 .tableSize {
-    margin-bottom: -6px!important;
-    margin-left: -6px!important;
-  
-    width: 100.65%!important;
+    margin-bottom: -6px !important;
+    margin-left: -6px !important;
+    width: 100.65% !important;
 }
-#footer .footer-active{
-    color:#80e889!important;
 
+#footer .footer-active {
+    color: #80e889 !important;
+}
+
+.field-icon {
+    float: right;
+    margin-left: -25px;
+    margin-top: -25px;
+    position: relative;
+    z-index: 2;
+    margin-right: 10px;
+    cursor: pointer;
 }

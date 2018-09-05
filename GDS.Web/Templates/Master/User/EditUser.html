@@ -1,7 +1,4 @@
-﻿<!--<h1 class="title iac-breadcrumb"> <a ui-sref="Master"><i class="fa fa-home"></i></a></h1>-->
-
-
-<form class="form-horizontal" name="UpdateUserform" novalidate ng-controller="UpdateUserController">
+﻿<form class="form-horizontal" name="UpdateUserform" novalidate ng-controller="UpdateUserController">
     <!--<h1 class="title" ng-show="UserID>0" translate="Admin_EditUser"></h1>
     <h1 class="title" ng-show="!(UserID>0)" translate="Admin_AddUser"></h1>-->
     <h3 class="title  fontorang">
@@ -11,18 +8,19 @@
         </b>
     </h3>
     <div role="tabpanel" class="form-horizontal" id="messages">
-        <div class="alert alert-danger alert-dismissible validationErrors" ng-show="(UpdateUserform.$submitted && (!UpdateUserform.$valid)) || (UpdateUserform.$submitted && (ValidateReigion() || ValidatePlant()))">
-            <ul ng-show="(UpdateUserform.$submitted && (!UpdateUserform.$valid)) || (UpdateUserform.$submitted &&  (ValidateReigion() || ValidatePlant()))">
+        <div class="alert alert-danger alert-dismissible validationErrors" ng-show="(UpdateUserform.$submitted && (!UpdateUserform.$valid)) || (UpdateUserform.$submitted && (ValidateReigion()))">
+            <ul ng-show="(UpdateUserform.$submitted && (!UpdateUserform.$valid)) || (UpdateUserform.$submitted &&  (ValidateReigion()))">
                 
                 <!--<li ng-show="UpdateUserform.UserName.$error.required">User Name is required.</li>-->
                 <li ng-show="UpdateUserform.FirstName.$error.required">First Name is required.</li>
                 <li ng-show="UpdateUserform.LastName.$error.required">Last Name is required.</li>
                 <li ng-show="UpdateUserform.Email.$error.required">Email is required.</li>
                 <li ng-show="UpdateUserform.Email.$error.email">Email Address is Invalid.</li>
+                <li ng-show="UpdateUserform.password.$error.required">Password is required.</li>                
                 <!--<li ng-show="UserObj.SelectedPlant.length==0">Select atleast one Plant.</li>-->
                 <li ng-show="UpdateUserform.NetworkId.$error.required">Network Id is required.</li>
                 <li ng-show="ValidateReigion()">Region is Required.</li>
-                <li ng-show="ValidatePlant()">Plant is Required.</li>
+                <!--<li ng-show="ValidatePlant()">Plant is Required.</li>-->
                 
             </ul>
         </div>
@@ -72,6 +70,15 @@
                     <input type="email" name="Email" class="form-control" maxlength="100" ng-model="UserObj.Email" required="required">
                 </div>
             </div>
+
+            <div class="form-group">
+                <label class="col-sm-6 col-lg-4 control-label rn_pad mandatoryField">Password</label>
+                <div class="col-sm-12 col-md-8">
+                    <input type="password" id="password-field" name="password" class="form-control" maxlength="50" ng-model="UserObj.Password" required="required">
+                    <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>                  
+                </div>
+            </div>
+
             <div class="form-group">
                 <label class="col-sm-6 col-lg-4 control-label rn_pad" translate="Admin_Role">Roles</label>
                 <div class="col-sm-12 col-md-8">

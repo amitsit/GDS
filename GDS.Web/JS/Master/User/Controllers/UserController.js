@@ -156,7 +156,7 @@ app.controller('UpdateUserController', function ($scope, localStorageService, $s
 
     decodeParams($stateParams);
     BindToolTip();
-
+    enablePasswordEye() ;
     $scope.UserID = parseInt($stateParams.UserId);
     $scope.LoggedInUserId = $rootScope.LoginUserDetail.UserId;
 
