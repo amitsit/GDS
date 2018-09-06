@@ -41,9 +41,9 @@ namespace GDS.API.Controllers.SubProcess
 
         [HttpGet]
         [Route("GetProcessDocumentBySubProcessIdAndRegionId")]
-        public ApiResponse<DocumentMasterModel> GetProcessDocumentBySubProcessIdAndRegionId(int? SubProcessId,int? RegionId, int? UserId)
+        public ApiResponse<DocumentMasterModel> GetProcessDocumentBySubProcessIdAndRegionId(int? SubProcessId,int? RegionId, int? UserId,bool? IsActive)
         {
-            return this._iSubProcessService.GetProcessDocumentBySubProcessIdAndRegionId(SubProcessId, RegionId, UserId);
+            return this._iSubProcessService.GetProcessDocumentBySubProcessIdAndRegionId(SubProcessId, RegionId, UserId, IsActive);
         }
 
         [HttpGet]

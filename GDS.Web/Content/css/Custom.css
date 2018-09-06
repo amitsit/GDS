@@ -5029,6 +5029,7 @@ td input {
 
 .editprocessheader {
     background-color: white;
+   
 }
 
 /* keyframes */
@@ -5937,3 +5938,15 @@ input[type="radio"], input[type="checkbox"] {
     margin-right: 10px;
     cursor: pointer;
 }
+.width51{
+        width:51px!important;
+    }
+  .border1{
+        border-right:1px solid #ddd!important;
+    }
+   .tableScroll1{
+       overflow-y:auto!important;
+       height:500px!important;
+       display:block;
+   }
+   

@@ -47,7 +47,7 @@
         $scope.RegionList = []; //Assigned Region Array
 
         $scope.GetSubProcess($scope.ProcessId, $scope.SubProcessId, $scope.RegionId, $scope.UserId);
-
+        $scope.IsActive = false;
     }
 
 
@@ -83,7 +83,7 @@
     }
 
     $scope.GetProcessDocumentBySubProcessIdAndRegionId = function (SubProcessId, RegionId, UserId) {
-        var promiseGetProcessDocumentBySubProcessIdAndRegionId = SubProcessService.GetProcessDocumentBySubProcessIdAndRegionId(SubProcessId, RegionId, UserId);
+        var promiseGetProcessDocumentBySubProcessIdAndRegionId = SubProcessService.GetProcessDocumentBySubProcessIdAndRegionId(SubProcessId, RegionId, UserId,  $scope.IsActive);
         promiseGetProcessDocumentBySubProcessIdAndRegionId.success(function (response) {
             $scope.ProcessDocuments = response.Data;       
         });

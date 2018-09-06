@@ -1,9 +1,4 @@
-﻿<style>
-    .tr_border{
-      border-left:1px #ddd;
-      border-right:1px #ddd;
-    }
-</style>
+﻿
 
 <div class="no-space" ng-controller="ChangeLogsController">
     <h3 class="title  fontorang">
@@ -36,29 +31,33 @@
                                 <td colspan="7" >
                                     <table class="col-sm-12 tableSize">
                                       <tr class="tr_color">
-                                            <th colspan="7" class="th_header " >
+                                            <th colspan="7" class="th_header " id="headingOne" >
                                                <label ng-bind="ChangeLogYear.Year" class="col-sm-1 text-center"></label> 
+                                                <!--<a class="pull-right editprocessheader mr-10" ng-class="showtable()">
+                                                <i class="glyphicon glyphicon-chevron-down"></i></a>-->
                                             </th>
                                             </tr>
-                                        <tr ng-show="ChangeLog.Year==ChangeLog.Year" ng-repeat="ChangeLog in ChangeLogsData">
-                                            <td class="col-sm-1 text-center tablebox1  " ng-bind="ChangeLog.CreatedDate | date:GlobalDateFormat"></td>
-                                            <td class="col-sm-1 text-center tablebox1  " ng-bind="ChangeLog.Code"></td>
-                                            <td class="col-sm-2 text-center tablebox1  " ng-bind="ChangeLog.ProcessName"></td>
-                                            <td class="col-sm-2 text-center tablebox1  " ng-bind="ChangeLog.SubProcessName"></td>
-                                            <td class="col-sm-2 text-center tablebox1 " ng-bind="ChangeLog.DocumentTitle"></td>
-                                            <td class="col-sm-2 text-center tablebox1 " ng-bind="ChangeLog.Description"></td>
-                                            <td class="col-sm-2 text-center tablebox1 " >
-                                                <div class="col-sm-12">
-                                                    <div class="col-sm-8">
-                                                        <span ng-bind="ChangeLog.Action"></span>
+                                        <tbody class="tableScroll1">
+                                            <tr ng-show="ChangeLog.Year==ChangeLog.Year" ng-repeat="ChangeLog in ChangeLogsData" >
+                                                <td class="col-sm-1 text-center tablebox1  " ng-bind="ChangeLog.CreatedDate | date:GlobalDateFormat"></td>
+                                                <td class="col-sm-1 text-center tablebox1  " ng-bind="ChangeLog.Code"></td>
+                                                <td class="col-sm-2 text-center tablebox1  " ng-bind="ChangeLog.ProcessName"></td>
+                                                <td class="col-sm-2 text-center tablebox1  " ng-bind="ChangeLog.SubProcessName"></td>
+                                                <td class="col-sm-2 text-center tablebox1 " ng-bind="ChangeLog.DocumentTitle"></td>
+                                                <td class="col-sm-2 text-center tablebox1 " ng-bind="ChangeLog.Description"></td>
+                                                <td class="col-sm-2 text-center tablebox1 ">
+                                                    <div class="col-sm-12">
+                                                        <div class="col-sm-8">
+                                                            <span ng-bind="ChangeLog.Action"></span>
+                                                        </div>
+                                                        <div class="col-sm-4 ml-0 mr-0">
+                                                            <a ng-show="isSubModuleAccessibleToUser('Change Logs', 'Change Logs', 'Update Change Logs')" class="pull-left mr-10" title="Edit" data-original-title="Edit" data-toggle="tooltip"><i class="glyphicon glyphicon-pencil " ng-click="GoToEditChangeLog(ChangeLog,Enum.Mode.Edit)"></i></a>
+                                                            <a ng-show="isSubModuleAccessibleToUser('Change Logs', 'Change Logs', 'Delete Change Logs')" class="pull-left" title="Delete" data-original-title="Delete" data-toggle="tooltip" ng-click="DeleteChangeLog(ChangeLog)"><i class="glyphicon glyphicon-trash"></i></a>
+                                                        </div>
                                                     </div>
-                                                    <div class="col-sm-4 ml-0 mr-0"  >
-                                                        <a ng-show="isSubModuleAccessibleToUser('Change Logs', 'Change Logs', 'Update Change Logs')" class="pull-left mr-10" title="Edit" data-original-title="Edit" data-toggle="tooltip"><i class="glyphicon glyphicon-pencil " ng-click="GoToEditChangeLog(ChangeLog,Enum.Mode.Edit)"></i></a>
-                                                         <a ng-show="isSubModuleAccessibleToUser('Change Logs', 'Change Logs', 'Delete Change Logs')" class="pull-left" title="Delete" data-original-title="Delete" data-toggle="tooltip" ng-click="DeleteChangeLog(ChangeLog)"><i class="glyphicon glyphicon-trash"></i></a>
-                                                    </div>
-                                                </div>                                                                                                                                              
-                                            </td>
-                                        </tr>
+                                                </td>
+                                            </tr>
+                                        </tbody>
                                     </table>
                                 </td>                                                            
                                
@@ -72,4 +71,5 @@
         </div>
 </div>
     </div>
+
 

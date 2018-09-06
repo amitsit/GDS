@@ -44,7 +44,9 @@
     }
 
     $scope.GetContactUsDetail = function (ContactId, UserId) {
+      
         var promiseGetContacts = ContactUsService.GetContactUsDetail(ContactId, UserId);
+      
         promiseGetContacts.success(function (response) {
          
             $scope.ContactObj = response.Data[0];

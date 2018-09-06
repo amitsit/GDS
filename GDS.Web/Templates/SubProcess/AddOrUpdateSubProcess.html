@@ -114,6 +114,7 @@
                                                 <th>Code</th>
                                                 <th>Title</th>
                                                 <th>Release Date</th>
+                                                <th>Active</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -122,6 +123,7 @@
                                                 <td class="text-center" ng-bind="document.DocumentCode"></td>
                                                 <td class="text-center" ng-bind="document.DocumentTitle"></td>
                                                 <td class="text-center" ng-bind="document.ReleaseDate|date:GlobalDateFormat"></td>
+                                                <td class="text-center" ng-bind="(document.IsActive)==true?'Yes':'No'"></td>
                                                 <td class="text-center"><a ng-show="isSubModuleAccessibleToUser('Sub Process', 'Document', 'Add / Update Document')" class="btn-primary btn-sm" ng-click="OpenDocumentPopup(document)"><i class="glyphicon glyphicon-pencil"></i></a>&nbsp;<a class="btn-primary btn-sm" ng-click="DeleteDocument(document)"><i class="glyphicon glyphicon-trash"></i></a></td>
                                             </tr>
                                         </tbody>

@@ -47,6 +47,8 @@ app.controller('SubProcessController', function ($scope, $state, localStorageSer
             }
             $scope.GetSubProcess($scope.ProcessId, $scope.SubProcessId, $scope.RegionId, $scope.UserId);
         }
+
+        $scope.IsActive = true;
     }
   
 
@@ -77,7 +79,7 @@ app.controller('SubProcessController', function ($scope, $state, localStorageSer
     }
 
     $scope.GetProcessDocumentBySubProcessIdAndRegionId = function (SubProcessId, RegionId, UserId) {
-        var promiseGetProcessDocumentBySubProcessIdAndRegionId = SubProcessService.GetProcessDocumentBySubProcessIdAndRegionId(SubProcessId, RegionId, UserId);
+        var promiseGetProcessDocumentBySubProcessIdAndRegionId = SubProcessService.GetProcessDocumentBySubProcessIdAndRegionId(SubProcessId, RegionId, UserId,$scope.IsActive);
         promiseGetProcessDocumentBySubProcessIdAndRegionId.success(function (response) {
             $scope.ProcessDocuments = response.Data;
         });

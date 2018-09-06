@@ -128,7 +128,7 @@ namespace GDS.Services.SubProcess
             return response;
         }
 
-        public ApiResponse<DocumentMasterModel> GetProcessDocumentBySubProcessIdAndRegionId(int? SubProcessId, int? RegionId, int? UserId)
+        public ApiResponse<DocumentMasterModel> GetProcessDocumentBySubProcessIdAndRegionId(int? SubProcessId, int? RegionId, int? UserId, bool? IsActive)
         {
             var response = new ApiResponse<DocumentMasterModel>();
 
@@ -153,7 +153,14 @@ namespace GDS.Services.SubProcess
                     Value = (object)UserId ?? DBNull.Value
                 };
 
-                var result = _repository.ExecuteSQL<DocumentMasterModel>("GetProcessDocumentBySubProcessIdAndRegionId", SubProcessIdParam, RegionIdParam, UserIdParam).ToList<DocumentMasterModel>();
+                var IsActiveParam = new SqlParameter
+                {
+                    ParameterName = "IsActive",
+                    DbType = DbType.Boolean,
+                    Value = (object)IsActive ?? DBNull.Value
+                };
+
+                var result = _repository.ExecuteSQL<DocumentMasterModel>("GetProcessDocumentBySubProcessIdAndRegionId", SubProcessIdParam, RegionIdParam, UserIdParam, IsActiveParam).ToList<DocumentMasterModel>();
                 response.Success = true;
                 response.Data = result;
             }
