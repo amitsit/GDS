@@ -49,6 +49,7 @@ app.controller('SubProcessController', function ($scope, $state, localStorageSer
         }
 
         $scope.IsActive = true;
+        $scope.IsRegionDocumentsAvailable = false;
     }
   
 
@@ -87,6 +88,16 @@ app.controller('SubProcessController', function ($scope, $state, localStorageSer
         });
     }
 
+    $scope.GetProcessDocumentBySubProcessIdAndRegionId_ByRegion= function (RegionId) {
+        var promiseGetProcessDocumentBySubProcessIdAndRegionId = SubProcessService.GetProcessDocumentBySubProcessIdAndRegionId($scope.SubProcessObj.SubProcessId, RegionId, $scope.UserId, $scope.IsActive);
+        promiseGetProcessDocumentBySubProcessIdAndRegionId.success(function (response) {
+            $scope.IsRegionDocumentsAvailable = true;
+            $scope.ProcessRegionDocuments = response.Data;
+        });
+        promiseGetProcessDocumentBySubProcessIdAndRegionId.error(function (data, statusCode) {
+        });
+    }
+
     $scope.IsEmptyHeader = function () {
         var neefTohide = false;
         if (!isNullOrUndefinedOrEmpty($scope.SubProcessObj)) {
@@ -97,9 +108,9 @@ app.controller('SubProcessController', function ($scope, $state, localStorageSer
         return neefTohide;
     }
 
-    $scope.ChangeRegion = function (RegionId) {
-        $state.go('SubProcessDetail', ({ 'MenuId': $scope.MenuId, 'ProcessId': $scope.ProcessId, 'SubProcessId': $scope.SubProcessId, 'RegionId': RegionId }));
-    }
+    //$scope.ChangeRegion = function (RegionId) {
+    //    $state.go('SubProcessDetail', ({ 'MenuId': $scope.MenuId, 'ProcessId': $scope.ProcessId, 'SubProcessId': $scope.SubProcessId, 'RegionId': RegionId }));
+    //}
 
 
     INIT();

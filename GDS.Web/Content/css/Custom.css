@@ -5949,4 +5949,7 @@ input[type="radio"], input[type="checkbox"] {
        height:500px!important;
        display:block;
    }
-   
+
+.width30_per{
+    width:30%!important;
+}   
