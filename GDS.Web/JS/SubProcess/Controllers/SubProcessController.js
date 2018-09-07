@@ -91,6 +91,7 @@ app.controller('SubProcessController', function ($scope, $state, localStorageSer
     $scope.GetProcessDocumentBySubProcessIdAndRegionId_ByRegion= function (RegionId) {
         var promiseGetProcessDocumentBySubProcessIdAndRegionId = SubProcessService.GetProcessDocumentBySubProcessIdAndRegionId($scope.SubProcessObj.SubProcessId, RegionId, $scope.UserId, $scope.IsActive);
         promiseGetProcessDocumentBySubProcessIdAndRegionId.success(function (response) {
+            $scope.RegionId = RegionId;
             $scope.IsRegionDocumentsAvailable = true;
             $scope.ProcessRegionDocuments = response.Data;
         });

@@ -5952,4 +5952,7 @@ input[type="radio"], input[type="checkbox"] {
 
 .width30_per{
     width:30%!important;
-}   
+}  
+.width280px{
+    width:280px!important;
+} 
