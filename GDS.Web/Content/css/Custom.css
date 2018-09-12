@@ -5838,9 +5838,10 @@ select.form-control {
 }
 
 .nav-tabs > li > a:hover {
+    width:280px!important;
     background-color: #839DD2;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
+    border-top-left-radius: 15px!important;
+    border-top-right-radius: 15px!important;
 }
 
 .activetab {
@@ -5956,3 +5957,7 @@ input[type="radio"], input[type="checkbox"] {
 .width280px{
     width:280px!important;
 } 
+.li_a{
+    border:none!important;
+}
+

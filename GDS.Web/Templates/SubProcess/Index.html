@@ -84,7 +84,7 @@
                         <!--<li ng-class="(Enum.Region.Global==RegionId)?'activetab':'inactivetab'" ng-click="ChangeRegion(Enum.Region.Global)"><a class="font-bold">Global</a></li>-->                        
                         <li>
                             <ul class="nav nav-tabs" id="ulLinks">
-                                <li class="width280px text-center" ng-if="region.RegionId!=Enum.Region.Global" ng-click="GetProcessDocumentBySubProcessIdAndRegionId_ByRegion(region.RegionId)" ng-class="(region.RegionId==RegionId)?'activetab':'inactivetab'" ng-repeat="region in RegionList"><a ng-bind="region.RegionName" class="font-bold"></a></li>
+                                <li class="width280px text-center" ng-if="region.RegionId!=Enum.Region.Global" ng-click="GetProcessDocumentBySubProcessIdAndRegionId_ByRegion(region.RegionId)" ng-class="(region.RegionId==RegionId)?'activetab':'inactivetab'" ng-repeat="region in RegionList"><a ng-bind="region.RegionName" class="font-bold li_a"></a></li>
                             </ul>
                         </li>
                     </ul>                
