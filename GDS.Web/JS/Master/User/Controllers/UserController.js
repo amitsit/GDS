@@ -287,8 +287,9 @@ app.controller('UpdateUserController', function ($scope, localStorageService, $s
 
 
     $scope.SaveUserDetail = function (form) {
+        debugger;
         form.$submitted = true;
-        if (form.$valid && !$scope.ValidateReigion() && !$scope.ValidatePlant()) {
+        if (form.$valid && !$scope.ValidateReigion()) {
             $scope.UserObj.LoggedInUserId = $scope.LoggedInUserId;
 
             //$scope.UserObj.SelectedPlant = $scope.UserObj.SelectedPlant.toString();
@@ -299,12 +300,7 @@ app.controller('UpdateUserController', function ($scope, localStorageService, $s
                 $scope.UserObj.RegionIdCsv = GetCSVFromJsonArray($scope.selectedRegions, "RegionID");
             }
 
-            if ($scope.IsAllPlantSelected == true) {
-                $scope.UserObj.PlantIdCsv = null;
-            } else {
-                $scope.UserObj.PlantIdCsv = GetCSVFromJsonArray($scope.selectedPlants, "PlantID");
-            }
-
+           
             if (!isNullOrUndefinedOrEmpty($scope.UserObj.SelectedRoles)) {
                 $scope.UserObj.SelectedRoles = $scope.UserObj.SelectedRoles.toString();
             } else {
@@ -313,6 +309,7 @@ app.controller('UpdateUserController', function ($scope, localStorageService, $s
 
 
             var saveUser = UserService.SaveUserDetail($scope.UserObj);
+            debugger;
             saveUser.success(function (response) {
                 if (response.Success) {
                     if ($scope.UserID > 0) {
