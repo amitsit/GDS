@@ -1,5 +1,4 @@
-﻿
-app.filter('unique', function () {
+﻿app.filter('unique', function () {
     return function (collection, keyname) {
         var output = [],
             keys = [];
